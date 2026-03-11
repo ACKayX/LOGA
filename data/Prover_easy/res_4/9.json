@@ -1,0 +1,157 @@
+{
+  "claim": "Context:'''\nIf Bodhi is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both. Bodhi is not a social advocate. If Bodhi either manages factories or develops technologies (but not both), then he is an industrialist. Trenton is a successful entrepreneur. If Sasha is either an environmentalist or an industrialist (but not both), then he is a respected leader. If Sasha is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both. Bodhi is not an environmentalist. Marvin is not an environmentalist. Bodhi is a successful entrepreneur. If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Bodhi is a respected leader.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the Context, Bodhi is a successful entrepreneur. The rule 'If Bodhi is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both' applies. Since Bodhi is not a social advocate, he must be an industrialist."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the Context, Bodhi is a successful entrepreneur. The rule 'If Bodhi is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both' applies. Since Bodhi is not a social advocate, he must be an industrialist.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states: 'If Bodhi either manages factories or develops technologies (but not both), then he is an industrialist.' However, the argument A1 does not establish that Bodhi either manages factories or develops technologies (but not both). Without this condition being met, we cannot conclude Bodhi is an industrialist from that specific rule, and the rule used in A1 might not be sufficient alone.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The rule 'If Bodhi is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both' is directly given in the Context and applies unconditionally to Bodhi since he is stated to be a successful entrepreneur. The rule about managing factories or developing technologies is an additional, separate conditional statement that does not negate or override the first rule. Therefore, A1's reasoning from the first rule remains valid regardless of the second rule's applicability.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Bodhi is an industrialist as concluded in A1, the Context states: 'If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader.' For this conditional to be triggered and prove Bodhi is a respected leader, we need the antecedent 'Bodhi is either an environmentalist or an industrialist (but not both)' to be true. A1 only establishes Bodhi is an industrialist, but does not address whether he is also an environmentalist. The Context states 'Bodhi is not an environmentalist,' which combined with him being an industrialist makes the antecedent true (industrialist, not environmentalist). Therefore, A1's conclusion that Bodhi is an industrialist is actually a necessary step to proving he is a respected leader, not an attack on it. Wait, this argument is not an attack on A1 but a support. Therefore, it is invalid as an attack and should not be generated. Recalling the strict attack definition, an attack must create inconsistency. This does not.",
+          "confidence": 0.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context states 'Bodhi is not an environmentalist.' Combined with the deduction that Bodhi is an industrialist, this satisfies the condition 'Bodhi is either an environmentalist or an industrialist (but not both).'"
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context states 'Bodhi is not an environmentalist.' Combined with the deduction that Bodhi is an industrialist, this satisfies the condition 'Bodhi is either an environmentalist or an industrialist (but not both).'",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The deduction that Bodhi is an industrialist is not explicitly stated in the Context and relies on intermediate reasoning steps that may contain hidden assumptions or logical gaps.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context explicitly provides all necessary premises to deduce Bodhi is an industrialist: Bodhi is a successful entrepreneur; if successful entrepreneur then either social advocate or industrialist (but not both); Bodhi is not a social advocate. This is a valid logical deduction.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if Bodhi is an industrialist and not an environmentalist, the condition 'Bodhi is either an environmentalist or an industrialist (but not both)' is satisfied, but the Context does not explicitly state that satisfying this condition alone makes Bodhi a respected leader; it only states 'If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader.' This is a conditional statement, not a biconditional.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The Context is authoritative and must be taken as true. The conditional 'If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader' is given as fact. Since the antecedent is satisfied (Bodhi is industrialist, not environmentalist), the consequent (Bodhi is a respected leader) logically follows by modus ponens.",
+          "confidence": 0.92,
+          "attacks": {
+            "D1": 0.88
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the condition 'If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader,' and since Bodhi is an industrialist and not an environmentalist, the antecedent is true, so Bodhi must be a respected leader."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the condition 'If Bodhi is either an environmentalist or an industrialist (but not both), then he is a respected leader,' and since Bodhi is an industrialist and not an environmentalist, the antecedent is true, so Bodhi must be a respected leader.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 assumes Bodhi is an industrialist, but this is not directly stated in the Context. The Context only states: 'If Bodhi either manages factories or develops technologies (but not both), then he is an industrialist.' There is no information confirming that Bodhi either manages factories or develops technologies.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the Context: 'Bodhi is a successful entrepreneur.' Also: 'If Bodhi is a successful entrepreneur, then he is either a social advocate or an industrialist, but not both.' And: 'Bodhi is not a social advocate.' Therefore, by logical deduction, Bodhi must be an industrialist. This directly supports the premise of A3.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 1.0
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "All premises are directly provided or logically derived from the Context, with no contradictions or missing information, making the conclusion that Bodhi is a respected leader necessarily true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "All premises are directly provided or logically derived from the Context, with no contradictions or missing information, making the conclusion that Bodhi is a respected leader necessarily true.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 claims all premises are 'directly provided or logically derived' and that the conclusion is 'necessarily true,' but this overstates the logical certainty. The Context contains conditional statements that require specific conditions to be met for Bodhi to be a respected leader; it is not an unconditional guarantee.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly notes the conditional nature of the statements, the Context explicitly provides the necessary conditions for Bodhi to be a respected leader and establishes that those conditions are met through logical deduction, making the conclusion logically necessary under the given Context.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

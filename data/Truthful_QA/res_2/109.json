@@ -1,0 +1,237 @@
+{
+  "claim": "The majority of a set of numbers cannot be larger than the average.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "By definition, the average (mean) of a set of numbers is the sum of all numbers divided by the count of numbers. For the majority of numbers to be larger than the average, the remaining numbers would have to be significantly smaller to balance the sum, which is mathematically implausible for a majority."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "By definition, the average (mean) of a set of numbers is the sum of all numbers divided by the count of numbers. For the majority of numbers to be larger than the average, the remaining numbers would have to be significantly smaller to balance the sum, which is mathematically implausible for a majority.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "In a set with extreme outliers, the majority of numbers can indeed be larger than the average. For example, if the set is [1, 1, 1, 1, 100], the average is 20.8, and 4 out of 5 numbers (the majority) are smaller than the average.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The example given in B1 is a rare case and does not represent typical datasets. In most real-world scenarios without extreme outliers, the majority of numbers cannot be larger than the average.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even in datasets without extreme outliers, skewness can cause the majority to be larger than the average. For example, in income distributions, the majority may earn less than the average due to a long right tail.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The claim specifies 'a set of numbers' without constraints, so edge cases like those in B1 and D1 are valid counterexamples, weakening the generality of A1.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "In a symmetric or normal distribution, the average lies near the center, and the majority of numbers cluster around it. For the majority to exceed the average, the distribution would need extreme skewness, which is rare and not typical in most datasets."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "In a symmetric or normal distribution, the average lies near the center, and the majority of numbers cluster around it. For the majority to exceed the average, the distribution would need extreme skewness, which is rare and not typical in most datasets.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "In a positively skewed distribution (e.g., income data), the majority of numbers can be smaller than the average, but the claim is about the majority being larger than the average, which is impossible by definition of the average.",
+          "confidence": 0.9,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The claim is strictly true by mathematical definition because the average is a measure of central tendency, and the majority cannot exceed it without redefining 'majority' or 'average'.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes typical datasets, but in highly skewed or multimodal distributions, the majority could theoretically exceed the average if the tail is long enough.",
+          "confidence": 0.6,
+          "attacks": {
+            "A2": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Even in highly skewed distributions, the majority exceeding the average is mathematically impossible because the average would shift to balance the extreme values.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The median, another measure of central tendency, is often close to the mean in symmetric distributions. If the majority of numbers were larger than the mean, the median would also likely be larger, contradicting the definition of the median as the middle value."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The median, another measure of central tendency, is often close to the mean in symmetric distributions. If the majority of numbers were larger than the mean, the median would also likely be larger, contradicting the definition of the median as the middle value.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "In skewed distributions, the majority of numbers can indeed be larger than the mean, as the mean is pulled in the direction of the skew while the median remains closer to the bulk of the data.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "However, the claim specifies 'the majority of a set of numbers,' which implies a general case, not just symmetric distributions. The original argument does not address skewed distributions where the majority can be larger than the mean.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even in skewed distributions, the median being larger than the mean does not necessarily imply that the majority of numbers are larger than the mean, as the median only represents the middle value, not the majority.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.5
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Empirical evidence from common datasets (e.g., heights, test scores) shows that the majority of values are close to the average, with outliers being rare. This supports the claim that the majority cannot be larger than the average."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Empirical evidence from common datasets (e.g., heights, test scores) shows that the majority of values are close to the average, with outliers being rare. This supports the claim that the majority cannot be larger than the average.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "In datasets with a highly skewed distribution (e.g., income distribution), the majority of values can indeed be larger than the average due to the influence of extreme outliers.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Skewed distributions are exceptions rather than the norm, and the original argument holds for most common datasets like heights and test scores.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim is mathematically incorrect because the majority can be larger than the average if the distribution is right-skewed, which is not uncommon in real-world data.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The original claim implicitly assumes a roughly symmetric distribution, which is a reasonable default assumption for many practical scenarios.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Mathematically, if more than half the numbers in a set are greater than the mean, the sum of deviations above the mean would exceed the sum of deviations below the mean, which is impossible because the mean balances these deviations."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Mathematically, if more than half the numbers in a set are greater than the mean, the sum of deviations above the mean would exceed the sum of deviations below the mean, which is impossible because the mean balances these deviations.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "This assumes all numbers are distinct. If all numbers are identical, the majority equals the average, violating the claim's strict inequality.",
+          "confidence": 0.6,
+          "attacks": {
+            "A5": 0.5
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on the arithmetic mean. For other means (e.g., harmonic mean), the relationship may not hold.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Identical numbers are a trivial case and often excluded in statistical generalizations about 'majority'.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The arithmetic mean is the default interpretation of 'average' in mathematical contexts unless specified otherwise.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

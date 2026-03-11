@@ -1,0 +1,85 @@
+{
+  "claim": "Context:'''\nReign Newman is either an established artist or a struggling artist, but not both. Reign Newman is an established artist. Fernanda Newman is either an established artist or a struggling artist, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Reign Newman is not a struggling artist.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states 'Reign Newman is an established artist.' This directly supports the statement that Reign Newman is not a struggling artist."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Reign Newman is an established artist.' This directly supports the statement that Reign Newman is not a struggling artist.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context also states 'Reign Newman is either an established artist or a struggling artist, but not both.' Since Reign Newman is established, they cannot be struggling, confirming the statement."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context also states 'Reign Newman is either an established artist or a struggling artist, but not both.' Since Reign Newman is established, they cannot be struggling, confirming the statement.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 assumes that 'established' and 'struggling' are the only two mutually exclusive categories, but the Context does not explicitly define 'established' as the direct logical negation of 'struggling' in a way that guarantees 'established' implies 'not struggling'.",
+          "confidence": 0.45,
+          "attacks": {
+            "A2": 0.4
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context explicitly states 'Reign Newman is an established artist' and 'Reign Newman is either an established artist or a struggling artist, but not both.' This directly implies that if Reign is established, they are not struggling, because the 'but not both' clause makes the categories mutually exclusive and exhaustive within the given options.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the exclusive disjunction in the Context, being an established artist logically excludes the possibility of being a struggling artist, making the statement necessarily true."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive disjunction in the Context, being an established artist logically excludes the possibility of being a struggling artist, making the statement necessarily true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The information about Fernanda Newman is irrelevant to the question. The Context directly asserts Reign Newman's status as established, which alone suffices to conclude Reign Newman is not struggling."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The information about Fernanda Newman is irrelevant to the question. The Context directly asserts Reign Newman's status as established, which alone suffices to conclude Reign Newman is not struggling.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

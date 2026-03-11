@@ -1,0 +1,277 @@
+{
+  "claim": "Major does not dress elegantly. Major trains regularly. Major is not highly educated. Major is a famous figure. If Major has sympathy for others and is successful, then he supports charity. If Major is well-connected, then he is wealthy and an influential person. Major speaks well. If Major trains regularly and is a formidable opponent, then he can win championships. For Major, having wealth and supporting charity are mutually exclusive, but not necessarily exhaustive. Major has loyal fans. If someone has discipline and natural talent, then they can win championships. Anyone who speaks well or dresses elegantly can have high social status. If Major has natural talent, then he has high social status and works hard. Everyone who is a famous figure is either a respected leader or an influential person (or both). Major is not a popular figure. If Major has high social status, then he is either well-connected or highly educated (but not both). If Major wins championships, then he either supports charity or is a popular figure (or both). If Major is a skilled boxer, then he is a formidable opponent and has loyal fans. Major is not a respected leader.Based on the above information, is the following statement true, false, or uncertain? Major is not a skilled boxer.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "If Major is a skilled boxer, then he is a formidable opponent and has loyal fans. The context states Major has loyal fans, which is consistent with being a skilled boxer. This supports that Major could be a skilled boxer, making the statement 'Major is not a skilled boxer' false."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "If Major is a skilled boxer, then he is a formidable opponent and has loyal fans. The context states Major has loyal fans, which is consistent with being a skilled boxer. This supports that Major could be a skilled boxer, making the statement 'Major is not a skilled boxer' false.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 commits a logical fallacy: affirming the consequent. The conditional statement 'If Major is a skilled boxer, then he has loyal fans' does not imply that having loyal fans means he is a skilled boxer. Loyal fans could exist for other reasons (e.g., being a famous figure, which Major is). Therefore, A1's inference is invalid.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly identifies the formal fallacy, the context provides additional constraints. The statement 'If Major is a skilled boxer, then he is a formidable opponent and has loyal fans' is a given conditional. A1 uses the presence of loyal fans to suggest consistency with being a skilled boxer, not strict logical deduction. This weakens B1's attack as A1 is not claiming deductive proof but plausible support.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context explicitly states: 'Major is not a popular figure.' and 'If Major wins championships, then he either supports charity or is a popular figure (or both).' If Major were a skilled boxer, he could win championships (via other conditionals), but winning championships would require him to be a popular figure or support charity. Since he is not popular, winning championships would require supporting charity. However, the context also states: 'For Major, having wealth and supporting charity are mutually exclusive.' If winning championships leads to wealth (via being influential/well-connected), a contradiction may arise. This indirect chain suggests being a skilled boxer might lead to logical tensions, undermining A1's support.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "If Major is a skilled boxer, then he is a formidable opponent. If Major trains regularly and is a formidable opponent, then he can win championships. If Major wins championships, then he either supports charity or is a popular figure (or both). Major is not a popular figure, so if he wins championships, he must support charity. However, for Major, having wealth and supporting charity are mutually exclusive. If Major supports charity, he cannot have wealth. But if Major is well-connected, then he is wealthy and an influential person. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected, implying wealth. This creates a contradiction if he supports charity. Therefore, Major likely cannot win championships, implying he is not a formidable opponent, so he is not a skilled boxer."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "If Major is a skilled boxer, then he is a formidable opponent. If Major trains regularly and is a formidable opponent, then he can win championships. If Major wins championships, then he either supports charity or is a popular figure (or both). Major is not a popular figure, so if he wins championships, he must support charity. However, for Major, having wealth and supporting charity are mutually exclusive. If Major supports charity, he cannot have wealth. But if Major is well-connected, then he is wealthy and an influential person. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected, implying wealth. This creates a contradiction if he supports charity. Therefore, Major likely cannot win championships, implying he is not a formidable opponent, so he is not a skilled boxer.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that if Major has high social status, he must be well-connected. However, the premise states: 'If Major has high social status, then he is either well-connected or highly educated (but not both).' Since Major is not highly educated, it does logically force him to be well-connected if he has high social status. But the argument fails to establish that Major actually has high social status. The premises only state: 'If Major has natural talent, then he has high social status and works hard.' We don't know if Major has natural talent. Without establishing high social status, the chain leading to wealth and contradiction may not hold.",
+          "confidence": 0.72,
+          "attacks": {
+            "A2": 0.78
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The counter-argument B1 correctly points out the missing premise about high social status, but it overlooks another path to high social status. The premises state: 'Anyone who speaks well or dresses elegantly can have high social status.' Major speaks well. Therefore, Major can have high social status. This supports A2's assumption that Major has high social status, reinstating the logical chain toward contradiction.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's inference is too strong. The premise says 'can have high social status,' not 'must have high social status.' Speaking well is sufficient but not necessary for high social status, and it does not guarantee it. Therefore, from 'Major speaks well' we cannot conclude definitively that Major has high social status. The original argument A2 still relies on an unproven assumption.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument contains a logical flaw in its final step. Even if we accept that Major cannot win championships, it does not necessarily follow that he is not a formidable opponent. The premise is: 'If Major trains regularly and is a formidable opponent, then he can win championships.' This is a conditional (if A and B, then C). From not-C (cannot win championships), we cannot deduce not-B (not formidable opponent). We could deduce not-A or not-B. Since we know Major trains regularly (A is true), we actually can deduce not-B. So this step is logically valid. However, the earlier contradiction relies on too many uncertain conditional chains.",
+          "confidence": 0.6,
+          "attacks": {
+            "A2": 0.55
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "If Major has natural talent, then he has high social status and works hard. If someone has discipline and natural talent, then they can win championships. Major trains regularly, which implies discipline. If Major has natural talent and discipline, he can win championships. If he wins championships, then he either supports charity or is a popular figure (or both). Major is not a popular figure, so he would support charity. However, the mutual exclusivity of wealth and charity for Major does not necessarily prevent this; it only means if he supports charity, he cannot have wealth. This does not contradict him being a skilled boxer, as wealth is not required for skill. Thus, Major could be a skilled boxer."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "If Major has natural talent, then he has high social status and works hard. If someone has discipline and natural talent, then they can win championships. Major trains regularly, which implies discipline. If Major has natural talent and discipline, he can win championships. If he wins championships, then he either supports charity or is a popular figure (or both). Major is not a popular figure, so he would support charity. However, the mutual exclusivity of wealth and charity for Major does not necessarily prevent this; it only means if he supports charity, he cannot have wealth. This does not contradict him being a skilled boxer, as wealth is not required for skill. Thus, Major could be a skilled boxer.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Major has natural talent, but this is not stated in the context. Without explicit confirmation of natural talent, the chain leading to 'could be a skilled boxer' is speculative. The context only provides 'If Major has natural talent...', not that he actually has it.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument concludes 'Major could be a skilled boxer,' but the claim to evaluate is 'Major is not a skilled boxer.' Arguing that he could be does not directly support the claim's negation; it merely suggests uncertainty. Therefore, as a support argument, it is logically weak for establishing the claim's falsehood.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Major lacks natural talent, he could still be a skilled boxer through training alone, as skill can be acquired. The absence of natural talent does not definitively prevent him from being skilled.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.65
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Major is not a popular figure. If Major wins championships, then he either supports charity or is a popular figure (or both). Since he is not popular, winning championships would force him to support charity. For Major, having wealth and supporting charity are mutually exclusive. If Major is well-connected, then he is wealthy. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected, implying wealth. But if he supports charity, he cannot have wealth. Thus, if he has high social status, a contradiction arises if he wins championships. To avoid contradiction, he likely does not win championships. If he does not win championships, then from 'If Major trains regularly and is a formidable opponent, then he can win championships,' it does not necessarily mean he is not formidable (he might not train regularly, but he does train regularly). However, if he is not formidable, then from 'If Major is a skilled boxer, then he is a formidable opponent,' he is not a skilled boxer. This supports the statement."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Major is not a popular figure. If Major wins championships, then he either supports charity or is a popular figure (or both). Since he is not popular, winning championships would force him to support charity. For Major, having wealth and supporting charity are mutually exclusive. If Major is well-connected, then he is wealthy. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected, implying wealth. But if he supports charity, he cannot have wealth. Thus, if he has high social status, a contradiction arises if he wins championships. To avoid contradiction, he likely does not win championships. If he does not win championships, then from 'If Major trains regularly and is a formidable opponent, then he can win championships,' it does not necessarily mean he is not formidable (he might not train regularly, but he does train regularly). However, if he is not formidable, then from 'If Major is a skilled boxer, then he is a formidable opponent,' he is not a skilled boxer. This supports the statement.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that having high social status is necessary for the contradiction. The statement 'If Major has high social status, then he is either well-connected or highly educated (but not both)' is conditional. Major might not have high social status at all. The premises state: 'Anyone who speaks well or dresses elegantly can have high social status.' Major speaks well, but does not dress elegantly. 'Can have' does not guarantee he does. Without high social status, the chain (high status \u2192 well-connected \u2192 wealthy) doesn't activate, so no contradiction with supporting charity arises even if he wins championships.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion that 'he likely does not win championships' is not logically forced. The contradiction only arises under the specific combination of winning championships AND having high social status. If he wins championships but does not have high social status, he could support charity without conflicting with wealth (since the well-connected/wealthy chain isn't triggered). Therefore, winning championships remains possible, and the subsequent reasoning about not being formidable or not being a skilled boxer is not necessarily true.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument relies on the premise 'If Major wins championships, then he either supports charity or is a popular figure (or both).' Since Major is not popular, winning championships implies he supports charity. However, the premises also state: 'If Major has sympathy for others and is successful, then he supports charity.' Supporting charity is conditional on sympathy AND success. Winning championships might indicate success, but sympathy is not established. Therefore, winning championships does not logically force him to support charity; the conditional requirement for sympathy may not be met.",
+          "confidence": 0.7,
+          "attacks": {
+            "A4": 0.72
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out that high social status is not guaranteed, the original context includes: 'If Major has natural talent, then he has high social status and works hard.' If Major has natural talent, then high social status is guaranteed. The argument A4 did not consider this pathway. If Major has natural talent, he definitely has high social status, which would trigger the well-connected/wealthy chain and create the contradiction with supporting charity if he wins championships. Therefore, the scenario where he lacks high social status depends on him lacking natural talent, which is not addressed.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Major trains regularly. If Major trains regularly and is a formidable opponent, then he can win championships. Being a formidable opponent is a condition for winning championships. If Major is a skilled boxer, then he is a formidable opponent. Thus, if Major is a skilled boxer, he can win championships. The context does not explicitly state he wins championships, but it does not state he doesn't. Without evidence against his skill, we cannot conclude he is not a skilled boxer. The statement 'Major is not a skilled boxer' is therefore uncertain, leaning false."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Major trains regularly. If Major trains regularly and is a formidable opponent, then he can win championships. Being a formidable opponent is a condition for winning championships. If Major is a skilled boxer, then he is a formidable opponent. Thus, if Major is a skilled boxer, he can win championships. The context does not explicitly state he wins championships, but it does not state he doesn't. Without evidence against his skill, we cannot conclude he is not a skilled boxer. The statement 'Major is not a skilled boxer' is therefore uncertain, leaning false.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 incorrectly concludes uncertainty about 'Major is not a skilled boxer' by focusing on a hypothetical chain (skilled \u2192 formidable \u2192 can win). However, the context provides definitive information: 'Major is not a popular figure' and 'If Major wins championships, then he either supports charity or is a popular figure (or both).' If Major were a skilled boxer, he could win championships. But winning championships would require him to be either a supporter of charity or a popular figure. The context states he is not popular, so winning would force him to support charity. Yet the context also states: 'For Major, having wealth and supporting charity are mutually exclusive.' If he wins championships and supports charity, he cannot have wealth. However, if he is well-connected, he is wealthy. There is no contradiction yet, but the argument A5 ignores that the context does not state he wins championships. More critically, the context provides no positive evidence that he is a skilled boxer. The claim 'Major is not a skilled boxer' is the statement to evaluate. Without evidence for his skill, and given the logical constraints, the default logical position is that the statement is true until proven otherwise. A5's 'uncertain, leaning false' is a misapplication of burden of proof.",
+          "confidence": 0.72,
+          "attacks": {
+            "A5": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Argument A5 relies on the premise 'If Major is a skilled boxer, then he is a formidable opponent' from the context. It then combines with 'Major trains regularly' and the conditional 'If Major trains regularly and is a formidable opponent, then he can win championships' to conclude he *can* win championships. However, 'can win' is a possibility, not an actuality. The context does not state he wins championships. The leap from 'can win' to 'therefore we cannot conclude he is not skilled' is logically weak. The absence of evidence for championships is not evidence for skill. The claim 'Major is not a skilled boxer' could still be true even if he trains regularly and *could* be formidable. A5's reasoning commits the fallacy of affirming the consequent in a probabilistic sense and fails to establish a strong case against the claim.",
+          "confidence": 0.68,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1 argues that without evidence for skill, the claim 'Major is not a skilled boxer' should be considered true. However, the context provides the conditional: 'If someone has discipline and natural talent, then they can win championships.' It also states: 'If Major has natural talent, then he has high social status and works hard.' There is no information about Major having natural talent or discipline (beyond training regularly, which may indicate discipline). Without evidence of natural talent, we cannot infer he can win championships via that path either. But the lack of evidence for natural talent does not prove he is not a skilled boxer. Skill could come from training alone. B1's shift of burden of proof is too strong; the context does not contain a direct statement or necessary implication that he is not skilled. Therefore, the correct epistemic status is uncertain, not true.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Major is a famous figure. Everyone who is a famous figure is either a respected leader or an influential person (or both). Major is not a respected leader, so he must be an influential person. If Major is well-connected, then he is wealthy and an influential person. Since he is influential, he could be well-connected, implying wealth. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected. Anyone who speaks well or dresses elegantly can have high social status. Major speaks well, so he can have high social status, implying he is well-connected and wealthy. For Major, having wealth and supporting charity are mutually exclusive. If he is wealthy, he cannot support charity. If Major wins championships, he must support charity or be popular. He is not popular, so winning would require supporting charity, contradicting wealth. Thus, he likely does not win championships. If he does not win championships, and he trains regularly, then from 'If Major trains regularly and is a formidable opponent, then he can win championships,' he is not a formidable opponent. If he is not formidable, then from 'If Major is a skilled boxer, then he is a formidable opponent,' he is not a skilled boxer."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Major is a famous figure. Everyone who is a famous figure is either a respected leader or an influential person (or both). Major is not a respected leader, so he must be an influential person. If Major is well-connected, then he is wealthy and an influential person. Since he is influential, he could be well-connected, implying wealth. If Major has high social status, then he is either well-connected or highly educated (but not both). Major is not highly educated, so if he has high social status, he must be well-connected. Anyone who speaks well or dresses elegantly can have high social status. Major speaks well, so he can have high social status, implying he is well-connected and wealthy. For Major, having wealth and supporting charity are mutually exclusive. If he is wealthy, he cannot support charity. If Major wins championships, he must support charity or be popular. He is not popular, so winning would require supporting charity, contradicting wealth. Thus, he likely does not win championships. If he does not win championships, and he trains regularly, then from 'If Major trains regularly and is a formidable opponent, then he can win championships,' he is not a formidable opponent. If he is not formidable, then from 'If Major is a skilled boxer, then he is a formidable opponent,' he is not a skilled boxer.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that Major having high social status is certain because he speaks well. However, 'Anyone who speaks well or dresses elegantly can have high social status' only indicates a possibility, not a guarantee. Major does not dress elegantly, and the statement does not require that speaking well alone is sufficient for high social status. Therefore, Major might not have high social status at all, breaking the chain of reasoning that leads to him being well-connected and wealthy.",
+          "confidence": 0.72,
+          "attacks": {
+            "A6": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument concludes Major is not a skilled boxer because he is not formidable, which is derived from him not winning championships. However, the premise 'If Major trains regularly and is a formidable opponent, then he can win championships' does not state that winning championships is necessary for being formidable. It only states a sufficient condition: if he trains and is formidable, then he can win. It is logically possible for Major to be formidable but still not win championships due to other factors (e.g., stronger opponents, bad luck). Therefore, not winning does not logically imply he is not formidable.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.88
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument deduces that Major must be an influential person because he is famous and not a respected leader. The rule states: 'Everyone who is a famous figure is either a respected leader or an influential person (or both).' Since he is not a respected leader, he must be an influential person. This deduction is logically valid. However, the subsequent step assumes that being influential implies he could be well-connected, which then implies wealth via 'If Major is well-connected, then he is wealthy and an influential person.' This is a logical error: the conditional only states that if well-connected, then wealthy and influential. It does not state that if influential, then well-connected. Being influential could arise from other sources. Therefore, the leap from 'influential' to 'well-connected' is not justified.",
+          "confidence": 0.8,
+          "attacks": {
+            "A6": 0.82
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out that high social status is not guaranteed, the original argument A6 relies on this as a key step. If Major does not have high social status, then the condition 'If Major has high social status, then he is either well-connected or highly educated (but not both)' does not apply, and the entire derivation of well-connectedness and wealth collapses. This directly undermines the premise that Major is wealthy and thus cannot support charity, which is central to A6's conclusion about championship outcomes.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.68
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's attack is valid but does not fully refute A6's core structure. Even if not winning championships does not logically prove Major is not formidable, it remains a reasonable inductive inference given the premises. The original argument A6 uses 'likely does not win championships' and then treats it as certain for the subsequent deduction. B2 correctly identifies this logical overstep, but A6's conclusion about not being skilled boxer still follows if the earlier steps about wealth and charity are sound. Therefore, B2 weakens but does not dismantle A6.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    }
+  }
+}

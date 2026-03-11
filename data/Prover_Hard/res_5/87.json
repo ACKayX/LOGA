@@ -1,0 +1,189 @@
+{
+  "claim": "If someone is passionate, then they push boundaries and have an experimental approach. Johanna is not creative. If someone is a diligent worker, then they have high standards and are passionate. Johanna does not gain widespread recognition. Johanna either has an experimental approach or values tradition. Anyone who puts in extra effort is a diligent worker. If Johanna is talented, then she either pushes boundaries or takes risks, but not both. Johanna puts in extra effort. Johanna does not influence others. Johanna either follows trends or creates unique pieces, but not both. If Johanna either sets style standards or follows trends (but not both), then she is creative. Johanna has high standards. For all humans, if someone is a renowned designer, then they create unique pieces and gain widespread recognition. Johanna does not value tradition. If Johanna either influences others or pushes boundaries (but not both), then she sets style standards. Johanna develops skills or creates unique pieces.Based on the above information, is the following statement true, false, or uncertain? Johanna is a renowned designer.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states that for all humans, if someone is a renowned designer, then they create unique pieces and gain widespread recognition. Johanna does not gain widespread recognition, so she cannot be a renowned designer."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states that for all humans, if someone is a renowned designer, then they create unique pieces and gain widespread recognition. Johanna does not gain widespread recognition, so she cannot be a renowned designer.",
+          "cate": "S",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Johanna does not gain widespread recognition, which is a necessary condition for being a renowned designer according to the context. Therefore, Johanna is not a renowned designer."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Johanna does not gain widespread recognition, which is a necessary condition for being a renowned designer according to the context. Therefore, Johanna is not a renowned designer.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The context specifies that a renowned designer must create unique pieces. Johanna either follows trends or creates unique pieces, but not both. It is not definitively established that she creates unique pieces, and combined with her lack of widespread recognition, she cannot be a renowned designer."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context specifies that a renowned designer must create unique pieces. Johanna either follows trends or creates unique pieces, but not both. It is not definitively established that she creates unique pieces, and combined with her lack of widespread recognition, she cannot be a renowned designer.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Johanna either follows trends or creates unique pieces, but not both.' This is a disjunction, meaning one must be true. The argument A3 incorrectly treats this as uncertainty about creating unique pieces, when in fact we can determine which is true from other context statements.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states 'If Johanna either sets style standards or follows trends (but not both), then she is creative.' and 'Johanna is not creative.' Therefore, Johanna cannot be following trends. Since she either follows trends or creates unique pieces (but not both), she must create unique pieces.",
+          "confidence": 0.9,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Argument B2 relies on the premise that 'Johanna is not creative' is true. While this is stated in the context, we must check if this premise is used consistently. The context also states 'If someone is passionate, then they push boundaries and have an experimental approach' and 'If someone is a diligent worker, then they have high standards and are passionate.' Johanna has high standards and puts in extra effort (making her a diligent worker), so she is passionate and thus has an experimental approach. Having an experimental approach might relate to creativity in ways not fully specified.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Johanna is not creative. Since creativity is often associated with renowned designers, and the context links creativity to setting style standards or following trends (but not both) for Johanna, her lack of creativity further supports that she is not a renowned designer."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Johanna is not creative. Since creativity is often associated with renowned designers, and the context links creativity to setting style standards or following trends (but not both) for Johanna, her lack of creativity further supports that she is not a renowned designer.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states 'If Johanna either sets style standards or follows trends (but not both), then she is creative.' Since Johanna is not creative, it means she does not set style standards and does not follow trends. However, the claim also states 'Johanna either follows trends or creates unique pieces, but not both.' If she does not follow trends, then she must create unique pieces. Creating unique pieces is a necessary condition for being a renowned designer according to the claim. Therefore, Johanna could still be a renowned designer despite not being creative, as long as she creates unique pieces.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The claim states 'For all humans, if someone is a renowned designer, then they create unique pieces and gain widespread recognition.' Johanna does not gain widespread recognition. Therefore, Johanna cannot be a renowned designer. This directly contradicts the possibility raised in B1 that Johanna could be a renowned designer by creating unique pieces, since widespread recognition is also a necessary condition.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Johanna does not influence others. Influence is a common trait of renowned designers, and the context connects influencing others or pushing boundaries (but not both) to setting style standards for Johanna. Her lack of influence undermines any path to being renowned."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Johanna does not influence others. Influence is a common trait of renowned designers, and the context connects influencing others or pushing boundaries (but not both) to setting style standards for Johanna. Her lack of influence undermines any path to being renowned.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states: 'For all humans, if someone is a renowned designer, then they create unique pieces and gain widespread recognition.' Johanna does not gain widespread recognition (given). Therefore, even if she creates unique pieces, she cannot be a renowned designer because both conditions are necessary.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The argument B1 relies on the universal conditional being applicable to Johanna. However, the context also states: 'If Johanna either influences others or pushes boundaries (but not both), then she sets style standards.' If she sets style standards, then by another rule ('If Johanna either sets style standards or follows trends (but not both), then she is creative'), she becomes creative, contradicting 'Johanna is not creative'. This creates an inconsistency in the premises about Johanna's properties, making the logical status of 'renowned designer' uncertain rather than definitively false.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Johanna has high standards and puts in extra effort, making her a diligent worker, which implies she is passionate. However, passion leads to pushing boundaries and an experimental approach. Johanna either has an experimental approach or values tradition, and she does not value tradition, so she has an experimental approach. Yet, being a renowned designer requires creating unique pieces and gaining widespread recognition, which she lacks, so she is not a renowned designer."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Johanna has high standards and puts in extra effort, making her a diligent worker, which implies she is passionate. However, passion leads to pushing boundaries and an experimental approach. Johanna either has an experimental approach or values tradition, and she does not value tradition, so she has an experimental approach. Yet, being a renowned designer requires creating unique pieces and gaining widespread recognition, which she lacks, so she is not a renowned designer.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'passion leads to pushing boundaries and an experimental approach' is a necessary truth, but the claim only states 'If someone is passionate, then they push boundaries and have an experimental approach' as a conditional. Johanna being passionate does not guarantee she pushes boundaries if there are exceptions or if the conditional is not universally applied in all contexts.",
+          "confidence": 0.65,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument concludes Johanna is not a renowned designer because she lacks widespread recognition and (implied) does not create unique pieces. However, the claim states 'Johanna either follows trends or creates unique pieces, but not both.' It does not definitively state she does not create unique pieces; she might create unique pieces and not follow trends. Without establishing she does not create unique pieces, the conclusion about not being a renowned designer is premature.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the conditional about passion is not absolute, the claim presents it as a logical rule within the given information. Since all given statements are to be treated as true for this evaluation, and Johanna is deduced to be passionate, she must push boundaries and have an experimental approach. There is no room for exceptions within the provided logical framework.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The claim also states 'If Johanna either sets style standards or follows trends (but not both), then she is creative.' Johanna is stated as 'not creative.' Therefore, she cannot satisfy the antecedent: she cannot be in the state of either setting style standards or following trends (but not both). This indirectly affects the possibilities regarding creating unique pieces versus following trends, but it doesn't directly prove she creates unique pieces. The lack of positive evidence for creating unique pieces, combined with lacking widespread recognition, still supports the original conclusion.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "claim": "Cupcake has golden eyes. If Cupcake is a solitary snake, then she lives in the rainforest. Cupcake is wild. Cupcake either has deadly precision or strikes quickly. Cupcake is not large. Cupcake is not carnivorous. If Cupcake is a wild snake and harmless, then she is not fierce. If Cupcake is aggressive, then she is venomous and dominates her territory. Cupcake has sharp fangs. If Cupcake has black scales, then she either has a coiled body or is large. If Cupcake lives in the rainforest, then she is either fierce or has deadly precision, but not both. For every snake, it is either venomous or non-venomous, but not both. Cupcake does not strike quickly. All snakes that have sharp teeth and attack preys are fierce. All snakes that have a coiled body and sharp fangs are carnivorous. If Cupcake has golden eyes, then she is either a snake that lives in the rainforest or a snake with black scales, but not both. Every snake is either harmless or venomous.Based on the above information, is the following statement true, false, or uncertain? Cupcake is non-venomous.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'Every snake is either harmless or venomous.' If Cupcake is harmless, then she is non-venomous, since the categories are mutually exclusive."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'Every snake is either harmless or venomous.' If Cupcake is harmless, then she is non-venomous, since the categories are mutually exclusive.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Cupcake is harmless, but this is not established. The context states 'If Cupcake is a wild snake and harmless, then she is not fierce.' However, we only know Cupcake is wild. Harmlessness is not given, so we cannot conclude she is non-venomous from the harmless/venomous dichotomy alone.",
+          "confidence": 0.78,
+          "attacks": {
+            "A1": 0.82
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context provides 'If Cupcake is aggressive, then she is venomous and dominates her territory.' If Cupcake is aggressive, she would be venomous, contradicting the claim that she is non-venomous. Aggressiveness is not ruled out in the given information, so the non-venomous conclusion is uncertain.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.68
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the context: 'All snakes that have sharp teeth and attack preys are fierce.' Cupcake has sharp fangs (sharp teeth). If she attacks prey, she would be fierce. The context also states 'If Cupcake is a wild snake and harmless, then she is not fierce.' If she is fierce, she cannot be harmless. If she is not harmless, and given 'Every snake is either harmless or venomous,' she must be venomous, not non-venomous.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From the context, 'If Cupcake is aggressive, then she is venomous and dominates her territory.' If Cupcake is aggressive, then she is venomous, which contradicts the statement that she is non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From the context, 'If Cupcake is aggressive, then she is venomous and dominates her territory.' If Cupcake is aggressive, then she is venomous, which contradicts the statement that she is non-venomous.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 assumes Cupcake is aggressive, but this is not established in the context. The context only states 'Cupcake is wild,' which is not equivalent to aggressive. Without establishing aggression, the conditional premise cannot be applied to conclude venomous status.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states: 'For every snake, it is either venomous or non-venomous, but not both.' and 'Every snake is either harmless or venomous.' This implies 'harmless' and 'non-venomous' are logically equivalent in this context. The claim 'Cupcake is non-venomous' is equivalent to 'Cupcake is harmless.' Argument A2 does not address whether Cupcake is harmless, making its attack on the claim indirect and incomplete.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.82
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out aggression is not established, the context provides other logical pathways. For instance, 'If Cupcake is a wild snake and harmless, then she is not fierce.' This does not directly confirm or deny venomous status, but combined with other statements, it forms part of a deductive chain. B1's attack is valid but doesn't fully resolve the claim's truth value.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the context, 'If Cupcake is a wild snake and harmless, then she is not fierce.' If Cupcake is harmless, then she is non-venomous, as 'harmless' implies non-venomous given the mutual exclusivity of harmless and venomous."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the context, 'If Cupcake is a wild snake and harmless, then she is not fierce.' If Cupcake is harmless, then she is non-venomous, as 'harmless' implies non-venomous given the mutual exclusivity of harmless and venomous.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'Every snake is either harmless or venomous.' This establishes a dichotomy where 'harmless' and 'venomous' are mutually exclusive. However, the argument A3 assumes that 'harmless' directly implies 'non-venomous' without considering that the context's dichotomy already defines 'non-venomous' as equivalent to 'harmless'. This creates a circular or redundant inference that does not provide new logical support for the claim 'Cupcake is non-venomous' from the given premises.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The argument B1 correctly identifies the redundancy, but it does not undermine the logical validity of A3's core point\u2014that within the context's framework, if Cupcake is harmless, she must be non-venomous. The dichotomy 'every snake is either harmless or venomous' explicitly means harmless = non-venomous. Therefore, A3's inference, while tautological, is still logically consistent with the context.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "From the context, 'If Cupcake lives in the rainforest, then she is either fierce or has deadly precision, but not both.' If she is fierce, and given 'All snakes that have sharp teeth and attack preys are fierce,' and she has sharp fangs, she might attack prey, making her fierce and possibly venomous, contradicting non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From the context, 'If Cupcake lives in the rainforest, then she is either fierce or has deadly precision, but not both.' If she is fierce, and given 'All snakes that have sharp teeth and attack preys are fierce,' and she has sharp fangs, she might attack prey, making her fierce and possibly venomous, contradicting non-venomous.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Cupcake attacks prey because she has sharp fangs, but the context only states 'All snakes that have sharp teeth and attack preys are fierce.' It does not state that having sharp fangs implies attacking prey. Without evidence she attacks prey, the inference to fierceness is unsupported.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument attempts to link fierceness to venomousness, but the context states 'Every snake is either harmless or venomous' and 'If Cupcake is aggressive, then she is venomous and dominates her territory.' Fierceness is not the same as aggressiveness, and the context does not equate fierceness with venomousness. A snake can be fierce (e.g., defensive) but harmless.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the premise about attacking prey were granted, the context states 'All snakes that have sharp teeth and attack preys are fierce.' This is a conditional statement; it does not imply that fierceness leads to venomousness. The argument commits the fallacy of affirming the consequent by assuming fierceness necessarily implies venomousness.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the context, 'Cupcake is not carnivorous.' Combined with 'All snakes that have a coiled body and sharp fangs are carnivorous,' this implies Cupcake does not have a coiled body, which avoids a condition that might lead to carnivorousness and potential venomousness, supporting non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the context, 'Cupcake is not carnivorous.' Combined with 'All snakes that have a coiled body and sharp fangs are carnivorous,' this implies Cupcake does not have a coiled body, which avoids a condition that might lead to carnivorousness and potential venomousness, supporting non-venomous.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes avoiding carnivorousness supports non-venomous. The context states 'Every snake is either harmless or venomous' and 'For every snake, it is either venomous or non-venomous, but not both.' Non-venomous is equivalent to harmless. Being not carnivorous does not logically entail harmless; a snake could be venomous and not carnivorous (if it doesn't eat meat but uses venom for defense).",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 is valid but incomplete. The context also states 'If Cupcake is aggressive, then she is venomous and dominates her territory.' If Cupcake were aggressive, she would be venomous, contradicting non-venomous. The original argument does not address aggression, leaving a possible pathway to venomousness.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "However, the context does not state Cupcake is aggressive. Without evidence of aggression, the conditional 'If aggressive, then venomous' does not apply. The absence of aggression information does not undermine the original argument's logical structure about carnivorousness.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "From the context, 'Cupcake has sharp fangs.' Sharp fangs are often associated with venomous snakes, and given 'All snakes that have sharp teeth and attack preys are fierce,' if she attacks prey, she could be fierce and venomous, contradicting non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "From the context, 'Cupcake has sharp fangs.' Sharp fangs are often associated with venomous snakes, and given 'All snakes that have sharp teeth and attack preys are fierce,' if she attacks prey, she could be fierce and venomous, contradicting non-venomous.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument relies on an unsupported assumption that sharp fangs imply venomousness, but the context explicitly states 'Cupcake is not carnivorous' and 'All snakes that have a coiled body and sharp fangs are carnivorous.' Since Cupcake is not carnivorous, she cannot have both a coiled body and sharp fangs, and the context does not state she attacks prey, so the link to fierceness and venomousness is invalid.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion that this 'contradicts non-venomous' is logically flawed because it only establishes a possibility ('could be fierce and venomous'), not a necessity. The context states 'For every snake, it is either venomous or non-venomous, but not both' and 'Every snake is either harmless or venomous.' Since harmless and non-venomous are not equated in the context, and 'venomous' is a subset of 'not harmless', the argument fails to directly challenge the claim 'Cupcake is non-venomous.'",
+          "confidence": 0.8,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 correctly points out the missing premise about attacking prey, but it overlooks that the context states 'All snakes that have sharp teeth and attack preys are fierce.' Since 'sharp fangs' are a type of 'sharp teeth', if Cupcake had sharp fangs AND attacked prey, she would be fierce. However, the context does not state she attacks prey, so the original argument's inference remains speculative.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "From the context, 'Cupcake does not strike quickly.' Since 'Cupcake either has deadly precision or strikes quickly,' she must have deadly precision. Deadly precision does not directly imply venomousness, so she could be non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "From the context, 'Cupcake does not strike quickly.' Since 'Cupcake either has deadly precision or strikes quickly,' she must have deadly precision. Deadly precision does not directly imply venomousness, so she could be non-venomous.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes 'deadly precision' is unrelated to venomousness. From context: 'If Cupcake lives in the rainforest, then she is either fierce or has deadly precision, but not both.' Also: 'If Cupcake has golden eyes, then she is either a snake that lives in the rainforest or a snake with black scales, but not both.' If the claim 'Cupcake has golden eyes' is true, then she lives in rainforest OR has black scales. If rainforest, then fierce OR deadly precision. If deadly precision, then not fierce. But 'All snakes that have sharp teeth and attack preys are fierce.' Cupcake has sharp fangs (sharp teeth) and deadly precision implies attacking prey, so she must be fierce. Contradiction: she cannot be both fierce and not fierce if she has deadly precision in rainforest. This undermines the assumption that deadly precision allows non-venomous conclusion.",
+          "confidence": 0.75,
+          "attacks": {
+            "A7": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 overcomplicates. From context: 'Every snake is either harmless or venomous.' Also: 'If Cupcake is aggressive, then she is venomous and dominates her territory.' Cupcake is wild, has sharp fangs, deadly precision \u2013 these suggest aggression. If aggressive, then venomous. So deadly precision may correlate with aggression/venomousness, contradicting A7's 'could be non-venomous'.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's inference is weak: 'wild, sharp fangs, deadly precision' does not necessarily imply aggression. Context says 'If Cupcake is aggressive, then she is venomous...' but does not state Cupcake is aggressive. So venomousness not proven. A7's point that deadly precision doesn't directly imply venomousness stands.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "From the context, 'If Cupcake has golden eyes, then she is either a snake that lives in the rainforest or a snake with black scales, but not both.' If she lives in the rainforest, she is either fierce or has deadly precision. If fierce, she might be venomous, contradicting non-venomous."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "From the context, 'If Cupcake has golden eyes, then she is either a snake that lives in the rainforest or a snake with black scales, but not both.' If she lives in the rainforest, she is either fierce or has deadly precision. If fierce, she might be venomous, contradicting non-venomous.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+```yaml
+Arguments:
+  - id: "A1"
+    text: "Iris studies Earth's geological processes. According to the context, if Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both. Since she studies Earth's geological processes, one of these two outcomes must be true."
+    cate: "P"
+    confidence: 0.55
+    attacks: {}
+  - id: "B1"
+    text: "The context states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This is a conditional statement. A1 incorrectly treats it as guaranteeing one outcome must be true. The conditional only states what she *can* do, not what she *must* do. It does not logically guarantee she actually does either."
+    confidence: 0.85
+    attacks:
+      A1: 0.80
+  - id: "B2"
+    text: "A1 concludes 'one of these two outcomes must be true' based solely on Iris studying geological processes. However, the context provides other information that may determine which outcome is true or false. The conditional only sets up a possibility, not a necessity. The argument A1 makes a logical leap from a conditional about capability to a conclusion about actual occurrence."
+    confidence: 0.82
+    attacks:
+      A1: 0.78
+  - id: "C1"
+    text: "B1's attack is valid but incomplete. While the conditional uses 'can', in logical discourse within a given context, such statements often imply that if the antecedent is true, one of the disjuncts in the consequent must be true, as they represent the only possible outcomes. The phrase 'but not both' reinforces they are exclusive and exhaustive possibilities in this scenario. Therefore, A1's interpretation that one must be true is reasonable given the structure of the statement."
+    confidence: 0.75
+    attacks:
+      B1: 0.70
+  - id: "B3"
+    text: "The context states 'Iris does not seek self-improvement' and 'If Iris either values learning or seeks self-improvement (but not both), then she values personal growth.' Since she does not seek self-improvement, for the antecedent to be true, she must value learning. However, the context also states 'Iris does not value personal growth.' Therefore, the antecedent 'Iris either values learning or seeks self-improvement (but not both)' must be false. This means Iris does NOT value learning. The context also states 'Iris values learning or is passionate about research.' Since she does not value learning, she must be passionate about research. If Iris is passionate about research, then she shares knowledge with others and collaborates with peers. The context also states 'Iris either advances human understanding or shares knowledge with others, but not both.' Since she shares knowledge, she does not advance human understanding. The context states 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Iris pursues academic degrees (given). For the antecedent to be true and cause her to advance understanding, she must NOT contribute to scientific knowledge. Since she does not advance understanding, the antecedent must be false. The only way for 'Iris either contributes to scientific knowledge or pursues academic degrees (but not both)' to be false is if she either does both or does neither. She does pursue academic degrees, so to make the disjunction false, she must also contribute to scientific knowledge. Therefore, Iris contributes to scientific knowledge. Returning to the original conditional about her studying geological processes: she can either discover new minerals or contribute to scientific knowledge, but not both. Since we have deduced she contributes to scientific knowledge, she cannot discover new minerals. This directly contradicts A1's support for the claim 'Iris discovers new minerals.'"
+    confidence: 0.88
+    attacks:
+      A1: 0.95
+```

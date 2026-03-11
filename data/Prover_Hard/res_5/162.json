@@ -1,0 +1,229 @@
+{
+  "claim": "Bunny performs ballet. Either Aileen enjoys tango or she dislikes tango, but not both. Giovanni has stage experience. If Aileen has grace, then she performs rumba and expresses passion. If Aileen has stage experience, then she either performs ballet or performs rumba, but not both. If Aileen has rhythm, then she instructs movement and shares her passion. Giovanni values culture. If Aileen is a choreographer, then she either practices yoga or teaches dance, but not both. If Aileen either performs rumba or dances samba (but not both), then she teaches dance. Aileen performs ballet. If Giovanni instructs movement, then she either loves waltz or loves salsa, but not both. Either Bunny enjoys tango or she dislikes tango, but not both. If Aileen instructs movement, then she either loves waltz or loves salsa, but not both. If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both. For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango. Bunny appreciates music. Aileen dances samba. Aileen appreciates music. Aileen values culture. Aileen loves waltz. If Bunny either performs rumba or dances samba (but not both), then she teaches dance. If Aileen appreciates music, then she instructs movement and values culture. Estella loves waltz. Aileen has stage experience. If Bunny teaches dance, then she either loves salsa or enjoys tango, but not both. Estella dances samba.Based on the above information, is the following statement true, false, or uncertain? Aileen does not dislike tango.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'Either Aileen enjoys tango or she dislikes tango, but not both.' Since Aileen performs ballet, and the context states 'Aileen performs ballet,' we must determine her tango preference. Given 'Aileen loves waltz' and 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both,' but we don't yet know if she teaches dance. However, 'If Aileen appreciates music, then she instructs movement and values culture' and 'Aileen appreciates music' is given, so Aileen instructs movement. Then 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' Since Aileen loves waltz, she does not love salsa. Also, 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' If she taught dance, she would need to love salsa or enjoy tango, but she doesn't love salsa, so she would need to enjoy tango. But we don't know if she teaches dance yet. However, 'Aileen dances samba' and 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' She dances samba, and we don't have her performing rumba, so she teaches dance. Therefore, since she teaches dance and doesn't love salsa, she must enjoy tango. Thus, she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'Either Aileen enjoys tango or she dislikes tango, but not both.' Since Aileen performs ballet, and the context states 'Aileen performs ballet,' we must determine her tango preference. Given 'Aileen loves waltz' and 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both,' but we don't yet know if she teaches dance. However, 'If Aileen appreciates music, then she instructs movement and values culture' and 'Aileen appreciates music' is given, so Aileen instructs movement. Then 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' Since Aileen loves waltz, she does not love salsa. Also, 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' If she taught dance, she would need to love salsa or enjoy tango, but she doesn't love salsa, so she would need to enjoy tango. But we don't know if she teaches dance yet. However, 'Aileen dances samba' and 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' She dances samba, and we don't have her performing rumba, so she teaches dance. Therefore, since she teaches dance and doesn't love salsa, she must enjoy tango. Thus, she does not dislike tango.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 relies on the premise that Aileen does not perform rumba, but this is not established. The context states: 'If Aileen has grace, then she performs rumba and expresses passion.' It does not state whether Aileen has grace. If Aileen has grace, she performs rumba. If she performs rumba, then the condition 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance' would be triggered, but it requires 'but not both.' If she both performs rumba and dances samba, the condition does not apply, so she might not teach dance. Without knowing if Aileen has grace, we cannot conclude she teaches dance.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Aileen has grace and performs rumba, the condition 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance' still holds if she performs rumba but does not dance samba. However, the context explicitly states 'Aileen dances samba.' Therefore, if she performs rumba, she would be doing both, which violates the 'but not both' part of the antecedent. The condition only applies if exactly one is true. Since both are true, the condition is not triggered, so we cannot infer she teaches dance from that rule. Thus, the inference in B1 that she might not teach dance is correct, but for a stronger reason: the condition simply does not apply if both are true.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context provides another route to establish that Aileen teaches dance: 'If Aileen is a choreographer, then she either practices yoga or teaches dance, but not both.' However, we do not know if Aileen is a choreographer. Without that, we cannot use this rule. Also, 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' This is a conditional, not a biconditional. So, even if we cannot prove she teaches dance, it does not disprove she enjoys tango. The original claim 'Aileen does not dislike tango' depends on her enjoying tango, which might be established independently. The argument in A1 attempts to prove she enjoys tango via teaching dance, but if teaching dance is not proven, the argument fails.",
+          "confidence": 0.7,
+          "attacks": {
+            "A1": 0.75
+          }
+        },
+        {
+          "id": "E1",
+          "text": "We can establish that Aileen enjoys tango directly from other context statements. The context states: 'For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango.' However, we are not given whether Aileen attends tango clubs or listens to tango music. So this rule cannot be applied. Also, 'Either Aileen enjoys tango or she dislikes tango, but not both.' This is an exclusive disjunction. To prove she does not dislike tango, we must prove she enjoys tango. Without a solid proof of her enjoying tango, the claim remains uncertain.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "From 'Aileen dances samba' and the rule 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance,' it follows that Aileen teaches dance. Then from 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' We know 'Aileen loves waltz' and from 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both,' and since she instructs movement (because 'Aileen appreciates music' triggers 'instructs movement'), she loves waltz, so she does not love salsa. Therefore, for the teaching dance condition to hold, she must enjoy tango. Since she enjoys tango, from 'Either Aileen enjoys tango or she dislikes tango, but not both,' she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From 'Aileen dances samba' and the rule 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance,' it follows that Aileen teaches dance. Then from 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' We know 'Aileen loves waltz' and from 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both,' and since she instructs movement (because 'Aileen appreciates music' triggers 'instructs movement'), she loves waltz, so she does not love salsa. Therefore, for the teaching dance condition to hold, she must enjoy tango. Since she enjoys tango, from 'Either Aileen enjoys tango or she dislikes tango, but not both,' she does not dislike tango.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Aileen loves waltz' and 'Aileen instructs movement' together imply she does not love salsa via the rule 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' However, the rule only states that if she instructs movement, then she loves exactly one of waltz or salsa. It does not logically exclude the possibility that she loves both waltz and salsa simultaneously; it only guarantees at least one. Therefore, from 'Aileen loves waltz' alone, we cannot definitively conclude she does not love salsa, which undermines the subsequent deduction that she must enjoy tango.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 misinterprets the logical structure. The rule 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both' is an exclusive or (XOR). XOR means exactly one of the two options is true. Therefore, if Aileen instructs movement, she loves waltz XOR loves salsa. Given we know 'Aileen loves waltz' is true, the XOR condition forces 'loves salsa' to be false. Thus, the original argument's inference that she does not love salsa is logically valid, restoring the chain of reasoning.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given 'Aileen appreciates music' triggers 'instructs movement and values culture,' so Aileen instructs movement. Then 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' We have 'Aileen loves waltz,' so she does not love salsa. Also, 'Aileen dances samba' triggers 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' Since she dances samba and there is no indication she performs rumba, she teaches dance. Then 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' Since she does not love salsa, she must enjoy tango. Therefore, she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given 'Aileen appreciates music' triggers 'instructs movement and values culture,' so Aileen instructs movement. Then 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' We have 'Aileen loves waltz,' so she does not love salsa. Also, 'Aileen dances samba' triggers 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' Since she dances samba and there is no indication she performs rumba, she teaches dance. Then 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' Since she does not love salsa, she must enjoy tango. Therefore, she does not dislike tango.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The rule 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance' requires that she does not both perform rumba and dance samba. However, from the context, we know 'Aileen dances samba' and 'If Aileen has grace, then she performs rumba and expresses passion.' The context does not state whether Aileen has grace, so it is possible she also performs rumba. If she does, the 'but not both' condition is violated, making the premise 'Aileen either performs rumba or dances samba (but not both)' false, and thus the conclusion 'she teaches dance' does not necessarily follow.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Aileen dances samba' and does not state that Aileen performs rumba. The rule 'If Aileen has grace, then she performs rumba and expresses passion' is conditional on Aileen having grace, which is not asserted in the context. Without evidence that Aileen has grace, we cannot conclude she performs rumba. Therefore, the 'but not both' condition is satisfied (she dances samba and does not perform rumba), so the inference that she teaches dance remains valid.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "From the context, 'Aileen has stage experience' is given. Also, 'If Aileen has stage experience, then she either performs ballet or performs rumba, but not both.' Since 'Aileen performs ballet' is given, she does not perform rumba. This is consistent with her dancing samba but not performing rumba. Then from 'Aileen dances samba' and the rule involving performing rumba or dancing samba, since she does not perform rumba, the condition 'dances samba' alone implies she teaches dance. Then as above, teaching dance and not loving salsa implies she enjoys tango, so she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From the context, 'Aileen has stage experience' is given. Also, 'If Aileen has stage experience, then she either performs ballet or performs rumba, but not both.' Since 'Aileen performs ballet' is given, she does not perform rumba. This is consistent with her dancing samba but not performing rumba. Then from 'Aileen dances samba' and the rule involving performing rumba or dancing samba, since she does not perform rumba, the condition 'dances samba' alone implies she teaches dance. Then as above, teaching dance and not loving salsa implies she enjoys tango, so she does not dislike tango.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Aileen dances samba' and 'Aileen does not perform rumba' together satisfy the condition 'Aileen either performs rumba or dances samba (but not both)'. However, the rule states 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' The condition requires exactly one of the two to be true. Since 'Aileen dances samba' is true and 'Aileen performs rumba' is false, the condition is satisfied, so the conclusion that she teaches dance is valid. However, the argument then uses 'teaching dance and not loving salsa implies she enjoys tango'. This relies on the rule 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' To conclude she enjoys tango, we must know she does not love salsa. The argument does not establish that Aileen does not love salsa from the given context.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context, 'Aileen loves waltz' is given. There is no direct statement that she does not love salsa. The rule 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both' means that if she teaches dance, she must love salsa or enjoy tango exclusively. Without knowing whether she loves salsa, we cannot conclude she enjoys tango. Therefore, the original argument's step from teaching dance to enjoying tango is unsupported.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context provides 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' Since 'Aileen loves waltz' is true, this implies she does not love salsa. However, this rule is conditional on Aileen instructing movement, which is not established in the argument. The argument does not show that Aileen instructs movement, so we cannot use this to infer she does not love salsa.",
+          "confidence": 0.78,
+          "attacks": {
+            "C1": 0.72
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Consider the universal statement: 'For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango.' However, there is no information about Aileen attending tango clubs or listening to tango music, so this rule does not directly apply. But from other rules, we derive she enjoys tango. Since she enjoys tango, by the exclusive disjunction 'Either Aileen enjoys tango or she dislikes tango, but not both,' it is necessarily true that she does not dislike tango. This is a direct logical deduction from the derived fact that she enjoys tango."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Consider the universal statement: 'For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango.' However, there is no information about Aileen attending tango clubs or listening to tango music, so this rule does not directly apply. But from other rules, we derive she enjoys tango. Since she enjoys tango, by the exclusive disjunction 'Either Aileen enjoys tango or she dislikes tango, but not both,' it is necessarily true that she does not dislike tango. This is a direct logical deduction from the derived fact that she enjoys tango.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Aileen enjoys tango, but this is not directly stated in the context. The universal rule about attending tango clubs or listening to tango music does not apply to Aileen, as correctly noted. No other rule in the context explicitly states that Aileen enjoys tango. Therefore, the premise 'she enjoys tango' is unsupported, making the deduction invalid.",
+          "confidence": 0.72,
+          "attacks": {
+            "A5": 0.78
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' Also: 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' Aileen dances samba (given), so she teaches dance. Therefore, she either loves salsa or enjoys tango. Since Aileen loves waltz (given), and there is no rule linking waltz to salsa or tango, we cannot determine which of salsa or tango holds. Thus, Aileen enjoying tango remains uncertain, not established.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.82
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'Either Aileen enjoys tango or she dislikes tango, but not both.' This is an exclusive disjunction. Even if we cannot prove she enjoys tango, we also cannot prove she dislikes tango from the given information. The claim 'Aileen does not dislike tango' is equivalent to 'Aileen enjoys tango' under this exclusive disjunction. Since enjoyment of tango is not provable, the claim is uncertain, not false. Therefore, argument A5 incorrectly asserts the claim as necessarily true.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.92
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Check for contradictions: If Aileen disliked tango, then from 'Either Aileen enjoys tango or she dislikes tango, but not both,' she would not enjoy tango. But from the chain: appreciates music \u2192 instructs movement; instructs movement and loves waltz \u2192 not love salsa; dances samba \u2192 teaches dance; teaches dance and not love salsa \u2192 enjoys tango. This chain forces her to enjoy tango. Therefore, assuming she dislikes tango leads to a contradiction with the derived enjoys tango. Thus, she cannot dislike tango, so the statement 'Aileen does not dislike tango' is true."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Check for contradictions: If Aileen disliked tango, then from 'Either Aileen enjoys tango or she dislikes tango, but not both,' she would not enjoy tango. But from the chain: appreciates music \u2192 instructs movement; instructs movement and loves waltz \u2192 not love salsa; dances samba \u2192 teaches dance; teaches dance and not love salsa \u2192 enjoys tango. This chain forces her to enjoy tango. Therefore, assuming she dislikes tango leads to a contradiction with the derived enjoys tango. Thus, she cannot dislike tango, so the statement 'Aileen does not dislike tango' is true.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The chain 'dances samba \u2192 teaches dance' is not directly stated. The given rule is: 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance.' This requires that she does not perform rumba to conclude teaches dance from dances samba. It is not established that she does not perform rumba, so the chain is incomplete.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'If Aileen has stage experience, then she either performs ballet or performs rumba, but not both.' Aileen has stage experience (given) and performs ballet (given). Therefore, she does not perform rumba. With 'dances samba' given and 'not performs rumba', the condition 'either performs rumba or dances samba (but not both)' is satisfied (since she dances samba and does not perform rumba). Thus, the rule applies: she teaches dance. The chain in A6 is therefore valid.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

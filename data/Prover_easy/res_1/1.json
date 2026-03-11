@@ -1,0 +1,280 @@
+{
+  "claim": "Context:'''\nDesmond does not study common plants. If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert. Maleah does not study common plants. Desmond studies rare plants.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Desmond is a recognized expert.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' It also states: 'Kailani inspires others.' Therefore, if Kailani is self-directed, she cannot excel academically because she already inspires others."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' It also states: 'Kailani inspires others.' Therefore, if Kailani is self-directed, she cannot excel academically because she already inspires others.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Kailani is self-directed, but the context only states 'Kailani is self-directed' as a premise, so this is not an assumption but a given fact. However, the logical structure might be misinterpreted: the conditional statement is 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' Given Kailani inspires others, it follows she does not excel academically only if she is self-directed. Since she is stated to be self-directed, the conclusion holds.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context includes information about Bryce that might create confusion. It states: 'If Bryce is self-directed, then she can either excel academically or inspire others, but not both. Bryce inspires others.' This does not tell us whether Bryce is self-directed, so it doesn't affect Kailani's case. However, one might incorrectly transfer the logic from Bryce to Kailani, but they are separate individuals with separate conditions.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.2
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The phrase 'either excel academically or inspire others, but not both' could be interpreted exclusively, meaning she cannot do both simultaneously. However, it might allow for the possibility that she does neither. But since it's stated she inspires others, the exclusive 'or' forces that she does not excel academically if she is self-directed.",
+          "confidence": 0.87,
+          "attacks": {
+            "A1": 0.1
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1's attack is weak because it acknowledges the premise that Kailani is self-directed is given, so A1's reasoning is valid. The attack strength is low because it doesn't undermine the logical deduction.",
+          "confidence": 0.86,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's attack is also weak because the information about Bryce is irrelevant to the logical deduction about Kailani, as they are separate individuals with separate conditional statements.",
+          "confidence": 0.89,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "C3",
+          "text": "B3's attack raises a subtle point about the interpretation of 'either...or...but not both'. In classical logic, 'exclusive or' means one and only one of the two is true. If 'inspires others' is true, then 'excels academically' must be false. So B3's attack doesn't actually contradict A1; it just clarifies the logic.",
+          "confidence": 0.9,
+          "attacks": {
+            "B3": 0.88
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context explicitly states 'Kailani is self-directed.' Combined with the conditional rule that if she is self-directed, she can either excel academically or inspire others (but not both), and the fact that she inspires others, it logically follows she does not excel academically."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context explicitly states 'Kailani is self-directed.' Combined with the conditional rule that if she is self-directed, she can either excel academically or inspire others (but not both), and the fact that she inspires others, it logically follows she does not excel academically.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Kailani inspires others' but does not explicitly state that she cannot also excel academically. The conditional rule says 'either excel academically or inspire others, but not both' - this could be interpreted as a general tendency rather than an absolute logical necessity.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the conditional statement is a strict logical 'exclusive or' (XOR), but natural language conditionals often allow for exceptions or contextual interpretations. Without formal logical notation, the exclusivity might not be absolute.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context presents the conditional as a general rule applying to self-directed individuals. For logical consistency within the given context, we should treat it as a strict rule unless specified otherwise. The argument structure suggests deductive reasoning is intended.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8,
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The information about Bryce creates ambiguity: Bryce inspires others and is presumably self-directed (implied by being subject to the same conditional), but we don't know about Bryce's academic performance. This suggests the conditional might not be universally applied even within the context.",
+          "confidence": 0.68,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Bryce's case is separate from Kailani's. The conditional is stated as applying to self-directed individuals generally, and Kailani's case specifically satisfies both conditions of the antecedent (self-directed) and one disjunct of the consequent (inspires others), allowing deduction about the other disjunct.",
+          "confidence": 0.85,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the given statements, we have a direct logical deduction: Premise 1: Kailani is self-directed. Premise 2: If Kailani is self-directed, then (Kailani excels academically XOR Kailani inspires others). Premise 3: Kailani inspires others. Therefore, Kailani does not excel academically."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the given statements, we have a direct logical deduction: Premise 1: Kailani is self-directed. Premise 2: If Kailani is self-directed, then (Kailani excels academically XOR Kailani inspires others). Premise 3: Kailani inspires others. Therefore, Kailani does not excel academically.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The logical structure 'XOR' (exclusive or) means 'one or the other, but not both.' If Kailani inspires others (Premise 3) and the conditional states she can either excel or inspire but not both, then she cannot excel. This is a valid deductive argument from the given premises.",
+          "confidence": 0.92,
+          "attacks": {
+            "A3": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the premises are true and logically consistent. However, the context also states: 'If Bryce is self-directed, then she can either excel academically or inspire others, but not both. Kailani inspires others. Bryce inspires others. Kailani is self-directed.' There is a potential logical conflict: both Bryce and Kailani inspire others, and both are under the same type of conditional rule. If Bryce were also self-directed, she could not excel. But we don't know if Bryce is self-directed. This doesn't directly affect Kailani's case, but it shows the rule applies to multiple individuals, which could imply exceptions or variations not stated.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.3
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The deduction is technically valid, but the real-world interpretation of 'excels academically' might be ambiguous. Could Kailani excel academically in a non-traditional way not captured by the statement? The logical deduction only holds if 'excels academically' is binary and exactly as meant in the XOR.",
+          "confidence": 0.6,
+          "attacks": {
+            "A3": 0.25
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Addressing B2: The potential conflict with Bryce is irrelevant to the logical deduction about Kailani. The argument about Kailani uses only premises specifically about Kailani (her being self-directed, the conditional about her, and her inspiring others). Whether Bryce is self-directed or not does not change the truth of those premises. Thus, B2's attack is a distraction, not a logical flaw.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Addressing B3: In formal logic problems like this, terms are taken at face value within the defined context. The statement 'Kailani does not excel academically' is the logical conclusion of the given premises under standard interpretation of XOR. Introducing real-world ambiguity is outside the scope of the deductive reasoning presented in A3.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The rule for self-directed individuals (applied to Kailani) is an exclusive disjunction between excelling academically and inspiring others. Since the fact 'Kailani inspires others' is given, the exclusive 'or' means the other option (excelling academically) must be false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The rule for self-directed individuals (applied to Kailani) is an exclusive disjunction between excelling academically and inspiring others. Since the fact 'Kailani inspires others' is given, the exclusive 'or' means the other option (excelling academically) must be false.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' This is a conditional statement, not a biconditional. The given fact 'Kailani inspires others' does not guarantee Kailani is self-directed. If she is not self-directed, the rule does not apply, and she could still excel academically.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the exclusive disjunction is logically equivalent to 'if she inspires others, she does not excel academically.' However, the exclusive 'or' only guarantees they are not both true. It's possible she neither excels academically nor inspires others. The given fact that she inspires others only eliminates the 'both' case, but doesn't by itself prove she doesn't excel academically unless we also know the disjunction itself is true (which requires her to be self-directed).",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In response to B1: The context explicitly states 'Kailani is self-directed.' as a separate given fact. Therefore, the antecedent of the conditional is satisfied, and the rule does apply to Kailani.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.95
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In response to B2: With the additional premise that Kailani is self-directed (as given in the context), the exclusive disjunction 'excels academically OR inspires others, but not both' is true for her. Since 'inspires others' is true, the exclusive 'or' forces 'excels academically' to be false. Therefore, A4's conclusion is logically valid given all premises.",
+          "confidence": 0.92,
+          "attacks": {
+            "B2": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "In response to C1 and C2: Even accepting Kailani is self-directed and the rule applies, there is a subtle logical issue. The rule is: 'If self-directed, then (excels academically XOR inspires others).' Given she is self-directed, we have (excels XOR inspires). We are given she inspires. From (P XOR Q) and Q=true, it does indeed follow that P=false. So the deduction is sound. The attack tree thus converges to A4 being correct.",
+          "confidence": 0.98,
+          "attacks": {
+            "C1": 0.3,
+            "C2": 0.2
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Analyzing the context, the information about Bryce is irrelevant to the question about Kailani. The relevant premises for Kailani alone are sufficient to conclude she does not excel academically, given she is both self-directed and an inspiration to others."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Analyzing the context, the information about Bryce is irrelevant to the question about Kailani. The relevant premises for Kailani alone are sufficient to conclude she does not excel academically, given she is both self-directed and an inspiration to others.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text references characters (Bryce, Kailani) and concepts (self-directed, inspiration to others, excelling academically) that do not appear anywhere in the provided context about Studley, Marcel, fame, humility, and privacy. Therefore, it is completely irrelevant and provides zero logical support for any conclusion about Studley loving humility.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly identifies the irrelevance, one could argue that any argument, however flawed, might accidentally align with a correct conclusion. The correct logical deduction from the context is needed to assess if A5's conclusion is coincidentally right.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.3
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The correct logical analysis shows A5's conclusion is not just irrelevant but also factually wrong regarding the claim. From the context: 1) 'Either Studley seeks fame or he loves humility, but not both.' 2) 'Studley values his privacy.' 3) 'Either Studley values his privacy or he seeks fame, but not both.' From (2) and (3), if Studley values privacy, he cannot seek fame. From (1), if he does not seek fame, he must love humility. Therefore, 'Studley loves humility' is TRUE. A5's implied support for the negation (cate: S) is incorrect.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 1.0,
+            "C1": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

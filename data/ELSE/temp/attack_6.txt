@@ -1,0 +1,23 @@
+```yaml
+Arguments:
+  - id: "A7"
+    text: "Iris does not value personal growth. The context states that if Iris either values learning or seeks self-improvement (but not both), then she values personal growth. Iris does not seek self-improvement, and it is not stated whether she values learning. However, the context says Iris values learning or is passionate about research. If she is passionate about research (as supported elsewhere), then she may not value learning, avoiding the condition for valuing personal growth. This indirect reasoning does not conflict with discovering new minerals, leaving it as a possible outcome."
+    cate: "P"
+    confidence: 0.35
+    attacks: {}
+  - id: "B1"
+    text: "The argument A7 attempts to support the claim 'Iris discovers new minerals' by discussing unrelated conditions about personal growth, learning, and research passion. However, it fails to establish any logical connection between these premises and the conclusion about discovering new minerals. The context provides specific logical constraints about mineral discovery that must be addressed directly."
+    confidence: 0.85
+    attacks:
+      A7: 0.90
+  - id: "C1"
+    text: "The context states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This is an exclusive OR. To determine if Iris discovers new minerals, we must know whether she contributes to scientific knowledge. The argument B1 correctly points out A7's irrelevance but does not itself address this necessary logical condition from the context."
+    confidence: 0.92
+    attacks:
+      B1: 0.88
+  - id: "D1"
+    text: "From the context: 'Iris pursues academic degrees.' Also: 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Since Iris pursues academic degrees, for the 'but not both' condition to hold, she must NOT contribute to scientific knowledge. Therefore, she does not contribute to scientific knowledge. Given the exclusive OR with discovering new minerals, if she does not contribute to scientific knowledge, then she must discover new minerals."
+    confidence: 0.95
+    attacks:
+      C1: 0.93
+```

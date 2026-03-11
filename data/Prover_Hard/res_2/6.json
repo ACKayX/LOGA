@@ -1,0 +1,461 @@
+{
+  "claim": "Dr. Marlon reads often. Dr. Marlon follows his experience or trusts his instinct. Dr. Marlon does not follow his experience. Dr. Marlon is not analytical. If Dr. Marlon either learns quickly or has good memory, then he is analytical. If Dr. Marlon has good memory, then he is either rational or intuitive, but not both. Dr. Marlon learns quickly if he reads often. If Dr. Marlon values insight, then he both listens carefully and trusts his instinct. Anyone who trusts their instinct is intuitive. Everyone is rational or emotional (or both).Based on the above information, is the following statement true, false, or uncertain? Dr. Marlon's patients are emotional.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the given information, Estrella has local expertise. If Estrella has local expertise, then she either shares her knowledge or enjoys storytelling (but not both)."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the given information, Estrella has local expertise. If Estrella has local expertise, then she either shares her knowledge or enjoys storytelling (but not both).",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "A1 does not directly address whether Estrella is a respected local. The conclusion 'Estrella is a respected local' requires showing she is either an experienced sailor or a knowledgeable guide (but not both), which A1 does not establish.",
+          "confidence": 0.82,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Estrella has local expertise and either shares knowledge or enjoys storytelling, this does not imply she is a knowledgeable guide or experienced sailor, which are necessary conditions for being a respected local according to the premises.",
+          "confidence": 0.78,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "However, from the premises: 'If Estrella shares her knowledge, then she is a knowledgeable guide.' So if Estrella chooses 'shares knowledge' from the local expertise condition, she becomes a knowledgeable guide, which could lead to being a respected local.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "But being a knowledgeable guide alone is insufficient for being a respected local. The premise states: 'If Estrella is either an experienced sailor or a knowledgeable guide (but not both), then she is a respected local.' The 'but not both' condition creates uncertainty\u2014if Estrella were both, the implication doesn't apply.",
+          "confidence": 0.72,
+          "attacks": {
+            "C1": 0.68
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The premise 'Estrella is not an experienced sailor' eliminates one path to being a respected local. So she must be a knowledgeable guide (and not an experienced sailor) to be a respected local. A1 doesn't show she's a knowledgeable guide.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "From 'Estrella adores history or is a knowledgeable guide' and 'If Estrella shares her knowledge, then she is a knowledgeable guide,' if Estrella chooses 'shares knowledge' from the local expertise condition, she becomes a knowledgeable guide, satisfying one condition for respected local.",
+          "confidence": 0.7,
+          "attacks": {
+            "B3": 0.65
+          }
+        },
+        {
+          "id": "D2",
+          "text": "However, there's also 'If Estrella is passionate about history, then she either shares her knowledge or has extensive experience (or both).' If Estrella is passionate about history, she might share knowledge, making her a knowledgeable guide. But we don't know if she's passionate about history\u2014'adores history' is different from 'passionate about history.'",
+          "confidence": 0.68,
+          "attacks": {
+            "C2": 0.6
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The statement 'If Estrella shares her knowledge, then she is a knowledgeable guide' provides a conditional relationship. If Estrella chooses to share her knowledge from her local expertise, she becomes a knowledgeable guide."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The statement 'If Estrella shares her knowledge, then she is a knowledgeable guide' provides a conditional relationship. If Estrella chooses to share her knowledge from her local expertise, she becomes a knowledgeable guide.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 incorrectly assumes that sharing knowledge from local expertise automatically makes someone a 'knowledgeable guide.' A guide typically implies not just knowledge but also the ability to convey it effectively to others, which requires skills beyond mere knowledge sharing.",
+          "confidence": 0.72,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "From the given information: 'Estrella does not connect with her audience.' Since connecting with an audience is a key aspect of being an effective guide, Estrella may not qualify as a 'knowledgeable guide' even if she shares knowledge.",
+          "confidence": 0.8,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The original claim states: 'If Estrella shares her knowledge, then she is a knowledgeable guide.' This is a given premise, not something to be argued for. A2 is merely restating this premise, not providing independent support for whether Estrella is a respected local.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B3 correctly notes A2 restates a premise, the premise itself is relevant to determining if Estrella is a respected local through logical deduction from the given information.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.65
+          }
+        },
+        {
+          "id": "B4",
+          "text": "Even if Estrella becomes a knowledgeable guide by sharing knowledge, the statement 'If Estrella is either an experienced sailor or a knowledgeable guide (but not both), then she is a respected local' requires her to be exactly one of these. She might be both or neither, which would not trigger the conditional.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "From the given information: 'Estrella is not an experienced sailor.' So if she is a knowledgeable guide (from sharing knowledge), she would satisfy the condition of being 'either an experienced sailor or a knowledgeable guide (but not both)' since she's only the guide, making her a respected local.",
+          "confidence": 0.86,
+          "attacks": {
+            "B4": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The statement 'If Estrella is either an experienced sailor or a knowledgeable guide (but not both), then she is a respected local' establishes that being a knowledgeable guide is sufficient for being a respected local, provided she is not also an experienced sailor."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The statement 'If Estrella is either an experienced sailor or a knowledgeable guide (but not both), then she is a respected local' establishes that being a knowledgeable guide is sufficient for being a respected local, provided she is not also an experienced sailor.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'Estrella is not an experienced sailor' is given, so the 'but not both' condition is satisfied if she is a knowledgeable guide. However, we must first establish that Estrella is actually a knowledgeable guide for the conditional to apply.",
+          "confidence": 0.9,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A3 assumes the conditional statement is being applied correctly, but it overlooks that the conditional's antecedent requires Estrella to be *either* an experienced sailor *or* a knowledgeable guide. If she is neither, the conditional does not apply, and she would not be a respected local based on this rule alone.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the given: 'If Estrella shares her knowledge, then she is a knowledgeable guide.' Also: 'If Estrella has local expertise, then she either shares her knowledge or enjoys storytelling (but not both).' Since 'Estrella has local expertise' is given, she either shares knowledge or enjoys storytelling. If she shares knowledge, then she is a knowledgeable guide, which would satisfy B1's requirement.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "However, 'Estrella does not connect with her audience' is given. Also: 'If Estrella either speaks confidently or connects with her audience (but not both), then she loves public speaking.' Since she speaks confidently (given) and does not connect, the 'but not both' condition is satisfied, so she loves public speaking. This doesn't directly affect the knowledgeable guide status but shows other logical constraints are active.",
+          "confidence": 0.85,
+          "attacks": {
+            "C1": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Even if Estrella is a knowledgeable guide, the conditional in A3 only says she is a respected local *if* she is either an experienced sailor or a knowledgeable guide but not both. Since she is not an experienced sailor, if she is a knowledgeable guide, the condition is met. Therefore, A3's core logic is valid once we establish she is a knowledgeable guide.",
+          "confidence": 0.87,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "There is a potential contradiction: 'Estrella adores history or is a knowledgeable guide.' Also, 'If Estrella is passionate about history, then she either shares her knowledge or has extensive experience (or both).' If she adores history (similar to passionate), she might share knowledge, making her a knowledgeable guide. But this is not guaranteed\u2014she could adore history and have extensive experience instead of sharing knowledge, so she might not be a guide.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C3",
+          "text": "From 'Estrella has local expertise' and 'she either shares her knowledge or enjoys storytelling (but not both)', if she enjoys storytelling, then she does not share knowledge, so she would not be a knowledgeable guide via that path. But she could still be a knowledgeable guide via other means (e.g., the 'adores history' disjunction). However, without knowing whether she shares knowledge, her guide status is uncertain.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "We know 'Estrella is not an experienced sailor' from the given information, so the condition 'but not both' in the respected local rule is satisfied if she becomes a knowledgeable guide."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "We know 'Estrella is not an experienced sailor' from the given information, so the condition 'but not both' in the respected local rule is satisfied if she becomes a knowledgeable guide.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The respected local rule requires 'either an experienced sailor or a knowledgeable guide (but not both)'. Even if Estrella is not an experienced sailor, we still need to prove she is a knowledgeable guide to conclude she is a respected local. A4 only addresses half of the requirement.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "From the given information: 'If Estrella shares her knowledge, then she is a knowledgeable guide.' However, we don't know if Estrella shares her knowledge. Also, 'Estrella adores history or is a knowledgeable guide' doesn't guarantee she is a knowledgeable guide; she might only adore history.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Regarding B1: We can check if Estrella is a knowledgeable guide from other premises. 'Estrella has local expertise' is given. The first rule says: 'If Estrella has local expertise, then she either shares her knowledge or enjoys storytelling (but not both).' This doesn't directly make her a knowledgeable guide.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Regarding B2: From 'Estrella does not connect with her audience' and 'If Estrella either speaks confidently or connects with her audience (but not both), then she loves public speaking', we can deduce she loves public speaking since she speaks confidently. However, this doesn't help prove she is a knowledgeable guide.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Regarding C1: There's also 'If Estrella is passionate about history, then she either shares her knowledge or has extensive experience (or both).' But we don't know if Estrella is passionate about history; we only know she 'adores history or is a knowledgeable guide'. Without knowing she is passionate, we can't use this to prove she shares knowledge.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Examining the alternatives: Estrella has local expertise, so she either shares knowledge or enjoys storytelling. If she shares knowledge, she becomes a knowledgeable guide, then a respected local. If she enjoys storytelling instead, we need to check other paths."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Examining the alternatives: Estrella has local expertise, so she either shares knowledge or enjoys storytelling. If she shares knowledge, she becomes a knowledgeable guide, then a respected local. If she enjoys storytelling instead, we need to check other paths.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that if Estrella shares knowledge, she becomes a knowledgeable guide, which would make her a respected local. However, the premise states: 'If Estrella shares her knowledge, then she is a knowledgeable guide.' This is a conditional, not a biconditional. Being a knowledgeable guide might require more than just sharing knowledge.",
+          "confidence": 0.72,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument ignores the 'but not both' condition. Estrella having local expertise means she either shares knowledge OR enjoys storytelling, not both. If she enjoys storytelling, she cannot share knowledge, so the path to becoming a knowledgeable guide via sharing knowledge is blocked.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if Estrella becomes a knowledgeable guide, the respected local condition requires: 'If Estrella is either an experienced sailor or a knowledgeable guide (but not both), then she is a respected local.' She is not an experienced sailor, so if she is a knowledgeable guide, she qualifies. However, we must check if she could be both an experienced sailor and knowledgeable guide\u2014she isn't an experienced sailor, so the 'but not both' condition is satisfied if she is a knowledgeable guide.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In response to B1: The premise 'If Estrella shares her knowledge, then she is a knowledgeable guide' is a direct logical implication given in the problem. If the antecedent (shares knowledge) is true, the consequent (knowledgeable guide) must be true. So A5's step is logically valid under that premise.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B4",
+          "text": "Estrella does not connect with her audience. The premise says: 'If Estrella either speaks confidently or connects with her audience (but not both), then she loves public speaking.' She speaks confidently and does not connect, so the 'either-or (but not both)' condition is satisfied (she has exactly one of the two). Therefore, she loves public speaking. If she loves public speaking and enjoys storytelling, that might conflict with other conditions about charismatic behavior or exclusive choices.",
+          "confidence": 0.78,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In response to B2: A5 acknowledges the 'but not both' by examining two alternative paths: one where she shares knowledge, one where she enjoys storytelling. That is exactly what the 'either-or but not both' implies. So A5's structure respects that condition.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B5",
+          "text": "From the given: 'Estrella adores history or is a knowledgeable guide.' Also: 'If Estrella is passionate about history, then she either shares her knowledge or has extensive experience (or both).' If she adores history, she might share knowledge, making her a knowledgeable guide. But if she is already a knowledgeable guide without adoring history, that's fine too. However, we don't know if she adores history or is passionate about it. Without knowing if she shares knowledge, we cannot conclude she is a knowledgeable guide.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C3",
+          "text": "In response to B4: The conflict with loving public speaking and enjoying storytelling is not directly ruled out by given statements. The only related constraint is: 'If Estrella is charismatic, then she either enjoys storytelling or loves public speaking (but not both).' We don't know if she is charismatic. So no immediate contradiction.",
+          "confidence": 0.75,
+          "attacks": {
+            "B4": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The statement 'Estrella adores history or is a knowledgeable guide' provides another route. Even if she doesn't share knowledge, she might be a knowledgeable guide through adoring history, though this isn't explicitly stated as sufficient."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The statement 'Estrella adores history or is a knowledgeable guide' provides another route. Even if she doesn't share knowledge, she might be a knowledgeable guide through adoring history, though this isn't explicitly stated as sufficient.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is completely irrelevant to the claim about Aubree being innovative. It discusses a different person (Estrella) and a different topic (history/guide), having no logical connection to the premises or conclusion about Aubree.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we generously interpret A6 as attempting to analyze logical disjunctions, it fails to engage with any of the given premises about Aubree, Joseph, Steven, or Tyler. The argument contains no references to curiosity, philosophical thinking, astrophysics, logical analysis, or any other relevant concepts from the claim.",
+          "confidence": 0.93,
+          "attacks": {
+            "A6": 0.98
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "The most direct logical path: Estrella has local expertise \u2192 must choose between sharing knowledge or enjoying storytelling. If she shares knowledge \u2192 she is a knowledgeable guide. Since she's not an experienced sailor, being a knowledgeable guide makes her a respected local."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "The most direct logical path: Estrella has local expertise \u2192 must choose between sharing knowledge or enjoying storytelling. If she shares knowledge \u2192 she is a knowledgeable guide. Since she's not an experienced sailor, being a knowledgeable guide makes her a respected local.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A7 is completely irrelevant to the claim about Marlowe's PhD status. It discusses Estrella, a person not mentioned in the claim or given information, making it a non-sequitur.",
+          "confidence": 0.99,
+          "attacks": {
+            "A7": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A7's internal logic is flawed. The premises about Estrella (local expertise, choice between sharing knowledge/storytelling, not being a sailor) are not provided in the original information, so the argument is built on unsupported assumptions.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 0.9
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "P",
+        "text": "No contradictory information prevents Estrella from being a respected local. The conditions about charisma, public speaking, and connecting with audience don't conflict with the respected local criteria, which depends only on being an experienced sailor or knowledgeable guide (exclusively)."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "No contradictory information prevents Estrella from being a respected local. The conditions about charisma, public speaking, and connecting with audience don't conflict with the respected local criteria, which depends only on being an experienced sailor or knowledgeable guide (exclusively).",
+          "cate": "P",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes the respected local criteria are independent of other conditions. If being a respected local requires community recognition, and charisma/public speaking are essential for such recognition in the context described, then conditions about charisma could conflict with respected local status if unmet.",
+          "confidence": 0.65,
+          "attacks": {
+            "A8": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument overlooks potential logical dependencies. The information states respected locals must be either experienced sailors OR knowledgeable guides, but other conditions might implicitly require being a respected local to satisfy certain criteria, creating circular constraints that could prevent Estrella from qualifying.",
+          "confidence": 0.6,
+          "attacks": {
+            "A8": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if charisma is important for community recognition, the definition of 'respected local' in the given constraints might be purely credential-based (sailor/guide), not requiring charisma. The original argument correctly separates these criteria unless explicitly linked in the premises.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Circular constraints would only matter if the problem structure forces exclusivity or dependency. Without explicit statements linking 'respected local' to other conditions besides sailor/guide, the argument's assumption of no conflict remains reasonable unless proven otherwise.",
+          "confidence": 0.68,
+          "attacks": {
+            "B2": 0.72
+          }
+        }
+      ]
+    }
+  }
+}

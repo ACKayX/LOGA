@@ -1,0 +1,237 @@
+{
+  "claim": "Avah either advances her field or becomes a public figure, but not both. If Avah either reads academic papers or attends conferences (but not both), then she is a researcher. Avah has strong attention to detail. For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition. If Yareli makes key discoveries, then she will earn professional recognition. Avah has a PhD. If someone works diligently and makes key discoveries, then they will gain expertise. Avah thinks critically. Ariana pursues new fields. Yareli has strong attention to detail. Anyone who has sharp insight or develops new techniques can earn professional recognition. If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both. If Lily has a PhD, then she is either a researcher or a skilled forensic scientist, but not both. If someone conducts experiments and interprets results, then they can publish papers. Avah pursues new fields. If Avah analyzes evidence, then she is either a skilled forensic scientist or can crack codes. Avah works diligently. Avah either gains expertise in forensic chemistry or pursues new fields, but not both. Yareli becomes a public figure. Avah shares knowledge or publishes papers. Lily either gains expertise in forensic chemistry or pursues new fields, but not both. Avah becomes a public figure. Ariana either advances her field or becomes a public figure, but not both. Yareli thinks critically. For all humans, if someone is a researcher and publishes papers, then they advance their field. All individuals who have strong attention to detail think critically and interpret results. Avah conducts experiments. Ariana has a PhD.Based on the above information, is the following statement true, false, or uncertain? Avah cannot solve complex cases.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Avah has a PhD, and the context states: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' Since Avah becomes a public figure, and the context also states: 'Avah either advances her field or becomes a public figure, but not both,' she does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah shares knowledge or publishes papers, so if she were a researcher, she would advance her field, but she does not. Therefore, Avah is not a researcher. By the PhD condition, she must then be a skilled forensic scientist. For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition. Thus, Avah can solve complex cases, making the statement false."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Avah has a PhD, and the context states: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' Since Avah becomes a public figure, and the context also states: 'Avah either advances her field or becomes a public figure, but not both,' she does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah shares knowledge or publishes papers, so if she were a researcher, she would advance her field, but she does not. Therefore, Avah is not a researcher. By the PhD condition, she must then be a skilled forensic scientist. For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition. Thus, Avah can solve complex cases, making the statement false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Avah shares knowledge or publishes papers' logically implies she publishes papers. However, the disjunction 'or' means at least one is true, not necessarily both. She might only share knowledge without publishing papers. If she does not publish papers, the condition for a researcher to advance their field ('if someone is a researcher and publishes papers') is not satisfied, so her not advancing her field does not prove she isn't a researcher.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Avah does not publish papers, the context states: 'All individuals who have strong attention to detail think critically and interpret results.' Avah has strong attention to detail, so she interprets results. Also, 'If someone conducts experiments and interprets results, then they can publish papers.' Avah conducts experiments and interprets results, so she can publish papers. The ability to publish papers, combined with being a researcher, would still trigger the advancement condition, supporting the original inference.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on the premise that Avah does not advance her field because she becomes a public figure. However, the context states: 'Avah either advances her field or becomes a public figure, but not both.' This is an exclusive or, meaning exactly one is true. It is given that Avah becomes a public figure, so indeed she does not advance her field. This part is logically sound and not attackable.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Avah becomes a public figure, and the context states: 'Avah either advances her field or becomes a public figure, but not both.' Therefore, Avah does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah shares knowledge or publishes papers, so if she were a researcher, she would advance her field, but she does not. Thus, Avah is not a researcher. From her PhD, she must be a skilled forensic scientist. However, the context also states: 'Avah either gains expertise in forensic chemistry or pursues new fields, but not both.' Avah pursues new fields, so she does not gain expertise in forensic chemistry. As a skilled forensic scientist, she can solve complex cases, but lacking expertise in forensic chemistry might imply limitations in solving certain complex cases, introducing uncertainty about her ability to solve all complex cases. The statement 'Avah cannot solve complex cases' could be true if interpreted as her not being able to solve some complex cases due to lack of specific expertise."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Avah becomes a public figure, and the context states: 'Avah either advances her field or becomes a public figure, but not both.' Therefore, Avah does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah shares knowledge or publishes papers, so if she were a researcher, she would advance her field, but she does not. Thus, Avah is not a researcher. From her PhD, she must be a skilled forensic scientist. However, the context also states: 'Avah either gains expertise in forensic chemistry or pursues new fields, but not both.' Avah pursues new fields, so she does not gain expertise in forensic chemistry. As a skilled forensic scientist, she can solve complex cases, but lacking expertise in forensic chemistry might imply limitations in solving certain complex cases, introducing uncertainty about her ability to solve all complex cases. The statement 'Avah cannot solve complex cases' could be true if interpreted as her not being able to solve some complex cases due to lack of specific expertise.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' This is a universal conditional. If Avah is a skilled forensic scientist, she can solve complex cases. The argument that lacking expertise in forensic chemistry might limit her ability is not supported by the context. The universal statement does not include exceptions for specific subfields; it directly states that skilled forensic scientists can solve complex cases.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states: 'Avah either advances her field or becomes a public figure, but not both.' and 'Avah becomes a public figure.' Therefore, Avah does not advance her field. The universal rule states: 'For all humans, if someone is a researcher and publishes papers, then they advance their field.' Avah shares knowledge or publishes papers. If she were a researcher, she would advance her field, but she does not. Thus, she is not a researcher. From her PhD, the context states: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' Since she is not a researcher, she must be a skilled forensic scientist. The universal rule about skilled forensic scientists directly applies, so she can solve complex cases. The original claim 'Avah cannot solve complex cases' is therefore false.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'Avah either gains expertise in forensic chemistry or pursues new fields, but not both.' and 'Avah pursues new fields.' Therefore, she does not gain expertise in forensic chemistry. While the universal rule states skilled forensic scientists can solve complex cases, it does not specify what 'complex cases' entail. If some complex cases specifically require expertise in forensic chemistry, and Avah lacks that expertise, then for those specific cases, she cannot solve them. The original claim 'Avah cannot solve complex cases' could be interpreted as a universal negation (she cannot solve any complex cases), which is false, or as a particular negation (there exist some complex cases she cannot solve), which could be true. Given the ambiguity, the truth value of the claim relative to the context is uncertain.",
+          "confidence": 0.65,
+          "attacks": {
+            "C1": 0.6
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Avah is a skilled forensic scientist because she has a PhD and is not a researcher (as she does not advance her field due to becoming a public figure). The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' This is a universal conditional, so if Avah is a skilled forensic scientist, she can solve complex cases. Therefore, the statement 'Avah cannot solve complex cases' is false."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Avah is a skilled forensic scientist because she has a PhD and is not a researcher (as she does not advance her field due to becoming a public figure). The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' This is a universal conditional, so if Avah is a skilled forensic scientist, she can solve complex cases. Therefore, the statement 'Avah cannot solve complex cases' is false.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 incorrectly assumes Avah is not a researcher. The context states: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' It also states: 'For all humans, if someone is a researcher and publishes papers, then they advance their field.' However, the context states 'Avah becomes a public figure' and 'Avah either advances her field or becomes a public figure, but not both.' Therefore, Avah does NOT advance her field. Since she does not advance her field, she cannot be a researcher (as being a researcher who publishes papers would require advancing her field). Therefore, by the PhD rule, she must be a skilled forensic scientist. However, this conclusion relies on the chain: PhD \u2192 (researcher XOR skilled forensic scientist); not advancing field \u2192 not researcher \u2192 therefore skilled forensic scientist. This chain is logically valid given the context, so A3's conclusion that Avah is a skilled forensic scientist is actually correct, but its reasoning about 'not a researcher' is incomplete. More critically, A3's cate should be 'S' (supporting the negation of the claim 'Avah cannot solve complex cases'), which it is, but its confidence is low because it makes an unsupported leap about her not being a researcher due to becoming a public figure, without explicitly linking all the necessary conditions. The argument's final logical structure is correct, but its explanatory reasoning is flawed.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1 points out a flaw in A3's reasoning but ultimately agrees with A3's conclusion that Avah is a skilled forensic scientist. However, B1's attack is not logically inconsistent with A3's core conclusion. A3 claims Avah is a skilled forensic scientist; B1 also concludes Avah is a skilled forensic scientist, just via different reasoning. Therefore, B1 does not satisfy the strict attack definition of creating logical or semantic inconsistency with A3. An attack must undermine the parent's conclusion or show it doesn't follow. B1 does neither; it corrects the reasoning but affirms the conclusion. Thus, B1 is not a valid attack on A3.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The context states: 'If Avah analyzes evidence, then she is either a skilled forensic scientist or can crack codes.' It does not confirm that Avah analyzes evidence. Without explicit confirmation that Avah analyzes evidence, we cannot definitively conclude she is a skilled forensic scientist from this statement. While other arguments suggest she is a skilled forensic scientist based on her PhD and not being a researcher, there might be an alternative interpretation where she is neither a researcher nor a skilled forensic scientist if the PhD condition has exceptions not stated. This uncertainty means the statement 'Avah cannot solve complex cases' might be true if she is not a skilled forensic scientist."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context states: 'If Avah analyzes evidence, then she is either a skilled forensic scientist or can crack codes.' It does not confirm that Avah analyzes evidence. Without explicit confirmation that Avah analyzes evidence, we cannot definitively conclude she is a skilled forensic scientist from this statement. While other arguments suggest she is a skilled forensic scientist based on her PhD and not being a researcher, there might be an alternative interpretation where she is neither a researcher nor a skilled forensic scientist if the PhD condition has exceptions not stated. This uncertainty means the statement 'Avah cannot solve complex cases' might be true if she is not a skilled forensic scientist.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' Since the context confirms 'Avah has a PhD,' she must be either a researcher or a skilled forensic scientist. The context also states 'Avah becomes a public figure' and 'Avah either advances her field or becomes a public figure, but not both.' Since she becomes a public figure, she does not advance her field. The context states: 'For all humans, if someone is a researcher and publishes papers, then they advance their field.' Since Avah does not advance her field, she cannot be both a researcher and publish papers. However, the context states 'Avah shares knowledge or publishes papers.' If she publishes papers, then she would advance her field if she were a researcher, creating a contradiction with her not advancing her field. Therefore, she cannot be a researcher. Given the PhD condition, she must therefore be a skilled forensic scientist.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' This is a universal statement with no exceptions provided in the context. If Avah is a skilled forensic scientist (as concluded from B1), then it logically follows that she can solve complex cases. Therefore, the claim 'Avah cannot solve complex cases' is directly contradicted by this contextual rule.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.2
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The attack from C1 to B1 is invalid under the strict attack definition. C1 does not create inconsistency or incoherence with B1; instead, it builds upon B1's conclusion (that Avah is a skilled forensic scientist) to draw a further, consistent inference. B1's reasoning about Avah's role remains unchallenged. A valid attack would need to undermine B1's logical steps or premises, not extend its conclusion.",
+          "confidence": 0.95,
+          "attacks": {
+            "C1": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Avah works diligently and thinks critically, and all individuals who have strong attention to detail think critically and interpret results. Avah has strong attention to detail, so she interprets results. She also conducts experiments. If someone conducts experiments and interprets results, then they can publish papers. Avah can publish papers, which aligns with 'Avah shares knowledge or publishes papers.' However, to solve complex cases, she needs to be a skilled forensic scientist. From her PhD and not being a researcher, she is a skilled forensic scientist, so she can solve complex cases, making the statement false."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Avah works diligently and thinks critically, and all individuals who have strong attention to detail think critically and interpret results. Avah has strong attention to detail, so she interprets results. She also conducts experiments. If someone conducts experiments and interprets results, then they can publish papers. Avah can publish papers, which aligns with 'Avah shares knowledge or publishes papers.' However, to solve complex cases, she needs to be a skilled forensic scientist. From her PhD and not being a researcher, she is a skilled forensic scientist, so she can solve complex cases, making the statement false.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes Avah is not a researcher. From the context: 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' However, we cannot determine which one she is without additional information. The statement 'From her PhD and not being a researcher' is an unsupported assumption.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument claims Avah can solve complex cases because she would be a skilled forensic scientist. However, being a skilled forensic scientist is necessary but not sufficient to solve complex cases. The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' This is a conditional statement, but we don't have confirmation that Avah is indeed a skilled forensic scientist.",
+          "confidence": 0.8,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 correctly identifies the assumption problem, but it doesn't address the logical structure of the original argument. Even if we don't know whether Avah is a researcher or skilled forensic scientist, the original argument's conclusion doesn't logically follow from its premises due to this uncertainty.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The context states: 'Avah either advances her field or becomes a public figure, but not both.' Avah becomes a public figure, so she does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah publishes papers, so if she were a researcher, she would advance her field, but she does not. Therefore, she is not a researcher. From her PhD, she is a skilled forensic scientist. However, the context also states: 'If someone works diligently and makes key discoveries, then they will gain expertise.' It does not state that Avah makes key discoveries. Without key discoveries, she might not gain expertise, which could affect her ability to solve complex cases despite being a skilled forensic scientist. The statement 'Avah cannot solve complex cases' might be true if she lacks the necessary expertise from key discoveries."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context states: 'Avah either advances her field or becomes a public figure, but not both.' Avah becomes a public figure, so she does not advance her field. For all humans, if someone is a researcher and publishes papers, then they advance their field. Avah publishes papers, so if she were a researcher, she would advance her field, but she does not. Therefore, she is not a researcher. From her PhD, she is a skilled forensic scientist. However, the context also states: 'If someone works diligently and makes key discoveries, then they will gain expertise.' It does not state that Avah makes key discoveries. Without key discoveries, she might not gain expertise, which could affect her ability to solve complex cases despite being a skilled forensic scientist. The statement 'Avah cannot solve complex cases' might be true if she lacks the necessary expertise from key discoveries.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases and earn professional recognition.' Since Avah is a skilled forensic scientist (from her PhD and not being a researcher), it directly follows that she can solve complex cases. This is a universal conditional statement that applies to all humans, including Avah, regardless of whether she makes key discoveries or gains expertise. The argument A6 incorrectly introduces an additional requirement (key discoveries) that is not present in the definition of a skilled forensic scientist's capabilities.",
+          "confidence": 0.92,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'If someone works diligently and makes key discoveries, then they will gain expertise.' This is a conditional statement about gaining expertise, not about solving complex cases. The ability to solve complex cases is explicitly tied to being a skilled forensic scientist, not to gaining expertise. Therefore, B1 correctly identifies that A6's link between lacking key discoveries and inability to solve complex cases is a non sequitur. The context provides no statement that expertise (from key discoveries) is necessary for solving complex cases; it only states that skilled forensic scientists can solve them.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.2
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states: 'Avah either gains expertise in forensic chemistry or pursues new fields, but not both.' and 'Avah pursues new fields.' Therefore, Avah does not gain expertise in forensic chemistry. However, the context does not state that forensic chemistry expertise is required to solve complex cases. The universal statement about skilled forensic scientists applies regardless of their specific field of expertise. Thus, A6's speculation about lacking expertise affecting ability to solve complex cases is unsupported by the context.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

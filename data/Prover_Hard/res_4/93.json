@@ -1,0 +1,213 @@
+{
+  "claim": "For all humans, if they either value quality ingredients or source locally, then they prioritize sustainability. Selah sources locally. Selah creates unique recipes. Peach sources locally. Selah either cares for her community or advocates for social causes, but these two actions are mutually exclusive. If Selah runs a small business, then she either supports local producers or values quality ingredients (or both). If someone prioritizes sustainability, then they care for their community and minimize waste. Peach advocates for social causes. If Selah either supports local farmers or volunteers regularly (but not both), then she cares for her community. Owen enjoys food or is passionate about cooking. Owen shares recipes or respects tradition. Selah shares recipes or respects tradition. Anyone who loves feasting enjoys food. Selah minimizes waste. Selah does not share recipes. If Selah is passionate about cooking, then she creates unique recipes and builds a successful business. Anyone who learns from their ancestors or honors their family legacy respects tradition. Duncan minimizes waste. Selah advocates for social causes. Duncan either cares for her community or advocates for social causes, but these two actions are mutually exclusive. Selah enjoys food or is passionate about cooking. If someone enjoys food, then they appreciate flavors. If Selah values quality ingredients, then she either appreciates flavors or respects tradition (but not both).Based on the above information, is the following statement true, false, or uncertain? Selah builds a successful business.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Selah is passionate about cooking. The context states 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' Since she creates unique recipes (given), the conditional's antecedent is satisfied, so she builds a successful business."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Selah is passionate about cooking. The context states 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' Since she creates unique recipes (given), the conditional's antecedent is satisfied, so she builds a successful business.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'creates unique recipes' implies 'is passionate about cooking'. The given conditional is 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' This is a one-way implication; having unique recipes does not guarantee passion for cooking. Selah might create unique recipes for other reasons (e.g., business necessity, inherited recipes).",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states 'Selah enjoys food or is passionate about cooking.' This is a disjunction, meaning at least one is true. It's possible Selah only enjoys food but is not passionate about cooking. Without establishing passion for cooking, the conditional cannot be triggered.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly notes the logical fallacy, the context provides additional information: 'Selah creates unique recipes' is given as a fact. The conditional linking passion to unique recipes suggests that if Selah were passionate, unique recipes would follow. However, unique recipes existing doesn't prove passion, but it makes passion more plausible as an explanation.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if passion for cooking is uncertain, there might be an alternative path to a successful business. The context states 'If Selah runs a small business, then she either supports local producers or values quality ingredients (or both).' We don't know if Selah runs a small business, but if she does, and if she supports local producers or values quality ingredients, that could lead to business success independently of cooking passion.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument also assumes the conditional 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business' is a strict logical truth in this context. However, conditionals in real-world reasoning often admit exceptions. Passion might lead to unique recipes, but business success depends on many other factors (market, management, luck) not guaranteed by passion alone.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context provides that 'Selah minimizes waste' and 'If someone prioritizes sustainability, then they care for their community and minimize waste.' Since Selah minimizes waste, she might prioritize sustainability, which would require her to care for her community. However, 'Selah advocates for social causes' and 'Duncan either cares for her community or advocates for social causes, but these two actions are mutually exclusive' suggests a pattern where caring for community and advocating for causes are separate. This doesn't directly affect the business claim but shows logical constraints in the scenario.",
+          "confidence": 0.7,
+          "attacks": {
+            "B3": 0.4
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Selah advocates for social causes. The context states 'Selah either cares for her community or advocates for social causes, but these two actions are mutually exclusive.' Since she advocates, she does not care for her community. The context also states 'If someone prioritizes sustainability, then they care for their community and minimize waste.' Since she minimizes waste (given), if she prioritized sustainability, she would have to care for her community, which she does not. Therefore, she does not prioritize sustainability. The initial universal claim is 'For all humans, if they either value quality ingredients or source locally, then they prioritize sustainability.' Selah sources locally (given). If she valued quality ingredients, she would prioritize sustainability, which she does not. Therefore, she does not value quality ingredients. The context states 'If Selah runs a small business, then she either supports local producers or values quality ingredients (or both).' Since she does not value quality ingredients, if she runs a small business, she must support local producers. However, the context also states 'If Selah either supports local farmers or volunteers regularly (but not both), then she cares for her community.' If she supported local farmers, she would care for her community, which she does not. Therefore, she does not support local farmers. This means she cannot run a small business under the given conditional unless she valued quality ingredients, which she does not. Therefore, she does not run a small business. However, the business success is directly tied to her passion for cooking, not necessarily to running a small business. Since she is passionate about cooking (deduced from her not sharing recipes and the disjunction 'Selah enjoys food or is passionate about cooking' with the fact that if she enjoyed food she would appreciate flavors, but if she valued quality ingredients she would either appreciate flavors or respect tradition, not both; she does not value quality ingredients as shown, so this doesn't force a contradiction, but we can deduce passion for cooking from the disjunction and other facts: she does not share recipes (given), and 'Selah shares recipes or respects tradition' is true, so she respects tradition. Also, 'Anyone who learns from their ancestors or honors their family legacy respects tradition.' She respects tradition, so one of those is true. Also, 'If Selah values quality ingredients, then she either appreciates flavors or respects tradition (but not both).' She does not value quality ingredients, so this conditional doesn't apply. From 'Selah enjoys food or is passionate about cooking,' if she enjoyed food, she would appreciate flavors (conditional). There's no contradiction with her respecting tradition and appreciating flavors since the 'but not both' only applies if she valued quality ingredients, which she doesn't. However, we can deduce she is passionate about cooking from the business success conditional. Since she creates unique recipes, the only way to guarantee that is if she is passionate about cooking (from the conditional). Therefore, she is passionate about cooking, and thus builds a successful business."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Selah advocates for social causes. The context states 'Selah either cares for her community or advocates for social causes, but these two actions are mutually exclusive.' Since she advocates, she does not care for her community. The context also states 'If someone prioritizes sustainability, then they care for their community and minimize waste.' Since she minimizes waste (given), if she prioritized sustainability, she would have to care for her community, which she does not. Therefore, she does not prioritize sustainability. The initial universal claim is 'For all humans, if they either value quality ingredients or source locally, then they prioritize sustainability.' Selah sources locally (given). If she valued quality ingredients, she would prioritize sustainability, which she does not. Therefore, she does not value quality ingredients. The context states 'If Selah runs a small business, then she either supports local producers or values quality ingredients (or both).' Since she does not value quality ingredients, if she runs a small business, she must support local producers. However, the context also states 'If Selah either supports local farmers or volunteers regularly (but not both), then she cares for her community.' If she supported local farmers, she would care for her community, which she does not. Therefore, she does not support local farmers. This means she cannot run a small business under the given conditional unless she valued quality ingredients, which she does not. Therefore, she does not run a small business. However, the business success is directly tied to her passion for cooking, not necessarily to running a small business. Since she is passionate about cooking (deduced from her not sharing recipes and the disjunction 'Selah enjoys food or is passionate about cooking' with the fact that if she enjoyed food she would appreciate flavors, but if she valued quality ingredients she would either appreciate flavors or respect tradition, not both; she does not value quality ingredients as shown, so this doesn't force a contradiction, but we can deduce passion for cooking from the disjunction and other facts: she does not share recipes (given), and 'Selah shares recipes or respects tradition' is true, so she respects tradition. Also, 'Anyone who learns from their ancestors or honors their family legacy respects tradition.' She respects tradition, so one of those is true. Also, 'If Selah values quality ingredients, then she either appreciates flavors or respects tradition (but not both).' She does not value quality ingredients, so this conditional doesn't apply. From 'Selah enjoys food or is passionate about cooking,' if she enjoyed food, she would appreciate flavors (conditional). There's no contradiction with her respecting tradition and appreciating flavors since the 'but not both' only applies if she valued quality ingredients, which she doesn't. However, we can deduce she is passionate about cooking from the business success conditional. Since she creates unique recipes, the only way to guarantee that is if she is passionate about cooking (from the conditional). Therefore, she is passionate about cooking, and thus builds a successful business.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is not relevant to the given claim about Monroe. The provided context and claim are entirely about Monroe's traits and logical relationships between them, while A2 discusses a different person (Selah) and unrelated predicates. Therefore, A2 provides zero support for the claim 'Monroe is not impulsive'.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance of A2 to the Monroe claim, the task requires building an attack tree starting from A2. Therefore, we must evaluate A2 on its own internal logic concerning Selah, not dismiss it for being off-topic. The attack should be based on logical flaws within A2's reasoning about Selah.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A2's conclusion that Selah 'builds a successful business' is not logically guaranteed. The argument deduces she is passionate about cooking from a conditional: 'Since she creates unique recipes, the only way to guarantee that is if she is passionate about cooking (from the conditional).' This presumes the conditional is bidirectional (only if), but the context likely states 'If someone is passionate about cooking, then they create unique recipes.' This does not mean that creating unique recipes implies passion for cooking; it could be due to other factors. Therefore, the final leap to business success is unsound.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "B3",
+          "text": "A2 contains a potential equivocation or conflation of terms. It uses 'supports local producers' and 'supports local farmers' interchangeably. The context statement is 'If Selah runs a small business, then she either supports local producers or values quality ingredients (or both).' and 'If Selah either supports local farmers or volunteers regularly (but not both), then she cares for her community.' These are distinct predicates ('producers' vs. 'farmers'). The argument assumes supporting local producers entails supporting local farmers, which is not necessarily logically valid. This weakens the deduction that she cannot run a small business.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B3's attack is valid in a strict logical sense, but in common interpretation, 'local producers' in a food context often includes 'local farmers'. The argument A2 is applying a reasonable semantic equivalence. While not formally airtight, it's a plausible inference within the scenario's context, reducing the strength of B3's attack.",
+          "confidence": 0.7,
+          "attacks": {
+            "B3": 0.65
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the context, 'Selah creates unique recipes' is given. The only conditional that directly links creating unique recipes to another trait is 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' This is a biconditional-like statement: if passionate, then creates and builds. Since she creates, one might infer the antecedent, but strictly, the conditional does not guarantee that creating unique recipes implies passion. However, combined with other information, we can deduce passion. The disjunction 'Selah enjoys food or is passionate about cooking' must be true. If she enjoys food, then she appreciates flavors. There is no contradiction with that. But also, 'Selah shares recipes or respects tradition' is true, and she does not share recipes, so she respects tradition. If she enjoyed food, she would appreciate flavors. The conditional about valuing quality ingredients doesn't apply since she doesn't value them. Therefore, both enjoying food and being passionate about cooking are possible. However, to satisfy the conditional that she creates unique recipes, passion is sufficient. Since we have no evidence against passion, and the context strongly suggests it through logical deduction, we conclude she is passionate, hence builds a successful business."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the context, 'Selah creates unique recipes' is given. The only conditional that directly links creating unique recipes to another trait is 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' This is a biconditional-like statement: if passionate, then creates and builds. Since she creates, one might infer the antecedent, but strictly, the conditional does not guarantee that creating unique recipes implies passion. However, combined with other information, we can deduce passion. The disjunction 'Selah enjoys food or is passionate about cooking' must be true. If she enjoys food, then she appreciates flavors. There is no contradiction with that. But also, 'Selah shares recipes or respects tradition' is true, and she does not share recipes, so she respects tradition. If she enjoyed food, she would appreciate flavors. The conditional about valuing quality ingredients doesn't apply since she doesn't value them. Therefore, both enjoying food and being passionate about cooking are possible. However, to satisfy the conditional that she creates unique recipes, passion is sufficient. Since we have no evidence against passion, and the context strongly suggests it through logical deduction, we conclude she is passionate, hence builds a successful business.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument commits the logical fallacy of affirming the consequent. The given conditional is 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business.' From 'Selah creates unique recipes,' one cannot validly conclude she is passionate. The conditional only states passion is sufficient for creation, not necessary. Creation could occur for other reasons not mentioned in the premises.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on an unwarranted assumption that 'the context strongly suggests [passion] through logical deduction,' but no such deduction is presented. The other premises about enjoying food, sharing recipes, and valuing ingredients do not logically force the conclusion of passion. The disjunction 'enjoys food OR is passionate' being true allows for the possibility she only enjoys food and is not passionate, which would still be consistent with her creating recipes (if creation can occur without passion).",
+          "confidence": 0.8,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While affirming the consequent is generally invalid, in a constrained logical system where all possible causes for 'creates unique recipes' are explicitly listed in the premises, and passion is the only one listed, one might infer passion by process of elimination. However, the problem statement does not assert that the given conditionals are exhaustive of all possibilities for recipe creation.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if the list of causes is not exhaustive, practical reasoning often uses 'inference to the best explanation.' Given no other stated cause for creating unique recipes in the provided context, passion becomes the most plausible explanatory factor, especially when combined with the disjunction that she must either enjoy food or be passionate.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Examining the negated scenario: suppose Selah does not build a successful business. From 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business,' if she does not build, then she is not passionate about cooking. Then from 'Selah enjoys food or is passionate about cooking,' she must enjoy food. Then from 'If someone enjoys food, then they appreciate flavors,' she appreciates flavors. Also, from 'Selah shares recipes or respects tradition' and she does not share recipes, she respects tradition. Now, from 'If Selah values quality ingredients, then she either appreciates flavors or respects tradition (but not both).' She appreciates flavors and respects tradition, so if she valued quality ingredients, she would have to choose one, but she has both, so she cannot value quality ingredients. This is consistent. She sources locally. From the universal claim, if she values quality ingredients or sources locally, she prioritizes sustainability. She sources locally, so she prioritizes sustainability. Then from 'If someone prioritizes sustainability, then they care for their community and minimize waste.' She minimizes waste (given), so she must care for her community. But from 'Selah either cares for her community or advocates for social causes, but these two actions are mutually exclusive.' She advocates for social causes (given), so she cannot care for her community. Contradiction. Therefore, the assumption that she does not build a successful business leads to a contradiction. Hence, she must build a successful business."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Examining the negated scenario: suppose Selah does not build a successful business. From 'If Selah is passionate about cooking, then she creates unique recipes and builds a successful business,' if she does not build, then she is not passionate about cooking. Then from 'Selah enjoys food or is passionate about cooking,' she must enjoy food. Then from 'If someone enjoys food, then they appreciate flavors,' she appreciates flavors. Also, from 'Selah shares recipes or respects tradition' and she does not share recipes, she respects tradition. Now, from 'If Selah values quality ingredients, then she either appreciates flavors or respects tradition (but not both).' She appreciates flavors and respects tradition, so if she valued quality ingredients, she would have to choose one, but she has both, so she cannot value quality ingredients. This is consistent. She sources locally. From the universal claim, if she values quality ingredients or sources locally, she prioritizes sustainability. She sources locally, so she prioritizes sustainability. Then from 'If someone prioritizes sustainability, then they care for their community and minimize waste.' She minimizes waste (given), so she must care for her community. But from 'Selah either cares for her community or advocates for social causes, but these two actions are mutually exclusive.' She advocates for social causes (given), so she cannot care for her community. Contradiction. Therefore, the assumption that she does not build a successful business leads to a contradiction. Hence, she must build a successful business.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is irrelevant to the claim about Mia. The claim asks about Mia's skills based on premises about Mia, but A4 discusses a completely different person (Selah) and a different scenario about building a business. This is a case of mistaken identity or context confusion.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the context mismatch, A4's internal logic is flawed. It assumes that 'Selah shares recipes or respects tradition' and that 'she does not share recipes' is given, but the original problem statement about Mia does not mention Selah sharing recipes. This premise is introduced without justification.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, one could interpret A4 as a metaphorical or analogical argument attempting to demonstrate a logical pattern. However, this interpretation is highly strained and not supported by the text, which treats Selah as a specific case.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3
+          }
+        }
+      ]
+    }
+  }
+}

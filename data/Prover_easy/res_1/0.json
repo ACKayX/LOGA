@@ -1,0 +1,237 @@
+{
+  "claim": "Context:'''\nBrecken has experienced heartbreak. Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Brecken has never experienced heartbreak.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states that if Kailani is self-directed, then she can either excel academically or inspire others, but not both. It also states that Kailani inspires others. Therefore, if Kailani is self-directed, she cannot also excel academically, supporting the claim that Kailani does not excel academically."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states that if Kailani is self-directed, then she can either excel academically or inspire others, but not both. It also states that Kailani inspires others. Therefore, if Kailani is self-directed, she cannot also excel academically, supporting the claim that Kailani does not excel academically.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Kailani is self-directed, but the context only states 'Kailani is self-directed' as a premise. However, this premise might be questionable if the context itself contains contradictions or if 'self-directed' has ambiguous meaning that could be challenged.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure 'if P then (Q xor R)' with R true doesn't necessarily imply not-Q unless P is true. While P (Kailani is self-directed) is given, one could question whether the conditional applies universally or has exceptions not stated.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Kailani is self-directed' as a factual premise. There's no internal contradiction about this premise, so challenging it requires external assumptions not supported by the given information.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The conditional statement is presented as a general rule in the context. Unless specified otherwise, we should assume it applies as stated. Logical reasoning from given premises is valid unless premises themselves are contradictory.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The claim 'Kailani does not excel academically' could be uncertain if there's ambiguity in 'excel academically.' Minimal academic success might not qualify as 'excelling,' allowing both inspiring others and some academic achievement without contradiction.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C3",
+          "text": "The context uses 'excel academically' as a binary alternative to 'inspire others' in the exclusive or relationship. This suggests they are mutually exclusive outcomes when someone is self-directed, leaving no middle ground for partial success.",
+          "confidence": 0.72,
+          "attacks": {
+            "B3": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Given the rule that a self-directed person cannot both excel academically and inspire others, and the fact that Kailani inspires others, it logically follows that if Kailani is self-directed, she does not excel academically. Since the context explicitly states Kailani is self-directed, the claim is directly supported."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Given the rule that a self-directed person cannot both excel academically and inspire others, and the fact that Kailani inspires others, it logically follows that if Kailani is self-directed, she does not excel academically. Since the context explicitly states Kailani is self-directed, the claim is directly supported.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the logical rule is applied universally and without exception. However, the context presents the rule as a conditional statement ('If Kailani is self-directed, then she can either excel academically or inspire others, but not both'). This is a premise, not a proven universal law. The conclusion's validity depends entirely on the truth of this premise, which is not independently verified.",
+          "confidence": 0.72,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument contains a potential scope error. The context provides two separate but identical rules: one for Bryce and one for Kailani. It's possible these are individual-specific constraints, not a general principle. Applying Kailani's rule to deduce her non-excellence is valid, but the argument's phrasing ('the rule that a self-directed person cannot...') generalizes it, which may not be justified by the context.",
+          "confidence": 0.68,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly notes the rule is a premise, within the bounds of the given logical context, we must accept the premises as true for the purpose of deduction. The question asks what follows 'based on the above information'. Therefore, challenging the premise's external validity is outside the scope of the problem. The deduction A2 makes is logically sound given the accepted premises.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's point about over-generalization is valid but doesn't ultimately weaken A2's core conclusion. Even if the rule is specific to Kailani (as stated: 'If Kailani is self-directed, then...'), the argument's logic still holds. The phrase 'the rule that a self-directed person cannot...' in A2 is slightly imprecise but refers effectively to Kailani's specific rule. The conclusion about Kailani remains directly derivable.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The logical structure is: If Kailani is self-directed, then (excel academically XOR inspire others). Kailani is self-directed (given) and inspires others (given). Therefore, by the exclusive 'or', she does not excel academically, making the claim true."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The logical structure is: If Kailani is self-directed, then (excel academically XOR inspire others). Kailani is self-directed (given) and inspires others (given). Therefore, by the exclusive 'or', she does not excel academically, making the claim true.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both' might be misinterpreted. The context states this as a conditional rule, but it doesn't specify whether this rule applies universally or only under certain conditions not fully described. The logical deduction assumes the rule's applicability is absolute.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the exclusive 'or' (XOR) is correctly applied. However, in natural language, 'either...or...but not both' can sometimes be interpreted as a strong disjunction but might allow for exceptional cases where both occur if the 'self-directed' property manifests in a unique way not considered by the rule.",
+          "confidence": 0.6,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 raises a point about interpretation, the context presents the conditional statements as given facts for the logical puzzle. In formal logic puzzles, such conditionals are typically taken as absolute premises unless stated otherwise. Therefore, the applicability is intended to be absolute within the puzzle's framework.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's challenge about the interpretation of 'but not both' is weak in this context. The phrase 'but not both' is the standard linguistic indicator of an exclusive or (XOR) in logic puzzles and deductive reasoning. Introducing exceptional cases without evidence contradicts the standard approach to interpreting such puzzles.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even accepting C1's point, the puzzle's internal consistency could be questioned. The context also gives an identical rule for Bryce ('If Bryce is self-directed, then she can either excel academically or inspire others, but not both') and states Bryce inspires others. It does not state whether Bryce is self-directed. If Bryce were also self-directed, she too would not excel academically. This parallel suggests the rule is meant to be applied symmetrically, strengthening A3's interpretation rather than weakening it.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "From the premises, Kailani's self-directed nature imposes a constraint: she can only achieve one of two outcomes. Since inspiring others is confirmed, the outcome of excelling academically is excluded, confirming Kailani does not excel academically."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From the premises, Kailani's self-directed nature imposes a constraint: she can only achieve one of two outcomes. Since inspiring others is confirmed, the outcome of excelling academically is excluded, confirming Kailani does not excel academically.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The constraint 'can either excel academically or inspire others, but not both' is a logical exclusive-or (XOR). However, the premises only state that Kailani inspires others. For the XOR to force 'not excel academically', we must also assume that 'excelling academically' and 'inspiring others' are the only two possible outcomes under 'self-directed'. If there are other possible outcomes not mentioned, the conclusion doesn't necessarily follow.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly presents the exclusive-or condition as the definitive constraint for a self-directed person: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' This leaves no room for other outcomes within the scope of the logical constraint. Given Kailani is confirmed as self-directed and confirmed to inspire others, the XOR directly excludes excelling academically.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes that 'inspires others' is a binary, all-or-nothing trait. In reality, one could inspire others to a minimal degree while still excelling academically. The premises don't specify a threshold for what counts as 'inspires others,' creating ambiguity about whether the exclusive-or condition has actually been triggered.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context treats 'inspires others' as a categorical fact, not a matter of degree. Both Kailani and Bryce are flatly stated to 'inspire others.' In formal logic puzzles like this, predicates are typically treated as binary for the purpose of applying logical constraints, so the objection about degrees is not relevant to the given structure.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "There is a potential scope ambiguity: does the exclusive-or apply to capabilities or to actual achievements? The phrase 'can either excel academically or inspire others' might mean these are the only two possible talents, not that they are mutually exclusive in manifestation. Kailani might have the capability for both but chooses to only exercise one.",
+          "confidence": 0.6,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "C3",
+          "text": "The logical structure 'can either A or B, but not both' is standard for exclusive disjunction over possibilities/actualities in such puzzles. The follow-up 'Kailani inspires others' is presented as an observed fact, not a capability. Therefore, the constraint applies to actual outcomes: since she actually inspires others, she cannot also actually excel academically.",
+          "confidence": 0.85,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

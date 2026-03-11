@@ -1,0 +1,269 @@
+{
+  "claim": "Maxine collaborates with peers or publishes research (or both). Iris values learning or is passionate about research. Iris does not publish research. Iris collaborates with peers or publishes research (or both). Iris does not seek self-improvement. If Iris is passionate about research, then she shares knowledge with others and collaborates with peers. If Daisy is passionate about research, then she shares knowledge with others and collaborates with peers. Iris studies Earth's geological processes. If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both. If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding. If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research. Iris does not value personal growth. Iris either advances human understanding or shares knowledge with others, but not both. If Iris is curious, then she either advances human understanding or has practical skills (but not both). Iris pursues academic degrees. Flora does not seek self-improvement. If Iris either values learning or seeks self-improvement (but not both), then she values personal growth.Based on the above information, is the following statement true, false, or uncertain? Iris discovers new minerals.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Iris studies Earth's geological processes, and the context states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This means she cannot do both; she must choose one or the other."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Iris studies Earth's geological processes, and the context states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This means she cannot do both; she must choose one or the other.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Iris publishes research is false (given: 'Iris does not publish research'), and contributing to scientific knowledge is often associated with publishing research. Since she does not publish, it is more plausible that she contributes in other ways, but the direct logical constraint forces a choice between discovering minerals and contributing to knowledge."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Iris publishes research is false (given: 'Iris does not publish research'), and contributing to scientific knowledge is often associated with publishing research. Since she does not publish, it is more plausible that she contributes in other ways, but the direct logical constraint forces a choice between discovering minerals and contributing to knowledge.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'contributing to scientific knowledge' is equivalent to 'publishing research.' The given statements only say Iris does not publish research; they do not state that she cannot contribute to scientific knowledge through other means like discovering new minerals.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The statement 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both' creates an exclusive choice. If she does not publish research, that does not automatically mean she contributes to scientific knowledge; she could instead discover new minerals, which would make the claim 'Iris discovers new minerals' true.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The exclusive choice in the given statements means that if Iris discovers new minerals, she cannot contribute to scientific knowledge. However, the original argument A2 suggests that not publishing research implies she contributes in other ways, which could still be consistent with discovering minerals if 'contributing to scientific knowledge' is interpreted narrowly as publishing. But the given statements do not define 'contribute to scientific knowledge' as exclusively publishing, so the exclusive choice remains logically independent of publishing status.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Iris pursues academic degrees (given), and if she either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding. Since she pursues academic degrees, she cannot also contribute to scientific knowledge in this 'or but not both' clause, implying she does not contribute to scientific knowledge."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Iris pursues academic degrees (given), and if she either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding. Since she pursues academic degrees, she cannot also contribute to scientific knowledge in this 'or but not both' clause, implying she does not contribute to scientific knowledge.",
+          "cate": "S",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 incorrectly interprets the logical structure. The premise states: 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' This is a conditional where the antecedent is an exclusive disjunction. Iris pursuing academic degrees alone does not satisfy the antecedent; the antecedent requires that she either contributes to scientific knowledge OR pursues academic degrees, BUT NOT BOTH. Since we only know she pursues academic degrees, we cannot determine whether she also contributes to scientific knowledge. Therefore, the antecedent's truth value is undetermined, and we cannot conclude she does not contribute to scientific knowledge from this premise alone.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 points out the logical nuance, the original context provides additional information that resolves the uncertainty. We know: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' Iris studies Earth's geological processes (given). Therefore, she either discovers new minerals or contributes to scientific knowledge, exclusively. If she were to contribute to scientific knowledge, then in the exclusive disjunction with pursuing academic degrees, she would be doing both (contributing and pursuing degrees), making the antecedent of the 'advances human understanding' premise false. However, the claim in question is about discovering new minerals, not directly about contributing to scientific knowledge. The logical chain from A3 remains incomplete for the claim.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.72
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The attack in C1 misinterprets the attack on B1. B1 correctly states that from the exclusive disjunction premise alone, we cannot conclude Iris does not contribute to scientific knowledge. C1 attempts to use other context to resolve this, but that does not invalidate B1's logical point about the specific premise A3 uses. B1's attack on A3 is valid because A3 draws an unjustified conclusion from that premise in isolation. The other context does not make A3's reasoning correct; it merely provides additional paths. Therefore, B1's attack stands.",
+          "confidence": 0.85,
+          "attacks": {
+            "C1": 0.8
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "From the previous argument, since Iris does not contribute to scientific knowledge, and from the geological processes statement she must choose between discovering minerals and contributing to knowledge, she must discover new minerals? Wait, check: if she does not contribute, then she must discover. But let's verify consistency: The clause 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' She pursues academic degrees, so for the 'or but not both' to hold, she cannot contribute. Therefore, she does not contribute. Then from the geological processes statement, since she does not contribute, she must discover new minerals. But the question is whether she discovers new minerals, so this would support 'true'. However, there is a conflict: Let's re-examine. The geological processes statement: 'she can either discover new minerals or contribute to scientific knowledge, but not both.' It does not say she must do one; it says she can either do one or the other. It is a possibility, not a necessity. So she may do neither. Therefore, we cannot conclude she discovers. Given the lack of positive evidence for discovery, and the context does not state she discovers, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From the previous argument, since Iris does not contribute to scientific knowledge, and from the geological processes statement she must choose between discovering minerals and contributing to knowledge, she must discover new minerals? Wait, check: if she does not contribute, then she must discover. But let's verify consistency: The clause 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' She pursues academic degrees, so for the 'or but not both' to hold, she cannot contribute. Therefore, she does not contribute. Then from the geological processes statement, since she does not contribute, she must discover new minerals. But the question is whether she discovers new minerals, so this would support 'true'. However, there is a conflict: Let's re-examine. The geological processes statement: 'she can either discover new minerals or contribute to scientific knowledge, but not both.' It does not say she must do one; it says she can either do one or the other. It is a possibility, not a necessity. So she may do neither. Therefore, we cannot conclude she discovers. Given the lack of positive evidence for discovery, and the context does not state she discovers, the claim is false.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The geological processes statement is 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This is a conditional statement about what she can do, not what she must do. Even if she does not contribute to scientific knowledge, the statement does not logically force her to discover new minerals; it only permits it as one of two exclusive possibilities. She could also do neither, as the statement only describes possibilities under the condition that she studies geological processes.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The original argument A4 acknowledges this limitation in its own reasoning ('It does not say she must do one; it says she can either do one or the other. It is a possibility, not a necessity. So she may do neither.'), which directly contradicts its earlier conclusion that 'she must discover new minerals.' This internal inconsistency undermines the logical validity of A4's support for the claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "From the context: 'Iris either advances human understanding or shares knowledge with others, but not both.' Also, 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Since Iris pursues academic degrees, for the 'or but not both' condition to hold, she cannot contribute to scientific knowledge. However, advancing human understanding does not require discovering new minerals; it could be achieved through other means not specified in the context. Therefore, the lack of contribution does not entail discovery.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context provides no direct statement that Iris discovers new minerals. All information about her activities (studies geological processes, pursues academic degrees, does not publish research, etc.) does not imply she actually discovers minerals. Without explicit evidence, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context provides no direct statement that Iris discovers new minerals. All information about her activities (studies geological processes, pursues academic degrees, does not publish research, etc.) does not imply she actually discovers minerals. Without explicit evidence, the claim is false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Iris studies Earth's geological processes. The context states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' Since no statement confirms she contributes to scientific knowledge, discovering new minerals remains a logical possibility from her geological studies.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states Iris 'pursues academic degrees' and 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Since she pursues academic degrees, she advances human understanding. The context also states: 'Iris either advances human understanding or shares knowledge with others, but not both.' Therefore, she does not share knowledge with others. The context states: 'If Iris is passionate about research, then she shares knowledge with others and collaborates with peers.' Since she does not share knowledge, she cannot be passionate about research. The context states: 'If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research.' Since she is not passionate about research, she neither solves complex problems nor analyzes data. Without solving complex problems or analyzing data, her geological studies may not lead to mineral discovery, supporting A5's position.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context explicitly states about Iris's geological studies: 'she can either discover new minerals or contribute to scientific knowledge, but not both.' This establishes discovery of new minerals as a direct, exclusive possible outcome of her geological work. Without evidence she contributes to scientific knowledge, the possibility of mineral discovery remains open and cannot be dismissed as false without explicit contradiction.",
+          "confidence": 0.72,
+          "attacks": {
+            "C1": 0.78
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Iris either advances human understanding or shares knowledge with others, but not both. Also, if Iris is curious, then she either advances human understanding or has practical skills (but not both). Curiosity is not directly stated, but these constraints do not relate to mineral discovery. The absence of any link between her known actions and mineral discovery means the claim is unsupported."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Iris either advances human understanding or shares knowledge with others, but not both. Also, if Iris is curious, then she either advances human understanding or has practical skills (but not both). Curiosity is not directly stated, but these constraints do not relate to mineral discovery. The absence of any link between her known actions and mineral discovery means the claim is unsupported.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "Iris does not seek self-improvement and does not value personal growth, but these are irrelevant to mineral discovery. The only relevant clause is the geological processes one, which is permissive ('can either...'), not mandatory. Thus, there is no necessity for her to discover minerals."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "Iris does not seek self-improvement and does not value personal growth, but these are irrelevant to mineral discovery. The only relevant clause is the geological processes one, which is permissive ('can either...'), not mandatory. Thus, there is no necessity for her to discover minerals.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly dismisses the logical structure. The geological processes clause states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' This is a conditional with an exclusive disjunction in the consequent. It does not state she must do either; it states she can do one or the other. Therefore, the absence of necessity does not support the negation of the claim; it merely leaves the claim uncertain. A7's conclusion that 'there is no necessity' does not logically entail that 'Iris discovers new minerals' is false (S).",
+          "confidence": 0.82,
+          "attacks": {
+            "A7": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the permissive nature of the clause, it overlooks that A7's assigned cate is S (supporting negation). The claim is 'Iris discovers new minerals.' To support its negation, one must show evidence or reasoning that she does not discover minerals. The geological clause alone, being permissive, provides no such evidence. Therefore, A7's reasoning is invalid for supporting S; it should be P (supporting the claim's uncertainty) or have its cate corrected. The attack on A7's logical validity stands.",
+          "confidence": 0.79,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "Considering logical consistency: From 'Iris pursues academic degrees' and the rule about contributing to knowledge or pursuing degrees (but not both) leading to advancing understanding, since she pursues degrees, she does not contribute to knowledge. Then from the geological processes rule, if she does not contribute, she could discover minerals, but it is not forced. Since the context does not state she discovers, and the question asks if she discovers, the answer is false due to lack of evidence."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "Considering logical consistency: From 'Iris pursues academic degrees' and the rule about contributing to knowledge or pursuing degrees (but not both) leading to advancing understanding, since she pursues degrees, she does not contribute to knowledge. Then from the geological processes rule, if she does not contribute, she could discover minerals, but it is not forced. Since the context does not state she discovers, and the question asks if she discovers, the answer is false due to lack of evidence.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'could discover minerals' means 'does not discover minerals.' The geological processes rule states: 'If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both.' Since she does not contribute to knowledge (as argued), the rule forces her to discover minerals. Therefore, the conclusion should be true, not false.",
+          "confidence": 0.85,
+          "attacks": {
+            "A8": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 misinterprets the rule. The rule says 'she can either discover... or contribute... but not both.' This is a permission/possibility statement, not a forced exclusive choice. It does not require that she must do one; it only says she cannot do both. Therefore, not contributing does not force discovery.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's interpretation is inconsistent with logical implication. In standard logic, 'if P then (Q xor R)' with P true and R false does imply Q true, because 'xor' means exactly one must be true. Here, P='Iris studies geological processes' is true, R='contribute to knowledge' is false (from academic degrees rule), so Q='discovers minerals' must be true.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

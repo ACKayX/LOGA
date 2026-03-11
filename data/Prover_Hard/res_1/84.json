@@ -1,0 +1,319 @@
+{
+  "claim": "If Samantha is either self-taught or has vocational training (but not both), then she is a mechanic. Samantha does not troubleshoot well. Samantha does not develop creative solutions. Anyone who has natural talent or works hard can learn through practice. If Samantha is a mechanic, then she either has formal education or apprenticeship training, but not both. If Samantha has either formal education or hands-on experience (but not both), then she is skilled. Samantha has apprenticeship training. Samantha fixes problems. Anyone who troubleshoots well or fixes problems can gain hands-on experience. Samantha works hard. Samantha is not self-taught. Everyone who learns through practice either develops creative solutions or has vocational training (or both). If Samantha either participates in courses or reads manuals (but not both), then she has vocational training.Based on the above information, is the following statement true, false, or uncertain? Samantha is not skilled.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Samantha has apprenticeship training, which, given the conditional 'If Samantha is a mechanic, then she either has formal education or apprenticeship training, but not both,' implies she could be a mechanic if she does not have formal education. However, the claim 'Samantha is not skilled' depends on the condition 'If Samantha has either formal education or hands-on experience (but not both), then she is skilled.' Since Samantha has apprenticeship training, not formal education, and it is not established she has hands-on experience, she may not meet the condition for being skilled."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Samantha has apprenticeship training, which, given the conditional 'If Samantha is a mechanic, then she either has formal education or apprenticeship training, but not both,' implies she could be a mechanic if she does not have formal education. However, the claim 'Samantha is not skilled' depends on the condition 'If Samantha has either formal education or hands-on experience (but not both), then she is skilled.' Since Samantha has apprenticeship training, not formal education, and it is not established she has hands-on experience, she may not meet the condition for being skilled.",
+          "cate": "S",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly applies the given conditionals. The first conditional states: 'If Samantha is a mechanic, then she either has formal education or apprenticeship training, but not both.' This does not imply that having apprenticeship training makes her a mechanic; it only sets a necessary condition for being a mechanic. Samantha having apprenticeship training alone does not confirm she is a mechanic, so the initial inference is flawed.",
+          "confidence": 0.82,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the inference about Samantha being a mechanic is weak, the core reasoning about her not being skilled remains valid. The condition for being skilled requires either formal education or hands-on experience (but not both). Samantha has apprenticeship training, which is neither formal education nor necessarily hands-on experience as defined. Therefore, she does not meet the condition, supporting the original argument's conclusion.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes apprenticeship training is distinct from hands-on experience, but in many contexts, apprenticeship training inherently involves substantial hands-on experience. If apprenticeship training qualifies as hands-on experience, then Samantha would have hands-on experience without formal education, meeting the condition 'either formal education or hands-on experience (but not both)' and thus being skilled, contradicting the argument's conclusion.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The given information explicitly lists 'formal education,' 'apprenticeship training,' and 'hands-on experience' as separate categories. Since they are distinguished in the conditionals, apprenticeship training is not treated as a subset of hands-on experience. Therefore, Samantha's apprenticeship training does not automatically grant her hands-on experience as per the logical constraints, preserving the argument's validity.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.9
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "From 'Anyone who troubleshoots well or fixes problems can gain hands-on experience,' and 'Samantha fixes problems,' it follows Samantha can gain hands-on experience. However, 'can gain' does not guarantee she has gained it. Without confirmed hands-on experience, and with apprenticeship training (which is not formal education), the condition for being skilled ('If Samantha has either formal education or hands-on experience (but not both), then she is skilled') is not satisfied, supporting that Samantha is not skilled."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From 'Anyone who troubleshoots well or fixes problems can gain hands-on experience,' and 'Samantha fixes problems,' it follows Samantha can gain hands-on experience. However, 'can gain' does not guarantee she has gained it. Without confirmed hands-on experience, and with apprenticeship training (which is not formal education), the condition for being skilled ('If Samantha has either formal education or hands-on experience (but not both), then she is skilled') is not satisfied, supporting that Samantha is not skilled.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'apprenticeship training' cannot be considered 'formal education.' In many professional contexts, structured apprenticeship programs are indeed a form of formal education or training, which could satisfy the 'formal education' condition in the rule for being skilled.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument states 'Samantha fixes problems,' which directly implies she can gain hands-on experience per the first premise. The conclusion that she lacks hands-on experience is an assumption not supported by the given facts; it only states 'can gain' doesn't guarantee it, but doesn't provide evidence she hasn't gained it. The absence of confirmation is not proof of absence.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1's point about apprenticeships is context-dependent, the original problem likely uses 'formal education' in a traditional academic sense (e.g., university degree), distinct from on-the-job training like apprenticeships. Without explicit redefinition in the premises, the original argument's interpretation is reasonable.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2 correctly identifies an assumption, but the original argument's purpose is to support 'Samantha is not skilled' given the available information. Since the information does not confirm hands-on experience, and the logical condition for being skilled requires either formal education or hands-on experience (confirmed), the argument validly shows the condition is not met with the given facts.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Samantha works hard, and 'Anyone who has natural talent or works hard can learn through practice.' This implies Samantha can learn through practice. However, 'Everyone who learns through practice either develops creative solutions or has vocational training (or both).' Samantha does not develop creative solutions, so if she learns through practice, she must have vocational training. But Samantha has apprenticeship training, and it is not stated she has vocational training; in fact, from 'If Samantha is either self-taught or has vocational training (but not both), then she is a mechanic,' and 'Samantha is not self-taught,' vocational training is uncertain. Without confirmed vocational training or creative solutions, it's unclear if she learns through practice, leaving her skill status undetermined, but leaning toward not skilled due to lack of formal education or confirmed hands-on experience."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Samantha works hard, and 'Anyone who has natural talent or works hard can learn through practice.' This implies Samantha can learn through practice. However, 'Everyone who learns through practice either develops creative solutions or has vocational training (or both).' Samantha does not develop creative solutions, so if she learns through practice, she must have vocational training. But Samantha has apprenticeship training, and it is not stated she has vocational training; in fact, from 'If Samantha is either self-taught or has vocational training (but not both), then she is a mechanic,' and 'Samantha is not self-taught,' vocational training is uncertain. Without confirmed vocational training or creative solutions, it's unclear if she learns through practice, leaving her skill status undetermined, but leaning toward not skilled due to lack of formal education or confirmed hands-on experience.",
+          "cate": "S",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'apprenticeship training' and 'vocational training' are mutually exclusive or distinct. In common usage, apprenticeship is a form of vocational training. Therefore, Samantha's apprenticeship training likely qualifies as vocational training, satisfying the condition for someone who learns through practice.",
+          "confidence": 0.72,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premise 'Everyone who learns through practice either develops creative solutions or has vocational training (or both)' does not require vocational training to be formally stated as such if apprenticeship serves the same function. The logical structure is: If Samantha learns through practice, then (creative solutions OR vocational training). She lacks creative solutions, so vocational training is necessary. If apprenticeship is vocational training, the condition is met. The argument's uncertainty is overstated.",
+          "confidence": 0.68,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While apprenticeship is often considered vocational training, the original information specifies 'Samantha has apprenticeship training' and separately discusses 'vocational training' in a conditional statement. This deliberate separation suggests the puzzle treats them as distinct categories. Therefore, we cannot assume apprenticeship equals vocational training without explicit statement.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.7,
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if apprenticeship and vocational training are distinct, the conditional 'If Samantha is either self-taught or has vocational training (but not both), then she is a mechanic' combined with 'Samantha is not self-taught' does not make vocational training uncertain\u2014it makes it independent. She could have vocational training or not; the conditional only applies if she has vocational training exclusively (not both with self-taught). Since she isn't self-taught, having vocational training would satisfy the 'but not both' condition (as one is true, the other false), triggering the consequent that she is a mechanic. If she is not a mechanic, she lacks vocational training. The puzzle doesn't state she is a mechanic, so vocational training remains possible but not confirmed.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.6
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The core logical chain is: 1) Samantha works hard. 2) Anyone who works hard can learn through practice. Therefore, Samantha can learn through practice. 3) Everyone who learns through practice has (creative solutions OR vocational training). 4) Samantha does not have creative solutions. Therefore, IF she learns through practice, she must have vocational training. The argument then introduces unrelated conditions about being a mechanic, which don't directly negate the possibility of vocational training. The leap to 'leaning toward not skilled' is not justified by the premises.",
+          "confidence": 0.78,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The leap is justified because the argument identifies a contradiction: If Samantha learns through practice, she must have vocational training. But the subsequent conditional about vocational training leading to being a mechanic, combined with no mention of her being a mechanic, casts doubt on whether she actually has vocational training. If she likely lacks vocational training, then the condition for learning through practice fails, making it uncertain whether she learns through practice despite working hard. This uncertainty supports the conclusion that her skill status is undetermined.",
+          "confidence": 0.7,
+          "attacks": {
+            "B3": 0.65
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The condition for being skilled requires formal education or hands-on experience, but not both. Samantha has apprenticeship training, which is distinct from formal education based on the context. Hands-on experience is not explicitly stated; it is only possible from fixing problems, but not guaranteed. Therefore, without formal education or confirmed hands-on experience, Samantha does not meet the condition for being skilled, supporting the claim that she is not skilled."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The condition for being skilled requires formal education or hands-on experience, but not both. Samantha has apprenticeship training, which is distinct from formal education based on the context. Hands-on experience is not explicitly stated; it is only possible from fixing problems, but not guaranteed. Therefore, without formal education or confirmed hands-on experience, Samantha does not meet the condition for being skilled, supporting the claim that she is not skilled.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Apprenticeship training is widely recognized as a form of hands-on experience, not just theoretical learning. If Samantha has apprenticeship training, she likely has hands-on experience by definition.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The original claim is about Coraline, but this argument discusses Samantha. This creates a relevance problem\u2014the argument may not apply to the actual claim being evaluated.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Not all apprenticeship programs provide substantial hands-on experience; some are more observational or theoretical. Without specifics about Samantha's apprenticeship, we cannot assume it qualifies as hands-on experience.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if the argument is about the wrong person, the logical structure about 'skilled' conditions could still be analogous if similar conditions apply to Coraline. The reasoning might transfer if we assume parallel definitions.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument assumes 'hands-on experience' must be explicitly stated, but it can be inferred from context. Apprenticeship typically involves practical work, and 'fixing problems' suggests applied activity that constitutes experience.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From 'If Samantha either participates in courses or reads manuals (but not both), then she has vocational training.' There is no information that Samantha participates in courses or reads manuals, so vocational training is not inferred. Without vocational training, and given she does not develop creative solutions, the link to learning through practice is weak. This uncertainty in her learning path further supports that she may not have the attributes (formal education or hands-on experience) to be skilled."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From 'If Samantha either participates in courses or reads manuals (but not both), then she has vocational training.' There is no information that Samantha participates in courses or reads manuals, so vocational training is not inferred. Without vocational training, and given she does not develop creative solutions, the link to learning through practice is weak. This uncertainty in her learning path further supports that she may not have the attributes (formal education or hands-on experience) to be skilled.",
+          "cate": "S",
+          "confidence": 0.42,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 discusses Samantha, but the claim is about Koa. The premises and conclusion in A5 are irrelevant to determining whether 'Koa shares local knowledge' is true, false, or uncertain.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the wrong subject (Samantha), A5's internal logic is flawed. The absence of information about Samantha taking courses or reading manuals does not logically prove vocational training is absent; it only means we cannot infer it from that specific conditional. Other paths to vocational training might exist.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly points out a logical flaw in A5's reasoning about Samantha, B1's attack is more fundamental. If the entire argument is about a different person (Samantha) than the subject of the claim (Koa), then A5 provides zero support for any conclusion about Koa, regardless of its internal validity.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.3,
+            "A5": 0.95
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Samantha does not troubleshoot well, which limits her ability to gain hands-on experience from troubleshooting. While she fixes problems, which could lead to hands-on experience, it is not certain. With apprenticeship training and no formal education, and without confirmed hands-on experience, the necessary condition for being skilled is not met, indicating Samantha is not skilled."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Samantha does not troubleshoot well, which limits her ability to gain hands-on experience from troubleshooting. While she fixes problems, which could lead to hands-on experience, it is not certain. With apprenticeship training and no formal education, and without confirmed hands-on experience, the necessary condition for being skilled is not met, indicating Samantha is not skilled.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that troubleshooting is the only way to gain hands-on experience, but apprenticeship training itself often provides substantial hands-on experience regardless of troubleshooting ability.",
+          "confidence": 0.72,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument contains a contradiction: it states Samantha 'fixes problems' but also 'does not troubleshoot well.' Fixing problems inherently involves troubleshooting, so these statements conflict, weakening the logical foundation.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if apprenticeship provides some hands-on experience, the quality and depth might be insufficient for being considered 'skilled' if troubleshooting\u2014a key component\u2014is lacking.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument moves from 'not certain' about hands-on experience to a definitive conclusion ('Samantha is not skilled'), committing a modal scope fallacy\u2014uncertainty in premises doesn't justify a certain negative conclusion.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In practical skill assessment, if hands-on experience cannot be confirmed, the default reasonable position is to conclude the person is not skilled until proven otherwise, making the argument's leap pragmatically valid.",
+          "confidence": 0.6,
+          "attacks": {
+            "B3": 0.55
+          }
+        }
+      ]
+    }
+  }
+}

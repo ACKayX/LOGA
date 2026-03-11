@@ -1,0 +1,237 @@
+{
+  "claim": "Context:'''\nCallen can think creatively. If Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both. If Tyson can think creatively, then she can either create innovative solutions or inspire social change, but not both. Callen inspires social change.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Callen does not create innovative solutions.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states 'Callen inspires social change.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Callen inspires social change.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'If Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both.' Since Callen inspires social change, she cannot also create innovative solutions, making the Claim true.",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context does not explicitly state that Callen can think creatively, only that 'Callen can think creatively' is a premise in a conditional statement. Without confirming Callen can think creatively, the logical implication about her not creating innovative solutions may not apply.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The Context explicitly begins with 'Callen can think creatively.' as a standalone true statement, not as part of a conditional premise. Therefore, the conditional's antecedent is satisfied, and the logical implication holds.",
+          "confidence": 1.0,
+          "attacks": {
+            "C1": 0.95
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context states that if Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context states that if Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Callen inspires social change.' This directly establishes that Callen inspires social change.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The Context states 'Callen can think creatively.' This directly establishes that Callen can think creatively.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 0.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Given B2 (Callen can think creatively) and A2 (the conditional rule from the Context), it follows that Callen can either create innovative solutions or inspire social change, but not both.",
+          "confidence": 1.0,
+          "attacks": {
+            "B2": 0.0
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Given C1 (the exclusive 'or' applies) and B1 (Callen inspires social change), it logically follows that Callen does not create innovative solutions.",
+          "confidence": 1.0,
+          "attacks": {
+            "C1": 0.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the premises, if Callen inspires social change, she cannot also create innovative solutions, as the two outcomes are mutually exclusive."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the premises, if Callen inspires social change, she cannot also create innovative solutions, as the two outcomes are mutually exclusive.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise states that if Callen can think creatively, she can either create innovative solutions or inspire social change, but not both. However, it does not explicitly state that Callen can think creatively; it only says 'Callen can think creatively' as a given fact in the context, which must be accepted as true. Therefore, the argument A3 correctly applies the exclusive 'or' rule from the premise to conclude that since Callen inspires social change, she does not create innovative solutions. There is no logical inconsistency here, so no valid attack exists under the strict definition requiring inconsistency. This placeholder indicates that no attack was generated due to the argument's logical soundness given the context.",
+          "confidence": 0.0,
+          "attacks": {
+            "A3": 0.0
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The logical deduction is direct: given the exclusive 'or' and the fact Callen inspires social change, she does not create innovative solutions."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The logical deduction is direct: given the exclusive 'or' and the fact Callen inspires social change, she does not create innovative solutions.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The exclusive 'or' condition only applies if Callen can think creatively. The context states 'Callen can think creatively,' but this premise could be challenged if 'think creatively' is interpreted differently in the exclusive 'or' condition versus the initial statement.",
+          "confidence": 0.45,
+          "attacks": {
+            "A4": 0.4
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Callen can think creatively' as a factual premise. There is no ambiguity or different interpretation allowed; the context must be treated as fully authoritative and true under all interpretations.",
+          "confidence": 0.98,
+          "attacks": {
+            "B1": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The exclusive 'or' might not be logically exclusive in all interpretations. 'But not both' could be interpreted as 'not necessarily both' rather than 'exactly one,' creating uncertainty about whether both could still occur in some scenarios.",
+          "confidence": 0.3,
+          "attacks": {
+            "A4": 0.25
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In logical discourse, 'either A or B, but not both' is the standard definition of an exclusive disjunction (XOR). The context uses this precise phrasing, so it must be interpreted as exactly one of the two options being true.",
+          "confidence": 0.96,
+          "attacks": {
+            "B2": 0.92
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The Context provides no information suggesting Callen creates innovative solutions; it only confirms she inspires social change."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The Context provides no information suggesting Callen creates innovative solutions; it only confirms she inspires social change.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context explicitly states that if Callen can think creatively, she can either create innovative solutions OR inspire social change, but not both. Since she inspires social change, she cannot create innovative solutions.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context does not explicitly state that Callen can think creatively; it only says 'Callen can think creatively' as a premise. Without verifying this premise independently, we cannot apply the logical rule about 'either/or but not both'.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The Context must be treated as fully authoritative and true under all interpretations. The statement 'Callen can think creatively' is part of the Context, so it must be accepted as true without question.",
+          "confidence": 0.99,
+          "attacks": {
+            "C1": 0.95
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The statement 'Callen does not create innovative solutions' is the logical negation of one disjunct in an exclusive disjunction where the other disjunct is true."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The statement 'Callen does not create innovative solutions' is the logical negation of one disjunct in an exclusive disjunction where the other disjunct is true.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Callen can think creatively. If Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both.' This establishes an exclusive disjunction between creating innovative solutions and inspiring social change. Since the Context explicitly states 'Callen inspires social change,' by the exclusive disjunction rule, Callen cannot create innovative solutions. Therefore, the statement 'Callen does not create innovative solutions' is directly supported by the Context, making A6's reasoning redundant but valid.",
+          "confidence": 0.98,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 does not create logical inconsistency with A6. Both A6 and B1 correctly interpret the exclusive disjunction from the Context and arrive at the same conclusion that Callen does not create innovative solutions. Since B1 supports the same conclusion as A6, it does not attack A6 but rather reinforces it. Therefore, B1 fails to satisfy the strict attack definition of creating logical or semantic inconsistency with its parent A6.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

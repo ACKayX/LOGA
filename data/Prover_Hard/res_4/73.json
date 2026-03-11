@@ -1,0 +1,248 @@
+{
+  "claim": "Jade does not map terrain. Alyssa does not map terrain. If Faith loves the outdoors, then she examines fossils and classifies minerals. Alyssa enjoys hiking. Alyssa does not appreciate nature. Faith does not gain recognition. If Twinkle enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Alyssa does not gain recognition. If Alyssa values exploration, then she loves the outdoors. If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both. If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). If Faith studies geology, then she can either make breakthroughs or gain recognition, but not both. Jade does not uncover the secrets of the Earth. If Alyssa loves the outdoors, then she examines fossils and classifies minerals. If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology. If Jade either examines fossils or maps terrain (but not both), then she analyzes rock formations. Jade enjoys hiking. If Twinkle collects rocks, then she will classify minerals. Alyssa does not uncover the secrets of the Earth. Faith does not collect rocks. If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.Based on the above information, is the following statement true, false, or uncertain? Alyssa makes breakthroughs.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Alyssa enjoys hiking, which means she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. If she loves the outdoors, then she examines fossils and classifies minerals. If she either examines fossils or maps terrain (but not both), then she analyzes rock formations. Since she does not map terrain, she examines fossils, so she analyzes rock formations. Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Alyssa does not uncover the secrets of the Earth, so she must study geology. If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both. Alyssa does not gain recognition, so she must make breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Alyssa enjoys hiking, which means she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. If she loves the outdoors, then she examines fossils and classifies minerals. If she either examines fossils or maps terrain (but not both), then she analyzes rock formations. Since she does not map terrain, she examines fossils, so she analyzes rock formations. Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Alyssa does not uncover the secrets of the Earth, so she must study geology. If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both. Alyssa does not gain recognition, so she must make breakthroughs.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 is completely irrelevant to the claim about Rosalina's loyalty to the state. It discusses a different person (Alyssa) and different predicates (hiking, geology, etc.) that have no logical connection to the premises given about Rosalina.",
+          "confidence": 0.99,
+          "attacks": {
+            "A1": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A1 contains logical errors. For example, 'Alyssa enjoys hiking, which means she either appreciates nature or loves the outdoors (but not both)' is an unjustified exclusive disjunction. Enjoying hiking does not logically entail that exactly one of those two broader categories must be true.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The final conclusion of A1 ('she must make breakthroughs') has no bearing on the claim 'Rosalina is disloyal to the state.' Therefore, A1 provides zero support for either the truth or falsity of the claim about Rosalina.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.95
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Alyssa enjoys hiking, which means she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. If she loves the outdoors, then she examines fossils and classifies minerals. However, the information does not specify that she either examines fossils or maps terrain (but not both) \u2014 it's conditional. She might not meet that condition, so she might not analyze rock formations. Without analyzing rock formations, she might not study geology. If she doesn't study geology, the rule about making breakthroughs or gaining recognition doesn't apply, so she might not make breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Alyssa enjoys hiking, which means she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. If she loves the outdoors, then she examines fossils and classifies minerals. However, the information does not specify that she either examines fossils or maps terrain (but not both) \u2014 it's conditional. She might not meet that condition, so she might not analyze rock formations. Without analyzing rock formations, she might not study geology. If she doesn't study geology, the rule about making breakthroughs or gaining recognition doesn't apply, so she might not make breakthroughs.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is about 'Alyssa' and discusses hiking, nature, fossils, and geology. The claim is about 'Rosalina' and concerns loyalty to the state, authority, influence, and power. The domains are completely unrelated. An argument about Alyssa cannot logically support or oppose a claim about Rosalina.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A2 does not contain any premises or conclusions related to the claim 'Rosalina is disloyal to the state.' It is a non sequitur. For an argument to have a valid category (P or S), its content must be relevant to the claim. Since it is irrelevant, it cannot be assigned a confidence score for supporting the claim's truth or negation.",
+          "confidence": 0.98,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out the irrelevance, one could technically assign a confidence of 0.0 to any irrelevant argument, as it provides zero evidential weight. Therefore, the initial correction of A2's confidence to 0.0 is logically consistent, even if the argument itself is nonsensical in context.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.3
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Alyssa enjoys hiking, so she either appreciates nature or loves the outdoors (but not both). Given she does not appreciate nature, she loves the outdoors. From 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals,' she examines fossils. Since she does not map terrain, the condition 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' is satisfied (she examines fossils, not maps terrain). Thus, she analyzes rock formations. From 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both),' and since she does not uncover the secrets of the Earth, she studies geology. From 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both,' and since she does not gain recognition, she makes breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Alyssa enjoys hiking, so she either appreciates nature or loves the outdoors (but not both). Given she does not appreciate nature, she loves the outdoors. From 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals,' she examines fossils. Since she does not map terrain, the condition 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' is satisfied (she examines fossils, not maps terrain). Thus, she analyzes rock formations. From 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both),' and since she does not uncover the secrets of the Earth, she studies geology. From 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both,' and since she does not gain recognition, she makes breakthroughs.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is about a completely different person (Alyssa) and scenario (hiking, geology) that has no logical connection to the claim about Rosalina and loyalty to the state. Therefore, it provides zero support for determining whether Rosalina is disloyal to the state.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were about Rosalina, its internal logic is flawed. The premise 'Alyssa enjoys hiking, so she either appreciates nature or loves the outdoors (but not both)' is an unjustified exclusive disjunction. Enjoying hiking does not logically force a choice between two closely related concepts, nor does it preclude appreciating nature while loving the outdoors.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The argument B1 is correct in stating A3 is irrelevant, but it does not address the actual claim. The correct approach is to analyze the provided statements about Rosalina directly, ignoring the unrelated A3 argument entirely.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The statement 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' is a conditional. While Alyssa examines fossils, it's not explicitly stated that she does not also map terrain in a way that violates the 'but not both' condition. However, it is given that Alyssa does not map terrain, so the condition holds. But there is another path: 'If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology.' This is an alternative way to study geology. If she doesn't meet this condition, she might not study geology through this path. However, from analyzing rock formations, she studies geology. Yet, the rule about breakthroughs or recognition applies only if she studies geology. Since she studies geology and doesn't gain recognition, she must make breakthroughs. But wait, the rule says 'can either make breakthroughs or gain recognition, but not both.' It doesn't force one or the other; it just says she can't do both. So it's possible she does neither. Therefore, it's uncertain whether she makes breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The statement 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' is a conditional. While Alyssa examines fossils, it's not explicitly stated that she does not also map terrain in a way that violates the 'but not both' condition. However, it is given that Alyssa does not map terrain, so the condition holds. But there is another path: 'If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology.' This is an alternative way to study geology. If she doesn't meet this condition, she might not study geology through this path. However, from analyzing rock formations, she studies geology. Yet, the rule about breakthroughs or recognition applies only if she studies geology. Since she studies geology and doesn't gain recognition, she must make breakthroughs. But wait, the rule says 'can either make breakthroughs or gain recognition, but not both.' It doesn't force one or the other; it just says she can't do both. So it's possible she does neither. Therefore, it's uncertain whether she makes breakthroughs.",
+          "cate": "S",
+          "confidence": 0.42,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is irrelevant to the claim about Augustine. The claim is 'Augustine is a famous scientist,' but A4 discusses Alyssa, examines fossils, maps terrain, and geological studies. There is no logical connection established between Alyssa's scenario and Augustine's situation. The premises provided are entirely about Augustine, not Alyssa.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A4's internal reasoning is flawed. It concludes uncertainty about breakthroughs for Alyssa, but this reasoning cannot be transferred to determine Augustine's fame. The rules governing Augustine are distinct and must be analyzed directly from the given premises about Augustine.",
+          "confidence": 0.88,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, the task might be interpreted as evaluating the logical form of A4's reasoning pattern in isolation. However, the original prompt clearly provides premises about Augustine and asks about Augustine, making any argument about a different person logically invalid for supporting or opposing the claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.2,
+            "B2": 0.15
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the given: Alyssa enjoys hiking \u2192 she either appreciates nature or loves the outdoors (but not both). She does not appreciate nature \u2192 she loves the outdoors. If she loves the outdoors \u2192 she examines fossils and classifies minerals. She does not map terrain. So she examines fossils (and does not map terrain). If she either examines fossils or maps terrain (but not both) \u2192 she analyzes rock formations. This condition is met (examines fossils, not maps terrain) \u2192 she analyzes rock formations. Anyone who analyzes rock formations \u2192 studies geology or uncovers the secrets of the Earth (or both). She does not uncover the secrets of the Earth \u2192 she studies geology. If she studies geology \u2192 she can either make breakthroughs or gain recognition, but not both. She does not gain recognition \u2192 therefore, she must make breakthroughs. This is a logical deduction chain with no gaps."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the given: Alyssa enjoys hiking \u2192 she either appreciates nature or loves the outdoors (but not both). She does not appreciate nature \u2192 she loves the outdoors. If she loves the outdoors \u2192 she examines fossils and classifies minerals. She does not map terrain. So she examines fossils (and does not map terrain). If she either examines fossils or maps terrain (but not both) \u2192 she analyzes rock formations. This condition is met (examines fossils, not maps terrain) \u2192 she analyzes rock formations. Anyone who analyzes rock formations \u2192 studies geology or uncovers the secrets of the Earth (or both). She does not uncover the secrets of the Earth \u2192 she studies geology. If she studies geology \u2192 she can either make breakthroughs or gain recognition, but not both. She does not gain recognition \u2192 therefore, she must make breakthroughs. This is a logical deduction chain with no gaps.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Andy and terraforming. It discusses a different person (Alyssa) and different activities (hiking, fossils, geology) that have no logical connection to the premises or conclusion in the given problem.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A5 contains internal logical errors. For example, 'If she either examines fossils or maps terrain (but not both) \u2192 she analyzes rock formations' is treated as a biconditional, but the original statement might be conditional only. Also, the deduction chain assumes all conditionals are true without verification from the original claim set.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A5 were internally consistent, its conclusion about 'Alyssa must make breakthroughs' has no bearing on whether 'Andy does not oppose terraforming' is true, false, or uncertain. The problem requires reasoning about Andy, Heath, Cassidy, and Kabir using the provided logical statements.",
+          "confidence": 0.95,
+          "attacks": {
+            "B2": 0.3,
+            "B1": 0.2
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The deduction chain relies on the conditional 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' While it's true she examines fossils and does not map terrain, the conditional might not be the only way to analyze rock formations. However, the text doesn't provide other ways. But more critically, the rule 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both' uses 'can either... or...' which in logic often means exclusive or, but it doesn't necessitate that she does one of them; it only says that if she does one, she doesn't do the other. It's possible she does neither. Since it's not forced that she must do one, we cannot conclude she makes breakthroughs. Thus, the statement is uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The deduction chain relies on the conditional 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' While it's true she examines fossils and does not map terrain, the conditional might not be the only way to analyze rock formations. However, the text doesn't provide other ways. But more critically, the rule 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both' uses 'can either... or...' which in logic often means exclusive or, but it doesn't necessitate that she does one of them; it only says that if she does one, she doesn't do the other. It's possible she does neither. Since it's not forced that she must do one, we cannot conclude she makes breakthroughs. Thus, the statement is uncertain.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 incorrectly assumes the claim context involves 'Alyssa' and 'analyzes rock formations.' The actual claim is about Nathalia and whether she is fearless, based on a set of logical premises about Nathalia, Mae, Zainab, and Owen. A6's text references completely different entities and conditions, making it irrelevant to the given claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the entity mismatch, A6's logical critique about 'can either... or...' not forcing a choice is valid in abstract logic, but it is applied to the wrong problem. For the actual claim, we must evaluate Nathalia's fearlessness using the provided premises, not Alyssa's geology activities.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, A6 might have been intended as a meta-argument about logical reasoning under similar conditional structures. However, since the premises are entirely different, the analogy fails, and B1's attack stands.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.3
+          }
+        }
+      ]
+    }
+  }
+}

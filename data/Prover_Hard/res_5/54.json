@@ -1,0 +1,325 @@
+{
+  "claim": "Ariana hides in vegetation. All frogs that live in damp environments either hide in vegetation or burrow into soil. Cairo inhabits forests. If Cairo is a small-sized frog, then he lives on land and eats insects. Cairo does not jump a long distance. Ariana is agile. If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both). Cairo burrows into soil or hibernates underground. Cairo hides in vegetation. If Cairo either breathes air or inhabits forests (but not both), then he lives on land. Cairo is agile. If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both. All frogs that swim efficiently have webbed feet. If Cairo either has powerful legs or uses stream current (but not both), then he can swim efficiently. Cairo lives in a damp environment. If Ariana is agile, then he either swims efficiently or jumps a long distance (but not both). Either Cairo lives on land or lives in water, but not both. If Cairo is small, then he hibernates underground and eats insects. If Galilea has webbed feet, then he either hibernates underground or breathes air, but not both.Based on the above information, is the following statement true, false, or uncertain? Cairo lives in water.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states: 'Either Cairo lives on land or lives in water, but not both.' Since Cairo lives on land (as shown in other arguments), he cannot live in water."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states: 'Either Cairo lives on land or lives in water, but not both.' Since Cairo lives on land (as shown in other arguments), he cannot live in water.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'Cairo lives on land' is not directly established in the context. While several conditional statements exist, none directly prove Cairo lives on land without additional unverified assumptions.",
+          "confidence": 0.72,
+          "attacks": {
+            "A1": 0.78
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From context: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Cairo inhabits forests (directly stated). If Cairo does not breathe air, then the condition 'either breathes air or inhabits forests (but not both)' is satisfied, so he lives on land. The context doesn't specify Cairo's breathing, leaving this uncertain.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From context: 'Cairo inhabits forests.' and 'All frogs that live in damp environments either hide in vegetation or burrow into soil.' Cairo lives in a damp environment (directly stated) and burrows into soil (directly stated). Forest habitats with damp environments are typically terrestrial, supporting Cairo lives on land.",
+          "confidence": 0.79,
+          "attacks": {
+            "B1": 0.82
+          }
+        },
+        {
+          "id": "E1",
+          "text": "From context: 'If Cairo is small, then he hibernates underground and eats insects.' Cairo's size is not specified. Also, 'If Cairo is a small-sized frog, then he lives on land and eats insects.' Both conditionals require Cairo to be small, which is unconfirmed. Thus, Cairo living on land remains unproven.",
+          "confidence": 0.74,
+          "attacks": {
+            "D1": 0.71
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From the context: 'If Cairo is a small-sized frog, then he lives on land and eats insects.' Given Cairo is small (implied by his agility and other traits aligning with small frogs in the context), he lives on land, not in water."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From the context: 'If Cairo is a small-sized frog, then he lives on land and eats insects.' Given Cairo is small (implied by his agility and other traits aligning with small frogs in the context), he lives on land, not in water.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that Cairo is small-sized is not explicitly stated in the context. While Cairo is agile, agility does not necessarily imply small size for frogs. The context only states 'If Cairo is a small-sized frog, then he lives on land and eats insects' - this is a conditional statement, but we cannot confirm the antecedent is true.",
+          "confidence": 0.72,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Cairo's size is uncertain, the context states 'Cairo lives in a damp environment' and 'All frogs that live in damp environments either hide in vegetation or burrow into soil.' Cairo burrows into soil (given), which is consistent with land-dwelling behavior. Additionally, 'Either Cairo lives on land or lives in water, but not both' - if he burrows into soil, he must live on land, not in water.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'Cairo inhabits forests.' Forests are terrestrial environments, not aquatic. This directly supports that Cairo lives on land rather than in water, regardless of his size or other characteristics.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The context says: 'All frogs that live in damp environments either hide in vegetation or burrow into soil.' Cairo lives in a damp environment and burrows into soil (stated: 'Cairo burrows into soil or hibernates underground'), which is a terrestrial adaptation, not an aquatic one."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context says: 'All frogs that live in damp environments either hide in vegetation or burrow into soil.' Cairo lives in a damp environment and burrows into soil (stated: 'Cairo burrows into soil or hibernates underground'), which is a terrestrial adaptation, not an aquatic one.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Cairo burrows into soil or hibernates underground' is a disjunction, not a definite assertion that Cairo burrows into soil. Cairo could instead hibernate underground, which does not directly indicate terrestrial vs. aquatic habitat.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Cairo hibernates underground rather than burrowing, hibernation underground is still a terrestrial adaptation, as aquatic frogs typically hibernate underwater or in mud at the bottom of water bodies, not underground.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states: 'Either Cairo lives on land or lives in water, but not both.' This is an exclusive disjunction, meaning one must be true. The argument A3 assumes 'lives on land' without proving the negation of 'lives in water'.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context also says: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Cairo inhabits forests, so if he does not breathe air (i.e., uses gills or cutaneous respiration in water), then he lives on land. But Cairo is agile, and 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both).' Cairo does not jump a long distance, so he must swim efficiently. 'All frogs that swim efficiently have webbed feet.' So Cairo has webbed feet. 'If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both.' This creates a chain that may support aquatic traits, contradicting A3's certainty.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Cairo inhabits forests (stated explicitly), and forests are primarily terrestrial habitats; while they may contain water bodies, the context's logical structure ties forest inhabitance to land living via other conditions."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Cairo inhabits forests (stated explicitly), and forests are primarily terrestrial habitats; while they may contain water bodies, the context's logical structure ties forest inhabitance to land living via other conditions.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Since Cairo inhabits forests, the condition 'inhabits forests' is true, but the 'but not both' clause means the conditional only triggers if exactly one of 'breathes air' or 'inhabits forests' is true. The truth of 'breathes air' is not established, so the conditional may not apply, weakening the link between forest inhabitance and land living.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context also states: 'Either Cairo lives on land or lives in water, but not both.' This exclusive disjunction means Cairo must be in one habitat. If forest inhabitance strongly implies land living (as A4 argues), then 'lives in water' is false. However, the conditional in B1's attack does not definitively break A4; it only shows uncertainty. The direct evidence from the exclusive disjunction, combined with forest as a terrestrial habitat, supports A4's reasoning.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.82
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context indicates: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Since Cairo inhabits forests, and the 'but not both' condition is satisfied (he does both breathe air and inhabit forests, making the antecedent false), but other premises directly place him on land."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context indicates: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Since Cairo inhabits forests, and the 'but not both' condition is satisfied (he does both breathe air and inhabit forests, making the antecedent false), but other premises directly place him on land.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The antecedent 'Cairo either breathes air or inhabits forests (but not both)' is false because Cairo inhabits forests, and we can reasonably assume frogs breathe air, so he does both. A false antecedent makes the conditional true but does not support any conclusion about Cairo living on land from this specific rule. The argument incorrectly treats this as supporting evidence.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the specific conditional rule doesn't apply, other premises directly establish Cairo lives on land: 'Either Cairo lives on land or lives in water, but not both' combined with 'Cairo burrows into soil or hibernates underground' and 'Cairo hides in vegetation'\u2014activities associated with terrestrial, not aquatic, life.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Cairo does not jump a long distance (stated), and he is agile. From 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both)', since he doesn't jump long, he must swim efficiently. However, efficient swimming (via webbed feet) does not imply living in water, as the context separates land/water living explicitly."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Cairo does not jump a long distance (stated), and he is agile. From 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both)', since he doesn't jump long, he must swim efficiently. However, efficient swimming (via webbed feet) does not imply living in water, as the context separates land/water living explicitly.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "From the context: 'All frogs that swim efficiently have webbed feet.' Since A6 concludes Cairo swims efficiently, he must have webbed feet. Then from 'If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both.' This creates tension with other premises but doesn't directly attack the conclusion about living in water.",
+          "confidence": 0.7,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states: 'Either Cairo lives on land or lives in water, but not both.' A6 argues efficient swimming doesn't imply living in water, but the context also says: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Cairo inhabits forests (stated). If he breathes air, then he lives on land. If he doesn't breathe air, the conditional doesn't apply. This doesn't directly contradict A6's reasoning.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "A6 assumes 'efficient swimming (via webbed feet) does not imply living in water' is supported by the context. However, the context states: 'If Cairo either has powerful legs or uses stream current (but not both), then he can swim efficiently.' This is a conditional for swimming efficiently, not a biconditional. Having webbed feet (from efficient swimming) doesn't force living in water, but the context doesn't explicitly separate them. The land/water dichotomy remains unresolved by A6.",
+          "confidence": 0.72,
+          "attacks": {
+            "A6": 0.68
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "From 'All frogs that swim efficiently have webbed feet' and Cairo's efficient swimming (deduced), he has webbed feet. Yet, 'If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both'\u2014this does not force aquatic life; many land frogs have webbed feet for occasional swimming."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "From 'All frogs that swim efficiently have webbed feet' and Cairo's efficient swimming (deduced), he has webbed feet. Yet, 'If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both'\u2014this does not force aquatic life; many land frogs have webbed feet for occasional swimming.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Cairo swims efficiently, but this is not directly stated. From 'If Cairo either has powerful legs or uses stream current (but not both), then he can swim efficiently'\u2014we don't know if Cairo has powerful legs or uses stream current. Without that, we cannot deduce efficient swimming or webbed feet.",
+          "confidence": 0.85,
+          "attacks": {
+            "A7": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion that 'this does not force aquatic life' is irrelevant to the cate assignment. Even if true, it doesn't support the Claim 'Cairo lives in water'\u2014it actually undermines it by suggesting webbed feet don't imply aquatic life. So A7 should not be P (supporting the Claim).",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the Context: 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both)' and 'Cairo is agile' and 'Cairo does not jump a long distance'\u2014this logically forces Cairo to swim efficiently. Therefore, B1's attack fails because efficient swimming is deducible.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "The context's premises about Cairo (e.g., burrowing into soil, living in damp environments, inhabiting forests) consistently describe terrestrial behaviors, with no statement placing him in water; thus, the claim 'Cairo lives in water' is contradicted by the body of evidence."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The context's premises about Cairo (e.g., burrowing into soil, living in damp environments, inhabiting forests) consistently describe terrestrial behaviors, with no statement placing him in water; thus, the claim 'Cairo lives in water' is contradicted by the body of evidence.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Either Cairo lives on land or lives in water, but not both.' This is a direct disjunction that makes 'Cairo lives in water' a logical possibility, not a contradiction. The absence of explicit water placement does not prove terrestrial life; it only leaves the disjunction unresolved.",
+          "confidence": 0.75,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'Cairo lives in a damp environment. All frogs that live in damp environments either hide in vegetation or burrow into soil. Cairo burrows into soil or hibernates underground. Cairo hides in vegetation.' These behaviors (burrowing, hiding in vegetation) are fully consistent with terrestrial frogs. Combined with 'inhabits forests' (typically terrestrial), the evidence strongly points to land, making 'lives in water' the less likely disjunct.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context also states: 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land.' Since Cairo inhabits forests, the 'but not both' condition means he cannot also breathe air for this conditional to apply. Without knowing his breathing, this conditional does not force him onto land. Thus, the terrestrial evidence is not logically conclusive.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

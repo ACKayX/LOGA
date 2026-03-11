@@ -1,0 +1,197 @@
+{
+  "claim": "If Dr. Alaina Thompson either funds medical research or develops new treatments (but not both), then she combats serious diseases. Alaina receives a noble award. Dr. Marleigh Thompson does not develop new treatments. Alaina does not gain international recognition. Dr. Marleigh Thompson funds medical research. Dr. Alaina Thompson does not develop new treatments. If Dr. Alaina Thompson is an advocate for patients' rights, then she does not pioneer a medical breakthrough, and vice versa. If Dr. Alaina Thompson combats serious diseases, then she either advocates for patients' rights or gains international recognition (or both). Dr. Alaina Thompson contributes to medicine or makes groundbreaking discoveries. If Dr. Alaina Thompson cares about people and speaks out against injustice, then she advocates for patients' rights. Dr. Alaina Thompson funds medical research. If Dr. Alaina Thompson is dedicated to cancer research, then she can either make groundbreaking discoveries or improve patients' lives, but not both. Alaina does not contribute to medicine. Dr. Alaina Thompson works in healthcare or combats serious diseases. If Dr. Alaina Thompson receives a noble award, then she is either dedicated to cancer research or pioneers a medical breakthrough, but not both.Based on the above information, is the following statement true, false, or uncertain? Dr. Alaina Thompson does not improve patients' lives.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the given statements, we know 'Alaina does not contribute to medicine' and 'If Dr. Alaina Thompson is dedicated to cancer research, then she can either make groundbreaking discoveries or improve patients' lives, but not both.' Since she does not contribute to medicine, and she either makes groundbreaking discoveries or improves patients' lives exclusively if dedicated to cancer research, the available evidence points toward her not improving patients' lives."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the given statements, we know 'Alaina does not contribute to medicine' and 'If Dr. Alaina Thompson is dedicated to cancer research, then she can either make groundbreaking discoveries or improve patients' lives, but not both.' Since she does not contribute to medicine, and she either makes groundbreaking discoveries or improves patients' lives exclusively if dedicated to cancer research, the available evidence points toward her not improving patients' lives.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 is irrelevant to the claim about Kahlani preferring mass-produced beer. The argument discusses 'Alaina' and 'Dr. Alaina Thompson,' who are not mentioned in the provided premises about Kahlani. Therefore, it provides no logical support for or against the claim regarding Kahlani.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance of A1's content, the task requires building an attack tree starting from A1. Therefore, counter-arguments should engage with A1's internal logic, even if its premise references are flawed.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch and assume A1 is about Kahlani, its logical structure is flawed. The premise 'she does not contribute to medicine' does not logically entail 'she does not improve patients' lives' from the given conditional. The conditional states that IF dedicated to cancer research, THEN an exclusive disjunction follows. Without establishing dedication to cancer research, no conclusion about improving lives can be drawn.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A1 might be interpreted as using a contrapositive or background knowledge: if someone improves patients' lives, they contribute to medicine. Therefore, not contributing to medicine implies not improving lives. This is a plausible implicit premise, though not stated in the provided text.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The implicit premise in C2 is not valid in all contexts. One could improve patients' lives through non-medical means (e.g., emotional support, administrative efficiency). Therefore, the inference 'not contribute to medicine \u2192 not improve patients' lives' remains weak and unsupported.",
+          "confidence": 0.75,
+          "attacks": {
+            "C2": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The statement 'Dr. Alaina Thompson contributes to medicine or makes groundbreaking discoveries' is given, but it is also stated 'Alaina does not contribute to medicine.' Therefore, she must make groundbreaking discoveries. Since making groundbreaking discoveries and improving patients' lives are mutually exclusive under the condition of being dedicated to cancer research, and she makes groundbreaking discoveries, she cannot improve patients' lives."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The statement 'Dr. Alaina Thompson contributes to medicine or makes groundbreaking discoveries' is given, but it is also stated 'Alaina does not contribute to medicine.' Therefore, she must make groundbreaking discoveries. Since making groundbreaking discoveries and improving patients' lives are mutually exclusive under the condition of being dedicated to cancer research, and she makes groundbreaking discoveries, she cannot improve patients' lives.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is entirely irrelevant to the given claim about Hunter the fisherman. It discusses a different person (Dr. Alaina Thompson) and a different logical scenario, making it logically invalid for the task of determining if 'Hunter is an unsuccessful fisherman' is true, false, or uncertain.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A2 were relevant, its internal logic is flawed. It assumes a mutual exclusivity between 'making groundbreaking discoveries' and 'improving patients' lives' under dedication to cancer research, which is not a universally valid premise. Many groundbreaking discoveries directly lead to improved patient outcomes.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "It is given that 'If Dr. Alaina Thompson receives a noble award, then she is either dedicated to cancer research or pioneers a medical breakthrough, but not both.' Since 'Alaina receives a noble award' is true, she is either dedicated to cancer research or pioneers a medical breakthrough. If she pioneers a medical breakthrough, then from 'If Dr. Alaina Thompson is an advocate for patients' rights, then she does not pioneer a medical breakthrough, and vice versa,' she cannot be an advocate for patients' rights. This does not directly confirm she does not improve patients' lives, but combined with other statements, it supports the conclusion."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "It is given that 'If Dr. Alaina Thompson receives a noble award, then she is either dedicated to cancer research or pioneers a medical breakthrough, but not both.' Since 'Alaina receives a noble award' is true, she is either dedicated to cancer research or pioneers a medical breakthrough. If she pioneers a medical breakthrough, then from 'If Dr. Alaina Thompson is an advocate for patients' rights, then she does not pioneer a medical breakthrough, and vice versa,' she cannot be an advocate for patients' rights. This does not directly confirm she does not improve patients' lives, but combined with other statements, it supports the conclusion.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 references 'Dr. Alaina Thompson' and statements about her, but the original claim is about 'Samantha', not Alaina. This is a complete non sequitur\u2014the premises and conclusion in A3 are irrelevant to the claim about Samantha.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the name mismatch and treat A3 as potentially about Samantha, its logical structure still fails to address the actual claim. The claim asks whether 'Samantha does not gain recognition for her skills' is true/false/uncertain. A3 discusses noble awards, medical breakthroughs, and patient advocacy\u2014none of which appear in the given information about Samantha.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The original problem provides 12 specific statements about Samantha. A valid argument must use only those given statements. A3 introduces entirely different content (Dr. Alaina Thompson, noble awards, cancer research, medical breakthroughs, patient advocacy), so it cannot logically support any conclusion about Samantha.",
+          "confidence": 0.98,
+          "attacks": {
+            "A3": 0.95
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "From 'Dr. Alaina Thompson funds medical research' and 'If Dr. Alaina Thompson either funds medical research or develops new treatments (but not both), then she combats serious diseases,' since she funds medical research and it is stated 'Dr. Alaina Thompson does not develop new treatments,' she combats serious diseases. Then from 'If Dr. Alaina Thompson combats serious diseases, then she either advocates for patients' rights or gains international recognition (or both),' and 'Alaina does not gain international recognition,' she must advocate for patients' rights. If she advocates for patients' rights, then from 'If Dr. Alaina Thompson is an advocate for patients' rights, then she does not pioneer a medical breakthrough, and vice versa,' she does not pioneer a medical breakthrough. Since she receives a noble award and does not pioneer a medical breakthrough, from the noble award condition, she must be dedicated to cancer research. Given she is dedicated to cancer research and makes groundbreaking discoveries (as derived), she cannot improve patients' lives."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From 'Dr. Alaina Thompson funds medical research' and 'If Dr. Alaina Thompson either funds medical research or develops new treatments (but not both), then she combats serious diseases,' since she funds medical research and it is stated 'Dr. Alaina Thompson does not develop new treatments,' she combats serious diseases. Then from 'If Dr. Alaina Thompson combats serious diseases, then she either advocates for patients' rights or gains international recognition (or both),' and 'Alaina does not gain international recognition,' she must advocate for patients' rights. If she advocates for patients' rights, then from 'If Dr. Alaina Thompson is an advocate for patients' rights, then she does not pioneer a medical breakthrough, and vice versa,' she does not pioneer a medical breakthrough. Since she receives a noble award and does not pioneer a medical breakthrough, from the noble award condition, she must be dedicated to cancer research. Given she is dedicated to cancer research and makes groundbreaking discoveries (as derived), she cannot improve patients' lives.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 references premises about 'Dr. Alaina Thompson' and 'Alaina' that are completely absent from the given claim about Lambchop, Jase, Hallie, and Buster. The claim contains no information about medical research, diseases, patients' rights, noble awards, or cancer research. Therefore, A4 is irrelevant to determining whether 'Jase is cowardly' and provides zero logical support.",
+          "confidence": 0.99,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A4's internal logic is flawed. It assumes 'makes groundbreaking discoveries (as derived)' but never derives this from the given premises. It also concludes 'she cannot improve patients' lives' without a clear logical chain from the provided statements. The reasoning is non-sequitur.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Considering all logical deductions: Alaina funds medical research, does not develop new treatments, combats serious diseases, does not gain international recognition, advocates for patients' rights, does not pioneer a medical breakthrough, receives a noble award, is dedicated to cancer research, makes groundbreaking discoveries, and does not contribute to medicine. The condition for being dedicated to cancer research explicitly states she can either make groundbreaking discoveries or improve patients' lives, but not both. Since she makes groundbreaking discoveries, she does not improve patients' lives."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Considering all logical deductions: Alaina funds medical research, does not develop new treatments, combats serious diseases, does not gain international recognition, advocates for patients' rights, does not pioneer a medical breakthrough, receives a noble award, is dedicated to cancer research, makes groundbreaking discoveries, and does not contribute to medicine. The condition for being dedicated to cancer research explicitly states she can either make groundbreaking discoveries or improve patients' lives, but not both. Since she makes groundbreaking discoveries, she does not improve patients' lives.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text references 'Alaina' and medical research topics, which are completely unrelated to the given claim about Jase, Lambchop, Hallie, and Buster. This constitutes a fundamental relevance failure.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, the argument's internal logic is about medical research dedication, which has no connection to determining whether Jase is cowardly based on the provided premises about risk, courage, authority, and personal gain.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "claim": "Consider the following background information: A 23-year-old college student presents to the clinic with a history of intermittent chest discomfort. He reports that, about once per month for the past 8 or 9 months, he\"s had episodes of \"feeling like my chest is going to explode.\" During these episodes, he also feels shortness of breath, feels shakiness throughout his arms and legs, and sweats so heavily that he needs to change his shirt. He is unsure of any clear precipitating factors but thinks they may occur more often around important exams or when big school projects are due. He shares that, as these episodes continue to recur, he has had mounting anxiety about having one when he is in class or at a restaurant. As a result, he is leaving the house less and less. He has no past medical history; the physical exam is unremarkable.\n\nGiven the background information the following is corrrect: Lorazepam is the best medication for the long-term management of this patient\"s condition.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Lorazepam is a benzodiazepine, which is not recommended for long-term management due to risks of dependence, tolerance, and cognitive impairment."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Lorazepam is a benzodiazepine, which is not recommended for long-term management due to risks of dependence, tolerance, and cognitive impairment.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Lorazepam can be effective for short-term symptom relief while initiating long-term treatments like SSRIs.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "SSRIs have a delayed onset of action, leaving the patient vulnerable without short-term relief like lorazepam.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Benzodiazepines like lorazepam are contraindicated in patients with a history of substance abuse, which is not ruled out here.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The patient has no reported history of substance abuse, making this concern speculative.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Selective serotonin reuptake inhibitors (SSRIs) or serotonin-norepinephrine reuptake inhibitors (SNRIs) are first-line treatments for panic disorder, which this patient likely has, due to their efficacy and safety profile."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Selective serotonin reuptake inhibitors (SSRIs) or serotonin-norepinephrine reuptake inhibitors (SNRIs) are first-line treatments for panic disorder, which this patient likely has, due to their efficacy and safety profile.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Lorazepam, a benzodiazepine, provides rapid relief for acute panic attacks but is not recommended for long-term use due to risks of dependence and tolerance.",
+          "confidence": 0.8,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Cognitive-behavioral therapy (CBT) is equally effective as SSRIs/SNRIs for panic disorder and avoids pharmacological side effects.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Benzodiazepines like lorazepam can be used adjunctively with SSRIs/SNRIs during the initial weeks before the latter take full effect.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Cognitive-behavioral therapy (CBT) is a well-established, non-pharmacological treatment for panic disorder and is often preferred over long-term benzodiazepine use."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Cognitive-behavioral therapy (CBT) is a well-established, non-pharmacological treatment for panic disorder and is often preferred over long-term benzodiazepine use.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Lorazepam provides immediate relief for acute panic attacks, which can be crucial for patients with severe symptoms.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Immediate relief from benzodiazepines like lorazepam can reduce the patient's avoidance behaviors more quickly than CBT alone.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Long-term use of benzodiazepines can lead to dependence and tolerance, which outweighs the benefits of immediate relief.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75,
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Combining CBT with short-term benzodiazepine use can provide both immediate relief and long-term management without the risks of dependence.",
+          "confidence": 0.85,
+          "attacks": {
+            "D1": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Long-term use of lorazepam can lead to withdrawal symptoms and rebound anxiety, making it unsuitable for chronic management of panic disorder."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Long-term use of lorazepam can lead to withdrawal symptoms and rebound anxiety, making it unsuitable for chronic management of panic disorder.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Lorazepam is effective for acute symptom relief in panic disorder, which can help the patient regain functionality.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Alternative medications like SSRIs have better long-term efficacy and safety profiles for panic disorder.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Cognitive-behavioral therapy (CBT) is a non-pharmacological alternative with proven long-term benefits for panic disorder.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The patient's avoidance behavior suggests a need for therapy addressing maladaptive coping mechanisms, which lorazepam does not provide."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The patient's avoidance behavior suggests a need for therapy addressing maladaptive coping mechanisms, which lorazepam does not provide.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Lorazepam can provide immediate symptom relief for acute episodes, which may help the patient engage in therapy more effectively.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Long-term use of lorazepam can lead to dependence and tolerance, which may exacerbate the patient's condition.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Combining lorazepam with cognitive-behavioral therapy (CBT) can address both immediate symptoms and long-term coping strategies.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.6,
+            "C1": 0.8
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Clinical guidelines for panic disorder emphasize the use of SSRIs or SNRIs over benzodiazepines like lorazepam for long-term treatment due to better outcomes and fewer side effects."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Clinical guidelines for panic disorder emphasize the use of SSRIs or SNRIs over benzodiazepines like lorazepam for long-term treatment due to better outcomes and fewer side effects.",
+          "cate": "S",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Benzodiazepines like lorazepam provide immediate relief from acute panic symptoms, which can be crucial for patient adherence and initial stabilization.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Long-term use of benzodiazepines can lead to dependence, tolerance, and withdrawal symptoms, which outweigh the benefits of immediate relief.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Some patients may not respond adequately to SSRIs or SNRIs, making benzodiazepines a necessary alternative for effective symptom management.",
+          "confidence": 0.68,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Combination therapy with SSRIs and short-term benzodiazepines can be used initially, followed by gradual tapering of benzodiazepines to minimize risks.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

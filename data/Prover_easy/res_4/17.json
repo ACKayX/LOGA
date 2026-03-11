@@ -1,0 +1,85 @@
+{
+  "claim": "Context:'''\nLarry is either fearful of storms or he is thrilled by storms, but not both. Larry is not fearful of storms.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Larry is thrilled by storms.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states 'Larry is either fearful of storms or he is thrilled by storms, but not both.' This is an exclusive disjunction, meaning exactly one of the two options must be true."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Larry is either fearful of storms or he is thrilled by storms, but not both.' This is an exclusive disjunction, meaning exactly one of the two options must be true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context also states 'Larry is not fearful of storms.' This directly supports the claim that Larry is thrilled by storms, as per the exclusive disjunction.",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context explicitly states 'Larry is not fearful of storms.' This directly eliminates the first option in the exclusive disjunction."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context explicitly states 'Larry is not fearful of storms.' This directly eliminates the first option in the exclusive disjunction.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the exclusive disjunction and the negation of one disjunct, the other disjunct must be true. Therefore, Larry must be thrilled by storms."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive disjunction and the negation of one disjunct, the other disjunct must be true. Therefore, Larry must be thrilled by storms.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The logical structure is a classic case of disjunctive syllogism: (P or Q, not P) therefore Q. Applying this to the context yields the conclusion that Larry is thrilled by storms."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The logical structure is a classic case of disjunctive syllogism: (P or Q, not P) therefore Q. Applying this to the context yields the conclusion that Larry is thrilled by storms.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The disjunctive syllogism is only valid if the disjunction is exclusive ('or' meaning exactly one). The context states 'but not both,' confirming exclusivity. Therefore, the logical structure is sound and no attack is logically valid.",
+          "confidence": 1.0,
+          "attacks": {
+            "A4": 0.0
+          }
+        }
+      ]
+    }
+  }
+}

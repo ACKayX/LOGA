@@ -1,0 +1,227 @@
+{
+  "claim": "If Coraline is a botanist, then she either focuses on flora or explores deserts, but not both. Coraline either publishes research papers or develops new technologies, but not both. If someone explores deserts, then they do not necessarily study cacti, and if someone studies cacti, then they do not necessarily explore deserts. Coraline either works independently or collaborates with colleagues, but not both. Coraline teaches students or publishes research papers. Coraline is a botanist. If Coraline studies cacti, then she can either develop new technologies or inspire new generations, but not both. Coraline either collaborates with colleagues or publishes research papers, but not both. Coraline does not work independently. Coraline focuses on flora.Based on the above information, is the following statement true, false, or uncertain? Coraline does not inspire new generations.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, Coraline is a botanist and focuses on flora. Since she focuses on flora, she does not explore deserts, as the context states she either focuses on flora or explores deserts, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, Coraline is a botanist and focuses on flora. Since she focuses on flora, she does not explore deserts, as the context states she either focuses on flora or explores deserts, but not both.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 does not directly address the Claim 'Coraline does not inspire new generations.' It only establishes that Coraline focuses on flora and not deserts, which is a preliminary step but insufficient to prove the Claim on its own.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A1 is insufficient alone, the full logical chain from the context can be completed: from 'focuses on flora' and the given exclusivities, we can deduce Coraline publishes research papers, does not develop new technologies, and therefore (from the final conditional) if she studied cacti she could not inspire new generations; but the context does not state she studies cacti, so the Claim remains uncertain.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context states Coraline does not work independently. Since she either works independently or collaborates with colleagues, but not both, she must collaborate with colleagues."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context states Coraline does not work independently. Since she either works independently or collaborates with colleagues, but not both, she must collaborate with colleagues.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Coraline either collaborates with colleagues or publishes research papers, but not both.' If A2 concludes she collaborates with colleagues, then she cannot publish research papers. However, the context also states 'Coraline teaches students or publishes research papers.' If she does not publish research papers, she must teach students. This creates no direct logical inconsistency with A2's conclusion about collaboration, so this does not constitute a valid attack under strict inconsistency requirements.",
+          "confidence": 0.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Coraline collaborates with colleagues, and the context states she either collaborates with colleagues or publishes research papers, but not both. Therefore, she does not publish research papers."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Coraline collaborates with colleagues, and the context states she either collaborates with colleagues or publishes research papers, but not both. Therefore, she does not publish research papers.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Coraline teaches students or publishes research papers.' This is an inclusive OR, meaning at least one must be true. If Coraline does not publish research papers, she must teach students. However, the argument A3 does not address whether she teaches students, leaving its conclusion incomplete and potentially misleading about her activities.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Coraline does not work independently.' Combined with 'Coraline either works independently or collaborates with colleagues, but not both,' it logically forces that she must collaborate with colleagues. Therefore, the premise 'Coraline collaborates with colleagues' in A3 is necessarily true, making the argument's core deduction sound regardless of the teaching point.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.88
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Coraline teaches students or publishes research papers, and since she does not publish research papers, she must teach students."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Coraline teaches students or publishes research papers, and since she does not publish research papers, she must teach students.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Coraline does not publish research papers' is not established by the given information. The claim states 'Coraline either publishes research papers or develops new technologies, but not both' and 'Coraline either collaborates with colleagues or publishes research papers, but not both', but does not definitively state she does not publish.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the claim: 'Coraline either collaborates with colleagues or publishes research papers, but not both' and 'Coraline does not work independently'. Since she doesn't work independently, she must collaborate with colleagues. Therefore, by the exclusive 'or', she does NOT publish research papers.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Coraline either publishes research papers or develops new technologies, but not both. Since she does not publish research papers, she must develop new technologies."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Coraline either publishes research papers or develops new technologies, but not both. Since she does not publish research papers, she must develop new technologies.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'she does not publish research papers' is not established from the given information. The claim states 'Coraline teaches students or publishes research papers' (inclusive or), and 'Coraline either collaborates with colleagues or publishes research papers, but not both'. However, we know 'Coraline does not work independently' and 'Coraline either works independently or collaborates with colleagues, but not both', so she must collaborate with colleagues. Since she collaborates with colleagues and 'Coraline either collaborates with colleagues or publishes research papers, but not both', she must NOT publish research papers. Therefore, the premise is actually correct, and A5's conclusion 'she must develop new technologies' follows.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Coraline develops new technologies, this does not directly support that 'Coraline does not inspire new generations'. The claim to evaluate is 'Coraline does not inspire new generations'. A5 attempts to support the negation of this (cate:P means support truth of claim, but A5 actually argues she develops tech, which is unrelated to inspiring generations). The logical path from 'develops new technologies' to 'does not inspire new generations' is missing. From the claim: 'If Coraline studies cacti, then she can either develop new technologies or inspire new generations, but not both.' We don't know if she studies cacti. So A5's conclusion doesn't logically connect to the target claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.95
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Coraline focuses on flora, but the context does not specify she studies cacti. The statement about inspiring new generations is conditional on studying cacti, which is not established, so it cannot be concluded she inspires new generations."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Coraline focuses on flora, but the context does not specify she studies cacti. The statement about inspiring new generations is conditional on studying cacti, which is not established, so it cannot be concluded she inspires new generations.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim is 'Coraline does not inspire new generations.' A6 argues this cannot be concluded because studying cacti is not established. However, from the context: 'If Coraline studies cacti, then she can either develop new technologies or inspire new generations, but not both.' Since 'studying cacti' is not established, the conditional does not apply, leaving the truth value of 'inspires new generations' undetermined. Thus, A6's conclusion that 'it cannot be concluded she inspires new generations' actually supports the claim's negation (i.e., the claim is false or uncertain), not the claim itself. Therefore, A6's reasoning is internally inconsistent with its assigned cate.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.8
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "If Coraline studied cacti, she could either develop new technologies or inspire new generations, but not both. Since she develops new technologies, if she studied cacti, she would not inspire new generations. However, it is not confirmed she studies cacti, but the claim 'Coraline does not inspire new generations' remains consistent with the available information."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "If Coraline studied cacti, she could either develop new technologies or inspire new generations, but not both. Since she develops new technologies, if she studied cacti, she would not inspire new generations. However, it is not confirmed she studies cacti, but the claim 'Coraline does not inspire new generations' remains consistent with the available information.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes Coraline develops new technologies. From the premises: 'Coraline either publishes research papers or develops new technologies, but not both' and 'Coraline teaches students or publishes research papers' and 'Coraline either collaborates with colleagues or publishes research papers, but not both' and 'Coraline does not work independently' (which implies she collaborates with colleagues). Since she collaborates, she does not publish research papers. Since she does not publish, she must develop new technologies. However, this conclusion relies on the 'or' being exclusive, which is stated. So the premise 'she develops new technologies' is actually supported. But the argument's weakness is that it then uses 'if she studied cacti' which is not established. The argument's conclusion that the claim is consistent is true, but the reasoning path is partially flawed because it introduces an unnecessary conditional about cacti study.",
+          "confidence": 0.75,
+          "attacks": {
+            "A7": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 misrepresents A7. A7 does not assume Coraline develops new technologies as an unsupported premise; it correctly derives it from the given statements. The real weakness of A7 is that it tries to link cacti study to the conclusion unnecessarily. However, since the claim 'Coraline does not inspire new generations' does not depend on whether she studies cacti (it could be true regardless), A7's consistency statement is valid. B1's attack focuses on a minor flaw in exposition rather than logical inconsistency.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "P",
+        "text": "All derived facts from the context (focuses on flora, collaborates, teaches, develops technologies) do not include inspiring new generations, and no rule forces her to inspire new generations, supporting that she does not."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "All derived facts from the context (focuses on flora, collaborates, teaches, develops technologies) do not include inspiring new generations, and no rule forces her to inspire new generations, supporting that she does not.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

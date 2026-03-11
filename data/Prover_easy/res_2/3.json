@@ -1,0 +1,322 @@
+{
+  "claim": "Context:'''\nButtercup has recovered from an illness. If Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Buttercup does not serve as a therapy horse.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Buttercup performs heavy work.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states that if Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Since it is given that Buttercup has recovered, this conditional applies."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states that if Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Since it is given that Buttercup has recovered, this conditional applies.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 correctly applies the conditional but doesn't complete the logical deduction to reach the conclusion 'Buttercup performs heavy work.' It only establishes that the conditional premise is active.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states 'Buttercup does not serve as a therapy horse.' Combined with the conditional established by A1, this directly leads to the conclusion that Buttercup performs heavy work, making A1's support for the claim correct and complete.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The phrase 'but not both' in the conditional creates an exclusive OR (XOR) relationship. If Buttercup has recovered, she must choose one role or the other, but cannot choose neither. The context doesn't explicitly rule out the possibility she chooses neither, which could make the conclusion uncertain.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In logical terms, 'either A or B, but not both' (exclusive OR) means exactly one of A or B must be true if the overall statement is true. Given the conditional 'If recovered, then (heavy work XOR therapy horse)' is true and 'recovered' is true, the XOR must be true. Therefore, she cannot choose neither; one must be true.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.85
+          }
+        },
+        {
+          "id": "B4",
+          "text": "The argument A1 assumes the conditional statement is a material implication with no exceptions. In real-world scenarios, recovery from an illness might not fully restore capability for heavy work, even if the conditional rule exists. There could be hidden medical restrictions.",
+          "confidence": 0.55,
+          "attacks": {
+            "A1": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The task is to evaluate logical truth based solely on the given context, not real-world veterinary knowledge. The context presents the conditional as a definitive logical rule. Introducing external assumptions about medical restrictions violates the scope of the problem.",
+          "confidence": 0.9,
+          "attacks": {
+            "B4": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "It is explicitly stated that Buttercup does not serve as a therapy horse. Given the exclusive 'or' condition, if she does not serve as a therapy horse, the only remaining possibility is that she performs heavy work."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "It is explicitly stated that Buttercup does not serve as a therapy horse. Given the exclusive 'or' condition, if she does not serve as a therapy horse, the only remaining possibility is that she performs heavy work.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The exclusive 'or' condition states she can perform heavy work OR serve as a therapy horse, but not both. However, it does not guarantee she must do one of them. The premise only says 'if recovered, then she can either...' This is a conditional statement about capability, not a guarantee of actual performance. She might be capable of both but choose to do neither.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the exclusive 'or' is exhaustive. The text says 'can either perform heavy work or serve as a therapy horse, but not both.' The word 'can' indicates possibility, not necessity. Therefore, not being a therapy horse does not logically force her to perform heavy work; she might simply be resting or doing light duties.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In the context of recovery from illness, the statement 'if recovered... then she can either...' strongly implies these are the two intended roles or outcomes considered by the authority making the statement. Given the practical context, it would be odd to state an exclusive 'or' between two options if a third 'do nothing' option was readily available and intended.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7,
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The logical structure is: If Recovered, then (HeavyWork XOR TherapyHorse). We know Not TherapyHorse. From (P XOR Q) and Not Q, we can deduce P. Therefore, A2's deduction is formally valid under the interpretation that the 'can... but not both' clause creates a logical exclusive disjunction (XOR) that is true.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.88,
+            "B2": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The formal validity in B3 depends on interpreting the natural language 'can either... or... but not both' as a material exclusive disjunction (XOR) that is asserted to be true. However, in logic, 'can' is a modal operator (possibility). The statement might be read as: If Recovered, then \u25ca(HW) & \u25ca(TH) & \u00ac\u25ca(HW & TH). From \u00acTH and this, we cannot deduce HW, only that HW is still possible.",
+          "confidence": 0.8,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The logical structure is: Recovered \u2192 (HeavyWork XOR TherapyHorse). With Recovered true and TherapyHorse false, HeavyWork must be true to satisfy the exclusive disjunction."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The logical structure is: Recovered \u2192 (HeavyWork XOR TherapyHorse). With Recovered true and TherapyHorse false, HeavyWork must be true to satisfy the exclusive disjunction.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The XOR interpretation might be incorrect. The text says 'can either perform heavy work or serve as a therapy horse, but not both' - this could mean she has the option to do one or the other exclusively, not that she must do one. The logical implication might be: Recovered \u2192 (HeavyWork \u2228 TherapyHorse) \u2227 \u00ac(HeavyWork \u2227 TherapyHorse). With TherapyHorse false, HeavyWork is possible but not necessary.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premise 'Buttercup has recovered from an illness' might not be established as a definite fact in the context. The statement begins with 'If Buttercup has recovered...' which suggests it's conditional, not asserted as true.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context clearly states 'Buttercup has recovered from an illness' as the first sentence, establishing it as a premise. The conditional statement that follows builds on this established fact.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even with XOR logic, there's a third possibility: Buttercup might do neither heavy work nor therapy. The exclusive disjunction only prohibits doing both simultaneously, but doesn't force her to do either one.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In propositional logic, 'P XOR Q' means exactly one of P or Q must be true. If P XOR Q is true and Q is false, then P must be true. There's no 'neither' option in XOR unless the entire XOR statement is false.",
+          "confidence": 0.92,
+          "attacks": {
+            "B3": 0.88
+          }
+        },
+        {
+          "id": "D1",
+          "text": "However, natural language 'can either A or B, but not both' often implies optionality rather than logical necessity. In practical horse management, recovery from illness doesn't automatically mandate specific work assignments.",
+          "confidence": 0.68,
+          "attacks": {
+            "C2": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "There is no information suggesting Buttercup cannot perform heavy work or that any other conditions apply. The premises directly lead to the conclusion that she performs heavy work."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "There is no information suggesting Buttercup cannot perform heavy work or that any other conditions apply. The premises directly lead to the conclusion that she performs heavy work.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premises state 'if recovered, then she can either perform heavy work OR serve as therapy, but not both.' This is a disjunction with exclusive 'or', meaning at least one must be true. Since she does not serve as therapy, by disjunctive syllogism, she must perform heavy work. A4's reasoning is essentially correct but could be made more explicit.",
+          "confidence": 0.92,
+          "attacks": {
+            "A4": 0.1
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the conditional 'if recovered then (heavy work XOR therapy)' is true and that 'not therapy' is true. However, the context does not explicitly guarantee Buttercup has actually recovered; it only says 'Buttercup has recovered from an illness' as part of the given context. If we treat that as a premise, then the deduction is valid. A4's statement 'premises directly lead' is accurate.",
+          "confidence": 0.88,
+          "attacks": {
+            "A4": 0.05
+          }
+        },
+        {
+          "id": "B3",
+          "text": "A4 says 'no information suggesting Buttercup cannot perform heavy work'\u2014this is true, but more importantly, the logical structure forces her to perform heavy work given the premises. So A4 understates the logical necessity; it's not just 'no info against,' it's 'necessarily follows.'",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.15
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1, B2, B3 are not really attacking A4; they are clarifying or strengthening it. A genuine attack would challenge whether the exclusive-or interpretation is correct, or whether 'can either perform heavy work or serve as therapy' means she is able to do them, not that she actually does one. Perhaps she can do heavy work but chooses not to.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7,
+            "B2": 0.6,
+            "B3": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1 raises a valid point: 'can either perform heavy work or serve as therapy' might express capability, not actuality. The conclusion 'Buttercup performs heavy work' requires the inference from capability to actual performance, which is not logically necessary unless additional premise (like 'she must do one of them') is assumed. The original context's 'but not both' suggests mutual exclusivity of roles, not obligation to take one.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.3,
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "E1",
+          "text": "D1's interpretation is plausible but less natural. In context, the statement is part of a logical puzzle where typically 'can either A or B' in such conditionals is read as 'does either A or B' for the purpose of deductive conclusion. The question asks if the statement is true based on the information; given standard logical interpretation, it is true.",
+          "confidence": 0.78,
+          "attacks": {
+            "D1": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The context provides all necessary conditions: recovery is confirmed, the exclusive choice is given, and therapy horse role is negated. Therefore, performing heavy work is a necessary consequence."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context provides all necessary conditions: recovery is confirmed, the exclusive choice is given, and therapy horse role is negated. Therefore, performing heavy work is a necessary consequence.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'she can either perform heavy work or serve as a therapy horse, but not both.' This is an exclusive OR, meaning performing heavy work is only one possibility. The negation of therapy horse doesn't automatically guarantee heavy work - there could be a third unstated option.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly frames the choice as binary: 'either perform heavy work or serve as a therapy horse.' No third option is mentioned. In logical reasoning with binary exclusive disjunction, \u00ac(therapy horse) \u2192 (heavy work) is valid.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if the exclusive OR is binary, the context doesn't specify that Buttercup must choose one immediately. Recovery allows the possibility, but doesn't necessitate immediate action. She could be in a transitional period choosing neither temporarily.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The question asks about the statement 'Buttercup performs heavy work' based on the given information. The context provides necessary and sufficient conditions for deduction, not temporal sequencing. The logical conclusion follows from the premises regardless of timing.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The phrase 'can either perform...' indicates capability, not actuality. Just because she can perform heavy work doesn't mean she does perform it. Many capable individuals don't exercise their capabilities.",
+          "confidence": 0.78,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C3",
+          "text": "In formal logic problems like this, 'can' in the premise combined with the exclusive OR and the negation of one disjunct typically implies the actualization of the other. The question expects deductive reasoning from the given constraints.",
+          "confidence": 0.85,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

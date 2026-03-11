@@ -1,0 +1,309 @@
+{
+  "claim": "Anyone who outperforms others or gets recognition inspires others. If someone has endurance or has quick reflexes, then they perform well. Jamari cannot lead his team successfully. Everyone either has endurance or has good speed, but not both is not necessarily true. Martin either excels under pressure or has strong technique, but not both. Jamari has quick reflexes. For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both). Jamari has strategic skills. If Jamari either trains regularly or eats nutritious food (but not both), then he has endurance. Megan has quick reflexes. Jamari does not inspire others. Aya does not inspire others. If Jamari has good agility and strong technique, then he will outperform others. If Martin has good agility and strong technique, then he will outperform others. Jamari either excels under pressure or has strong technique, but not both. Jamari does not excel under pressure. If someone has strategic skills and performs well, then they can lead their team successfully. Megan cannot lead his team successfully. Martin does not excel under pressure.Based on the above information, is the following statement true, false, or uncertain? Jamari is a good footballer.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Jamari does not inspire others, and the claim states that anyone who outperforms others or gets recognition inspires others. Since Jamari does not inspire others, he cannot have outperformed others or gotten recognition."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Jamari does not inspire others, and the claim states that anyone who outperforms others or gets recognition inspires others. Since Jamari does not inspire others, he cannot have outperformed others or gotten recognition.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that 'anyone who outperforms others or gets recognition inspires others' is presented as a universal claim in the context. However, the argument A1 uses Jamari's lack of inspiration to conclude he cannot have outperformed others. This is logically flawed because the universal claim is directional (outperformance \u2192 inspiration), not bidirectional. The absence of inspiration does not logically guarantee the absence of outperformance; Jamari could outperform others but still fail to inspire them for other reasons.",
+          "confidence": 0.82,
+          "attacks": {
+            "A1": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The counter-argument B1 correctly identifies the logical flaw in A1's reasoning, but it does not address the specific context provided. The context states 'Anyone who outperforms others or gets recognition inspires others' as a given fact. In formal logic, if 'All P are Q' is true, then the absence of Q (not Q) does imply the absence of P (not P) by contrapositive, provided the statement is interpreted as a strict universal conditional. Therefore, from 'Jamari does not inspire others' and the given universal rule, one can validly infer 'Jamari has not outperformed others and has not gotten recognition'.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Jamari cannot lead his team successfully. The claim states that if someone has strategic skills and performs well, then they can lead their team successfully. Jamari has strategic skills, so for him to not lead successfully, he must not perform well."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Jamari cannot lead his team successfully. The claim states that if someone has strategic skills and performs well, then they can lead their team successfully. Jamari has strategic skills, so for him to not lead successfully, he must not perform well.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that Jamari cannot lead his team successfully is given as a fact in the context. However, the argument A2 incorrectly infers from this that Jamari must not perform well. The conditional statement 'If someone has strategic skills and performs well, then they can lead their team successfully' does not logically imply its converse. Jamari's failure to lead could be due to factors other than not performing well, even if he has strategic skills.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states: 'If someone has strategic skills and performs well, then they can lead their team successfully.' This is a material conditional. Given that Jamari has strategic skills (stated in context) and cannot lead his team successfully (stated in context), by modus tollens, it logically follows that Jamari does not perform well. Therefore, argument B1's objection is invalid because the logical inference in A2 is actually correct.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.92
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Jamari either excels under pressure or has strong technique, but not both, and it is stated that Jamari does not excel under pressure. Therefore, Jamari must have strong technique."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Jamari either excels under pressure or has strong technique, but not both, and it is stated that Jamari does not excel under pressure. Therefore, Jamari must have strong technique.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 incorrectly assumes the exclusive 'or' relationship applies to Jamari. The statement 'Martin either excels under pressure or has strong technique, but not both' is explicitly about Martin, not Jamari. The statement about Jamari is 'Jamari either excels under pressure or has strong technique, but not both' which is a separate, identical claim. Therefore, the premise in A3 is valid and directly supported by the given information.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The conclusion of A3 ('Jamari must have strong technique') is logically valid given its premises, but it does not directly support or oppose the Claim 'Jamari is a good footballer.' It establishes an intermediate fact. Therefore, its assigned cate as 'S' (supporting the negation of the Claim) was incorrect, as it is not a direct argument about the Claim's truth value.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B2's attack is valid in identifying A3's misassigned cate, but it does not create logical inconsistency with A3's internal reasoning. A3's internal logic from its stated premises to its conclusion remains sound. B2 critiques the meta-labeling, not the argument's content.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Jamari has quick reflexes, and the claim states that if someone has endurance or has quick reflexes, then they perform well. Since Jamari has quick reflexes, he performs well."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Jamari has quick reflexes, and the claim states that if someone has endurance or has quick reflexes, then they perform well. Since Jamari has quick reflexes, he performs well.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states: 'If someone has endurance or has quick reflexes, then they perform well.' However, performing well does not necessarily mean someone is a good footballer. The argument A4 incorrectly assumes that performing well (from quick reflexes) directly supports Jamari being a good footballer.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim explicitly states: 'For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both).' Argument A4 only establishes that Jamari performs well due to quick reflexes, but provides no evidence that Jamari has either good speed or good agility, which are necessary conditions for being a good footballer according to the claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Argument B1 attacks A4 by pointing out that performing well does not equate to being a good footballer. However, the claim also states: 'If someone has strategic skills and performs well, then they can lead their team successfully.' Since Jamari has strategic skills (given) and A4 shows he performs well, this could indirectly support his football ability through leadership potential, though not directly.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Argument B2 correctly notes the necessary condition for being a good footballer (good speed or good agility). However, the claim states: 'Jamari has quick reflexes.' Quick reflexes are not explicitly equated to good speed or good agility in the given information, but they could be related to agility in football context. Without explicit contradiction, B2's attack might be too strict.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Jamari performs well (from quick reflexes) and has strategic skills, but he cannot lead his team successfully. This is consistent because the conditional 'if someone has strategic skills and performs well, then they can lead their team successfully' does not guarantee leadership success; it only states a sufficient condition, not a necessary one, so his lack of leadership success does not contradict performing well."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Jamari performs well (from quick reflexes) and has strategic skills, but he cannot lead his team successfully. This is consistent because the conditional 'if someone has strategic skills and performs well, then they can lead their team successfully' does not guarantee leadership success; it only states a sufficient condition, not a necessary one, so his lack of leadership success does not contradict performing well.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly interprets the conditional. The statement 'If someone has strategic skills and performs well, then they can lead their team successfully' is a universal conditional. If Jamari has both strategic skills and performs well, then he must be able to lead his team successfully. Since it is given that 'Jamari cannot lead his team successfully', this directly contradicts the conjunction of strategic skills and performing well.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The contradiction can be resolved by noting that 'performs well' might not be satisfied. The premise 'If someone has endurance or has quick reflexes, then they perform well' is also a universal conditional. Jamari has quick reflexes, so he must perform well. Therefore, the contradiction stands.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.4
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The universal conditional 'If someone has endurance or has quick reflexes, then they perform well' could have exceptions not stated. The given information does not explicitly state it holds for all cases without exception, so it might not be a strict logical guarantee for Jamari.",
+          "confidence": 0.55,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both). There is no information provided that Jamari has good speed or good agility, so it cannot be concluded that he is a good footballer."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both). There is no information provided that Jamari has good speed or good agility, so it cannot be concluded that he is a good footballer.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both)' is a universal conditional. The argument A6 attempts to use this to argue against Jamari being a good footballer by noting a lack of information about his speed or agility. However, the absence of explicit information does not logically prove the absence of the qualities. The conclusion 'it cannot be concluded that he is a good footballer' does not necessarily follow from the premise and the stated lack of information; it only establishes uncertainty, not support for negation.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 incorrectly assumes that A6's conclusion is a definitive negation. A6's text states 'it cannot be concluded that he is a good footballer,' which is an expression of uncertainty or lack of sufficient evidence for the claim 'Jamari is a good footballer.' In logical terms, arguing that a claim cannot be concluded from the given premises is a valid reason to assign the argument to category S (supporting the negation of the claim in a binary true/false evaluation under the given information). Therefore, B1's objection is based on a misinterpretation of A6's conclusion.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "Jamari has strong technique (from not excelling under pressure and the exclusive or). If Jamari has good agility and strong technique, then he will outperform others. However, there is no information that Jamari has good agility, so he may not outperform others, which is consistent with him not inspiring others."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "Jamari has strong technique (from not excelling under pressure and the exclusive or). If Jamari has good agility and strong technique, then he will outperform others. However, there is no information that Jamari has good agility, so he may not outperform others, which is consistent with him not inspiring others.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that lacking good agility prevents Jamari from outperforming others, but the premise 'If Jamari has good agility and strong technique, then he will outperform others' does not logically imply that lacking good agility prevents outperformance. Jamari could outperform others through other means not mentioned in the conditional.",
+          "confidence": 0.75,
+          "attacks": {
+            "A7": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Jamari could outperform through other means, the context states 'Jamari does not inspire others.' Since the claim is 'Anyone who outperforms others or gets recognition inspires others,' if Jamari does not inspire others, he cannot have outperformed others. Therefore, the lack of good agility is consistent with him not outperforming, supporting A7's conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A7 incorrectly infers 'Jamari has strong technique' from 'Jamari either excels under pressure or has strong technique, but not both' and 'Jamari does not excel under pressure.' This is logically valid, but the argument then uses this to question if he outperforms, which is irrelevant to the claim about being a good footballer. The argument does not address whether Jamari is a good footballer.",
+          "confidence": 0.9,
+          "attacks": {
+            "A7": 0.95
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "Jamari does not inspire others, and since inspiring others requires outperforming others or getting recognition, Jamari has not outperformed others. Without outperforming others and without known good speed or agility, there is no basis to conclude Jamari is a good footballer."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "Jamari does not inspire others, and since inspiring others requires outperforming others or getting recognition, Jamari has not outperformed others. Without outperforming others and without known good speed or agility, there is no basis to conclude Jamari is a good footballer.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that not inspiring others implies not outperforming others, but the claim states 'Anyone who outperforms others OR gets recognition inspires others.' Jamari might still outperform others without inspiring others if he gets recognition instead.",
+          "confidence": 0.72,
+          "attacks": {
+            "A8": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument incorrectly states Jamari lacks known good speed or agility. The context states 'Everyone either has endurance or has good speed, but not both is not necessarily true,' meaning speed is possible, and 'For all humans, if someone is a good footballer, then they either have good speed or have good agility (or both).' Jamari's speed/agility status is not established, so absence cannot be assumed.",
+          "confidence": 0.85,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Jamari gets recognition without outperforming others, recognition alone could inspire others per the claim, so lack of inspiration still suggests neither outperforming nor recognition occurred.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        }
+      ]
+    }
+  }
+}

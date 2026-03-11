@@ -1,0 +1,299 @@
+{
+  "claim": "Julissa either tracks seed dispersal or analyzes bloom patterns, but not both. Jose either investigates root systems or tracks seed dispersal, but not both. Jaziel either investigates root systems or tracks seed dispersal, but not both. For Jaziel, he either classifies foliage or documents habitats, but not both. If Jaziel has a green thumb, then he analyzes bloom patterns and collects plant samples. Elena classifies foliage. If Jaziel explores remote regions, then he either identifies unique specimens or studies tropical flora. Julissa does not examine fungal growth. Jaziel is either specialized in rare plants or a general plant researcher, but not both. If Jose either examines fungal growth or analyzes bloom patterns (but not both), then he studies tropical flora. Every botanist who studies plant migration either researches plant adaptation or tracks seed dispersal (or both). Jaziel classifies foliage. If Jaziel has vast knowledge, then he excels in experimentation and specializes in rare plants. Jaziel either documents habitats or investigates root systems, but not both. Jaziel does not examine fungal growth. Jaziel either tracks seed dispersal or analyzes bloom patterns, but not both. Jose either documents habitats or investigates root systems, but not both. If Jaziel either examines fungal growth or analyzes bloom patterns (but not both), then he studies tropical flora. Any botanist who studies tropical flora or discovers new species is specialized in rare plants.Based on the above information, is the following statement true, false, or uncertain? Jaziel is a general plant researcher.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The statement 'Jaziel is a general plant researcher' is false because the information states 'Jaziel is either specialized in rare plants or a general plant researcher, but not both,' and later conditions imply he specializes in rare plants."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The statement 'Jaziel is a general plant researcher' is false because the information states 'Jaziel is either specialized in rare plants or a general plant researcher, but not both,' and later conditions imply he specializes in rare plants.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The information does not definitively prove Jaziel specializes in rare plants. The condition 'If Jaziel has vast knowledge, then he excels in experimentation and specializes in rare plants' is conditional on 'has vast knowledge,' which is not stated as a fact.",
+          "confidence": 0.72,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "However, another rule states: 'Any botanist who studies tropical flora or discovers new species is specialized in rare plants.' If it can be shown Jaziel studies tropical flora, then he must be specialized in rare plants, making him not a general researcher.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A1 incorrectly assumes the 'later conditions imply he specializes in rare plants.' The conditions about analyzing bloom patterns or examining fungal growth leading to studying tropical flora are also conditional and their antecedents are not confirmed for Jaziel.",
+          "confidence": 0.78,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "We know 'Jaziel does not examine fungal growth' and 'Jaziel either tracks seed dispersal or analyzes bloom patterns, but not both.' If he analyzes bloom patterns, then by the rule 'If Jaziel either examines fungal growth or analyzes bloom patterns (but not both), then he studies tropical flora,' he would study tropical flora and thus be specialized in rare plants.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The antecedent of the rule in C2 requires 'either examines fungal growth or analyzes bloom patterns (but not both).' Since Jaziel does not examine fungal growth, the 'either/or' condition is only satisfied if he *does* analyze bloom patterns. This is not yet proven, so the chain of reasoning is incomplete.",
+          "confidence": 0.75,
+          "attacks": {
+            "C2": 0.7
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The claim 'Jaziel classifies foliage' is given. Another rule states: 'For Jaziel, he either classifies foliage or documents habitats, but not both.' Since he classifies foliage, he does NOT document habitats. Another rule states: 'Jaziel either documents habitats or investigates root systems, but not both.' Since he does not document habitats, he MUST investigate root systems.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C3",
+          "text": "B3 establishes Jaziel investigates root systems. Another rule states: 'Jaziel either investigates root systems or tracks seed dispersal, but not both.' Since he investigates root systems, he does NOT track seed dispersal. The rule 'Jaziel either tracks seed dispersal or analyzes bloom patterns, but not both' then forces him to analyze bloom patterns (since he doesn't track).",
+          "confidence": 0.98,
+          "attacks": {
+            "B3": 0.1,
+            "D1": 0.9
+          }
+        },
+        {
+          "id": "D2",
+          "text": "C3 logically proves Jaziel analyzes bloom patterns. Combining this with 'Jaziel does not examine fungal growth,' the condition 'If Jaziel either examines fungal growth or analyzes bloom patterns (but not both), then he studies tropical flora' is triggered. Therefore, Jaziel studies tropical flora.",
+          "confidence": 0.97,
+          "attacks": {
+            "C3": 0.05
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Since D2 proves Jaziel studies tropical flora, and the universal rule states 'Any botanist who studies tropical flora or discovers new species is specialized in rare plants,' Jaziel must be specialized in rare plants. Given the exclusive rule 'Jaziel is either specialized in rare plants or a general plant researcher, but not both,' he cannot be a general plant researcher. Therefore, the original statement is false.",
+          "confidence": 0.99,
+          "attacks": {
+            "D2": 0.05,
+            "B1": 0.95,
+            "B2": 0.9
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From 'If Jaziel has vast knowledge, then he excels in experimentation and specializes in rare plants,' specialization in rare plants is a direct consequent, and no information negates his having vast knowledge, so he is not a general researcher."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From 'If Jaziel has vast knowledge, then he excels in experimentation and specializes in rare plants,' specialization in rare plants is a direct consequent, and no information negates his having vast knowledge, so he is not a general researcher.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument's premise references 'Jaziel' and 'vast knowledge,' but the claim and provided information are exclusively about farmers (Anders, Ronan, Alyssa, Bo) and their agricultural practices. The argument is irrelevant to the claim about Ronan not developing new techniques.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, the argument's logic is flawed. The conditional 'If Jaziel has vast knowledge, then he excels in experimentation and specializes in rare plants' does not guarantee Jaziel has vast knowledge. The conclusion 'he is not a general researcher' does not logically follow from the premises provided in the argument itself.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out irrelevance, one could interpret the task as evaluating the internal logic of A2 in isolation, separate from the claim's context. On its own, A2 attempts a deductive inference.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.4
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Interpreting A2 in isolation still fails. A2 states 'specialization in rare plants is a direct consequent' of vast knowledge, and 'no information negates his having vast knowledge.' From 'If P then Q' and 'not not-P', you cannot conclude Q. You need P to conclude Q. The argument commits a formal fallacy (denying the antecedent is not involved, but it's a non sequitur).",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85,
+            "A2": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The rule 'Any botanist who studies tropical flora or discovers new species is specialized in rare plants' combined with conditions about Jaziel potentially studying tropical flora supports that he is specialized, not general."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The rule 'Any botanist who studies tropical flora or discovers new species is specialized in rare plants' combined with conditions about Jaziel potentially studying tropical flora supports that he is specialized, not general.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Argument A3 is completely irrelevant to the claim about Kiddo and wassailing. The argument discusses botanists and Jaziel, while the claim is about horses, specifically Kiddo's participation in wassailing.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were relevant, its logical structure is flawed. It attempts to apply a rule about botanists to a completely different domain (horses) without establishing any connection between the two domains.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Since Jaziel classifies foliage and the information includes 'For Jaziel, he either classifies foliage or documents habitats, but not both,' and he does not document habitats, his activities align with specialized roles rather than general research."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Since Jaziel classifies foliage and the information includes 'For Jaziel, he either classifies foliage or documents habitats, but not both,' and he does not document habitats, his activities align with specialized roles rather than general research.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is completely irrelevant to the claim about Kiddo not participating in wassailing. It discusses Jaziel, foliage classification, and habitat documentation, which are not mentioned anywhere in the provided information about Kiddo, Vada, or Tessa.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A4 were relevant, it contains internal contradictions with the provided information. The statement mentions 'Jaziel' and activities not present in the original problem, making it impossible to evaluate its logical connection to the claim.",
+          "confidence": 0.92,
+          "attacks": {
+            "A4": 0.98
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Jaziel does not examine fungal growth, and given the logical constraints on his activities, his profile fits a specialist in rare plants, contradicting the claim he is a general plant researcher."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Jaziel does not examine fungal growth, and given the logical constraints on his activities, his profile fits a specialist in rare plants, contradicting the claim he is a general plant researcher.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 references 'Jaziel' and 'fungal growth', but these terms do not appear anywhere in the given claim about Queenie, making A5 completely irrelevant to the Queenie statement being evaluated.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A5 were relevant to some other claim, its reasoning about 'specialist in rare plants' vs 'general plant researcher' has no logical connection to whether Queenie can dominate the gut microbiome, so it cannot support any conclusion about Queenie.",
+          "confidence": 0.93,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The claim explicitly states it is about Queenie's ability to dominate the gut microbiome, based on biological premises. A5 discusses an unrelated person (Jaziel) and unrelated activities, so it fails to address the actual question.",
+          "confidence": 0.96,
+          "attacks": {
+            "A5": 0.97
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The logical deductions from the given statements show Jaziel's attributes and activities are mutually exclusive with being a general plant researcher, making the claim false."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The logical deductions from the given statements show Jaziel's attributes and activities are mutually exclusive with being a general plant researcher, making the claim false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is irrelevant to the actual claim about Queenie. The claim mentions 'Jaziel' but the original problem is about 'Queenie', indicating A6 addresses a different scenario entirely.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch, A6 makes a definitive conclusion ('making the claim false') without showing the logical deduction steps from the given premises about Queenie, making it an unsupported assertion.",
+          "confidence": 0.82,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The name 'Jaziel' in A6 might be a typo for 'Queenie', and the argument could be attempting to analyze the Queenie scenario. However, without the actual deduction chain, we cannot verify its validity.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65,
+            "B2": 0.4
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if A6 intended to analyze Queenie, the conclusion that the claim is 'false' is premature. The premises allow us to deduce Queenie's properties systematically, and the truth value of 'Queenie is able to dominate the gut microbiome' depends on that deduction, not on a blanket statement.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.75,
+            "A6": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

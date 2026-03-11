@@ -1,0 +1,237 @@
+{
+  "claim": "Emelia manages finances or overspends money. If someone inherits a large sum of money, then they have excessive wealth. If Esteban either craves luxuries or prioritizes status (but not both), then he has excessive wealth. Esteban does not prioritize status. Esteban pursues materialism. Vihaan craves luxuries. Esteban craves luxuries. Esteban lives wastefully. If Esteban has excessive wealth, then he either makes impulsive decisions or is selfish, but not both. If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both. Esteban does not manage finances. If Esteban has disposable income, then he either overspends money or makes frequent purchases (but not both). If Esteban ignores warnings or acts recklessly, then he will regret his actions later. If Vihaan either craves luxuries or prioritizes status (but not both), then he has excessive wealth. Anyone who overspends money or makes impulsive decisions will regret their actions later. Esteban disregards others. Esteban manages finances or overspends money. Anyone who pursues materialism and disregards others can be selfish.Based on the above information, is the following statement true, false, or uncertain? Esteban loses his fortune.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Esteban lives wastefully, and the context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' This implies that living wastefully necessarily leads to one of these two outcomes, making it possible that he loses his fortune."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Esteban lives wastefully, and the context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' This implies that living wastefully necessarily leads to one of these two outcomes, making it possible that he loses his fortune.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 only establishes that losing his fortune is one of two possible outcomes, not that it is the actual outcome. The context explicitly states 'but not both', meaning we cannot conclude he loses his fortune without ruling out the alternative outcome of regretting his actions later.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'If Esteban ignores warnings or acts recklessly, then he will regret his actions later.' If Esteban's wasteful living constitutes acting recklessly, then he would regret his actions later, not lose his fortune, given the exclusive 'or' in the wastefulness rule.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context does not explicitly state that wasteful living equates to acting recklessly or ignoring warnings. Therefore, the connection between wasteful living and regretting actions via the recklessness rule is not established, leaving both outcomes possible.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The context does not explicitly state that Esteban loses his fortune; it only presents a conditional statement about living wastefully leading to either losing his fortune or regretting his actions later. Without additional information confirming which outcome occurs, the claim remains uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context does not explicitly state that Esteban loses his fortune; it only presents a conditional statement about living wastefully leading to either losing his fortune or regretting his actions later. Without additional information confirming which outcome occurs, the claim remains uncertain.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' Since the context explicitly states 'Esteban lives wastefully', the conditional is triggered, meaning one of the two outcomes must occur. Therefore, the claim cannot be 'uncertain'\u2014it must be either true or false based on which outcome actually occurs.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While the conditional is triggered, the context does not specify which disjunct ('lose his fortune' or 'regret his actions later') is true. Without explicit confirmation of either outcome, the truth value of 'Esteban loses his fortune' remains undetermined from the given information, making 'uncertain' the correct evaluation.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Esteban does not manage finances, and the context states: 'Emelia manages finances or overspends money.' and 'Esteban manages finances or overspends money.' Since Esteban does not manage finances, he must overspend money. Overspending money could contribute to financial loss, supporting the possibility that he loses his fortune."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Esteban does not manage finances, and the context states: 'Emelia manages finances or overspends money.' and 'Esteban manages finances or overspends money.' Since Esteban does not manage finances, he must overspend money. Overspending money could contribute to financial loss, supporting the possibility that he loses his fortune.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' This is a conditional statement, not a guarantee that he loses his fortune. Living wastefully only leads to one of two exclusive outcomes, and we don't know which one occurs.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'Anyone who overspends money or makes impulsive decisions will regret their actions later.' Since A3 concludes Esteban overspends money, this rule directly implies he will regret his actions later, not necessarily lose his fortune.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' If C1 is correct that Esteban will regret his actions later (due to overspending), then by the exclusive 'but not both' condition, he cannot lose his fortune.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The context includes: 'Anyone who overspends money or makes impulsive decisions will regret their actions later.' Since Esteban overspends money (as deduced from not managing finances), he will regret his actions later. This regret outcome is mutually exclusive with losing his fortune in the wastefulness conditional, making it less likely that he loses his fortune."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context includes: 'Anyone who overspends money or makes impulsive decisions will regret their actions later.' Since Esteban overspends money (as deduced from not managing finances), he will regret his actions later. This regret outcome is mutually exclusive with losing his fortune in the wastefulness conditional, making it less likely that he loses his fortune.",
+          "cate": "S",
+          "confidence": 0.62,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes Esteban overspends money. The context states: 'Esteban manages finances or overspends money' and 'Esteban does not manage finances.' From these, we can deduce Esteban overspends money. Therefore, the premise that Esteban overspends money is valid, not speculative.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion that 'it is less likely that he loses his fortune' does not logically follow. The context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' Esteban lives wastefully. Therefore, he will either lose his fortune OR regret his actions later. The argument establishes he will regret his actions later, which directly implies, by the exclusive 'or', that he will NOT lose his fortune. The argument's conclusion is actually stronger (certain, not just 'less likely') and supports the negation of the claim more directly.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Attack on B2: The logical chain to 'he will regret his actions later' is incomplete. We know Esteban overspends money. The context states: 'Anyone who overspends money or makes impulsive decisions will regret their actions later.' Therefore, Esteban will regret his actions later. This is a direct application of a universal rule, making the conclusion in B2 valid.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Esteban craves luxuries, and the context states: 'If Esteban either craves luxuries or prioritizes status (but not both), then he has excessive wealth.' Since Esteban does not prioritize status, the condition is met (craves luxuries but not both), so he has excessive wealth. Having excessive wealth might lead to behaviors that result in losing it, such as living wastefully."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Esteban craves luxuries, and the context states: 'If Esteban either craves luxuries or prioritizes status (but not both), then he has excessive wealth.' Since Esteban does not prioritize status, the condition is met (craves luxuries but not both), so he has excessive wealth. Having excessive wealth might lead to behaviors that result in losing it, such as living wastefully.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Esteban has excessive wealth, then he either makes impulsive decisions or is selfish, but not both.' It does not state that having excessive wealth directly causes living wastefully or losing fortune. The connection between excessive wealth and losing fortune through living wastefully is not logically established by the given context.",
+          "confidence": 0.82,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' This directly establishes a logical link between living wastefully and potentially losing his fortune, supporting A5's connection.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "While the context links living wastefully to either losing fortune OR regretting actions, it does not specify which occurs. The statement 'Esteban loses his fortune' requires determining which disjunct is true. Without additional context specifying that he loses his fortune (rather than regrets actions), the conclusion remains uncertain.",
+          "confidence": 0.78,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The context states: 'If Esteban has excessive wealth, then he either makes impulsive decisions or is selfish, but not both.' Esteban pursues materialism and disregards others, and 'Anyone who pursues materialism and disregards others can be selfish.' This suggests he might be selfish, which could lead to impulsive decisions or selfishness, but not directly to losing his fortune, leaving the outcome uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context states: 'If Esteban has excessive wealth, then he either makes impulsive decisions or is selfish, but not both.' Esteban pursues materialism and disregards others, and 'Anyone who pursues materialism and disregards others can be selfish.' This suggests he might be selfish, which could lead to impulsive decisions or selfishness, but not directly to losing his fortune, leaving the outcome uncertain.",
+          "cate": "S",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Esteban lives wastefully, then he will either lose his fortune or regret his actions later, but not both.' Since Esteban lives wastefully, this directly implies he will either lose his fortune or regret his actions later. This creates a direct logical path to the possibility of losing his fortune, which contradicts A6's claim of uncertainty.",
+          "confidence": 0.82,
+          "attacks": {
+            "A6": 0.78
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'Anyone who overspends money or makes impulsive decisions will regret their actions later.' If Esteban has excessive wealth, he makes impulsive decisions or is selfish. If he makes impulsive decisions, he will regret his actions later. From B1, if he lives wastefully, he either loses his fortune or regrets his actions later. If he regrets his actions later, he does not lose his fortune. Therefore, if he has excessive wealth and makes impulsive decisions, he regrets his actions and does not lose his fortune, creating uncertainty about losing his fortune and attacking B1's direct implication.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.72
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'Esteban does not prioritize status' and 'If Esteban either craves luxuries or prioritizes status (but not both), then he has excessive wealth.' Since Esteban craves luxuries and does not prioritize status, he satisfies the condition (craves luxuries but not both), so he has excessive wealth. This is a necessary premise for C1's reasoning, and it is directly supported by the context, undermining C1's attack on B1.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

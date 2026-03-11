@@ -1,0 +1,253 @@
+{
+  "claim": "Marlowe does not earn recognition. Vanessa has momentum. If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition. If Vanessa does not have a PhD, then he will pursue alternate credentials. For every human, either they have a PhD or they do not have a PhD. If Marlowe does not have a PhD, then he will pursue alternate credentials. Marlowe is either disciplined or thinks creatively, but not both. If Guy has momentum, then he is either disciplined or sets high goals, but not both. Anyone who has a clear vision or strives for excellence sets high goals. Guy is either disciplined or thinks creatively, but not both. If someone either seeks specialized certification or applies for fellowships (but not both), then they pursue alternate credentials. If Marlowe has momentum, then he is either disciplined or sets high goals, but not both. Marlowe works hard. Vanessa does not earn recognition. Marlowe has momentum. If Guy is ambitious and pursues alternate credentials, then he will earn recognition. Marlowe thinks creatively. Anyone who sets high goals or works hard is ambitious.Based on the above information, is the following statement true, false, or uncertain? Marlowe does not have a PhD.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "From the given context, 'If Marlowe does not have a PhD, then he will pursue alternate credentials.' However, it is also stated that 'Marlowe has momentum' and 'If Marlowe has momentum, then he is either disciplined or sets high goals, but not both.' Since 'Marlowe thinks creatively' and 'Marlowe is either disciplined or thinks creatively, but not both,' it follows that Marlowe is not disciplined, so he must set high goals. Then, 'Anyone who sets high goals or works hard is ambitious.' Marlowe works hard, so he is ambitious. With ambition established, 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition.' But it is given that 'Marlowe does not earn recognition.' Therefore, Marlowe cannot both be ambitious and pursue alternate credentials. Since he is ambitious, he must not pursue alternate credentials. The conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' would then imply that if Marlowe did not have a PhD, he would pursue alternate credentials, leading to a contradiction (since he does not pursue them). Thus, Marlowe must have a PhD to avoid this contradiction."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the given context, 'If Marlowe does not have a PhD, then he will pursue alternate credentials.' However, it is also stated that 'Marlowe has momentum' and 'If Marlowe has momentum, then he is either disciplined or sets high goals, but not both.' Since 'Marlowe thinks creatively' and 'Marlowe is either disciplined or thinks creatively, but not both,' it follows that Marlowe is not disciplined, so he must set high goals. Then, 'Anyone who sets high goals or works hard is ambitious.' Marlowe works hard, so he is ambitious. With ambition established, 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition.' But it is given that 'Marlowe does not earn recognition.' Therefore, Marlowe cannot both be ambitious and pursue alternate credentials. Since he is ambitious, he must not pursue alternate credentials. The conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' would then imply that if Marlowe did not have a PhD, he would pursue alternate credentials, leading to a contradiction (since he does not pursue them). Thus, Marlowe must have a PhD to avoid this contradiction.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Marlowe does not pursue alternate credentials' is a necessary conclusion. However, the premise 'Marlowe does not earn recognition' combined with 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition' only implies that it is not the case that both (Marlowe is ambitious) and (Marlowe pursues alternate credentials) are true. This is a logical disjunction: \u00ac(ambitious \u2227 pursues). From 'Marlowe is ambitious', this yields \u00ac(pursues), which is 'Marlowe does not pursue alternate credentials'. This step is logically valid (using \u00ac(P\u2227Q) and P to derive \u00acQ). Therefore, the attack fails as it misrepresents the logical structure.",
+          "confidence": 0.45,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The reasoning relies on the chain: Marlowe has momentum \u2192 (disciplined XOR sets high goals) \u2192 since thinks creatively \u2192 not disciplined \u2192 sets high goals. However, the premise 'Marlowe is either disciplined or thinks creatively, but not both' does not logically preclude Marlowe from being both disciplined and setting high goals based on the momentum conditional. The momentum conditional states: if momentum then (disciplined XOR sets high goals). It does not state that being disciplined and setting high goals are mutually exclusive in general; it states that given momentum, exactly one of them is true for Marlowe. Since we derived 'not disciplined' from the creativity/discipline exclusive-or, then 'sets high goals' follows. This step is sound. The attack fails to identify a genuine inconsistency.",
+          "confidence": 0.4,
+          "attacks": {
+            "A1": 0.25
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument concludes 'Marlowe must have a PhD' but this depends on the material conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials.' In classical logic, a conditional is false only when the antecedent is true and the consequent is false. Here, we have established the consequent is false (Marlowe does not pursue alternate credentials). For the conditional to be true (as given in the context), the antecedent must therefore be false. That is, 'Marlowe does not have a PhD' must be false, so Marlowe has a PhD. This is modus tollens: (\u00acPhD \u2192 pursue), \u00acpursue \u2234 PhD. The logic is valid. No logical flaw exists here.",
+          "confidence": 0.35,
+          "attacks": {
+            "A1": 0.2
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The context includes 'For every human, either they have a PhD or they do not have a PhD.' Applying this to Marlowe, he either has a PhD or does not. From the logical chain: Marlowe is ambitious (because he works hard and sets high goals), has momentum, and does not earn recognition. The condition for earning recognition for Marlowe is being ambitious and pursuing alternate credentials. Since he does not earn recognition, he cannot be both ambitious and pursuing alternate credentials. He is ambitious, so he must not pursue alternate credentials. The statement 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a conditional. If Marlowe did not have a PhD, this conditional would force him to pursue alternate credentials, contradicting the fact that he does not pursue them. Therefore, Marlowe cannot not have a PhD; he must have a PhD."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context includes 'For every human, either they have a PhD or they do not have a PhD.' Applying this to Marlowe, he either has a PhD or does not. From the logical chain: Marlowe is ambitious (because he works hard and sets high goals), has momentum, and does not earn recognition. The condition for earning recognition for Marlowe is being ambitious and pursuing alternate credentials. Since he does not earn recognition, he cannot be both ambitious and pursuing alternate credentials. He is ambitious, so he must not pursue alternate credentials. The statement 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a conditional. If Marlowe did not have a PhD, this conditional would force him to pursue alternate credentials, contradicting the fact that he does not pursue them. Therefore, Marlowe cannot not have a PhD; he must have a PhD.",
+          "cate": "P",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Marlowe is ambitious because he works hard and sets high goals. However, the context states 'Anyone who sets high goals or works hard is ambitious.' This is a disjunction (OR), meaning either condition is sufficient. Marlowe works hard (given), so he is ambitious regardless of whether he sets high goals. This premise is sound, but the argument then concludes Marlowe does not pursue alternate credentials because he doesn't earn recognition. The condition for Marlowe's recognition is: 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition.' The contrapositive is: If Marlowe does not earn recognition, then he is not both ambitious and pursuing alternate credentials (i.e., \u00ac(ambitious \u2227 pursues) \u2261 \u00acambitious \u2228 \u00acpursues). Since Marlowe is ambitious, we get \u00acpursues. This step is logically valid. However, the argument then uses 'If Marlowe does not have a PhD, then he will pursue alternate credentials' to conclude Marlowe must have a PhD. This requires assuming the conditional is true and has a true consequent when the antecedent is true. But the context does not guarantee the conditional's truth; it's presented as a given statement. The argument's conclusion that Marlowe has a PhD relies on this conditional being true and applying. Without external challenge, the reasoning is internally consistent but depends on the conditional's truth.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 questions the truth of the conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials.' However, the context presents this as a factual statement among the given information, not as a hypothetical. In logical analysis of the context, all provided statements are to be taken as true for the purpose of evaluating the claim. Therefore, the conditional must be accepted as true. Given it's true, and given Marlowe does not pursue alternate credentials (as derived), the antecedent (Marlowe does not have a PhD) must be false. Therefore, Marlowe has a PhD. This reinforces A2's conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A2 concludes Marlowe has a PhD. However, the claim to evaluate is 'Marlowe does not have a PhD.' A2's cate is originally 'S', which means it supports the negation of the claim (i.e., supports that Marlowe has a PhD). That is correct. But let's check logical consistency: The context states 'For every human, either they have a PhD or they do not have a PhD.' This is a tautology (law of excluded middle). It doesn't provide information about Marlowe's PhD status. The argument uses other conditionals to deduce Marlowe has a PhD. However, there's a potential logical flaw: From 'Marlowe does not earn recognition' and 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition', we get \u00ac(ambitious \u2227 pursues). Since ambitious is true, \u00acpursues is true. Then from 'If Marlowe does not have a PhD, then he will pursue alternate credentials', we get: if \u00acPhD \u2192 pursues. Since \u00acpursues is true, the contrapositive gives PhD. This is valid modus tollens. But wait: The context also includes 'If someone either seeks specialized certification or applies for fellowships (but not both), then they pursue alternate credentials.' This is another way to pursue alternate credentials. Could Marlowe pursue alternate credentials through other means not covered? The context doesn't say these are the only ways. So, the conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' might not be the only path; he might not pursue even without a PhD if he doesn't seek certification/fellowships. But the conditional is given as true, so if he doesn't have a PhD, he will pursue alternate credentials. The argument assumes the conditional is universally true and applies. Given the context, we must accept it. So the deduction is valid. However, the confidence should reflect that the reasoning depends on several conditionals all being true and applicable.",
+          "confidence": 0.68,
+          "attacks": {
+            "A2": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2 raises the point about other ways to pursue alternate credentials, suggesting the conditional might not be exhaustive. But the conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a direct logical statement in the context. It doesn't specify means; it just states he will pursue. The context also includes 'If someone either seeks specialized certification or applies for fellowships (but not both), then they pursue alternate credentials.' This defines what 'pursue alternate credentials' means in terms of specific actions. So, if Marlowe does not have a PhD, he will pursue alternate credentials, meaning he will either seek specialized certification or apply for fellowships (but not both). There's no contradiction; the conditionals together imply that not having a PhD leads to one of those actions. The argument A2 doesn't need to consider other means because the context defines the relationship. Therefore, the deduction stands.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Analyzing the implications: Marlowe thinks creatively, so from 'Marlowe is either disciplined or thinks creatively, but not both,' he is not disciplined. With momentum, 'If Marlowe has momentum, then he is either disciplined or sets high goals, but not both.' Since he is not disciplined, he must set high goals. Setting high goals makes him ambitious (as does working hard). Ambition plus pursuing alternate credentials would lead to recognition, but he does not earn recognition, so he does not pursue alternate credentials. The only condition given that would make him pursue alternate credentials is not having a PhD. Since he does not pursue them, the antecedent 'Marlowe does not have a PhD' must be false. Hence, Marlowe has a PhD."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Analyzing the implications: Marlowe thinks creatively, so from 'Marlowe is either disciplined or thinks creatively, but not both,' he is not disciplined. With momentum, 'If Marlowe has momentum, then he is either disciplined or sets high goals, but not both.' Since he is not disciplined, he must set high goals. Setting high goals makes him ambitious (as does working hard). Ambition plus pursuing alternate credentials would lead to recognition, but he does not earn recognition, so he does not pursue alternate credentials. The only condition given that would make him pursue alternate credentials is not having a PhD. Since he does not pursue them, the antecedent 'Marlowe does not have a PhD' must be false. Hence, Marlowe has a PhD.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'not having a PhD' is the only condition that would make Marlowe pursue alternate credentials. The premise states: 'If someone either seeks specialized certification or applies for fellowships (but not both), then they pursue alternate credentials.' This provides an alternative path to pursuing alternate credentials that does not depend on PhD status. Since Marlowe does not pursue alternate credentials, it could be because he neither seeks specialized certification nor applies for fellowships, regardless of his PhD status.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 overlooks that the original argument's reasoning about PhD status is based on the specific logical chain from the given premises. The premise 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a direct conditional. If Marlowe does not pursue alternate credentials, by modus tollens, he must have a PhD, unless the conditional is false or has exceptions. The alternative path via seeking certification/fellowships does not invalidate the direct conditional; it merely presents another sufficient condition, not a necessary one. The direct conditional remains valid, so the modus tollens inference stands.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.87
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The defense in C1 assumes the conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a strict logical truth in the context. However, the premises are presented as general statements, not necessarily as exhaustive or exceptionless laws. In real-world reasoning, conditionals can have implicit ceteris paribus clauses. The existence of an alternative sufficient condition (seeking certification/fellowships) suggests that pursuing alternate credentials is not solely determined by PhD status; other factors could prevent it even without a PhD, such as not engaging in those alternative activities. Thus, the modus tollens may not be airtight.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.72
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Consider the contrapositive of 'If Marlowe does not have a PhD, then he will pursue alternate credentials': If Marlowe does not pursue alternate credentials, then he has a PhD. It has been established that Marlowe does not pursue alternate credentials (because if he did, given his ambition, he would earn recognition, but he does not earn recognition). Therefore, by modus tollens, Marlowe has a PhD. This directly contradicts the claim 'Marlowe does not have a PhD.'"
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Consider the contrapositive of 'If Marlowe does not have a PhD, then he will pursue alternate credentials': If Marlowe does not pursue alternate credentials, then he has a PhD. It has been established that Marlowe does not pursue alternate credentials (because if he did, given his ambition, he would earn recognition, but he does not earn recognition). Therefore, by modus tollens, Marlowe has a PhD. This directly contradicts the claim 'Marlowe does not have a PhD.'",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'Marlowe does not pursue alternate credentials' is not directly established. The reasoning 'if he did, given his ambition, he would earn recognition, but he does not earn recognition' assumes the conditional 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition' is both true and that its antecedent ('Marlowe is ambitious and pursues alternate credentials') would be satisfied if Marlowe pursued alternate credentials. However, we only know Marlowe is ambitious from 'Anyone who sets high goals or works hard is ambitious' and 'Marlowe works hard'. The truth of the full conditional and the sufficiency of 'pursues alternate credentials' alone for the antecedent are not guaranteed by the given statements.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 itself relies on an incomplete reading. The given statement is: 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition.' This is a material conditional. For the modus tollens in A4 to fail, we would need a scenario where Marlowe pursues alternate credentials but does not earn recognition, which would make the conditional false. However, the context states as fact: 'Marlowe does not earn recognition.' Therefore, if Marlowe were to pursue alternate credentials, the conditional's antecedent would be true (ambitious + pursues) and its consequent false (no recognition), making the conditional false. But the context presents the conditional as a given truth. Therefore, to preserve the conditional's truth, Marlowe cannot be pursuing alternate credentials. Thus, the premise 'Marlowe does not pursue alternate credentials' is logically necessary given the truth of the conditional and the fact of no recognition.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The defense in C1 assumes the conditional 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition' is a logical truth within the context. However, the context presents it as a factual statement, not a logical axiom. In logical evaluation, we must consider all given statements as true, but their interaction can produce constraints. The modus tollens in A4 requires the joint truth of: (1) The conditional, (2) Marlowe is ambitious, and (3) Marlowe does not earn recognition. From these, it validly concludes Marlowe does not pursue alternate credentials. This is sound. Therefore, B1's challenge is invalid because the premise 'Marlowe does not pursue alternate credentials' is validly derived, not assumed.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context provides a complete logical system. Evaluating the claim 'Marlowe does not have a PhD' within this system leads to inconsistency. Assume for contradiction that Marlowe does not have a PhD. Then he pursues alternate credentials (from the conditional). He is ambitious (from setting high goals and working hard). Then he would earn recognition (from 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition'). But it is explicitly stated 'Marlowe does not earn recognition.' This is a contradiction. Therefore, the assumption is false, and Marlowe must have a PhD. Thus, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context provides a complete logical system. Evaluating the claim 'Marlowe does not have a PhD' within this system leads to inconsistency. Assume for contradiction that Marlowe does not have a PhD. Then he pursues alternate credentials (from the conditional). He is ambitious (from setting high goals and working hard). Then he would earn recognition (from 'If Marlowe is ambitious and pursues alternate credentials, then he will earn recognition'). But it is explicitly stated 'Marlowe does not earn recognition.' This is a contradiction. Therefore, the assumption is false, and Marlowe must have a PhD. Thus, the claim is false.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Marlowe sets high goals, but this is not explicitly stated. The premise 'Anyone who sets high goals or works hard is ambitious' means working hard alone is sufficient for ambition. However, the conditional for recognition requires both ambition AND pursuing alternate credentials. Without establishing Marlowe sets high goals, the chain from 'no PhD' to 'pursues alternate credentials' to 'ambitious' to 'earns recognition' is incomplete. The contradiction might not be forced.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states: 'Marlowe works hard.' Given the premise 'Anyone who sets high goals or works hard is ambitious,' working hard alone is sufficient to make Marlowe ambitious. Therefore, if Marlowe pursues alternate credentials (which follows from not having a PhD), he satisfies both conditions for the recognition conditional. The contradiction is forced, and B1's objection is invalid.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on the conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials.' However, the context also states: 'If someone either seeks specialized certification or applies for fellowships (but not both), then they pursue alternate credentials.' This defines 'pursues alternate credentials' as requiring one of those specific actions. The initial conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a separate, non-logical statement. Without proof that Marlowe seeks certification or applies for fellowships, we cannot conclude he pursues alternate credentials even if he lacks a PhD. The logical link is missing.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context must be treated as a set of true statements. The statement 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is given as fact. It is not presented as a definition to be derived from other conditions. Therefore, if Marlowe does not have a PhD, it directly and unconditionally implies he pursues alternate credentials. The definition about seeking certification or fellowships is a separate, general statement about what 'pursues alternate credentials' means, but the specific conditional about Marlowe overrides any need for intermediate derivation. The logical link is direct and valid.",
+          "confidence": 0.92,
+          "attacks": {
+            "B2": 0.88
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "From the given statements, we can deduce Marlowe's attributes: momentum, thinks creatively, works hard, sets high goals, ambitious, does not earn recognition, and does not pursue alternate credentials. The only link to PhD status is the conditional involving not having a PhD leading to pursuing alternate credentials. Since pursuing alternate credentials is false, the antecedent must be false. Therefore, Marlowe has a PhD. The claim 'Marlowe does not have a PhD' is the negation of this deduction, so it is false."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "From the given statements, we can deduce Marlowe's attributes: momentum, thinks creatively, works hard, sets high goals, ambitious, does not earn recognition, and does not pursue alternate credentials. The only link to PhD status is the conditional involving not having a PhD leading to pursuing alternate credentials. Since pursuing alternate credentials is false, the antecedent must be false. Therefore, Marlowe has a PhD. The claim 'Marlowe does not have a PhD' is the negation of this deduction, so it is false.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is a material conditional that can be contraposed. However, the given information states 'For every human, either they have a PhD or they do not have a PhD,' which is a tautology and doesn't affect the truth of the conditional. The conditional might not be logically necessary; it could be a contingent rule that doesn't apply if other conditions aren't met. Since 'pursues alternate credentials' is false, we cannot definitively conclude 'Marlowe has a PhD' without assuming the conditional is both true and applicable in all circumstances.",
+          "confidence": 0.72,
+          "attacks": {
+            "A6": 0.78
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 incorrectly treats the conditional as uncertain. The given statements are presented as factual premises for logical deduction. The conditional 'If Marlowe does not have a PhD, then he will pursue alternate credentials' is given as a premise, so it must be accepted as true for the deduction. In deductive reasoning, given premises are assumed true. Therefore, from 'not pursue alternate credentials' and the conditional, we can validly infer 'Marlowe has a PhD' via modus tollens.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.86
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "claim": "Consider the following background information: A 55-year-old truck driver is brought to a physician by his wife. She states that her husband developed a fever and began feeling weak 3 days ago, but has refused medical help. He has been unable to go to work because of his symptoms. The patient has been previously hospitalized for a tricuspid valve replacement surgery 1 year ago and takes aspirin daily. The medical history is also relevant for myocardial infarction 3 years ago and hypertension for the past 10 years, for which he takes lisinopril. His blood pressure is 140/80 mm Hg, the pulse is 82/min, the respirations are 18/minute, and the temperature is 37.2\u00b0C (98.9\u00b0F). On examination, several hemorrhages are noted on the nail beds of several fingers.\n\nGiven the background information the following is corrrect: Friable irregular masses attached to the valve would be most helpful in establishing a diagnosis.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The patient's history of tricuspid valve replacement surgery and recent fever and weakness are highly suggestive of infective endocarditis, which often presents with friable irregular masses (vegetations) on the valve."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The patient's history of tricuspid valve replacement surgery and recent fever and weakness are highly suggestive of infective endocarditis, which often presents with friable irregular masses (vegetations) on the valve.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's fever and weakness could also be caused by a common viral infection, which is more prevalent and does not involve valvular vegetations.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of hemorrhages on the nail beds (splinter hemorrhages) is a classic sign of infective endocarditis, supporting the original diagnosis.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's daily aspirin use could contribute to the nail bed hemorrhages, making them less specific for infective endocarditis.",
+          "confidence": 0.7,
+          "attacks": {
+            "A1": 0.5,
+            "C1": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The absence of a significantly elevated temperature (37.2\u00b0C) reduces the likelihood of a systemic infection like infective endocarditis.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.55
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The presence of nail bed hemorrhages (splinter hemorrhages) is a classic peripheral sign of infective endocarditis, further supporting the likelihood of valve vegetations."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The presence of nail bed hemorrhages (splinter hemorrhages) is a classic peripheral sign of infective endocarditis, further supporting the likelihood of valve vegetations.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Splinter hemorrhages can also occur due to trauma or other systemic conditions like vasculitis, not exclusively infective endocarditis.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In the context of the patient's recent valve surgery and fever, the specificity of splinter hemorrhages for infective endocarditis increases significantly.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's normal temperature (37.2\u00b0C) and absence of other classic signs like Osler nodes or Janeway lesions reduce the likelihood of active endocarditis.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Subacute infective endocarditis often presents with mild or absent fever, and peripheral signs may be the only initial clues.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Infective endocarditis is a known complication of prosthetic valves, and the patient's recent valve replacement surgery increases the probability of this diagnosis, where friable irregular masses are a hallmark finding."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Infective endocarditis is a known complication of prosthetic valves, and the patient's recent valve replacement surgery increases the probability of this diagnosis, where friable irregular masses are a hallmark finding.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's fever and weakness could also be caused by a common viral infection, which is statistically more likely than infective endocarditis.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of hemorrhages on the nail beds (splinter hemorrhages) is a specific sign of infective endocarditis, making a viral infection less likely.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's temperature is only slightly elevated (37.2\u00b0C), which is less typical for infective endocarditis where higher fevers are common.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Subacute infective endocarditis can present with low-grade fevers, especially in older patients or those on aspirin, which may mask fever.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's history of myocardial infarction and hypertension could explain the nail bed hemorrhages due to microvascular disease, not necessarily endocarditis.",
+          "confidence": 0.6,
+          "attacks": {
+            "A3": 0.55
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Splinter hemorrhages caused by microvascular disease are typically non-tender and located proximally, whereas those in endocarditis are more distal and may be tender.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.72
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The patient's fever and systemic symptoms, combined with his cardiac history, align with the clinical presentation of infective endocarditis, where valve vegetations are a key diagnostic feature."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The patient's fever and systemic symptoms, combined with his cardiac history, align with the clinical presentation of infective endocarditis, where valve vegetations are a key diagnostic feature.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's temperature of 37.2\u00b0C (98.9\u00b0F) is not significantly elevated, which is atypical for infective endocarditis where fever is a hallmark symptom.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Subacute infective endocarditis can present with low-grade or absent fever, especially in elderly or immunocompromised patients.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The nail bed hemorrhages could be caused by trauma or other conditions like vasculitis, not necessarily endocarditis.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Splinter hemorrhages are a classic peripheral sign of endocarditis when combined with other systemic symptoms.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's symptoms could be explained by a simple viral infection given the lack of specific cardiac findings on examination.",
+          "confidence": 0.6,
+          "attacks": {
+            "A4": 0.55
+          }
+        },
+        {
+          "id": "C3",
+          "text": "The combination of systemic symptoms with known valvular disease makes endocarditis more likely than a simple viral illness.",
+          "confidence": 0.82,
+          "attacks": {
+            "B3": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The absence of other obvious sources of infection in the patient's history makes infective endocarditis a leading differential, with valve vegetations being a critical diagnostic marker."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The absence of other obvious sources of infection in the patient's history makes infective endocarditis a leading differential, with valve vegetations being a critical diagnostic marker.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's fever and weakness could be caused by other common infections, such as viral or bacterial respiratory infections, which are more prevalent than infective endocarditis.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's history of tricuspid valve replacement and myocardial infarction significantly increases the risk of infective endocarditis, making it a more likely diagnosis despite the possibility of other infections.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's daily aspirin use could mask some symptoms of infection, making it harder to confirm infective endocarditis without further diagnostic tests.",
+          "confidence": 0.6,
+          "attacks": {
+            "A5": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The presence of hemorrhages on the nail beds (splinter hemorrhages) is a strong clinical indicator of infective endocarditis, supporting the original argument.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

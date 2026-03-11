@@ -1,0 +1,253 @@
+{
+  "claim": "If Amirah either teaches cooking classes or develops new recipes (but not both), then she writes cookbooks. If Kenzo is a talented cook, then she either works as a chef or runs her own restaurant, but not both. Amirah does not receive food awards. If Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. If Jakari is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. Amirah does not teach cooking classes. Jonathan enjoys experimenting with food. If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. If Amirah runs her own restaurant and is a successful chef, then she receives food awards. If Kenzo uses fresh ingredients or knows flavor combinations, then she has good taste. Amirah does not host cooking shows. Jonathan is not passionate about cooking. If Jakari is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. If Jakari enjoys experimenting with food, then she is a talented cook and has good taste. If Amirah uses fresh ingredients or knows flavor combinations, then she has good taste. If Amirah is an entrepreneur, then she either has formal culinary training or runs her own restaurant, but not both. If Amirah shares recipes online or documents her cooking life, then she can write cookbooks. Kenzo uses fresh ingredients. Kenzo is a food blogger. If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both. If Jonathan runs her own restaurant and is a successful chef, then she receives food awards. If Amirah enjoys experimenting with food, then she is a talented cook and has good taste. Amirah is not passionate about cooking. Amirah enjoys experimenting with food. For Amirah, she either writes cookbooks or works as a chef, but not both. Jakari does not teach cooking classes. If Amirah has business acumen and values customer experience, then she is a successful chef. Jonathan does not receive food awards. Amirah uses fresh ingredients. Amirah is a food blogger.Based on the above information, is the following statement true, false, or uncertain? Amirah is skilled at cooking.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Amirah enjoys experimenting with food, and the context states that if Amirah enjoys experimenting with food, then she is a talented cook and has good taste. Being a talented cook implies skill in cooking."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Amirah enjoys experimenting with food, and the context states that if Amirah enjoys experimenting with food, then she is a talented cook and has good taste. Being a talented cook implies skill in cooking.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' Since Amirah is not passionate about cooking (given), if she were skilled at cooking, she would be a successful chef. However, the context also states: 'For Amirah, she either writes cookbooks or works as a chef, but not both.' Since Amirah writes cookbooks (derived from context: Amirah is a food blogger, and if Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both; Amirah does not host cooking shows, so she develops new recipes; and if Amirah either teaches cooking classes or develops new recipes (but not both), then she writes cookbooks; Amirah does not teach cooking classes, so she writes cookbooks), she cannot work as a chef. Therefore, she cannot be a successful chef, contradicting the implication that being skilled at cooking would make her a successful chef.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'If Amirah runs her own restaurant and is a successful chef, then she receives food awards.' Amirah does not receive food awards (given). This does not directly prove she is not a successful chef, as she might not run her own restaurant. However, the context also states: 'If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both.' If Amirah were a talented cook (as A1 concludes), she would either work as a chef or run her own restaurant. But from B1, she cannot work as a chef (since she writes cookbooks). So, she would have to run her own restaurant. If she runs her own restaurant and is a successful chef (which would follow from being skilled at cooking, per the rule in B1), then she would receive food awards, contradicting the given that she does not receive food awards. Thus, the assumption that she is skilled at cooking leads to a contradiction.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Amirah uses fresh ingredients, and the context states that if Amirah uses fresh ingredients or knows flavor combinations, then she has good taste. Having good taste is often associated with culinary skill, supporting that she is skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Amirah uses fresh ingredients, and the context states that if Amirah uses fresh ingredients or knows flavor combinations, then she has good taste. Having good taste is often associated with culinary skill, supporting that she is skilled at cooking.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states 'If Amirah uses fresh ingredients or knows flavor combinations, then she has good taste.' This conditional only concludes 'has good taste,' not 'is skilled at cooking.' Good taste and culinary skill are distinct attributes; one does not logically entail the other based solely on the provided context.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context contains the statement: 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' It also states 'Amirah is not passionate about cooking.' For the conditional to be satisfied and for Amirah to be a successful chef, she must therefore be skilled at cooking. This provides a direct, context-supported logical path to conclude Amirah is skilled at cooking.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The argument C1 relies on the premise that Amirah is a successful chef to conclude she is skilled at cooking. However, the context does not explicitly state that Amirah is a successful chef. The conditional in C1 only states what happens *if* she is skilled or passionate, not that she actually is a successful chef. Therefore, the conclusion that she is skilled does not necessarily follow from the available information.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The context states that if Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. Amirah is not passionate about cooking, so if she were skilled at cooking, she would be a successful chef. However, Amirah does not receive food awards, and if she runs her own restaurant and is a successful chef, she would receive food awards. Since she does not receive awards, it suggests she may not be a successful chef, and thus not skilled at cooking under that conditional."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context states that if Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. Amirah is not passionate about cooking, so if she were skilled at cooking, she would be a successful chef. However, Amirah does not receive food awards, and if she runs her own restaurant and is a successful chef, she would receive food awards. Since she does not receive awards, it suggests she may not be a successful chef, and thus not skilled at cooking under that conditional.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that Amirah runs her own restaurant, but the context does not state this. The conditional about receiving awards only applies if she runs her own restaurant AND is a successful chef. Without knowing if she runs her own restaurant, the conclusion about not being skilled at cooking is not logically necessary.",
+          "confidence": 0.72,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument incorrectly treats the conditional 'if passionate OR skilled (but not both) then successful chef' as bidirectional. The context does not state that being a successful chef requires being passionate OR skilled. Amirah could be a successful chef through other means (e.g., business acumen and customer experience), so not being passionate doesn't force the skilled condition.",
+          "confidence": 0.78,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Amirah doesn't run her own restaurant, she could still be a successful chef by working as a chef. The context states 'For Amirah, she either writes cookbooks or works as a chef, but not both.' If she works as a chef, she could be successful without receiving food awards (awards are only guaranteed if she runs her own restaurant AND is successful).",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context explicitly states 'If Amirah has business acumen and values customer experience, then she is a successful chef.' This provides an alternative path to being a successful chef that doesn't require passion or skill, directly supporting B2's point that the original conditional isn't bidirectional.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.82
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Amirah is a food blogger, and the context states that if Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. Since Amirah does not host cooking shows, she must develop new recipes. Developing new recipes typically requires culinary skill."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Amirah is a food blogger, and the context states that if Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. Since Amirah does not host cooking shows, she must develop new recipes. Developing new recipes typically requires culinary skill.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states: 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' It also states: 'Amirah is not passionate about cooking.' Therefore, if Amirah were skilled at cooking, she would be a successful chef. However, the context also states: 'For Amirah, she either writes cookbooks or works as a chef, but not both.' Since A4 concludes Amirah develops new recipes (implying she writes cookbooks), she cannot work as a chef, and thus cannot be a successful chef. This creates a logical contradiction if A4's conclusion (that she is skilled) is accepted.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.82
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'If Amirah enjoys experimenting with food, then she is a talented cook and has good taste.' It also explicitly states: 'Amirah enjoys experimenting with food.' Therefore, Amirah is a talented cook. The context further states: 'If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both.' However, as established, Amirah writes cookbooks (from developing new recipes) and therefore cannot work as a chef. This is a direct logical inconsistency within the context itself regarding Amirah's status as a talented cook, which undermines the reliability of inferring skill from premises that lead to such contradictions.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context states that for Amirah, she either writes cookbooks or works as a chef, but not both. If she were skilled at cooking and not passionate (as given), the conditional would make her a successful chef, implying she works as a chef. However, there is no direct evidence she works as a chef, and she might write cookbooks instead, which could be done without being skilled at cooking (e.g., through collaboration or curation)."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context states that for Amirah, she either writes cookbooks or works as a chef, but not both. If she were skilled at cooking and not passionate (as given), the conditional would make her a successful chef, implying she works as a chef. However, there is no direct evidence she works as a chef, and she might write cookbooks instead, which could be done without being skilled at cooking (e.g., through collaboration or curation).",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' Since Amirah is not passionate about cooking (given), if she were skilled at cooking, she would be a successful chef. The context also states: 'If Amirah runs her own restaurant and is a successful chef, then she receives food awards.' However, Amirah does not receive food awards (given), so she cannot both run her own restaurant and be a successful chef. But being a successful chef does not necessarily require running her own restaurant; she could work as a chef. The argument A5 incorrectly assumes that being a successful chef implies she works as a chef, but the context does not explicitly state that a successful chef must work as a chef; it only links successful chef status to the conditional with passion/skill.",
+          "confidence": 0.72,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states: 'Amirah enjoys experimenting with food.' and 'If Amirah enjoys experimenting with food, then she is a talented cook and has good taste.' Therefore, Amirah is a talented cook. The context also states: 'If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both.' This directly implies Amirah either works as a chef or runs her own restaurant. Combined with the context that 'for Amirah, she either writes cookbooks or works as a chef, but not both,' if she works as a chef, she cannot write cookbooks. However, there is no direct evidence she works as a chef; she might run her own restaurant instead. If she runs her own restaurant, she could still write cookbooks (the context does not forbid that combination). Thus, A5's claim that she might write cookbooks without being skilled is undermined by the fact that being a talented cook (from enjoying experimenting) implies skill, and writing cookbooks does not necessarily conflict with being skilled.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 incorrectly separates 'successful chef' from 'works as a chef.' The context defines conditions for being a successful chef but does not equate it with working as a chef. However, the context states: 'If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both.' Since Amirah is a talented cook (from enjoying experimenting), she must either work as a chef or run her own restaurant. If she is also a successful chef (from being skilled), then if she works as a chef, she is a successful chef working as a chef. If she runs her own restaurant, she could be a successful chef running a restaurant. The context does not require a successful chef to work as a chef; it could be a role like restaurant owner. Thus, B1's attack on A5 is weak because A5's core point is about lack of direct evidence for working as a chef, which remains valid even if she is a successful chef in another capacity.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2 states that Amirah is a talented cook from enjoying experimenting, which implies skill. However, the context defines 'talented cook' separately from 'skilled at cooking.' The conditional for skilled cooking is: 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' Being a talented cook does not necessarily mean she is skilled at cooking; talent and skill are distinct attributes. The context does not explicitly link 'talented cook' to 'skilled at cooking.' Therefore, B2's inference that Amirah is skilled at cooking from being a talented cook is not supported by the context, undermining its attack on A5.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Amirah uses fresh ingredients and enjoys experimenting with food, which are practical indicators of hands-on cooking experience and skill development, supporting that she is skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Amirah uses fresh ingredients and enjoys experimenting with food, which are practical indicators of hands-on cooking experience and skill development, supporting that she is skilled at cooking.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states 'If Amirah uses fresh ingredients or knows flavor combinations, then she has good taste.' Having good taste does not logically imply being skilled at cooking; skill involves technique, execution, and knowledge beyond taste perception.",
+          "confidence": 0.72,
+          "attacks": {
+            "A6": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim states 'If Amirah enjoys experimenting with food, then she is a talented cook and has good taste.' However, 'talented cook' is not equivalent to 'skilled at cooking'\u2014talent may be innate, while skill implies developed proficiency through practice and training.",
+          "confidence": 0.68,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The claim explicitly states 'If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef.' Since it is given that 'Amirah is not passionate about cooking,' if she were skilled at cooking, she would be a successful chef. However, the claim also states 'For Amirah, she either writes cookbooks or works as a chef, but not both.' There is no information confirming she works as a chef, which undermines the inference that she is skilled.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The claim states 'If Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both.' It is given that 'Amirah is a food blogger' and 'Amirah does not host cooking shows,' so she must develop new recipes. Developing recipes involves creativity and knowledge, which supports cooking skill, contradicting the attack that fresh ingredients and experimentation don't imply skill.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

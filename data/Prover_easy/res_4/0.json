@@ -1,0 +1,101 @@
+{
+  "claim": "Context:'''\nBrecken has experienced heartbreak. Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Brecken has never experienced heartbreak.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The Context states 'Brecken has experienced heartbreak,' which directly contradicts the statement that 'Brecken has never experienced heartbreak.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Brecken has experienced heartbreak,' which directly contradicts the statement that 'Brecken has never experienced heartbreak.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The Context includes the logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' Since the first part is given as true, the second part ('he has never experienced heartbreak') must be false."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context includes the logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' Since the first part is given as true, the second part ('he has never experienced heartbreak') must be false.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Brecken has experienced heartbreak' as a fact, not as the first part of a disjunction. The disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both' is presented separately. The argument A2 incorrectly treats 'Brecken has experienced heartbreak' as the first disjunct when it's actually an independent statement preceding the disjunction.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context is a single statement: 'Brecken has experienced heartbreak. Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' The period separates two independent clauses. The first clause establishes Brecken has experienced heartbreak as true. The disjunction in the second clause then becomes redundant since its first disjunct is already known to be true, making the second disjunct necessarily false. Therefore A2's reasoning is logically sound.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Given the exclusive 'or' in the Context, the two possibilities are mutually exclusive. The affirmation of one ('Brecken has experienced heartbreak') logically entails the negation of the other ('Brecken has never experienced heartbreak')."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive 'or' in the Context, the two possibilities are mutually exclusive. The affirmation of one ('Brecken has experienced heartbreak') logically entails the negation of the other ('Brecken has never experienced heartbreak').",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context explicitly states 'Brecken has experienced heartbreak' as a fact, which directly contradicts the Claim 'Brecken has never experienced heartbreak'.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 0.2
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The Question asks whether 'Brecken has never experienced heartbreak' is true. Based solely on the Context, this statement is false because the Context explicitly asserts the opposite as a fact."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The Question asks whether 'Brecken has never experienced heartbreak' is true. Based solely on the Context, this statement is false because the Context explicitly asserts the opposite as a fact.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' This is an exclusive disjunction, meaning exactly one of the two options is true. The Question asks whether 'Brecken has never experienced heartbreak' is true. Since the Context also asserts 'Brecken has experienced heartbreak' as a fact, the exclusive disjunction forces 'Brecken has never experienced heartbreak' to be false. Therefore, A4's conclusion that the statement is false is logically necessary, not merely 'explicitly asserted.'",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.3
+          }
+        }
+      ]
+    }
+  }
+}

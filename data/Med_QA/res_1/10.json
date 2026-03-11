@@ -1,0 +1,283 @@
+{
+  "claim": "Consider the following background information: A 31-year-old male comes to your office for his annual exam. He states that he received all of his recommended vaccinations prior to beginning college, but has not had any vaccines in the past 13 years. His medical history is significant for intermittent, exercise-induced asthma. He has been sexually active in the past with multiple female partners.\n\nGiven the background information the following is corrrect: In addition to an influenza vaccine, the meningococcal vaccine should be administered to this patient during this visit.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The meningococcal vaccine is recommended for college students and young adults living in close quarters, which aligns with the patient's age and potential exposure risk."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The meningococcal vaccine is recommended for college students and young adults living in close quarters, which aligns with the patient's age and potential exposure risk.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient is not currently in college or living in close quarters, so the meningococcal vaccine may not be necessary.",
+          "confidence": 0.7,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if not in college now, the patient's age (31) still falls within the CDC's recommended range for catch-up meningococcal vaccination for previously unvaccinated adults.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's sexual activity history with multiple partners increases risk for meningococcal disease, supporting the need for vaccination regardless of living situation.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's asthma condition may make him more susceptible to respiratory infections, further justifying meningococcal vaccination.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.6
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The patient's history of being sexually active with multiple partners increases his risk for meningococcal disease, supporting the need for vaccination."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The patient's history of being sexually active with multiple partners increases his risk for meningococcal disease, supporting the need for vaccination.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Meningococcal disease is primarily associated with close living conditions (e.g., college dormitories or military barracks), not sexual activity.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While close living conditions are a primary risk factor, sexual activity can still facilitate transmission of Neisseria meningitidis, albeit less commonly.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient is 31 years old, well past the age of highest meningococcal disease risk (adolescents and young adults up to age 21).",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The CDC recommends meningococcal vaccination for high-risk adults, including those with certain medical conditions or lifestyle factors, regardless of age.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.7
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's asthma does not specifically increase his risk for meningococcal disease.",
+          "confidence": 0.9,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "B4",
+          "text": "The patient's last meningococcal vaccination was likely more than 10 years ago, and immunity may have waned, supporting revaccination.",
+          "confidence": 0.8,
+          "attacks": {}
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The meningococcal vaccine is typically recommended for adolescents and young adults up to age 21, and the patient is 31, which may reduce the urgency for this vaccine."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The meningococcal vaccine is typically recommended for adolescents and young adults up to age 21, and the patient is 31, which may reduce the urgency for this vaccine.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's history of being sexually active with multiple partners increases his risk for meningococcal disease, warranting the vaccine despite his age.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The CDC recommends meningococcal vaccination for adults with certain risk factors, including those with compromised immune systems or specific lifestyle factors, but the patient's asthma does not qualify as such a risk factor.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's age alone does not exclude him from benefiting from the meningococcal vaccine, especially if he has other risk factors such as living in close quarters or traveling to high-risk areas.",
+          "confidence": 0.8,
+          "attacks": {
+            "A3": 0.7
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Unless the patient is planning to live in a dormitory or other congregate setting, the risk of meningococcal disease may not justify vaccination at this age."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Unless the patient is planning to live in a dormitory or other congregate setting, the risk of meningococcal disease may not justify vaccination at this age.",
+          "cate": "S",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's history of multiple sexual partners increases the risk of meningococcal disease, justifying vaccination regardless of living situation.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Meningococcal disease can be severe and life-threatening, and vaccination is recommended for all adults with risk factors, including asthma.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's age (31) is within the range where meningococcal vaccination is still recommended for certain risk groups, including those with asthma or multiple sexual partners.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The CDC recommends meningococcal vaccination for adults with certain risk factors, including those with a history of multiple sexual partners, which applies to this patient."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The CDC recommends meningococcal vaccination for adults with certain risk factors, including those with a history of multiple sexual partners, which applies to this patient.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The CDC's recommendation for meningococcal vaccination in adults with multiple sexual partners is primarily targeted at men who have sex with men (MSM), not necessarily all individuals with multiple partners.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the primary focus is on MSM, the CDC also states that any individual with risk factors for meningococcal disease should be vaccinated, and multiple sexual partners can be considered a risk factor.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's exercise-induced asthma is not a recognized risk factor for meningococcal disease, so this condition does not support the need for vaccination.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient has not had any vaccines in 13 years, but this alone does not justify meningococcal vaccination without specific current risk factors.",
+          "confidence": 0.78,
+          "attacks": {
+            "A5": 0.65
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The patient's asthma does not specifically increase his risk for meningococcal disease, so it does not provide a strong rationale for vaccination in this case."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The patient's asthma does not specifically increase his risk for meningococcal disease, so it does not provide a strong rationale for vaccination in this case.",
+          "cate": "S",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's history of being sexually active with multiple partners increases his risk for meningococcal disease, which supports vaccination.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's age (31) and lack of recent vaccinations make him a candidate for the meningococcal vaccine regardless of his asthma status.",
+          "confidence": 0.9,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Current CDC guidelines recommend meningococcal vaccination for adults with certain risk factors, including sexual activity with multiple partners, which applies here.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.9
+          }
+        }
+      ]
+    }
+  }
+}

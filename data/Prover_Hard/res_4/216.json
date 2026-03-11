@@ -1,0 +1,263 @@
+{
+  "claim": "If Ameer earns recognition or leads by example, then he can advance knowledge. If Dahlia studies hard, then he makes meaningful contributions to society. If Ameer is passionate about research, then he collaborates with others and specializes in a field. If Ameer pursues higher education, then he either becomes an expert or makes meaningful contributions to society (or both). Everyone either specializes in a specific field or advances knowledge, but not necessarily both. Ameer is passionate about research. If someone prioritizes the wellbeing of others, then they have strong ethics. If someone has vision and takes initiative, then they can lead by example. Ameer collaborates with others. Ameer prioritizes the wellbeing of others. Ameer values integrity or pursues noble goals. If Declan either makes meaningful contributions or pursues noble goals (but not both), then he leads by example. If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example. If Ameer either publishes research or mentors students (but not both), then he can advance knowledge. Ameer does not inspire others. Anyone who has strong ethics and pursues noble goals will inspire others. If Ameer studies hard, then he makes meaningful contributions to society.Based on the above information, is the following statement true, false, or uncertain? Ameer does not study hard.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the statement 'If Ameer studies hard, then he makes meaningful contributions to society' and the given 'Ameer does not inspire others', combined with 'Anyone who has strong ethics and pursues noble goals will inspire others' and 'Ameer prioritizes the wellbeing of others' (which implies strong ethics via 'If someone prioritizes the wellbeing of others, then they have strong ethics'), we deduce Ameer has strong ethics. Since Ameer also 'values integrity or pursues noble goals', if he pursues noble goals, he would inspire others (strong ethics + noble goals \u2192 inspire others), but he does not inspire others, so he cannot both have strong ethics and pursue noble goals. Therefore, he does not pursue noble goals. This means he does not satisfy the condition for 'If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example' to trigger, but more critically, if he studied hard, he would make meaningful contributions, which combined with not pursuing noble goals would mean he makes meaningful contributions but not noble goals, satisfying the 'either makes meaningful contributions or pursues noble goals (but not both)' condition, leading to him leading by example. If he leads by example, then from 'If Ameer earns recognition or leads by example, then he can advance knowledge', he could advance knowledge. However, from 'Everyone either specializes in a specific field or advances knowledge', if he advances knowledge, he might not specialize, but that's not directly contradictory. The key is that if he studied hard, he would make meaningful contributions, which would trigger the condition for leading by example, but we have no direct contradiction yet. However, consider 'If Ameer either publishes research or mentors students (but not both), then he can advance knowledge.' We don't know if he publishes or mentors, so this doesn't force a contradiction. But from 'Ameer is passionate about research' and 'If Ameer is passionate about research, then he collaborates with others and specializes in a field', we know he specializes in a field. From 'Everyone either specializes in a specific field or advances knowledge', if he specializes, he does not advance knowledge. Therefore, he cannot advance knowledge. Now, if he studied hard, he would make meaningful contributions, and as argued, that would likely lead to him leading by example (since he doesn't pursue noble goals, making it 'either meaningful contributions or noble goals (but not both)' true), and leading by example would allow him to advance knowledge (from 'If Ameer earns recognition or leads by example, then he can advance knowledge'), but we know he cannot advance knowledge because he specializes. This is a contradiction. Therefore, Ameer cannot study hard."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the statement 'If Ameer studies hard, then he makes meaningful contributions to society' and the given 'Ameer does not inspire others', combined with 'Anyone who has strong ethics and pursues noble goals will inspire others' and 'Ameer prioritizes the wellbeing of others' (which implies strong ethics via 'If someone prioritizes the wellbeing of others, then they have strong ethics'), we deduce Ameer has strong ethics. Since Ameer also 'values integrity or pursues noble goals', if he pursues noble goals, he would inspire others (strong ethics + noble goals \u2192 inspire others), but he does not inspire others, so he cannot both have strong ethics and pursue noble goals. Therefore, he does not pursue noble goals. This means he does not satisfy the condition for 'If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example' to trigger, but more critically, if he studied hard, he would make meaningful contributions, which combined with not pursuing noble goals would mean he makes meaningful contributions but not noble goals, satisfying the 'either makes meaningful contributions or pursues noble goals (but not both)' condition, leading to him leading by example. If he leads by example, then from 'If Ameer earns recognition or leads by example, then he can advance knowledge', he could advance knowledge. However, from 'Everyone either specializes in a specific field or advances knowledge', if he advances knowledge, he might not specialize, but that's not directly contradictory. The key is that if he studied hard, he would make meaningful contributions, which would trigger the condition for leading by example, but we have no direct contradiction yet. However, consider 'If Ameer either publishes research or mentors students (but not both), then he can advance knowledge.' We don't know if he publishes or mentors, so this doesn't force a contradiction. But from 'Ameer is passionate about research' and 'If Ameer is passionate about research, then he collaborates with others and specializes in a field', we know he specializes in a field. From 'Everyone either specializes in a specific field or advances knowledge', if he specializes, he does not advance knowledge. Therefore, he cannot advance knowledge. Now, if he studied hard, he would make meaningful contributions, and as argued, that would likely lead to him leading by example (since he doesn't pursue noble goals, making it 'either meaningful contributions or noble goals (but not both)' true), and leading by example would allow him to advance knowledge (from 'If Ameer earns recognition or leads by example, then he can advance knowledge'), but we know he cannot advance knowledge because he specializes. This is a contradiction. Therefore, Ameer cannot study hard.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'leading by example' necessarily follows from 'makes meaningful contributions but not noble goals'. The premise states: 'If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example.' This is a conditional with a disjunctive antecedent. For it to trigger, we need exactly one of the two conditions true. If Ameer studies hard, he makes meaningful contributions (given). The argument has deduced he does not pursue noble goals. Therefore, meaningful contributions is true, noble goals is false, so the 'either/or but not both' condition is satisfied. This correctly triggers the conditional, so he would lead by example. This step is logically valid.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.2
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's main contradiction relies on the premises 'Everyone either specializes in a specific field or advances knowledge' and 'If Ameer is passionate about research, then he collaborates with others and specializes in a field.' From passion for research, we deduce he specializes. From the universal disjunction, if he specializes, he does not advance knowledge. Therefore, he cannot advance knowledge. This is sound. The contradiction arises if studying hard leads to him being able to advance knowledge (via leading by example). However, the premise 'If Ameer earns recognition or leads by example, then he can advance knowledge' states he *can* advance knowledge, not that he necessarily does. 'Can advance knowledge' is a possibility, not a certainty. Therefore, from leading by example, we only conclude it is possible for him to advance knowledge, not that he actually does. This possibility does not contradict the fact that he does not advance knowledge (because he specializes). He does not advance knowledge, but it could still be true that he *can* advance knowledge (i.e., has the capacity). The contradiction vanishes.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument deduces 'Ameer does not pursue noble goals' from 'Ameer has strong ethics' and 'Ameer does not inspire others' using the premise 'Anyone who has strong ethics and pursues noble goals will inspire others.' This is a valid application of modus tollens: if (strong ethics and noble goals) then inspire others; not inspire others; therefore, not (strong ethics and noble goals). This yields either not strong ethics or not noble goals. Since we have strong ethics, we conclude not noble goals. This step is logically correct.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.1
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly points out the modal issue ('can' vs 'does'), the original problem context often treats 'can advance knowledge' as being in logical tension with 'does not advance knowledge' when combined with disjunctive premises like 'Everyone either specializes or advances knowledge.' If someone specializes, they do not advance knowledge. If they do not advance knowledge, can it still be true they 'can' advance knowledge? In many logical interpretations, 'can' implies potential, not actuality, so no direct contradiction exists. However, in some strict logical puzzles, 'can' might be interpreted as 'it is possible that' which is compatible with it not happening. The attack is strong because it exposes an ambiguity in the original argument's interpretation.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.3
+          }
+        },
+        {
+          "id": "B4",
+          "text": "The argument also relies on the premise 'If Ameer is passionate about research, then he collaborates with others and specializes in a field.' This is given, so specialization is deduced. However, the universal premise 'Everyone either specializes in a specific field or advances knowledge' might allow for overlap? The word 'or' in logical puzzles is often exclusive, but sometimes inclusive. If it's exclusive, then specializing excludes advancing knowledge. The argument assumes exclusivity, which is reasonable given the context 'but not both' is used elsewhere. This part is sound.",
+          "confidence": 0.87,
+          "attacks": {
+            "A1": 0.05
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Given 'Ameer is passionate about research', from 'If Ameer is passionate about research, then he collaborates with others and specializes in a field', we know Ameer specializes in a field. From 'Everyone either specializes in a specific field or advances knowledge', since he specializes, he does not advance knowledge. Now, consider the statement 'If Ameer studies hard, then he makes meaningful contributions to society'. If Ameer studied hard, he would make meaningful contributions. Also, from 'Ameer prioritizes the wellbeing of others', which implies he has strong ethics. He also 'values integrity or pursues noble goals'. If he pursued noble goals, then with strong ethics, he would inspire others (from 'Anyone who has strong ethics and pursues noble goals will inspire others'), but we know 'Ameer does not inspire others', so he cannot pursue noble goals. Therefore, he does not pursue noble goals. Since he would make meaningful contributions if he studied hard, and he does not pursue noble goals, the condition 'If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example' is satisfied (because he makes meaningful contributions and does not pursue noble goals, so it's exactly one of them). Thus, he would lead by example. Then, from 'If Ameer earns recognition or leads by example, then he can advance knowledge', since he leads by example, he can advance knowledge. But we already deduced he cannot advance knowledge because he specializes. This is a logical contradiction. Therefore, the assumption that Ameer studies hard leads to a contradiction, so Ameer does not study hard."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Given 'Ameer is passionate about research', from 'If Ameer is passionate about research, then he collaborates with others and specializes in a field', we know Ameer specializes in a field. From 'Everyone either specializes in a specific field or advances knowledge', since he specializes, he does not advance knowledge. Now, consider the statement 'If Ameer studies hard, then he makes meaningful contributions to society'. If Ameer studied hard, he would make meaningful contributions. Also, from 'Ameer prioritizes the wellbeing of others', which implies he has strong ethics. He also 'values integrity or pursues noble goals'. If he pursued noble goals, then with strong ethics, he would inspire others (from 'Anyone who has strong ethics and pursues noble goals will inspire others'), but we know 'Ameer does not inspire others', so he cannot pursue noble goals. Therefore, he does not pursue noble goals. Since he would make meaningful contributions if he studied hard, and he does not pursue noble goals, the condition 'If Ameer either makes meaningful contributions or pursues noble goals (but not both), then he leads by example' is satisfied (because he makes meaningful contributions and does not pursue noble goals, so it's exactly one of them). Thus, he would lead by example. Then, from 'If Ameer earns recognition or leads by example, then he can advance knowledge', since he leads by example, he can advance knowledge. But we already deduced he cannot advance knowledge because he specializes. This is a logical contradiction. Therefore, the assumption that Ameer studies hard leads to a contradiction, so Ameer does not study hard.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is about a completely different scenario involving 'Ameer', but the original claim and all given premises are about Nathaniel, Georgia, Phillip, and Pumpkin. There is no logical connection between Ameer's story and the claim about Nathaniel making new discoveries. Therefore, A2 is irrelevant to the target claim and provides zero support for either P or S.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A2's internal logic is flawed. It assumes 'Ameer prioritizes the wellbeing of others' implies 'he has strong ethics', which is a non-sequitur. Prioritizing wellbeing is a value, but ethics encompass more systematic moral principles. This weakens the chain of deductions leading to the contradiction.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 points out a potential flaw, the implication from 'prioritizes wellbeing' to 'strong ethics' is reasonable in common discourse. Many ethical frameworks consider prioritizing others' wellbeing as a core component of strong ethics. The leap is not severe enough to invalidate the entire argument.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the premises: Ameer specializes in a field (due to passion for research). Therefore, he does not advance knowledge (from 'Everyone either specializes in a specific field or advances knowledge'). If he studied hard, he would make meaningful contributions. He has strong ethics (from prioritizing wellbeing). He does not inspire others. If he had strong ethics and pursued noble goals, he would inspire others, but he doesn't inspire, so he does not pursue noble goals. Thus, he makes meaningful contributions (if he studied hard) but does not pursue noble goals, satisfying 'either makes meaningful contributions or pursues noble goals (but not both)', so he leads by example. Leading by example implies he can advance knowledge. But he cannot advance knowledge due to specializing. Contradiction. Hence, he does not study hard."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the premises: Ameer specializes in a field (due to passion for research). Therefore, he does not advance knowledge (from 'Everyone either specializes in a specific field or advances knowledge'). If he studied hard, he would make meaningful contributions. He has strong ethics (from prioritizing wellbeing). He does not inspire others. If he had strong ethics and pursued noble goals, he would inspire others, but he doesn't inspire, so he does not pursue noble goals. Thus, he makes meaningful contributions (if he studied hard) but does not pursue noble goals, satisfying 'either makes meaningful contributions or pursues noble goals (but not both)', so he leads by example. Leading by example implies he can advance knowledge. But he cannot advance knowledge due to specializing. Contradiction. Hence, he does not study hard.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Ameer' and premises about 'Everyone either specializes in a specific field or advances knowledge', but these do not appear in the given claim. The argument is based on premises not provided in the problem statement, making it irrelevant to determining whether 'Ayleen does not lack expertise in botany' is true.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim is about Ayleen, Keilani, Ezequiel, and Miles, not Ameer. The argument's reasoning about specialization, advancing knowledge, studying hard, meaningful contributions, ethics, inspiring others, noble goals, and leading by example has no connection to the logical constraints given about botany expertise, nature enjoyment, artistic interests, horticulture, landscaping, gardening, or plant care.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we ignore the wrong name, the logical structure of A3 is internally flawed: it assumes a contradiction between 'cannot advance knowledge due to specializing' and 'leading by example implies he can advance knowledge', but the original claim never states that leading by example implies advancing knowledge. The argument invokes implications not present in the given information.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.95
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Analyze the logical chain: Ameer's passion for research forces specialization. Specialization excludes advancing knowledge. Studying hard would cause meaningful contributions. Meaningful contributions, without noble goals (since no inspiration given strong ethics), triggers leading by example. Leading by example enables advancing knowledge, which contradicts no advancing knowledge. Therefore, studying hard is impossible under the given conditions, making the claim 'Ameer does not study hard' true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Analyze the logical chain: Ameer's passion for research forces specialization. Specialization excludes advancing knowledge. Studying hard would cause meaningful contributions. Meaningful contributions, without noble goals (since no inspiration given strong ethics), triggers leading by example. Leading by example enables advancing knowledge, which contradicts no advancing knowledge. Therefore, studying hard is impossible under the given conditions, making the claim 'Ameer does not study hard' true.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is completely irrelevant to the claim about Ayleen's expertise in botany. It discusses 'Ameer' and 'studying hard,' which are not mentioned in the provided premises at all.",
+          "confidence": 0.99,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure of A4 is internally confused and based on invented premises ('passion for research forces specialization,' 'specialization excludes advancing knowledge') that have no connection to the given information about Ayleen, Ezequiel, Keilani, and Miles.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, A4's conclusion ('Ameer does not study hard') does not logically support the target claim ('Ayleen does not lack expertise in botany'). Therefore, A4 provides zero support for the claim regardless of its internal reasoning.",
+          "confidence": 0.98,
+          "attacks": {
+            "B2": 0.1,
+            "B1": 0.05
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Consider the contrapositive: If Ameer could advance knowledge, then he would not specialize. But he specializes, so he cannot advance knowledge. If he studied hard, he would make meaningful contributions. With strong ethics and no noble goals (to avoid inspiration), meaningful contributions alone trigger leading by example. Leading by example allows advancing knowledge, which is forbidden. Thus, studying hard cannot occur, so he does not study hard."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Consider the contrapositive: If Ameer could advance knowledge, then he would not specialize. But he specializes, so he cannot advance knowledge. If he studied hard, he would make meaningful contributions. With strong ethics and no noble goals (to avoid inspiration), meaningful contributions alone trigger leading by example. Leading by example allows advancing knowledge, which is forbidden. Thus, studying hard cannot occur, so he does not study hard.",
+          "cate": "S",
+          "confidence": 0.42,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Ameer' and concepts like 'advance knowledge', 'specialize', 'strong ethics', 'noble goals', 'leading by example', and 'meaningful contributions', none of which appear in the original claim about Saul. This makes the argument irrelevant to determining whether 'Saul does not become a success'.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.92
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure is internally confused. It tries to derive a contradiction about 'studying hard' from premises not in the original problem, but the steps (e.g., 'meaningful contributions alone trigger leading by example') are unsupported assertions with no logical connection to the given information about Saul.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we charitably map 'Ameer' to 'Saul', the conclusion 'he does not study hard' (or 'he does not practice diligently') directly contradicts the given premise 'Saul practices diligently', which is stated as a fact in the problem. An argument that contradicts a given premise is invalid.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.96
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "From the information: Ameer has strong ethics (prioritizes wellbeing). He does not inspire others. For him to not inspire despite strong ethics, he must not pursue noble goals. So he does not pursue noble goals. If he studied hard, he makes meaningful contributions. Then 'Ameer either makes meaningful contributions or pursues noble goals (but not both)' is true (meaningful contributions yes, noble goals no). So he leads by example. Leading by example implies he can advance knowledge. But he specializes (from passion for research), so he cannot advance knowledge. Contradiction. Therefore, he does not study hard."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "From the information: Ameer has strong ethics (prioritizes wellbeing). He does not inspire others. For him to not inspire despite strong ethics, he must not pursue noble goals. So he does not pursue noble goals. If he studied hard, he makes meaningful contributions. Then 'Ameer either makes meaningful contributions or pursues noble goals (but not both)' is true (meaningful contributions yes, noble goals no). So he leads by example. Leading by example implies he can advance knowledge. But he specializes (from passion for research), so he cannot advance knowledge. Contradiction. Therefore, he does not study hard.",
+          "cate": "S",
+          "confidence": 0.35,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is about a person named 'Ameer', but the claim and all given information are about 'Emmy', 'Aadhya', 'Eliel', and 'Sugams'. There is no mention of 'Ameer' in the provided premises. Therefore, A6 is irrelevant to determining whether 'Emmy is not complex' is true, false, or uncertain.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch, A6's internal logic is flawed. It concludes 'he does not study hard' based on a contradiction derived from premises not present in the original information (e.g., 'passion for research', 'can advance knowledge'). These are introduced without justification from the given text, making the reasoning unsound.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance due to the name, one could charitably interpret 'Ameer' as a typo for 'Emmy'. However, even with this substitution, the premises used in A6 ('strong ethics', 'passion for research', 'advance knowledge') are not found in the original information about Emmy. Therefore, the core flaw remains: A6 constructs an argument from non-given assumptions.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.1
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "claim": "Context:'''\nGeorgina is either creative or uninspired, but not both. Beckham is creative. Beckham is either creative or uninspired, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Beckham is not uninspired.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states 'Beckham is either creative or uninspired, but not both.' This is an exclusive disjunction, meaning exactly one of the two properties must be true for Beckham."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Beckham is either creative or uninspired, but not both.' This is an exclusive disjunction, meaning exactly one of the two properties must be true for Beckham.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context explicitly asserts 'Beckham is creative.' This directly assigns the property 'creative' to Beckham."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context explicitly asserts 'Beckham is creative.' This directly assigns the property 'creative' to Beckham.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Beckham is either creative or uninspired, but not both.' If Beckham is creative, then by logical necessity from this exclusive disjunction, Beckham cannot be uninspired. Therefore, 'Beckham is not uninspired' is necessarily true.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 0.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the exclusive disjunction and the direct assertion that Beckham is creative, the property 'uninspired' must be false for Beckham, as both cannot be true simultaneously."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive disjunction and the direct assertion that Beckham is creative, the property 'uninspired' must be false for Beckham, as both cannot be true simultaneously.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The statement 'Beckham is not uninspired' is logically equivalent to the negation of Beckham being uninspired. Since Beckham is creative, and the exclusive disjunction prevents him from being both, he cannot be uninspired, making the statement true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The statement 'Beckham is not uninspired' is logically equivalent to the negation of Beckham being uninspired. Since Beckham is creative, and the exclusive disjunction prevents him from being both, he cannot be uninspired, making the statement true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

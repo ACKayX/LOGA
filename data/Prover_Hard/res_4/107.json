@@ -1,0 +1,262 @@
+{
+  "claim": "Kevin protects marine life or studies the ocean. Vida either explores terrestrial ecosystems or studies the ocean, but not both. Kevin either investigates ecosystems or pursues space research. Kevin conducts research. If Kevin has a backpack or enjoys hiking, then he can explore terrestrial ecosystems. Kevin is a professor. If someone educates students, then they do not necessarily inspire others, and vice versa. If Kevin has passion, then he can either inspire others or develop innovative solutions, but not both. Kevin does not investigate ecosystems. Kevin either explores terrestrial ecosystems or studies the ocean, but not both. If Kevin studies the ocean, then he can either discover new species or inspire others, but not both. If Kevin is a professor, then he either conducts research or educates students, but not both. Kevin either pursues space research or explores terrestrial ecosystems, but not both.Based on the above information, is the following statement true, false, or uncertain? Kevin discovers new species.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Kevin does not study the ocean, which is a necessary condition for discovering new species according to the given rules."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Kevin does not study the ocean, which is a necessary condition for discovering new species according to the given rules.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states 'If Kevin studies the ocean, then he can either discover new species or inspire others, but not both.' This is a conditional statement, not a biconditional. Kevin could discover new species through other means like exploring terrestrial ecosystems.",
+          "confidence": 0.72,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the given information: 'Kevin either explores terrestrial ecosystems or studies the ocean, but not both' and 'Kevin does not investigate ecosystems' and 'Kevin either pursues space research or explores terrestrial ecosystems, but not both.' If Kevin pursues space research, he cannot explore terrestrial ecosystems, so he must study the ocean. But if he studies the ocean, the conditional about discovering new species applies.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Actually, from 'Kevin either pursues space research or explores terrestrial ecosystems, but not both' and 'Kevin either explores terrestrial ecosystems or studies the ocean, but not both', we cannot conclude Kevin studies the ocean. He could pursue space research and not explore terrestrial ecosystems, and also not study the ocean (since 'explores terrestrial ecosystems or studies the ocean' means he must do one or the other, but not both). Wait, if he doesn't explore terrestrial ecosystems, he must study the ocean. So if he pursues space research, he doesn't explore terrestrial ecosystems, so he must study the ocean.",
+          "confidence": 0.85,
+          "attacks": {
+            "C1": 0.9
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Let's trace through logically: 1) Kevin conducts research. 2) Kevin does not investigate ecosystems. 3) Kevin either investigates ecosystems or pursues space research \u2192 since he doesn't investigate ecosystems, he must pursue space research. 4) Kevin either pursues space research or explores terrestrial ecosystems, but not both \u2192 since he pursues space research, he does NOT explore terrestrial ecosystems. 5) Kevin either explores terrestrial ecosystems or studies the ocean, but not both \u2192 since he does NOT explore terrestrial ecosystems, he MUST study the ocean. Therefore, Kevin studies the ocean.",
+          "confidence": 0.92,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "F1",
+          "text": "If Kevin studies the ocean (from E1's conclusion), then 'If Kevin studies the ocean, then he can either discover new species or inspire others, but not both.' This doesn't guarantee he discovers new species; he might inspire others instead. So the statement 'Kevin discovers new species' remains uncertain.",
+          "confidence": 0.88,
+          "attacks": {
+            "E1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Kevin does not investigate ecosystems, and since he either pursues space research or explores terrestrial ecosystems, he must pursue space research."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Kevin does not investigate ecosystems, and since he either pursues space research or explores terrestrial ecosystems, he must pursue space research.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Kevin', but the claim is about 'Avah', making this argument irrelevant to the claim about Avah solving complex cases.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's premise 'Kevin does not investigate ecosystems' is not supported by any information in the provided context about Avah, Yareli, Lily, or Ariana.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The claim to be evaluated is 'Avah cannot solve complex cases', but this argument discusses Kevin's research focus, failing to address Avah's forensic capabilities at all.",
+          "confidence": 0.92,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant reference to Kevin, the logical structure is valid: if (not A) and (A or B), then B. However, this doesn't support any conclusion about Avah.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "If Kevin studied the ocean, he could discover new species, but he cannot study the ocean because he either explores terrestrial ecosystems or studies the ocean, and he pursues space research instead."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "If Kevin studied the ocean, he could discover new species, but he cannot study the ocean because he either explores terrestrial ecosystems or studies the ocean, and he pursues space research instead.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument mentions 'Kevin' and 'space research', but the claim is about 'Avah' and 'solving complex cases'. There is no logical connection between the argument's content and the claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument discusses studying the ocean and discovering new species, while the claim concerns forensic science and solving complex cases. The domains are completely unrelated.",
+          "confidence": 0.93,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument's reasoning about Kevin's choices (terrestrial ecosystems vs. ocean vs. space research) has no bearing on whether Avah can solve complex cases, which depends on her being a skilled forensic scientist according to the given information.",
+          "confidence": 0.9,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Kevin is a professor, so he either conducts research or educates students, but not both; he conducts research, which aligns with pursuing space research, not ocean study."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Kevin is a professor, so he either conducts research or educates students, but not both; he conducts research, which aligns with pursuing space research, not ocean study.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument is completely irrelevant to the claim about Kyler's charm. It discusses Kevin, a different person, and topics (space/ocean research) unrelated to any premises provided.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, the argument structure is internally flawed: a professor can both conduct research and educate students; the 'but not both' restriction is false in general.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Kevin protects marine life or studies the ocean, but since he pursues space research, he does not study the ocean, so he must protect marine life, which does not imply discovering new species."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Kevin protects marine life or studies the ocean, but since he pursues space research, he does not study the ocean, so he must protect marine life, which does not imply discovering new species.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument about Kevin is completely irrelevant to the claim about Lucian not working hard, as it discusses different people and unrelated activities.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Kevin's activities were relevant, the reasoning contains a logical error: pursuing space research doesn't necessarily preclude studying the ocean; someone could engage in multiple fields.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The original claim concerns Lucian's work ethic, but A5 discusses Kevin's activities, creating a complete disconnect in subject matter that invalidates any logical connection.",
+          "confidence": 0.92,
+          "attacks": {
+            "A5": 0.95,
+            "B1": 0.3
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The statement 'Kevin discovers new species' is false because all logical deductions from the given information point to him pursuing space research, not activities related to discovering new species."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The statement 'Kevin discovers new species' is false because all logical deductions from the given information point to him pursuing space research, not activities related to discovering new species.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Kevin' and 'space research', but the claim is about 'Nicholas' and 'taking pride in appearance'. This is a complete non-sequitur with zero relevance to the actual logical problem.",
+          "confidence": 0.99,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the wrong names, the reasoning structure 'all deductions point to X, therefore not Y' is flawed without establishing mutual exclusivity between 'space research' and 'discovering new species' in the premises.",
+          "confidence": 0.82,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The assigned cate 'S' is meaningless here. The argument doesn't address the truth value of 'Nicholas does not take pride in his appearance' at all, so it cannot be classified as supporting either the claim or its negation.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.98
+          }
+        }
+      ]
+    }
+  }
+}

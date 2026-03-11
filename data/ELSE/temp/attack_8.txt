@@ -1,0 +1,23 @@
+```yaml
+Arguments:
+  - id: "A9"
+    text: "From A8, Gary is brave. The context states 'If Gary is brave, then he will perform heroic actions and earn accolades'. Therefore, Gary earns accolades. The question asks if 'Gary does not earn accolades' is true. Since we derived that Gary earns accolades, the statement 'Gary does not earn accolades' is false."
+    cate: "S"
+    confidence: 0.92
+    attacks: {}
+  - id: "B1"
+    text: "A9 assumes Gary is brave (from A8), but the context states 'Gary either prioritizes his own safety or is brave, but Gary may not necessarily do both.' This means Gary could prioritize his own safety instead of being brave. Without establishing Gary is brave, the conclusion that he earns accolades doesn't follow."
+    confidence: 0.85
+    attacks:
+      A9: 0.88
+  - id: "C1"
+    text: "The context explicitly states 'Gary either prioritizes his own safety or is brave, but Gary may not necessarily do both.' This is an inclusive OR with the possibility of both, not an exclusive OR. It doesn't preclude Gary being brave. A8 (which A9 relies on) could still validly establish Gary is brave through other contextual reasoning."
+    confidence: 0.78
+    attacks:
+      B1: 0.82
+  - id: "D1"
+    text: "Even if Gary is brave, the context states 'If Gary is brave, then he will perform heroic actions and earn accolades.' This is a material conditional. For the conclusion 'Gary earns accolades' to be false, Gary would need to be brave but not earn accolades, which contradicts the conditional. So if bravery is established, accolades necessarily follow."
+    confidence: 0.90
+    attacks:
+      B1: 0.85
+```

@@ -1,0 +1,341 @@
+{
+  "claim": "Consider the following background information: A 3-week-old male newborn is brought to the hospital because of poor weight gain since birth. He was born at 38 weeks\" gestation via normal vaginal delivery. He weighed 3005 g (6 lb, 10 oz) at birth and currently weighs 2835 g (6 lb, 4 oz). He has been latching on and breastfeeding well since birth. His mother has a history of Graves\" disease and underwent near-total thyroidectomy in the second trimester of her pregnancy after her symptoms could not be controlled with antithyroid drugs. She is currently receiving L-thyroxine therapy. The patient\"s temperature is 38.9\u00b0C (102\u00b0F), pulse is 176/min, and respirations are 42/min. He appears irritable. Examination shows a diaphoretic infant with a paucity of subcutaneous fat. There is swelling of the neck at the midline.\n\nGiven the background information the following is corrrect: The most likely cause is the transplacental passage of TSH receptor antibodies.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The mother's history of Graves' disease and prior thyroidectomy suggests the presence of TSH receptor antibodies, which can cross the placenta and affect the newborn."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The mother's history of Graves' disease and prior thyroidectomy suggests the presence of TSH receptor antibodies, which can cross the placenta and affect the newborn.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The newborn's symptoms could also be due to neonatal sepsis, given the fever, tachycardia, and irritability.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Neonatal sepsis is less likely in this case because there is no history of prolonged rupture of membranes or maternal infection, and the neck swelling is more indicative of thyroid pathology.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The poor weight gain and diaphoresis could be due to congenital hyperinsulinism, which can present similarly.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Congenital hyperinsulinism is unlikely because the newborn does not have hypoglycemia, which is a hallmark of the condition.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The infant's symptoms, including poor weight gain, irritability, tachycardia, and fever, are consistent with neonatal hyperthyroidism caused by transplacental TSH receptor antibodies."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The infant's symptoms, including poor weight gain, irritability, tachycardia, and fever, are consistent with neonatal hyperthyroidism caused by transplacental TSH receptor antibodies.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The infant's symptoms could also be due to neonatal sepsis, which presents similarly with fever, tachycardia, and irritability.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Neonatal sepsis is less likely given the absence of risk factors such as premature rupture of membranes or maternal fever, and the presence of maternal Graves' disease history.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The swelling at the midline of the neck could indicate a congenital anomaly such as a thyroglossal duct cyst, unrelated to hyperthyroidism.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A thyroglossal duct cyst typically does not cause systemic symptoms like fever, tachycardia, or poor weight gain, making hyperthyroidism more likely.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The mother's L-thyroxine therapy could potentially affect the infant's thyroid function, complicating the diagnosis of neonatal hyperthyroidism.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C3",
+          "text": "L-thyroxine therapy in the mother is unlikely to cause hyperthyroidism in the infant, as it does not stimulate TSH receptors like transplacental antibodies do.",
+          "confidence": 0.82,
+          "attacks": {
+            "B3": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Neonatal hyperthyroidism is a well-documented complication of maternal Graves' disease, particularly when the mother has high levels of TSH receptor antibodies."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Neonatal hyperthyroidism is a well-documented complication of maternal Graves' disease, particularly when the mother has high levels of TSH receptor antibodies.",
+          "cate": "P",
+          "confidence": 0.9,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The newborn's symptoms could also be due to sepsis, which is common in neonates with fever, irritability, and poor weight gain.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Sepsis is less likely given the absence of risk factors like prolonged rupture of membranes or maternal fever, and the presence of neck swelling points more toward thyroid pathology.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The mother's L-thyroxine therapy could have altered the newborn's thyroid function, independent of TSH receptor antibodies.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "L-thyroxine therapy in the mother is unlikely to cause hyperthyroidism in the newborn, as it does not cross the placenta in significant amounts.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The newborn's symptoms could be due to congenital hyperthyroidism unrelated to maternal Graves' disease.",
+          "confidence": 0.5,
+          "attacks": {
+            "A3": 0.4
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Congenital hyperthyroidism unrelated to maternal Graves' disease is extremely rare and less likely than transplacental antibody transfer.",
+          "confidence": 0.9,
+          "attacks": {
+            "B3": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The swelling of the neck at the midline in the infant could indicate a goiter, which is a common finding in neonatal hyperthyroidism due to transplacental antibody passage."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The swelling of the neck at the midline in the infant could indicate a goiter, which is a common finding in neonatal hyperthyroidism due to transplacental antibody passage.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The swelling could also be due to a congenital midline neck mass such as a thyroglossal duct cyst, which is unrelated to hyperthyroidism.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of maternal Graves' disease and the infant's symptoms (irritability, tachycardia, fever) strongly support neonatal hyperthyroidism over other causes of neck swelling.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The infant's poor weight gain and diaphoresis could be due to sepsis or other infectious causes rather than hyperthyroidism.",
+          "confidence": 0.7,
+          "attacks": {
+            "A4": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The timing of symptoms and maternal history make hyperthyroidism more likely than sepsis, as fever and tachycardia are also common in hyperthyroidism.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The infant's diaphoresis and paucity of subcutaneous fat are additional signs of hypermetabolism, further supporting the diagnosis of neonatal hyperthyroidism from maternal antibodies."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The infant's diaphoresis and paucity of subcutaneous fat are additional signs of hypermetabolism, further supporting the diagnosis of neonatal hyperthyroidism from maternal antibodies.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Diaphoresis and poor subcutaneous fat can also be caused by sepsis or other infectious processes, which are common in neonates with fever and irritability.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of midline neck swelling is more specific to thyroid-related pathology, reducing the likelihood of sepsis as the primary cause.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The mother's history of Graves' disease and thyroidectomy does not guarantee transplacental antibody transfer, as antibody levels can vary post-thyroidectomy.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Neonatal hyperthyroidism is rare but strongly associated with maternal Graves' disease, even post-thyroidectomy, due to persistent antibodies.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The timing of symptoms appearing after birth aligns with the half-life of maternal TSH receptor antibodies, which can persist in the newborn for several weeks."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The timing of symptoms appearing after birth aligns with the half-life of maternal TSH receptor antibodies, which can persist in the newborn for several weeks.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The symptoms could also be due to neonatal sepsis, which is common in newborns presenting with fever, irritability, and poor weight gain.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Neonatal sepsis typically presents with additional signs like lethargy, poor feeding, and abnormal laboratory markers, which are not mentioned here.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The mother's history of Graves' disease and thyroidectomy suggests possible hypothyroidism in the newborn due to maternal thyroid hormone deficiency, not antibody transfer.",
+          "confidence": 0.7,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Hypothyroidism in newborns usually presents with lethargy, hypotonia, and prolonged jaundice, which are not described in this case.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The swelling at the midline of the neck could indicate a congenital anomaly like thyroglossal duct cyst, unrelated to thyroid antibodies.",
+          "confidence": 0.65,
+          "attacks": {
+            "A6": 0.55
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Thyroglossal duct cysts are typically asymptomatic and do not explain the systemic symptoms like fever, tachycardia, and poor weight gain.",
+          "confidence": 0.72,
+          "attacks": {
+            "B3": 0.68
+          }
+        }
+      ]
+    }
+  }
+}

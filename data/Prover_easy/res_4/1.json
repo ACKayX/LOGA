@@ -1,0 +1,189 @@
+{
+  "claim": "Context:'''\nDesmond does not study common plants. If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert. Maleah does not study common plants. Desmond studies rare plants.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Desmond is a recognized expert.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states 'Desmond studies rare plants.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Desmond studies rare plants.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Desmond does not study common plants.'",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The Context states 'If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert.'",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From B1 and A1, Desmond studies rare plants and does not study common plants, satisfying the condition 'studies rare plants or studies common plants (but not both)' as he studies rare plants exclusively.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 0.0
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Applying the conditional from B2 to C1, since the antecedent is satisfied, Desmond must be a recognized expert.",
+          "confidence": 1.0,
+          "attacks": {
+            "C1": 0.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context also states 'Desmond does not study common plants.'"
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context also states 'Desmond does not study common plants.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Desmond does not study common plants' is a premise, but it does not directly support the conclusion that Desmond is a recognized expert. The conclusion requires both that Desmond studies rare plants and that he does not study common plants, which together satisfy the condition 'either studies rare plants or studies common plants (but not both).'",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context explicitly states 'Desmond studies rare plants.' Combined with the premise that Desmond does not study common plants, this directly satisfies the condition 'either studies rare plants or studies common plants (but not both),' which, according to the Context, implies Desmond is a recognized expert.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The Context provides a conditional rule: 'If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert.'"
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The Context provides a conditional rule: 'If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The conditional rule requires that Desmond studies rare plants or common plants, but not both. The Context states 'Desmond does not study common plants' and 'Desmond studies rare plants.' This satisfies the 'rare plants or common plants (but not both)' condition, making the antecedent true. Therefore, the consequent 'he is a recognized expert' follows logically, directly supporting the Claim.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "From A1 and A2, Desmond studies rare plants and does not study common plants. This satisfies the condition 'studies rare plants or studies common plants (but not both)' because he studies rare plants and does not study common plants, meaning he does not study both."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From A1 and A2, Desmond studies rare plants and does not study common plants. This satisfies the condition 'studies rare plants or studies common plants (but not both)' because he studies rare plants and does not study common plants, meaning he does not study both.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The condition requires 'studies rare plants OR studies common plants (but not both)'. The argument A4 correctly states Desmond studies rare plants and does not study common plants, which is exactly 'rare plants OR common plants (but not both)' with the first disjunct true and the second false. There is no logical flaw to attack here; the argument is deductively valid given the context.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.0
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Since the condition of the rule is met, the consequence follows directly: Desmond is a recognized expert."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Since the condition of the rule is met, the consequence follows directly: Desmond is a recognized expert.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The rule states: 'If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert.' The condition requires that he studies rare plants or common plants, but not both. The context says 'Desmond studies rare plants' and 'Desmond does not study common plants.' This satisfies 'studies rare plants' and excludes 'both,' so the condition is met. Therefore, the argument A5 is logically sound and no valid attack exists.",
+          "confidence": 0.0,
+          "attacks": {
+            "A5": 0.0
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The information about Maleah is irrelevant to determining Desmond's status, so it does not affect the logical deduction."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The information about Maleah is irrelevant to determining Desmond's status, so it does not affect the logical deduction.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is incomplete because it doesn't establish the logical deduction itself, only removes a potential distraction.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the Context: 'If Desmond either studies rare plants or studies common plants (but not both), then he is a recognized expert.' Also: 'Desmond studies rare plants.' and 'Desmond does not study common plants.' This satisfies the condition, making Desmond a recognized expert.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

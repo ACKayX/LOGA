@@ -1,0 +1,165 @@
+{
+  "claim": "If Joshua is passionate about nature and excels in academics, then he will obtain a PhD. Joshua does not gain experience. If someone enters the workforce, then they gain experience and develop skills. If Joshua dedicates himself to research, then he makes new discoveries. Joshua either makes new discoveries or collaborates with others, but not both. Joshua either teaches at a university or publishes findings, but not both. Cowboy either teaches at a university or publishes findings, but not both. If Joshua obtains a PhD, then he will teach at a university. Yara develops skills. If Joshua pursues an advanced degree, then he will obtain a PhD. Joshua either collaborates with others or publishes findings. Joshua develops skills. If Joshua has curiosity, then he has a passion for learning and pursues an advanced degree. Anyone who collects data and analyzes results can publish findings. Joshua either enters the workforce or pursues an advanced degree, but not both at the same time. Yara either collaborates with others or publishes findings.Based on the above information, is the following statement true, false, or uncertain? Joshua dedicates himself to research.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Joshua either makes new discoveries or collaborates with others, but not both. If Joshua dedicates himself to research, then he makes new discoveries. Since Joshua develops skills, and if someone enters the workforce, then they gain experience and develop skills, but Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Since Joshua collaborates with others, and he either makes new discoveries or collaborates with others but not both, he does not make new discoveries. Therefore, Joshua does not dedicate himself to research."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Joshua either makes new discoveries or collaborates with others, but not both. If Joshua dedicates himself to research, then he makes new discoveries. Since Joshua develops skills, and if someone enters the workforce, then they gain experience and develop skills, but Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Since Joshua collaborates with others, and he either makes new discoveries or collaborates with others but not both, he does not make new discoveries. Therefore, Joshua does not dedicate himself to research.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'Joshua either collaborates with others or publishes findings' is an exclusive disjunction. The statement in the context is 'Joshua either collaborates with others or publishes findings' without the 'but not both' qualifier, meaning it could be inclusive. Therefore, Joshua could both collaborate and publish, breaking the chain that leads to 'he does not make new discoveries'.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the disjunction is inclusive, the argument's core logic about Joshua not entering the workforce still forces him to pursue an advanced degree. From 'If Joshua pursues an advanced degree, then he will obtain a PhD' and 'If Joshua obtains a PhD, then he will teach at a university', he must teach. The rule 'Joshua either teaches at a university or publishes findings, but not both' is exclusive. Therefore, he does not publish. The rule 'Joshua either collaborates with others or publishes findings' (inclusive) with 'he does not publish' still forces him to collaborate. The exclusive rule 'Joshua either makes new discoveries or collaborates with others, but not both' with 'he collaborates' still means he does not make new discoveries. The original conclusion 'Joshua does not dedicate himself to research' (from 'If he dedicates, he makes discoveries' and 'he does not make discoveries') remains valid.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The reconstruction in C1 relies on the premise 'Joshua does not gain experience' being a definitive fact. However, the context states 'Joshua does not gain experience' as a standalone proposition. If we treat the entire context as given facts, this is fine. But if we are reasoning purely from the logical implications, the statement 'Joshua does not gain experience' might be an observation rather than a necessary truth derived from other rules. If it were uncertain or contingent, the step 'he cannot have entered the workforce' (from 'if someone enters the workforce, then they gain experience') becomes a modus tollens only if 'does not gain experience' is certain. The argument A1 treats it as certain, which is valid given the context format, but the logical strength depends on accepting all context statements as equally solid premises.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Joshua either makes new discoveries or collaborates with others, but not both. If Joshua dedicates himself to research, then he makes new discoveries. Joshua develops skills, and if someone enters the workforce, then they gain experience and develop skills, but Joshua does not gain experience, so he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Since Joshua collaborates with others, and he either makes new discoveries or collaborates with others but not both, he does not make new discoveries. Therefore, Joshua does not dedicate himself to research."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Joshua either makes new discoveries or collaborates with others, but not both. If Joshua dedicates himself to research, then he makes new discoveries. Joshua develops skills, and if someone enters the workforce, then they gain experience and develop skills, but Joshua does not gain experience, so he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Since Joshua collaborates with others, and he either makes new discoveries or collaborates with others but not both, he does not make new discoveries. Therefore, Joshua does not dedicate himself to research.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Joshua either makes new discoveries or collaborates with others, but not both' is an exclusive disjunction. However, the premise states 'Joshua either makes new discoveries or collaborates with others, but not both.' This is explicitly exclusive, so the reasoning is valid. However, the argument incorrectly assumes that 'Joshua either teaches at a university or publishes findings, but not both' applies to Joshua. The premise states 'Cowboy either teaches at a university or publishes findings, but not both.' This is about Cowboy, not Joshua. Therefore, the conclusion that Joshua does not publish findings because he teaches at a university is unsupported.",
+          "confidence": 0.92,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 correctly identifies a critical error: the premise about teaching/publishing exclusivity is about Cowboy, not Joshua. However, the original claim context includes 'Joshua either teaches at a university or publishes findings, but not both.' This premise is explicitly given in the context, so B1's objection is invalid because it ignores this premise. The context is authoritative, so Joshua is indeed subject to that exclusive disjunction.",
+          "confidence": 0.98,
+          "attacks": {
+            "B1": 0.99
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Joshua either enters the workforce or pursues an advanced degree, but not both at the same time. Joshua does not gain experience. If someone enters the workforce, then they gain experience and develop skills. Since Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Joshua either makes new discoveries or collaborates with others, but not both, so he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Since he does not make new discoveries, he does not dedicate himself to research."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Joshua either enters the workforce or pursues an advanced degree, but not both at the same time. Joshua does not gain experience. If someone enters the workforce, then they gain experience and develop skills. Since Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Joshua either makes new discoveries or collaborates with others, but not both, so he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Since he does not make new discoveries, he does not dedicate himself to research.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Joshua does not gain experience' is a premise, but this is not explicitly stated as a given fact in the original claim set. It is presented as part of the argument itself without independent verification from the premises. Without this premise being established as true from the given information, the entire chain of reasoning collapses.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument concludes Joshua does not dedicate himself to research, but it relies on the conditional 'If Joshua dedicates himself to research, then he makes new discoveries.' However, the original information does not specify that making new discoveries is the ONLY possible outcome of dedicating himself to research. There could be other outcomes not mentioned, so the contrapositive used ('no new discoveries \u2192 no dedication to research') is not necessarily valid.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if 'Joshua does not gain experience' is assumed true, the argument states 'If someone enters the workforce, then they gain experience and develop skills.' This does not logically imply that not gaining experience means not entering the workforce, because the conditional only specifies what happens IF someone enters the workforce, not that gaining experience is exclusive to workforce entry. Joshua might not gain experience for other reasons unrelated to workforce entry.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Joshua develops skills. If someone enters the workforce, then they gain experience and develop skills. Joshua does not gain experience, so he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Joshua either makes new discoveries or collaborates with others, but not both, so he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Since he does not make new discoveries, he does not dedicate himself to research."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Joshua develops skills. If someone enters the workforce, then they gain experience and develop skills. Joshua does not gain experience, so he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree. If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Since Joshua either teaches at a university or publishes findings, but not both, and he teaches at a university, he does not publish findings. Joshua either collaborates with others or publishes findings, and since he does not publish findings, he must collaborate with others. Joshua either makes new discoveries or collaborates with others, but not both, so he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Since he does not make new discoveries, he does not dedicate himself to research.",
+          "cate": "S",
+          "confidence": 0.82,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'Joshua either makes new discoveries or collaborates with others, but not both' is a strict exclusive disjunction. However, the premise 'Joshua either makes new discoveries or collaborates with others' might be interpreted as inclusive ('or' meaning at least one, possibly both). If it is inclusive, then collaborating with others does not necessarily preclude making new discoveries. Therefore, the conclusion that Joshua does not make new discoveries from his collaboration is not logically guaranteed.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the disjunction is inclusive, the additional premise 'but not both' explicitly makes it exclusive. The original statement in the claim set is: 'Joshua either makes new discoveries or collaborates with others, but not both.' This clearly establishes an exclusive disjunction, so B1's objection is based on a misreading and does not undermine A4's logical step.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on the chain: Joshua pursues advanced degree \u2192 obtains PhD \u2192 teaches at university. However, the premise 'If Joshua pursues an advanced degree, then he will obtain a PhD' does not guarantee he completes it; 'pursues' might not imply 'obtains'. Similarly, 'If Joshua obtains a PhD, then he will teach at a university' might not be immediate or necessary; he could obtain a PhD but not teach. Thus, the conclusion that he teaches at university is not certain.",
+          "confidence": 0.6,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In logical reasoning, conditionals like 'If P then Q' are typically interpreted as material implication: whenever P is true, Q must be true. The premises state these as definitive conditionals without exceptions. Therefore, if Joshua pursues an advanced degree, he will obtain a PhD, and if he obtains a PhD, he will teach at a university. Given the logical structure, the chain holds deductively unless additional constraints are introduced, which are not present in the given information.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

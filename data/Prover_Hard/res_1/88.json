@@ -1,0 +1,352 @@
+{
+  "claim": "If Coraline is a botanist, then she either focuses on flora or explores deserts, but not both. Coraline either publishes research papers or develops new technologies, but not both. If someone explores deserts, then they do not necessarily study cacti, and if someone studies cacti, then they do not necessarily explore deserts. Coraline either works independently or collaborates with colleagues, but not both. Coraline teaches students or publishes research papers. Coraline is a botanist. If Coraline studies cacti, then she can either develop new technologies or inspire new generations, but not both. Coraline either collaborates with colleagues or publishes research papers, but not both. Coraline does not work independently. Coraline focuses on flora.Based on the above information, is the following statement true, false, or uncertain? Coraline does not inspire new generations.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the premises, Coraline is a botanist who focuses on flora, and since she focuses on flora, she does not explore deserts (as she cannot do both)."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the premises, Coraline is a botanist who focuses on flora, and since she focuses on flora, she does not explore deserts (as she cannot do both).",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise states 'If Coraline is a botanist, then she either focuses on flora or explores deserts, but not both.' This is a conditional statement, not a biconditional. While focusing on flora implies not exploring deserts, the converse isn't necessarily true. However, the argument correctly applies the 'but not both' clause when flora is chosen.",
+          "confidence": 0.92,
+          "attacks": {
+            "A1": 0.15
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes Coraline's focus on flora is definitively established from the premises. While 'Coraline focuses on flora' is given as a premise, the logical chain connecting this to 'she does not explore deserts' depends on the first conditional being properly interpreted and applied.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack in B2 is weak because the premise 'Coraline focuses on flora' is explicitly stated in the final line of the given information. This is a direct fact, not an inference. Therefore, applying the first conditional ('if botanist, then flora or deserts but not both') with 'flora' as true directly yields 'not explore deserts' by logical exclusion.",
+          "confidence": 0.95,
+          "attacks": {
+            "B2": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The main conclusion to evaluate is 'Coraline does not inspire new generations.' A1 only establishes she focuses on flora (not deserts). To determine if she inspires new generations, we must trace through other premises about technology development, teaching, and cactus study, which A1 does not address.",
+          "confidence": 0.86,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A1 is presented as a support argument for the claim 'Coraline does not inspire new generations.' Its role is to establish a foundational fact (she focuses on flora, not deserts) that may be part of a longer logical chain. Its confidence should be judged on its internal logic, not its completeness for the final conclusion.",
+          "confidence": 0.82,
+          "attacks": {
+            "B3": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if A1 is logically sound, B3's point remains critical: A1 alone is insufficient to prove the final claim. The attack strength should reflect how much this insufficiency undermines A1's value as a support argument for the ultimate conclusion. Since A1 is just one step, a high attack strength is warranted.",
+          "confidence": 0.84,
+          "attacks": {
+            "C2": 0.65
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Coraline does not work independently, so she must collaborate with colleagues, and since she collaborates with colleagues, she cannot publish research papers (as she cannot do both)."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Coraline does not work independently, so she must collaborate with colleagues, and since she collaborates with colleagues, she cannot publish research papers (as she cannot do both).",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'Coraline does not work independently' is true, but the claim states 'Coraline either works independently or collaborates with colleagues, but not both.' This means if she doesn't work independently, she must collaborate. However, there is also 'Coraline either collaborates with colleagues or publishes research papers, but not both.' So if she collaborates, she cannot publish. But there is also 'Coraline teaches students or publishes research papers.' This is an 'or' that doesn't exclude both, so she could teach without publishing. However, the conclusion 'Coraline does not inspire new generations' requires checking other constraints. The argument A2 only establishes she collaborates and doesn't publish, but doesn't directly prove she doesn't inspire new generations.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 points out A2 doesn't directly prove the final claim, A2 is part of a logical chain. From the given: Coraline is a botanist, focuses on flora (so she doesn't explore deserts). She doesn't work independently \u2192 collaborates \u2192 doesn't publish. Since she doesn't publish, and 'Coraline teaches students or publishes research papers' is true, she must teach students. Also, 'If Coraline studies cacti, then she can either develop new technologies or inspire new generations, but not both.' But we don't know if she studies cacti. Since she focuses on flora, she might study cacti (cacti are flora). But 'focuses on flora' doesn't specify cacti. Without knowing if she studies cacti, we cannot conclude about inspiring new generations. So A2 alone is insufficient, but combined with other facts, we might deduce the final claim.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Let's reconstruct fully: 1. Botanist. 2. Focuses on flora \u2192 not explore deserts (from 'either focuses on flora or explores deserts, but not both'). 3. Not work independently \u2192 collaborates. 4. Collaborates \u2192 not publish (from 'either collaborates or publishes, but not both'). 5. 'Teaches students or publishes research papers' is true, and not publish \u2192 teaches students. 6. 'If studies cacti, then either develop new technologies or inspire new generations, but not both.' We don't know if she studies cacti. 7. 'Either publishes research papers or develops new technologies, but not both.' Not publish \u2192 could develop new technologies? Not necessarily, because 'not publish' doesn't force develop; it's an exclusive or, so if not publish, she must develop. Wait: 'Coraline either publishes research papers or develops new technologies, but not both.' Since she doesn't publish, she must develop new technologies. So she develops new technologies. Then from 6: if she studies cacti, she either develops or inspires, not both. She develops \u2192 if she studies cacti, she cannot inspire. But we don't know if she studies cacti. However, she focuses on flora; cacti are flora, but not all flora are cacti. So uncertain. Therefore, A2's reasoning is incomplete for the final claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.88,
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "E1",
+          "text": "But from the statement 'If someone explores deserts, then they do not necessarily study cacti, and if someone studies cacti, then they do not necessarily explore deserts.' This implies studying cacti and exploring deserts are independent. She doesn't explore deserts (from flora focus), but could still study cacti. So studying cacti is possible. Since she develops new technologies (from not publish), and if she studies cacti, then she cannot inspire (from exclusive or in that conditional). But we don't know if she studies cacti. So final claim 'Coraline does not inspire new generations' is uncertain. Thus A2, while correct in its immediate deduction, doesn't establish the final claim.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Since Coraline does not publish research papers, and she must either teach students or publish research papers, she must teach students."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Since Coraline does not publish research papers, and she must either teach students or publish research papers, she must teach students.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is completely irrelevant to the claim about Griffin becoming a master distiller, as it discusses Coraline's activities instead of Griffin's.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premises in A3 about Coraline are not present in the given information, making the argument unsupported by the provided facts.",
+          "confidence": 0.98,
+          "attacks": {
+            "A3": 0.97
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if A3's logical form is valid, its conclusion about Coraline teaching students has no logical connection to whether Griffin becomes a master distiller.",
+          "confidence": 0.96,
+          "attacks": {
+            "A3": 0.96
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Given Coraline focuses on flora, she may or may not study cacti, but if she did study cacti, she could either develop new technologies or inspire new generations, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Given Coraline focuses on flora, she may or may not study cacti, but if she did study cacti, she could either develop new technologies or inspire new generations, but not both.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text is completely irrelevant to the claim about Cayden being a successful restaurateur, as it discusses a different person (Coraline) and unrelated topics (flora, cacti, technologies, generations).",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, the argument's logical structure is internally contradictory or nonsensical in the context of the claim, providing zero support for any position regarding Cayden.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.95
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Coraline collaborates with colleagues, so she does not publish research papers, and since she does not publish research papers, she does not develop new technologies (as she must either publish research papers or develop new technologies, but not both)."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Coraline collaborates with colleagues, so she does not publish research papers, and since she does not publish research papers, she does not develop new technologies (as she must either publish research papers or develop new technologies, but not both).",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Selah building a successful business, as it discusses a different person (Coraline) and different activities (publishing research, developing technologies) not mentioned in the original premises.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A5 were relevant, its logical structure is flawed because it assumes 'collaborates with colleagues' implies 'does not publish research papers' without justification from the given premises about Selah.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.9
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "If Coraline does not develop new technologies, then if she studies cacti, she must inspire new generations, but if she does not study cacti, the condition about inspiring new generations does not apply, leaving her inspiration status uncertain without further information."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "If Coraline does not develop new technologies, then if she studies cacti, she must inspire new generations, but if she does not study cacti, the condition about inspiring new generations does not apply, leaving her inspiration status uncertain without further information.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is completely irrelevant to the claim about Selah building a successful business. It discusses Coraline, cacti, technology development, and inspiring generations, which have no logical connection to the premises provided about Selah.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Argument A6 contains no information from the provided premises about Selah, Owen, Peach, or Duncan. The premises contain specific logical relationships about these individuals, but A6 introduces entirely new entities and conditions not present in the original information.",
+          "confidence": 0.93,
+          "attacks": {
+            "A6": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we ignore the irrelevance, A6's logical structure is flawed for supporting any claim about Selah. It presents a conditional about Coraline that cannot be mapped to the given premises about Selah's business success.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.92
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "The statement 'Coraline does not inspire new generations' cannot be definitively proven true or false from the given premises, as it depends on whether she studies cacti, which is not specified, making the truth value uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "The statement 'Coraline does not inspire new generations' cannot be definitively proven true or false from the given premises, as it depends on whether she studies cacti, which is not specified, making the truth value uncertain.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A7 is irrelevant to the claim about Margot's determination. The premises provided in the claim are entirely about Margot and general human conditionals, with no mention of Coraline, cacti, or inspiring new generations. Therefore, A7 cannot logically support any conclusion about the claim's statement.",
+          "confidence": 0.99,
+          "attacks": {
+            "A7": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance of A7's content to the claim, the task requires evaluating the claim 'Margot is not determined' using the provided premises. A proper supporting argument for the claim's uncertainty would need to engage with those premises, not introduce unrelated examples.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.3
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "P",
+        "text": "Logical deduction shows all definite facts about Coraline (botanist, flora focus, collaborates, teaches, no publishing, no technology development) do not entail whether she inspires new generations, so the statement is uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "Logical deduction shows all definite facts about Coraline (botanist, flora focus, collaborates, teaches, no publishing, no technology development) do not entail whether she inspires new generations, so the statement is uncertain.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly applies reasoning about 'Coraline' to a claim about 'Margot'. The premises in the claim are about Margot, not Coraline, so this argument is irrelevant to determining Margot's determination.",
+          "confidence": 0.95,
+          "attacks": {
+            "A8": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the name mismatch and treat 'Coraline' as a placeholder for 'Margot', the argument's structure is flawed. It claims uncertainty without engaging with the logical constraints provided about Margot's attributes and actions.",
+          "confidence": 0.88,
+          "attacks": {
+            "A8": 0.82
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim provides a complete set of logical constraints about Margot. With formal deduction (e.g., using propositional logic or a truth table), we can determine whether 'Margot is not determined' must be true, false, or remains possible under all models satisfying the premises.",
+          "confidence": 0.87,
+          "attacks": {
+            "A8": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A formal analysis shows the premises are consistent with both Margot being determined and Margot not being determined. Therefore, the statement 'Margot is not determined' is indeed uncertain, but for correct logical reasons, not because of facts about Coraline.",
+          "confidence": 0.83,
+          "attacks": {
+            "B2": 0.7,
+            "A8": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "If we symbolically encode the premises and test satisfiability, we find models where Margot is determined and models where she is not, confirming uncertainty. The original argument A8 reached the right conclusion but with irrelevant justification.",
+          "confidence": 0.9,
+          "attacks": {
+            "C2": 0.3,
+            "A8": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

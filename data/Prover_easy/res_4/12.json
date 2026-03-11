@@ -1,0 +1,85 @@
+{
+  "claim": "Context:'''\nGeorgina is either creative or uninspired, but not both. Beckham is creative. Beckham is either creative or uninspired, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Beckham is not uninspired.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states 'Beckham is either creative or uninspired, but not both.' This establishes an exclusive disjunction: Beckham must be exactly one of creative or uninspired."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Beckham is either creative or uninspired, but not both.' This establishes an exclusive disjunction: Beckham must be exactly one of creative or uninspired.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context also states 'Beckham is creative.' This directly supports the claim that Beckham is not uninspired, making A1's logical analysis redundant and not directly supportive of the claim's truth value.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.9
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context also explicitly states 'Beckham is creative.' This directly assigns the property 'creative' to Beckham."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context also explicitly states 'Beckham is creative.' This directly assigns the property 'creative' to Beckham.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Beckham is either creative or uninspired, but not both.' If Beckham is creative, then by the exclusive disjunction, Beckham cannot be uninspired. Therefore, 'Beckham is not uninspired' is necessarily true.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 0.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the exclusive disjunction, if Beckham is creative, he cannot simultaneously be uninspired. Therefore, the statement 'Beckham is not uninspired' is a direct logical consequence."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive disjunction, if Beckham is creative, he cannot simultaneously be uninspired. Therefore, the statement 'Beckham is not uninspired' is a direct logical consequence.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The Question asks if 'Beckham is not uninspired' is true, false, or uncertain. From the Context, we have a definitive truth: Beckham is creative, so he is not uninspired. The statement is therefore true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The Question asks if 'Beckham is not uninspired' is true, false, or uncertain. From the Context, we have a definitive truth: Beckham is creative, so he is not uninspired. The statement is therefore true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

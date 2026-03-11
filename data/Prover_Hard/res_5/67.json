@@ -1,0 +1,317 @@
+{
+  "claim": "For every horse, either the horse participates in wassailing or the horse does not participate in wassailing, but not both. Vada does not enjoy outdoor activities. Tessa either enjoys outdoor activities or has participated in parades. If Kiddo has a good temperament, then she either wins competitions or is majestic (or both). Kiddo either works on a farm or competes in shows, but not both. Vada works on a farm. Kiddo works on a farm. Kiddo does not enjoy outdoor activities. Kiddo has a good temperament. All horses with a noble appearance are majestic. Tessa either works on a farm or competes in shows, but not both. For Kiddo, either she has participated in parades or she wins competitions, but not necessarily both. If Tessa has a good temperament, then she either wins competitions or is majestic (or both). Any horse that leads processions has participated in parades. Kiddo either enjoys outdoor activities or has participated in parades. For Tessa, either she has participated in parades or she wins competitions, but not necessarily both. Tessa has a good temperament. If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.Based on the above information, is the following statement true, false, or uncertain? Kiddo does not participate in wassailing.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Kiddo works on a farm, and the context states 'Kiddo either works on a farm or competes in shows, but not both.' Since she works on a farm, she does not compete in shows."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Kiddo works on a farm, and the context states 'Kiddo either works on a farm or competes in shows, but not both.' Since she works on a farm, she does not compete in shows.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 does not directly address whether Kiddo participates in wassailing. It only establishes that Kiddo does not compete in shows, which is not logically equivalent to determining her participation in wassailing.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context provides a conditional statement: 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' Since A1 establishes Kiddo does not compete in shows, if Kiddo is majestic, she must participate in wassailing. However, A1 does not establish whether Kiddo is majestic, so the conclusion about wassailing remains undetermined.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the context: 'All horses with a noble appearance are majestic.' and 'Kiddo has a good temperament.' There is no information linking good temperament or noble appearance to Kiddo specifically, so her being majestic is not established. Therefore, the conditional about wassailing cannot be applied, and A1's limitation remains valid.",
+          "confidence": 0.82,
+          "attacks": {
+            "C1": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context states 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' Since Kiddo does not compete in shows (from A1), if she were majestic, she would have to participate in wassailing. However, Kiddo has a good temperament, and 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both).'"
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context states 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' Since Kiddo does not compete in shows (from A1), if she were majestic, she would have to participate in wassailing. However, Kiddo has a good temperament, and 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both).'",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 incorrectly assumes Kiddo does not compete in shows. The context states 'Kiddo either works on a farm or competes in shows, but not both' and also states 'Kiddo works on a farm.' Therefore, Kiddo does not compete in shows, so this premise is actually correct. However, A2 then claims 'if she were majestic, she would have to participate in wassailing' but this only follows if Kiddo is majestic, which A2 has not established. The argument jumps from 'Kiddo has a good temperament' to potentially being majestic without proving it.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 is partially correct but misses the logical structure of A2. A2 is attempting to show Kiddo might participate in wassailing by exploring the possibility she is majestic. However, the context states 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both).' Since Kiddo has a good temperament, she must either win competitions or be majestic. If she is majestic, then from 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both' and knowing she doesn't compete in shows, she would participate in wassailing. Therefore, A2's reasoning, while incomplete in its text, points toward a scenario where Kiddo could participate in wassailing, which would make the Claim 'Kiddo does not participate in wassailing' false. Thus, A2 correctly opposes the Claim, supporting its negation.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Kiddo does not enjoy outdoor activities, and the context states 'Kiddo either enjoys outdoor activities or has participated in parades.' Since she does not enjoy outdoor activities, she must have participated in parades."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Kiddo does not enjoy outdoor activities, and the context states 'Kiddo either enjoys outdoor activities or has participated in parades.' Since she does not enjoy outdoor activities, she must have participated in parades.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 incorrectly assumes the logical form of 'Kiddo either enjoys outdoor activities or has participated in parades' is an exclusive or, but the context states 'Kiddo either enjoys outdoor activities or has participated in parades' without specifying exclusivity, meaning both could be true. Therefore, from Kiddo not enjoying outdoor activities, we cannot definitively conclude she has participated in parades; she might have done neither if the statement is interpreted as a material implication or other non-exclusive form.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context must be interpreted consistently. The phrase 'Kiddo either enjoys outdoor activities or has participated in parades' appears in a list of given statements, all of which are to be taken as true. In logical contexts, 'either...or...' without 'but not both' is typically inclusive. However, the context also contains explicit 'but not both' for other statements, distinguishing them. Here, no 'but not both' is attached, so it is inclusive. For an inclusive or, if Kiddo does not enjoy outdoor activities, then she must have participated in parades to satisfy the disjunction. Thus, A3's inference is actually valid.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "For Kiddo, 'either she has participated in parades or she wins competitions, but not necessarily both.' Since she has participated in parades (from A3), she may or may not win competitions. If she does not win competitions, then from 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both),' since she has a good temperament and does not win competitions, she must be majestic. If she is majestic, then from 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both,' and since she does not compete in shows (from A1), she would have to participate in wassailing. But the claim is that Kiddo does not participate in wassailing, so this would be a contradiction. Therefore, to avoid contradiction, she must win competitions, making majestic status not necessary, and thus she may not be majestic. If she is not majestic, then from the majestic conditional, she does not have to participate in wassailing, supporting the claim."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "For Kiddo, 'either she has participated in parades or she wins competitions, but not necessarily both.' Since she has participated in parades (from A3), she may or may not win competitions. If she does not win competitions, then from 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both),' since she has a good temperament and does not win competitions, she must be majestic. If she is majestic, then from 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both,' and since she does not compete in shows (from A1), she would have to participate in wassailing. But the claim is that Kiddo does not participate in wassailing, so this would be a contradiction. Therefore, to avoid contradiction, she must win competitions, making majestic status not necessary, and thus she may not be majestic. If she is not majestic, then from the majestic conditional, she does not have to participate in wassailing, supporting the claim.",
+          "cate": "P",
+          "confidence": 0.62,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'Kiddo has participated in parades (from A3)' is a given premise. However, A3 is not provided in this context, so this premise is unsupported. Without knowing whether Kiddo has participated in parades, the entire chain of reasoning collapses.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we assume Kiddo has participated in parades, the argument contains a logical flaw. The statement 'For Kiddo, either she has participated in parades or she wins competitions, but not necessarily both' is an inclusive OR (allowing both), not an exclusive OR. Therefore, having participated in parades does not preclude also winning competitions. The argument incorrectly treats it as exclusive when determining whether she 'may or may not win competitions' - actually, she could still win competitions even with parade participation.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.72
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The argument's conclusion that 'to avoid contradiction, she must win competitions' is not logically necessary. Even if Kiddo does not win competitions, she could still avoid the contradiction by not being majestic. The conditional 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both)' only requires at least one of wins competitions OR majestic. If she doesn't win competitions, she must be majestic. But then the majestic conditional says if majestic, then either competes in shows OR participates in wassailing (exclusive). Since she doesn't compete in shows, she would participate in wassailing. This contradicts the claim that she doesn't participate in wassailing. So the real contradiction is between the premises themselves, not resolved by assuming she wins competitions.",
+          "confidence": 0.82,
+          "attacks": {
+            "C1": 0.68
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the context, 'For every horse, either the horse participates in wassailing or the horse does not participate in wassailing, but not both.' This is a tautology (law of excluded middle), so Kiddo either participates or does not. The given information does not force her to participate; in fact, it allows for her not participating, especially if she is not majestic or if she wins competitions without being majestic, as argued in A4."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the context, 'For every horse, either the horse participates in wassailing or the horse does not participate in wassailing, but not both.' This is a tautology (law of excluded middle), so Kiddo either participates or does not. The given information does not force her to participate; in fact, it allows for her not participating, especially if she is not majestic or if she wins competitions without being majestic, as argued in A4.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The tautology alone does not determine whether Kiddo participates or not; it merely states she must do one or the other. A5 incorrectly treats the tautology as supporting 'Kiddo does not participate in wassailing' when it equally supports 'Kiddo participates in wassailing'. The conclusion that she does not participate requires additional premises not provided in A5.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "A5 references A4's reasoning about Kiddo not being majestic or winning competitions without being majestic, but A5 itself does not incorporate those premises. Without those specific premises, A5's leap from the tautology to 'allows for her not participating' is logically incomplete and does not constitute support for the claim.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Kiddo has participated in parades (from A3). The context states 'Any horse that leads processions has participated in parades,' but this does not imply that participating in parades requires leading processions. There is no statement linking parade participation to wassailing for Kiddo, so her parade participation does not necessitate wassailing participation."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Kiddo has participated in parades (from A3). The context states 'Any horse that leads processions has participated in parades,' but this does not imply that participating in parades requires leading processions. There is no statement linking parade participation to wassailing for Kiddo, so her parade participation does not necessitate wassailing participation.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Kiddo either enjoys outdoor activities or has participated in parades.' Since Kiddo does not enjoy outdoor activities (given in context), she must have participated in parades. However, the context also states 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' If Kiddo is majestic, this creates a direct logical connection between her parade participation and potential wassailing participation through the majestic condition.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states 'All horses with a noble appearance are majestic.' However, there is no information about whether Kiddo has a noble appearance. Therefore, we cannot conclude Kiddo is majestic from the given information, and the conditional about majestic horses (competing in shows or participating in wassailing) does not necessarily apply to Kiddo.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'Kiddo has a good temperament' and 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both).' This means Kiddo must either win competitions or be majestic. If she wins competitions, this doesn't directly relate to wassailing. If she is majestic, then the conditional about majestic horses applies, creating a potential link to wassailing.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The context states 'Kiddo works on a farm' and 'Kiddo either works on a farm or competes in shows, but not both.' This means Kiddo does NOT compete in shows. If Kiddo were majestic, the context states 'she either competes in shows or participates in wassailing, but not both.' Since she doesn't compete in shows, she would have to participate in wassailing if she were majestic.",
+          "confidence": 0.9,
+          "attacks": {
+            "D1": 0.75
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "Kiddo does not compete in shows (from A1). The only conditional linking wassailing to Kiddo is through her being majestic. If she is not majestic, there is no requirement for her to participate in wassailing. Since she may not be majestic (as she could win competitions instead, satisfying the good temperament condition), she may not participate in wassailing."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "Kiddo does not compete in shows (from A1). The only conditional linking wassailing to Kiddo is through her being majestic. If she is not majestic, there is no requirement for her to participate in wassailing. Since she may not be majestic (as she could win competitions instead, satisfying the good temperament condition), she may not participate in wassailing.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Kiddo may not be majestic, but the context states: 'If Kiddo has a good temperament, then she either wins competitions or is majestic (or both).' Kiddo has a good temperament, so she must either win competitions OR be majestic (or both). The argument incorrectly treats these as mutually exclusive alternatives when they could both be true.",
+          "confidence": 0.75,
+          "attacks": {
+            "A7": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Kiddo could be both majestic and win competitions, the original argument's core point remains: if she is not majestic, she doesn't participate in wassailing. The context doesn't force her to be majestic; winning competitions alone satisfies the good temperament condition. So the possibility that she is not majestic remains valid.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' Kiddo does not compete in shows (from A1). Therefore, if Kiddo is majestic, she must participate in wassailing. Since she has a good temperament and could be majestic, we cannot conclude she doesn't participate in wassailing.",
+          "confidence": 0.85,
+          "attacks": {
+            "A7": 0.8
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "P",
+        "text": "Consider the possibility that Kiddo is majestic. Then from the majestic conditional, she either competes in shows or participates in wassailing, but not both. She does not compete in shows, so she must participate in wassailing. But if she participates in wassailing, then the claim 'Kiddo does not participate in wassailing' would be false. However, if she is majestic, she must also satisfy the good temperament condition: she either wins competitions or is majestic. Since she is majestic, this is satisfied regardless of winning competitions. But there is no contradiction in her being majestic, not competing in shows, and participating in wassailing. However, the context does not force her to be majestic; it only says if she has a good temperament, she wins competitions or is majestic. She has a good temperament, so she wins competitions or is majestic. If she wins competitions, she may not be majestic. Thus, it is uncertain whether she is majestic, and therefore uncertain whether she participates in wassailing. But the question asks if the statement is true, false, or uncertain. Given the arguments, it is not necessarily true, but the claim is 'Kiddo does not participate in wassailing.' Since it is uncertain, the confidence should be 0.5, but the initial confidence was set to 0.8 based on the arguments supporting the claim. Re-evaluating: the arguments show that she may not participate, but not that she definitely does not. Therefore, the claim is uncertain, not true. Adjusting: the confidence should be 0.5, and arguments should be mixed. However, the instruction says if confidence > 0.80, generate arguments supporting the claim; if < 0.20, supporting negation; if between, generate arguments randomly on either side. Since confidence is 0.8, which is not > 0.80, it is in the middle range. Therefore, arguments should be randomly on either side. But the initial confidence was estimated as 0.8, which is at the boundary. To be precise, 0.80 \u2264 confidence \u2264 0.80, so it is in the middle range. Thus, arguments should be mixed. However, the generated arguments above all support the claim (cate: P). This is incorrect if confidence is exactly 0.8. Let's correct: set confidence to 0.5 and generate mixed arguments."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "Consider the possibility that Kiddo is majestic. Then from the majestic conditional, she either competes in shows or participates in wassailing, but not both. She does not compete in shows, so she must participate in wassailing. But if she participates in wassailing, then the claim 'Kiddo does not participate in wassailing' would be false. However, if she is majestic, she must also satisfy the good temperament condition: she either wins competitions or is majestic. Since she is majestic, this is satisfied regardless of winning competitions. But there is no contradiction in her being majestic, not competing in shows, and participating in wassailing. However, the context does not force her to be majestic; it only says if she has a good temperament, she wins competitions or is majestic. She has a good temperament, so she wins competitions or is majestic. If she wins competitions, she may not be majestic. Thus, it is uncertain whether she is majestic, and therefore uncertain whether she participates in wassailing. But the question asks if the statement is true, false, or uncertain. Given the arguments, it is not necessarily true, but the claim is 'Kiddo does not participate in wassailing.' Since it is uncertain, the confidence should be 0.5, but the initial confidence was set to 0.8 based on the arguments supporting the claim. Re-evaluating: the arguments show that she may not participate, but not that she definitely does not. Therefore, the claim is uncertain, not true. Adjusting: the confidence should be 0.5, and arguments should be mixed. However, the instruction says if confidence > 0.80, generate arguments supporting the claim; if < 0.20, supporting negation; if between, generate arguments randomly on either side. Since confidence is 0.8, which is not > 0.80, it is in the middle range. Therefore, arguments should be randomly on either side. But the initial confidence was estimated as 0.8, which is at the boundary. To be precise, 0.80 \u2264 confidence \u2264 0.80, so it is in the middle range. Thus, arguments should be mixed. However, the generated arguments above all support the claim (cate: P). This is incorrect if confidence is exactly 0.8. Let's correct: set confidence to 0.5 and generate mixed arguments.",
+          "cate": "S",
+          "confidence": 0.5,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Kiddo works on a farm, and the context states 'Kiddo either works on a farm or competes in shows, but not both.' Since she works on a farm, she does not compete in shows. The majestic conditional says: 'If Kiddo is majestic, then she either competes in shows or participates in wassailing, but not both.' Since she does not compete in shows, if she were majestic, she would have to participate in wassailing. However, Kiddo has a good temperament, so she either wins competitions or is majestic. If she is not majestic, then she must win competitions. The context also says: 'For Kiddo, either she has participated in parades or she wins competitions, but not necessarily both.' If she wins competitions, she may or may not have participated in parades. There is no direct link from winning competitions to participating in wassailing. Therefore, if she is not majestic, there is no requirement for her to participate in wassailing. Since it is uncertain whether she is majestic, it is also uncertain whether she participates in wassailing. Thus, the claim 'Kiddo does not participate in wassailing' is not necessarily true; it could be false if she is majestic. Therefore, the claim is uncertain.",
+          "confidence": 0.85,
+          "attacks": {
+            "A8": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Kiddo does not enjoy outdoor activities. The context states: 'Kiddo either enjoys outdoor activities or has participated in parades.' Since she does not enjoy outdoor activities, she must have participated in parades. The context also states: 'Any horse that leads processions has participated in parades.' However, there is no information that Kiddo leads processions, so this does not provide additional constraints. Participating in parades does not directly relate to participating in wassailing. The only potential link to wassailing is through the majestic conditional. Since Kiddo has participated in parades, and from 'For Kiddo, either she has participated in parades or she wins competitions, but not necessarily both,' it is possible that she also wins competitions, but not required. If she wins competitions, then from her good temperament condition (she either wins competitions or is majestic), she satisfies it by winning competitions, so she may not be majestic. If she is not majestic, the majestic conditional does not apply, so there is no requirement to participate in wassailing. Therefore, it is possible that she does not participate in wassailing, supporting the claim. However, it is still uncertain because she could be majestic, which would require participation in wassailing. Thus, the claim is not definitively true.",
+          "confidence": 0.75,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context includes: 'For every horse, either the horse participates in wassailing or the horse does not participate in wassailing, but not both.' This is a tautology (law of excluded middle) and does not provide specific information about Kiddo's participation. It merely states that for each horse, participation in wassailing is a binary choice: either yes or no, exclusively. This does not help determine which one applies to Kiddo. Therefore, relying on this statement alone does not resolve the uncertainty; it only frames the problem as a binary outcome without giving evidence for either side.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Kiddo has a good temperament, so she either wins competitions or is majestic. If she wins competitions, then from 'For Kiddo, either she has participated in parades or she wins competitions, but not necessarily both,' she may or may not have participated in parades. If she wins competitions and is not majestic, the majestic conditional does not apply, so there is no requirement to participate in wassailing. Additionally, there is no other statement linking winning competitions or parade participation to wassailing. Therefore, in this scenario, she does not participate in wassailing, making the claim true. However, if she is majestic, the majestic conditional applies: she either competes in shows or participates in wassailing, but not both. She does not compete in shows (since she works on a farm), so she must participate in wassailing, making the claim false. Since both scenarios are possible given the context, the claim is uncertain.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

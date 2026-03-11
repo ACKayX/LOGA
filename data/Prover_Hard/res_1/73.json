@@ -1,0 +1,369 @@
+{
+  "claim": "Jade does not map terrain. Alyssa does not map terrain. If Faith loves the outdoors, then she examines fossils and classifies minerals. Alyssa enjoys hiking. Alyssa does not appreciate nature. Faith does not gain recognition. If Twinkle enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Alyssa does not gain recognition. If Alyssa values exploration, then she loves the outdoors. If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both. If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). If Faith studies geology, then she can either make breakthroughs or gain recognition, but not both. Jade does not uncover the secrets of the Earth. If Alyssa loves the outdoors, then she examines fossils and classifies minerals. If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology. If Jade either examines fossils or maps terrain (but not both), then she analyzes rock formations. Jade enjoys hiking. If Twinkle collects rocks, then she will classify minerals. Alyssa does not uncover the secrets of the Earth. Faith does not collect rocks. If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.Based on the above information, is the following statement true, false, or uncertain? Alyssa makes breakthroughs.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Alyssa enjoys hiking, which triggers the rule that she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. Loving the outdoors leads to examining fossils and classifying minerals, which could be part of geological study."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Alyssa enjoys hiking, which triggers the rule that she either appreciates nature or loves the outdoors (but not both). Since she does not appreciate nature, she must love the outdoors. Loving the outdoors leads to examining fossils and classifying minerals, which could be part of geological study.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument is completely irrelevant to the claim about Rosalina's loyalty to the state. It discusses Alyssa, hiking, nature appreciation, and geological study, none of which appear in the given premises about Rosalina.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument attempts to derive a conclusion about Rosalina using premises about a different person (Alyssa) and unrelated activities, violating basic logical relevance requirements for argumentation.",
+          "confidence": 0.93,
+          "attacks": {
+            "A1": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, the internal logic about Alyssa is flawed: 'enjoys hiking' doesn't necessarily trigger the exclusive disjunction about appreciating nature or loving the outdoors without additional premises connecting hiking to that disjunction.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.25
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Alyssa does not appreciate nature and does not gain recognition. If she studies geology, the rule states she can either make breakthroughs or gain recognition, but not both. Since she doesn't gain recognition, she could potentially make breakthroughs, but we lack confirmation she studies geology."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Alyssa does not appreciate nature and does not gain recognition. If she studies geology, the rule states she can either make breakthroughs or gain recognition, but not both. Since she doesn't gain recognition, she could potentially make breakthroughs, but we lack confirmation she studies geology.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the claim about Andy and terraforming, as it discusses Alyssa instead of Andy.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A2 contains no information about Andy's position on terraforming, which is what the claim asks about.",
+          "confidence": 0.93,
+          "attacks": {
+            "A2": 0.97
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The claim explicitly asks about Andy ('Andy does not oppose terraforming'), but A2 discusses a different person (Alyssa) entirely.",
+          "confidence": 0.94,
+          "attacks": {
+            "A2": 0.98
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "If Alyssa values exploration, then she loves the outdoors. While not stated directly, her enjoyment of hiking suggests she might value exploration, leading to loving the outdoors and subsequently examining fossils and classifying minerals, activities associated with geological analysis."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "If Alyssa values exploration, then she loves the outdoors. While not stated directly, her enjoyment of hiking suggests she might value exploration, leading to loving the outdoors and subsequently examining fossils and classifying minerals, activities associated with geological analysis.",
+          "cate": "S",
+          "confidence": 0.15,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument about Alyssa is completely irrelevant to the claim about Andy and terraforming. The claim and all supporting information are exclusively about Andy, Heath, Cassidy, and Kabir. Alyssa is never mentioned.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion ('activities associated with geological analysis') does not logically connect to the claim's statement ('Andy does not oppose terraforming'). Even if the premises about Alyssa were true, they provide zero support for determining Andy's position on terraforming.",
+          "confidence": 0.93,
+          "attacks": {
+            "A3": 0.97
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The reasoning is speculative and based on unsupported assumptions ('might value exploration', 'suggests', 'activities associated with'). It constructs a chain of weak implications that are not grounded in the provided factual statements.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Alyssa does not map terrain and does not uncover the secrets of the Earth. The rule states that anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Since she doesn't uncover secrets, analyzing rock formations would require studying geology, but we don't know if she analyzes rock formations."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Alyssa does not map terrain and does not uncover the secrets of the Earth. The rule states that anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Since she doesn't uncover secrets, analyzing rock formations would require studying geology, but we don't know if she analyzes rock formations.",
+          "cate": "S",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Alyssa' and rules about analyzing rock formations, but the claim is about 'Sapphire' and elemental magic. This appears to be a completely different scenario, making the argument irrelevant to the claim about Sapphire revolutionizing magical practices.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we assume the argument was meant to be about Sapphire, it discusses terrain mapping, rock formations, and geology, while the claim involves elemental magic, crystalweaving, talismans, and protection spells. The domains don't align logically.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The argument might be incorrectly copied from a different problem. In logical reasoning tasks, arguments must directly address the given premises and conclusion. This argument doesn't reference any of the premises about Sapphire's elemental abilities or crafting capabilities.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.2,
+            "B2": 0.15
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The conditional 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' could be triggered if she examines fossils. Since she loves the outdoors (from hiking and not appreciating nature), she examines fossils and classifies minerals, potentially leading to analyzing rock formations and studying geology."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The conditional 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' could be triggered if she examines fossils. Since she loves the outdoors (from hiking and not appreciating nature), she examines fossils and classifies minerals, potentially leading to analyzing rock formations and studying geology.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Nathalia's fearlessness. It discusses a different person (Alyssa) and different activities (examining fossils, mapping terrain, analyzing rock formations) that are not mentioned in the original premises.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A5 were relevant, it contains logical errors. The premise states 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' This cannot be 'triggered' by examining fossils alone if the 'but not both' condition requires her to not map terrain, which isn't established.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The original claim concerns Nathalia, not Alyssa. The premises provide direct information about Nathalia: 'Nathalia is either fearless or timid, but not both' and 'Nathalia is either cautious or timid.' From these, we can deduce Nathalia is timid (since she can't be both fearless and timid, and timid appears in both disjunctions), meaning she is not fearless.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The deduction in B2 is valid. If Nathalia is either fearless or timid (but not both), and also either cautious or timid, the only consistent assignment is timid (since fearless would require not timid from the first, but then the second would force cautious, which is possible but doesn't contradict). Actually, checking: If fearless, then not timid (first premise), then cautious (second premise). This is possible: fearless and cautious. So we need more reasoning.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the premises: 'Nathalia is either cautious or timid' and 'Nathalia is either fearless or timid, but not both.' These don't force timid alone. However, we also have 'Nathalia takes risks or seeks thrills' and 'If Nathalia is either timid or takes risks, then she is adventurous.' If she were fearless, she could be timid? No, 'fearless or timid, but not both' means she can't be both. So if fearless, then not timid, so from 'cautious or timid', she must be cautious. So fearless and cautious is possible. But we also have 'Nathalia values humility' and 'For Nathalia, achieving success and valuing humility are mutually exclusive.' No direct contradiction with fearless yet. We need to check other premises.",
+          "confidence": 0.75,
+          "attacks": {
+            "C2": 0.6
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The correct reasoning: From 'Nathalia is either fearless or timid, but not both' and 'Nathalia is either cautious or timid', we cannot conclude timid definitively. However, other premises may help. Importantly, 'Nathalia does not push her limits' and 'If Nathalia either pushes her limits or develops her skills (but not both), then she achieves success.' Since she doesn't push limits, the antecedent isn't satisfied (needs pushes limits or develops skills but not both; if she doesn't push limits, she must develop skills to satisfy 'or', but then 'but not both' requires not pushing limits, which is true, so if she develops skills, the antecedent is true). But we don't know if she develops skills. Not directly relevant to fearless.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.85
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Alyssa does not gain recognition. The rule 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both' means if she studies geology, she must choose one. Without confirmation she studies geology, and without evidence of breakthroughs, the statement remains unproven."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Alyssa does not gain recognition. The rule 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both' means if she studies geology, she must choose one. Without confirmation she studies geology, and without evidence of breakthroughs, the statement remains unproven.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is completely irrelevant to the claim about Gavin breaking barriers. The claim and all given information are about Gavin, Antonio, Eduardo, and Brayan, with no mention of Alyssa or geology.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A6's reasoning is flawed. It attempts to argue against 'Gavin breaks barriers' by discussing an unrelated person (Alyssa) and an unrelated field (geology), which constitutes a non sequitur logical fallacy.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out the irrelevance, one could interpret A6 as a metaphorical or analogical argument. However, analogical reasoning requires shared relevant properties, which are absent here since Gavin's context (journalism/activism traits) and Alyssa's context (geology) are fundamentally different.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.25
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "From 'If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology.' While not stated she does these, if she does either, she studies geology. Studying geology allows for breakthroughs as per the rule, since she doesn't gain recognition."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "From 'If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology.' While not stated she does these, if she does either, she studies geology. Studying geology allows for breakthroughs as per the rule, since she doesn't gain recognition.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Alyssa' and rules about 'studying geology' and 'breakthroughs', but the claim is about 'Gavin breaks barriers'. These are completely different domains with no logical connection.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the domain mismatch, the argument structure is invalid: it assumes Alyssa does one of the actions, but the premise only gives a conditional, not the antecedent.",
+          "confidence": 0.88,
+          "attacks": {
+            "A7": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument attempts to support the negation of 'Gavin breaks barriers' (cate: S), but it provides zero relevant evidence from the given facts about Gavin, Antonio, Eduardo, and their attributes.",
+          "confidence": 0.92,
+          "attacks": {
+            "A7": 0.95
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "The information is a set of conditional statements without explicit confirmation of key premises like Alyssa studying geology, analyzing rock formations, or making breakthroughs. Without direct evidence, the truth value of 'Alyssa makes breakthroughs' cannot be determined from the given logical constraints."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The information is a set of conditional statements without explicit confirmation of key premises like Alyssa studying geology, analyzing rock formations, or making breakthroughs. Without direct evidence, the truth value of 'Alyssa makes breakthroughs' cannot be determined from the given logical constraints.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly references 'Alyssa' when the claim is about 'Waylen'. This makes the argument irrelevant to the actual claim about Waylen not finding true acceptance.",
+          "confidence": 0.95,
+          "attacks": {
+            "A8": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the argument mistakenly references Alyssa, the core logical point about insufficient evidence might still apply analogously to Waylen if we substitute the names. The structure of the problem\u2014conditional statements without explicit confirmation\u2014could be similar.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The claim about Waylen contains specific logical constraints that allow deduction. For example: 'If Waylen expresses himself authentically, then he finds true acceptance.' Combined with other premises, we might determine whether Waylen finds true acceptance through logical inference, not just explicit confirmation.",
+          "confidence": 0.8,
+          "attacks": {
+            "A8": 0.75,
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's confidence is too high given its fundamental error. An argument that misidentifies the subject should have much lower reliability in addressing the claim.",
+          "confidence": 0.88,
+          "attacks": {
+            "A8": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The argument's core methodological point\u2014that conditional statements alone don't determine truth without confirmed premises\u2014is logically valid regardless of the name error. This methodological principle remains sound.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    }
+  }
+}

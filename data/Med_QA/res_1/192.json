@@ -1,0 +1,271 @@
+{
+  "claim": "Consider the following background information: An investigator is studying the function of different enzymes in various human cell types. A subset of normal human cells with an elevated intracellular concentration of bisphosphoglycerate mutase is harvested and isolated.\n\nGiven the background information the following is corrrect: \u03b1-ketoglutarate dehydrogenase is most likely to be absent in these cells.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Bisphosphoglycerate mutase is primarily found in erythrocytes, which lack mitochondria, and \u03b1-ketoglutarate dehydrogenase is a mitochondrial enzyme, so its absence is likely in these cells."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Bisphosphoglycerate mutase is primarily found in erythrocytes, which lack mitochondria, and \u03b1-ketoglutarate dehydrogenase is a mitochondrial enzyme, so its absence is likely in these cells.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Some non-erythroid cells can express bisphosphoglycerate mutase under specific metabolic conditions, and these cells may retain mitochondria.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if bisphosphoglycerate mutase is expressed in non-erythroid cells, the elevated concentration suggests erythrocyte-like metabolism where mitochondria are absent or inactive.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "\u03b1-ketoglutarate dehydrogenase is essential for the TCA cycle, and its absence would be lethal to most cell types, making the claim biologically implausible.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Specialized cells like mature erythrocytes survive without mitochondrial metabolism, so the absence of \u03b1-ketoglutarate dehydrogenase is plausible in cells mimicking erythrocyte biochemistry.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Elevated bisphosphoglycerate mutase suggests a focus on glycolysis and 2,3-BPG regulation, pathways that do not require \u03b1-ketoglutarate dehydrogenase, supporting its absence."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Elevated bisphosphoglycerate mutase suggests a focus on glycolysis and 2,3-BPG regulation, pathways that do not require \u03b1-ketoglutarate dehydrogenase, supporting its absence.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "\u03b1-ketoglutarate dehydrogenase is essential for the TCA cycle, which is a fundamental metabolic pathway present in most human cells, even those with elevated glycolysis.",
+          "confidence": 0.78,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Some specialized cells may downregulate the TCA cycle in favor of glycolysis, making \u03b1-ketoglutarate dehydrogenase non-essential in those contexts.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The absence of \u03b1-ketoglutarate dehydrogenase would lead to a buildup of \u03b1-ketoglutarate, which is toxic to cells, making its complete absence unlikely.",
+          "confidence": 0.8,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Cells with elevated bisphosphoglycerate mutase may have alternative mechanisms to mitigate \u03b1-ketoglutarate toxicity, allowing for the absence of \u03b1-ketoglutarate dehydrogenase.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Some non-erythrocyte cells may express bisphosphoglycerate mutase at low levels, and if these cells retain mitochondria, \u03b1-ketoglutarate dehydrogenase could still be present."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Some non-erythrocyte cells may express bisphosphoglycerate mutase at low levels, and if these cells retain mitochondria, \u03b1-ketoglutarate dehydrogenase could still be present.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Bisphosphoglycerate mutase is primarily expressed in erythrocytes, and its elevated concentration strongly suggests these cells are erythrocytes, which lack mitochondria and thus \u03b1-ketoglutarate dehydrogenase.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if non-erythrocyte cells express bisphosphoglycerate mutase, the elevated concentration mentioned in the background is atypical and still points to erythrocyte-like conditions where mitochondria are absent.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7,
+            "B1": 0.2
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Some rare cell types or pathological conditions might simultaneously exhibit elevated bisphosphoglycerate mutase and retain mitochondria, though this is highly speculative.",
+          "confidence": 0.4,
+          "attacks": {
+            "B1": 0.3,
+            "C1": 0.3
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The TCA cycle, which includes \u03b1-ketoglutarate dehydrogenase, is less active in cells prioritizing glycolysis, making the enzyme's absence more probable in such cells."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The TCA cycle, which includes \u03b1-ketoglutarate dehydrogenase, is less active in cells prioritizing glycolysis, making the enzyme's absence more probable in such cells.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Elevated bisphosphoglycerate mutase suggests increased glycolysis, but the TCA cycle may still operate partially to generate essential intermediates.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "\u03b1-Ketoglutarate dehydrogenase is essential for producing succinyl-CoA, a precursor for heme synthesis, which is critical even in glycolytic cells.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Some cancer cells exhibit complete TCA cycle suppression but still maintain \u03b1-ketoglutarate dehydrogenase for non-canonical metabolic functions.",
+          "confidence": 0.55,
+          "attacks": {
+            "C1": 0.5
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "If the harvested cells are not purely erythrocytes but a mixed population, some may contain mitochondria and thus \u03b1-ketoglutarate dehydrogenase."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "If the harvested cells are not purely erythrocytes but a mixed population, some may contain mitochondria and thus \u03b1-ketoglutarate dehydrogenase.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Erythrocytes are the primary human cell type with elevated bisphosphoglycerate mutase, and they lack mitochondria entirely.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Contamination by non-erythrocyte cell types during harvesting is statistically unlikely with modern isolation techniques.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if present in trace amounts, mitochondrial enzymes like \u03b1-ketoglutarate dehydrogenase would be functionally insignificant compared to erythrocyte biochemistry.",
+          "confidence": 0.6,
+          "attacks": {
+            "A5": 0.5
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Bisphosphoglycerate mutase's role in regulating oxygen affinity in hemoglobin is specific to erythrocytes, which are known to lack mitochondria and TCA cycle enzymes like \u03b1-ketoglutarate dehydrogenase."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Bisphosphoglycerate mutase's role in regulating oxygen affinity in hemoglobin is specific to erythrocytes, which are known to lack mitochondria and TCA cycle enzymes like \u03b1-ketoglutarate dehydrogenase.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Some non-erythrocyte cells may also lack \u03b1-ketoglutarate dehydrogenase due to metabolic specialization or mutations.",
+          "confidence": 0.65,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of mitochondria and TCA cycle enzymes is not exclusive to erythrocytes; certain cancer cell types also exhibit this trait.",
+          "confidence": 0.7,
+          "attacks": {
+            "A6": 0.55
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The investigator's cells may be erythrocyte precursors, which still contain mitochondria and TCA cycle enzymes before maturation.",
+          "confidence": 0.6,
+          "attacks": {
+            "A6": 0.5
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Bisphosphoglycerate mutase has been detected in non-erythroid cells with mitochondrial activity, challenging the erythrocyte-specific assumption.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

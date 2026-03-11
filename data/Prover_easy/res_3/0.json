@@ -1,0 +1,109 @@
+{
+  "claim": "Context:'''\nBrecken has experienced heartbreak. Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Brecken has never experienced heartbreak.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The Context states 'Brecken has experienced heartbreak,' which directly contradicts the statement that 'Brecken has never experienced heartbreak.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states 'Brecken has experienced heartbreak,' which directly contradicts the statement that 'Brecken has never experienced heartbreak.'",
+          "cate": "S",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The Context includes the logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' Since the first part of the disjunction is given as true, the second part ('he has never experienced heartbreak') must be false."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context includes the logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' Since the first part of the disjunction is given as true, the second part ('he has never experienced heartbreak') must be false.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Brecken has experienced heartbreak' as a fact. This directly contradicts the Claim that 'Brecken has never experienced heartbreak', making the Claim false. Therefore, A2's reasoning is unnecessary since the truth of the Claim is directly determined by the Context.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 is correct that the Context directly determines the Claim, A2's logical analysis of the disjunction is still valid and complementary. The Context establishes both the fact and the logical structure, so A2's reasoning reinforces rather than contradicts the conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Given the exclusive 'or' in the Context, the truth of 'Brecken has experienced heartbreak' logically excludes the possibility that 'Brecken has never experienced heartbreak' is true."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive 'or' in the Context, the truth of 'Brecken has experienced heartbreak' logically excludes the possibility that 'Brecken has never experienced heartbreak' is true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Brecken has experienced heartbreak' as a fact. Therefore, the exclusive 'or' structure means the alternative 'Brecken has never experienced heartbreak' must be false.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 0.0
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The Question asks whether 'Brecken has never experienced heartbreak' is true. Based on the Context, this statement is false because the Context explicitly asserts the opposite experience."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The Question asks whether 'Brecken has never experienced heartbreak' is true. Based on the Context, this statement is false because the Context explicitly asserts the opposite experience.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'Brecken has experienced heartbreak' and 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' This means 'Brecken has never experienced heartbreak' is logically false, not just false based on explicit assertion. The argument A4 is redundant and doesn't capture the full logical necessity.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly identifies the logical necessity, A4's conclusion that the statement is false remains correct. The redundancy or incomplete logical framing in A4 doesn't create inconsistency with the truth of its conclusion, so B1 doesn't successfully undermine A4's core claim.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

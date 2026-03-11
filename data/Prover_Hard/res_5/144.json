@@ -1,0 +1,349 @@
+{
+  "claim": "Khai either stays in one city or travels to new places, but not at the same time. Khai does not support local businesses. Khai tends to stay in one city if he has strong community ties. If Khai likes exotic flavors or craves hearty meals, then he will explore street food. If someone follows food blogs, then they either try Khai's stew or recommend it to friends. If Petal appreciates traditions, then he either loves local food or supports local businesses (or both). Khai does not have new experiences. Khai does not explore culture. Khai does not sample regional specialties. If someone visits Khai's stall and tries the stew, then they become a regular customer. Petal either stays in one city or travels to new places, but not at the same time. If Khai appreciates traditions, then he either loves local food or supports local businesses (or both). If Daphne enjoys soups, then he will explore street food and try the stew. Simon does not support local businesses. If Khai enjoys soups, then he will explore street food and try the stew. Simon does not have new experiences. Petal does not sample regional specialties. Daphne enjoys soups. If Khai either explores culture or stays in one city (but not both), then he has new experiences. If Khai gets bored and seeks adventure, then he travels to new places. Anyone who travels to new places will either sample regional specialties or try local cuisine (or both). If Khai craves spicy food, then he will venture outdoors and try local cuisine. Khai appreciates traditions. If Khai loves local food, then he will visit his own stall. Khai enjoys soups.Based on the above information, is the following statement true, false, or uncertain? Khai does not become a regular customer.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Khai enjoys soups, which implies he will explore street food and try the stew; if someone visits Khai's stall and tries the stew, they become a regular customer, so Khai would become a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Khai enjoys soups, which implies he will explore street food and try the stew; if someone visits Khai's stall and tries the stew, they become a regular customer, so Khai would become a regular customer.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states 'Khai does not become a regular customer.' Argument A1 concludes Khai would become a regular customer, which directly contradicts the claim. Since the claim is given as the proposition to evaluate, A1's conclusion opposes it, making its cate 'S' (supporting the negation). The logical relation is to the claim's truth value, not to an independent prediction.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premise 'if someone visits Khai's stall and tries the stew, then they become a regular customer' requires that someone actually visits Khai's stall. A1 assumes Khai visits his own stall, but this is not logically guaranteed from 'Khai enjoys soups' alone. The conditional about soups leads to exploring street food and trying the stew, but not necessarily at his own stall.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'If Khai loves local food, then he will visit his own stall.' Also, 'Khai appreciates traditions' and 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both).' Since 'Khai does not support local businesses' is given, Khai must love local food. Therefore, Khai will visit his own stall, satisfying the stall-visit condition for becoming a regular customer.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The context states 'Khai does not have new experiences' and 'Khai does not explore culture.' Also, 'If Khai either explores culture or stays in one city (but not both), then he has new experiences.' Since Khai does not have new experiences, he cannot satisfy the antecedent (explore culture XOR stays in one city). However, 'Khai tends to stay in one city if he has strong community ties' is given, but community ties are not confirmed. Khai's actions may be inconsistent, undermining the reliability of causal chains leading to him trying the stew.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.55
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Khai does not have new experiences, and if Khai either explores culture or stays in one city (but not both), then he has new experiences; since he does not have new experiences, he must not satisfy that condition, which could relate to his behavior regarding the stall."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Khai does not have new experiences, and if Khai either explores culture or stays in one city (but not both), then he has new experiences; since he does not have new experiences, he must not satisfy that condition, which could relate to his behavior regarding the stall.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 attempts to infer something about Khai's stall behavior from the absence of new experiences, but this is a non sequitur. The conditional 'if Khai either explores culture or stays in one city (but not both), then he has new experiences' does not logically imply anything about visiting his own stall or becoming a regular customer. The absence of new experiences only tells us the antecedent is false, meaning Khai does not satisfy 'either explores culture or stays in one city (but not both)'. This does not directly connect to the claim about becoming a regular customer.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the logical gap in A2, the information in the context provides a direct logical path to evaluate the claim. From the context: 'If Khai loves local food, then he will visit his own stall.' and 'If someone visits Khai's stall and tries the stew, then they become a regular customer.' Also, 'Khai appreciates traditions.' and 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both).' Since 'Khai does not support local businesses' is given, the disjunction forces 'Khai loves local food' to be true. Therefore, Khai visits his own stall, tries the stew, and becomes a regular customer. This directly contradicts the claim 'Khai does not become a regular customer' and thus invalidates the entire reasoning chain starting from A2.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Khai appreciates traditions, which implies he either loves local food or supports local businesses; but Khai does not support local businesses, so he must love local food, which implies he will visit his own stall, potentially leading to trying the stew and becoming a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Khai appreciates traditions, which implies he either loves local food or supports local businesses; but Khai does not support local businesses, so he must love local food, which implies he will visit his own stall, potentially leading to trying the stew and becoming a regular customer.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim states 'Khai does not become a regular customer.' The argument A3 attempts to show Khai could become a regular customer, but it relies on Khai trying the stew at his own stall. The given information states: 'If someone visits Khai's stall and tries the stew, then they become a regular customer.' This requires someone else (not Khai) to visit Khai's stall. Khai visiting his own stall is not equivalent to 'someone visits Khai's stall' in a way that implies he tries his own product as a customer. Therefore, the logical chain in A3 breaks.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The counter-argument B1 correctly identifies a flaw, but it's too restrictive. The statement 'If someone visits Khai's stall and tries the stew, then they become a regular customer' does not logically exclude Khai himself. 'Someone' can include Khai. Therefore, if Khai visits his own stall and tries the stew, the conditional could still apply to him, making A3's chain potentially valid.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if 'someone' includes Khai, A3's conclusion that Khai 'potentially' becomes a regular customer does not contradict the claim 'Khai does not become a regular customer.' 'Potentially' is not actual. The claim is a definite statement about Khai's status. A3 only establishes a possibility, not a certainty, and therefore does not logically support the negation of the claim. Its assigned cate should reflect support for the claim's truth, not its falsehood.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Khai does not explore culture and does not sample regional specialties, which might indicate he does not engage in activities that lead to trying new foods like the stew, so he may not become a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Khai does not explore culture and does not sample regional specialties, which might indicate he does not engage in activities that lead to trying new foods like the stew, so he may not become a regular customer.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 incorrectly assumes that not exploring culture or sampling regional specialties prevents Khai from trying the stew. However, the context states: 'If Khai enjoys soups, then he will explore street food and try the stew.' Since it is given that 'Khai enjoys soups,' it directly follows that Khai will try the stew, regardless of his cultural exploration or regional sampling habits.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly cites the conditional about Khai enjoying soups, it overlooks that trying the stew is necessary but not sufficient for becoming a regular customer. The context states: 'If someone visits Khai's stall and tries the stew, then they become a regular customer.' This requires both visiting the stall and trying the stew. Khai trying the stew does not guarantee he visits his own stall; visiting his stall is a separate condition not established by the soup enjoyment alone.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's objection is valid but incomplete. The context also states: 'If Khai loves local food, then he will visit his own stall.' Since Khai appreciates traditions, and 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both),' it follows that Khai loves local food (as he does not support local businesses). Therefore, Khai will visit his own stall. Combined with trying the stew from the soup enjoyment, both conditions for becoming a regular customer are met.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Khai enjoys soups, and if Daphne enjoys soups, then he will explore street food and try the stew; this applies to Khai as well due to the same condition, so Khai will try the stew and become a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Khai enjoys soups, and if Daphne enjoys soups, then he will explore street food and try the stew; this applies to Khai as well due to the same condition, so Khai will try the stew and become a regular customer.",
+          "cate": "S",
+          "confidence": 0.35,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly applies a conditional about Daphne to Khai. The statement 'If Daphne enjoys soups, then he will explore street food and try the stew' is specifically about Daphne, not a general rule applicable to anyone who enjoys soups. Therefore, Khai enjoying soups does not logically lead to him trying the stew via that premise.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While the conditional is specific to Daphne, the context also contains the statement 'If Khai enjoys soups, then he will explore street food and try the stew.' This directly supports the original argument's intended logical path, making the attack based on misapplication less relevant.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.95
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even with the correct conditional for Khai, the conclusion 'become a regular customer' requires the additional premise 'If someone visits Khai's stall and tries the stew, then they become a regular customer.' The argument A5 does not establish that Khai visits his own stall, which is a necessary step to trigger becoming a regular customer.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.85
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The context states 'If Khai loves local food, then he will visit his own stall.' Since Khai appreciates traditions, and 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both)', it is possible he loves local food. If he does, he would visit his stall. Combined with him trying the stew (from the soups conditional), this could fulfill the conditions to become a regular customer, making the attack's necessary step potentially satisfiable.",
+          "confidence": 0.7,
+          "attacks": {
+            "D1": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Khai does not have new experiences, which could conflict with becoming a regular customer if that involves a new routine or experience, suggesting he does not become a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Khai does not have new experiences, which could conflict with becoming a regular customer if that involves a new routine or experience, suggesting he does not become a regular customer.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that becoming a regular customer constitutes a 'new experience,' but this is not established. Being a regular customer is a sustained behavior, not necessarily a new experience, so the premise doesn't logically lead to the conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim states 'If someone visits Khai's stall and tries the stew, then they become a regular customer.' Since Khai enjoys soups and will explore street food and try the stew (from 'If Khai enjoys soups, then he will explore street food and try the stew'), Khai would become a regular customer, directly contradicting A6's conclusion.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B2 relies on Khai exploring street food and trying the stew, but 'explore street food' might not guarantee visiting his own stall. The condition requires visiting Khai's stall specifically, which isn't explicitly stated.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the claim: 'If Khai loves local food, then he will visit his own stall.' Since Khai appreciates traditions and loves local food or supports local businesses, and he does not support local businesses, he must love local food. Therefore, he visits his own stall, tries the stew, and becomes a regular customer, resolving C1's objection.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "Khai loves local food (from appreciating traditions and not supporting local businesses), so he will visit his own stall; if he visits and tries the stew, he becomes a regular customer, so Khai becomes a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "Khai loves local food (from appreciating traditions and not supporting local businesses), so he will visit his own stall; if he visits and tries the stew, he becomes a regular customer, so Khai becomes a regular customer.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that Khai loves local food is not established. The statement 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both)' is true, and Khai appreciates traditions. However, it is also stated that 'Khai does not support local businesses.' This means the disjunction 'loves local food OR supports local businesses' must be true, and since the second part is false, the first part 'Khai loves local food' must be true. Therefore, the premise is actually valid, and this attack fails on logical grounds.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 0.1
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Khai loves local food and visits his own stall, the rule 'If someone visits Khai's stall and tries the stew, then they become a regular customer' applies to 'someone,' not specifically to Khai himself. There is no stated rule that Khai will try the stew at his own stall. The argument assumes Khai will try the stew, but this action is not logically derived from the given premises.",
+          "confidence": 0.85,
+          "attacks": {
+            "A7": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The rule 'If someone visits Khai's stall and tries the stew, then they become a regular customer' is a general conditional. If Khai is the 'someone' who visits and tries the stew, the consequence logically follows. The attack (B2) incorrectly imposes a special restriction not present in the premises. The premises do not exclude Khai from being the 'someone' referenced.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "While Khai is not explicitly excluded, the premises heavily describe Khai's actions and preferences (e.g., he enjoys soups, appreciates traditions). The fact that the act of 'trying the stew' is never attributed to Khai in any premise, while other specific actions are, creates a semantic incompatibility. The argument A7 inserts an action (Khai tries the stew) that is not supported by any direct logical chain from the given facts, making it an unwarranted assumption.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "The information does not explicitly state that Khai visits his own stall and tries the stew, only that if someone does, they become a regular customer; without confirmation Khai does so, it is uncertain he becomes a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The information does not explicitly state that Khai visits his own stall and tries the stew, only that if someone does, they become a regular customer; without confirmation Khai does so, it is uncertain he becomes a regular customer.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Khai loves local food (from 'Khai appreciates traditions' and 'If Khai appreciates traditions, then he either loves local food or supports local businesses (or both)' and 'Khai does not support local businesses'), and if Khai loves local food, then he will visit his own stall. Visiting his own stall implies trying the stew, which would make him a regular customer per the rule.",
+          "confidence": 0.75,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The rule 'If someone visits Khai's stall and tries the stew, then they become a regular customer' does not specify that Khai himself cannot be that 'someone'. If Khai visits his own stall and tries the stew, he would become a regular customer, contradicting the claim that he does not.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if Khai visits his own stall, there is no explicit statement that he 'tries the stew' at that visit. The rule requires both visiting and trying the stew to trigger becoming a regular customer.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

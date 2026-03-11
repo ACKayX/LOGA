@@ -1,0 +1,149 @@
+{
+  "claim": "Context:'''\nVance will make groundbreaking discoveries if he conducts rigorous research. If Ivan studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both. Vance conducts rigorous research. Vance studies ocean depths. If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Vance inspires new generations.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "From the Context, 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' Since Vance studies ocean depths, he must choose exactly one of these outcomes."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the Context, 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' Since Vance studies ocean depths, he must choose exactly one of these outcomes.",
+          "cate": "S",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context also states 'Vance will make groundbreaking discoveries if he conducts rigorous research.' Since the Context explicitly states 'Vance conducts rigorous research,' it follows that Vance makes groundbreaking discoveries. Therefore, he cannot also inspire new generations under the 'not both' condition.",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 1.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The Context states, 'Vance conducts rigorous research.' Combined with 'Vance will make groundbreaking discoveries if he conducts rigorous research,' it logically follows that Vance makes groundbreaking discoveries."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context states, 'Vance conducts rigorous research.' Combined with 'Vance will make groundbreaking discoveries if he conducts rigorous research,' it logically follows that Vance makes groundbreaking discoveries.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' It also states: 'Vance studies ocean depths.' Therefore, Vance cannot both make groundbreaking discoveries and inspire new generations. Since A2 concludes Vance makes groundbreaking discoveries, it follows that Vance does not inspire new generations, which directly contradicts the Claim that 'Vance inspires new generations.'",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 0.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Given that Vance makes groundbreaking discoveries (from rigorous research) and the rule 'not both' applies, he cannot also inspire new generations, as they are mutually exclusive outcomes under the condition of studying ocean depths."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given that Vance makes groundbreaking discoveries (from rigorous research) and the rule 'not both' applies, he cannot also inspire new generations, as they are mutually exclusive outcomes under the condition of studying ocean depths.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes Vance makes groundbreaking discoveries from rigorous research. The Context states 'Vance will make groundbreaking discoveries if he conducts rigorous research' (conditional), but does not confirm the discovery actually occurred. Without confirmation, the mutual exclusivity argument cannot be applied.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument misinterprets the mutual exclusivity condition. The Context states: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' This is a conditional statement about what happens if he studies ocean depths, not an absolute prohibition. It does not preclude Vance from inspiring new generations if he doesn't make discoveries.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context explicitly states 'Vance conducts rigorous research.' Combining this with 'Vance will make groundbreaking discoveries if he conducts rigorous research' logically entails that Vance makes groundbreaking discoveries. Therefore, the premise in B1 that the discovery is unconfirmed is false.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "C2",
+          "text": "While B2 correctly notes the conditional structure, it ignores that the condition 'Vance studies ocean depths' is also explicitly true in the Context. Therefore, the mutual exclusivity rule is activated: since Vance studies ocean depths, he either makes groundbreaking discoveries or inspires new generations, but not both.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The statement 'Vance inspires new generations' is directly contradicted by the logical deduction: Vance studies ocean depths, so he either makes groundbreaking discoveries or inspires new generations, but not both; since he makes groundbreaking discoveries, he does not inspire new generations."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The statement 'Vance inspires new generations' is directly contradicted by the logical deduction: Vance studies ocean depths, so he either makes groundbreaking discoveries or inspires new generations, but not both; since he makes groundbreaking discoveries, he does not inspire new generations.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise 'Vance makes groundbreaking discoveries' is not definitively established. The context states 'Vance will make groundbreaking discoveries if he conducts rigorous research' and 'Vance conducts rigorous research.' This is a conditional statement about the future ('will make'), not a statement of established fact. Therefore, the conclusion that he does not inspire new generations relies on an unproven assumption.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Within the context, the conditional 'Vance will make groundbreaking discoveries if he conducts rigorous research' is presented as a given, authoritative fact. Since the context also states 'Vance conducts rigorous research,' the logical consequence 'Vance makes groundbreaking discoveries' must be accepted as true for the purpose of evaluating the claim. The context's statements are not probabilistic; they are the rules of the scenario.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure 'either makes groundbreaking discoveries or inspires new generations, but not both' is applied incorrectly. The context states this rule for 'Ivan,' not for Vance. The rule for Vance is only introduced in the final sentence as a separate, independent conditional. Treating them as the same rule for the same person is a conflation of two distinct statements.",
+          "confidence": 0.87,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context explicitly states: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' This is a direct, authoritative rule provided for Vance. It is not conflated with Ivan's rule; it is a separate, parallel rule that applies to Vance. Therefore, the application of this exclusive 'or' to Vance is correct and mandated by the context.",
+          "confidence": 0.95,
+          "attacks": {
+            "B2": 0.9
+          }
+        }
+      ]
+    }
+  }
+}

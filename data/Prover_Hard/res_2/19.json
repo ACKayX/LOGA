@@ -1,0 +1,401 @@
+{
+  "claim": "Maxine collaborates with peers or publishes research (or both). Iris values learning or is passionate about research. Iris does not publish research. Iris collaborates with peers or publishes research (or both). Iris does not seek self-improvement. If Iris is passionate about research, then she shares knowledge with others and collaborates with peers. If Daisy is passionate about research, then she shares knowledge with others and collaborates with peers. Iris studies Earth's geological processes. If Iris studies Earth's geological processes, then she can either discover new minerals or contribute to scientific knowledge, but not both. If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding. If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research. Iris does not value personal growth. Iris either advances human understanding or shares knowledge with others, but not both. If Iris is curious, then she either advances human understanding or has practical skills (but not both). Iris pursues academic degrees. Flora does not seek self-improvement. If Iris either values learning or seeks self-improvement (but not both), then she values personal growth.Based on the above information, is the following statement true, false, or uncertain? Iris discovers new minerals.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Iris studies Earth's geological processes, and if she does, then she can either discover new minerals or contribute to scientific knowledge, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Iris studies Earth's geological processes, and if she does, then she can either discover new minerals or contribute to scientific knowledge, but not both.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 only establishes an exclusive disjunction (either discovers new minerals OR contributes to scientific knowledge), but it does not provide evidence for which of the two outcomes actually occurs. Therefore, it does not directly support the claim 'Iris discovers new minerals' as true or false; it merely presents a necessary condition.",
+          "confidence": 0.82,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly notes A1 presents an exclusive disjunction, A1's categorization as 'P' is valid because it provides the logical framework from which the claim's truth could be deduced when combined with other premises. Its role is foundational, not conclusive on its own.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "From the given information: 'Iris pursues academic degrees.' Also: 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Since 'but not both' is part of the antecedent, and we don't know if Iris contributes to scientific knowledge, we cannot determine if the antecedent is true. However, if Iris does contribute to scientific knowledge, then by the exclusive disjunction in A1, she does NOT discover new minerals.",
+          "confidence": 0.78,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's attack is speculative because it depends on the unknown truth value of 'Iris contributes to scientific knowledge.' Without evidence she contributes, we cannot use that to negate the possibility of discovering new minerals. The exclusive disjunction remains unresolved.",
+          "confidence": 0.72,
+          "attacks": {
+            "B2": 0.68
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Consider the premise: 'If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research.' We don't know if Iris solves complex problems or analyzes data. Also: 'If Iris is passionate about research, then she shares knowledge with others and collaborates with peers.' We have 'Iris collaborates with peers or publishes research (or both)' and 'Iris does not publish research,' so she must collaborate with peers. This satisfies one part of the consequent if she were passionate about research, but doesn't prove she is passionate. Without proving passion for research, we cannot chain further to affect the mineral discovery question.",
+          "confidence": 0.7,
+          "attacks": {
+            "A1": 0.4
+          }
+        },
+        {
+          "id": "D1",
+          "text": "B3's attack strength is low because it introduces a long chain of conditionals with unknown antecedents, ultimately not connecting meaningfully to the exclusive disjunction about mineral discovery vs. scientific contribution. It attacks relevance rather than logical validity.",
+          "confidence": 0.8,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Iris pursues academic degrees, and if she either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Iris pursues academic degrees, and if she either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is irrelevant to the claim about Frankie living in the desert, as it discusses Iris and academic pursuits instead of armadillo behavior or habitat.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A2 were relevant, its logical structure is internally problematic: it states 'Iris pursues academic degrees' and then uses a conditional that depends on an exclusive 'or' with that same fact, creating potential redundancy or triviality.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The argument A2 might be mistakenly included from a different context; its premises do not connect to any given facts about Frankie, armadillos, or desert living, so it cannot support or oppose the claim.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Iris either advances human understanding or shares knowledge with others, but not both, and since she pursues academic degrees, she advances human understanding, implying she does not share knowledge with others."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Iris either advances human understanding or shares knowledge with others, but not both, and since she pursues academic degrees, she advances human understanding, implying she does not share knowledge with others.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument about Iris is irrelevant to the claim about Eliana, as they are different individuals with different premises and traits.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Pursuing academic degrees does not necessarily mean one advances human understanding; many pursue degrees for career advancement without contributing new knowledge.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if academic degrees don't guarantee advancing understanding, the structured learning and research involved in degree programs often contribute to human understanding, directly or indirectly.",
+          "confidence": 0.68,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Advancing human understanding and sharing knowledge are not mutually exclusive in reality; many academics both advance understanding through research and share knowledge through teaching and publications.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The original statement specifies 'either advances human understanding or shares knowledge with others, but not both' as a given premise, so challenging this premise is outside the scope of logical deduction from the premises.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "If Iris is passionate about research, then she shares knowledge with others and collaborates with peers, but since she does not share knowledge with others, she is not passionate about research."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "If Iris is passionate about research, then she shares knowledge with others and collaborates with peers, but since she does not share knowledge with others, she is not passionate about research.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 uses the name 'Iris', but the claim is about 'Dean'. This makes the argument irrelevant to the claim about Dean's ornithology expertise.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch, the logical structure of A4 is valid (modus tollens), but it discusses 'passion for research' and 'sharing knowledge', which are not directly mentioned in the original claim's premises about Dean.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the name mismatch, the task might involve evaluating the logical form of A4 independently, as a test of reasoning rather than factual relevance to Dean's case.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "If we treat A4 as a generic logical exercise, its conclusion ('she is not passionate about research') does not support or oppose the claim 'Dean is not an expert ornithologist', so its assigned category should be neutral, not S.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.7,
+            "A4": 0.65
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research, but since she is not passionate about research, she does not solve complex problems or analyze data in the exclusive sense."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "If Iris either solves complex problems or analyzes data (but not both), then she is passionate about research, but since she is not passionate about research, she does not solve complex problems or analyze data in the exclusive sense.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is about 'Iris', but the claim and all other given information are exclusively about 'Dean'. The premises and conclusion of A5 refer to a different person entirely, making it completely irrelevant to the claim about Dean.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the name mismatch and treat 'Iris' as a placeholder for 'Dean', the logical structure of A5 is valid (modus tollens). However, its premises ('solves complex problems', 'analyzes data', 'passionate about research') are not present in the original information about Dean, so it cannot be used to support any conclusion about Dean.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.4,
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The original information about Dean contains no statements about solving complex problems, analyzing data, or being passionate about research. Therefore, argument A5, regardless of its internal logic, is built on premises disconnected from the given scenario and provides zero support for the claim about Dean.",
+          "confidence": 0.96,
+          "attacks": {
+            "C1": 0.3,
+            "A5": 0.97
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Iris does not publish research, and since she collaborates with peers or publishes research (or both), she must collaborate with peers, but this does not imply she discovers new minerals."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Iris does not publish research, and since she collaborates with peers or publishes research (or both), she must collaborate with peers, but this does not imply she discovers new minerals.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Iris' and 'discovers new minerals', but the claim is about 'Dean' and 'expert ornithologist'. This is a complete non sequitur with no logical connection to the claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the wrong names, the logical structure 'not P, and (C or P), therefore C' is valid, but the conclusion 'this does not imply she discovers new minerals' is irrelevant to determining Dean's status as an expert ornithologist.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, one could charitably interpret A6 as attempting symbolic substitution where 'Iris' = 'Dean', 'publishes research' maps from the facts, and 'discovers new minerals' maps to 'expert ornithologist'. Under this strained reading, it attempts a deduction.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even under C1's charitable mapping, the deduction fails. From the facts: 'Dean does not publish research' and 'Anyone who publishes research or is a respected scientist can inspire others'. This doesn't force collaboration with peers; it only says publishing research or being a respected scientist are sufficient for inspiring others, not necessary. A6 incorrectly treats 'publishes research or collaborates with peers' as a given premise when it isn't in the original claim's context.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85,
+            "A6": 0.8
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "From the exclusive disjunction in studying Earth's geological processes, if Iris contributes to scientific knowledge, she cannot discover new minerals, and her pursuit of academic degrees leads to advancing human understanding, which aligns with contributing to scientific knowledge."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "From the exclusive disjunction in studying Earth's geological processes, if Iris contributes to scientific knowledge, she cannot discover new minerals, and her pursuit of academic degrees leads to advancing human understanding, which aligns with contributing to scientific knowledge.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references Iris, Earth's geological processes, discovering new minerals, and advancing human understanding, none of which appear in the original claim or premises about Alliebear. It is completely irrelevant to determining whether Alliebear is a dedicated scientist.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, the argument's logical structure doesn't connect to the premises. The original problem contains specific premises about Alliebear's actions (works independently, participates in conferences, pursues PhD, doesn't publish, etc.), but this argument doesn't reference any of them.",
+          "confidence": 0.92,
+          "attacks": {
+            "A7": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion appears to be about contributing to scientific knowledge, but the claim asks specifically about whether Alliebear is a dedicated scientist. These are different predicates with no established connection in the premises.",
+          "confidence": 0.88,
+          "attacks": {
+            "A7": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument contains internal contradictions: 'pursuit of academic degrees leads to advancing human understanding, which aligns with contributing to scientific knowledge' suggests a positive connection, but the initial premise sets up an exclusive disjunction that would prevent this alignment.",
+          "confidence": 0.75,
+          "attacks": {
+            "A7": 0.8
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "Iris does not seek self-improvement, and if she either values learning or seeks self-improvement (but not both), then she values personal growth, but she does not value personal growth, so she does not value learning either, further dissociating her from research passion that might lead to mineral discovery."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "Iris does not seek self-improvement, and if she either values learning or seeks self-improvement (but not both), then she values personal growth, but she does not value personal growth, so she does not value learning either, further dissociating her from research passion that might lead to mineral discovery.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A8 attempts to link Iris's lack of self-improvement and learning to a lack of research passion for mineral discovery, but this connection is speculative and not logically established in the given claim about Gabriel.",
+          "confidence": 0.82,
+          "attacks": {
+            "A8": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A8 is about Iris, while the claim is about Gabriel improving lives of citizens. The premises about Iris are irrelevant to the conclusion about Gabriel, making A8 a non sequitur.",
+          "confidence": 0.95,
+          "attacks": {
+            "A8": 0.95
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument A8 contains a logical error: from 'not (values learning or seeks self-improvement)' and 'not values personal growth', it incorrectly concludes 'not values learning'. The logical structure is flawed because the conditional premise doesn't guarantee this inference.",
+          "confidence": 0.78,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A8 were relevant, its internal logic is questionable: the statement 'if she either values learning or seeks self-improvement (but not both), then she values personal growth' doesn't logically force the conclusion that not valuing personal growth implies not valuing learning.",
+          "confidence": 0.85,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

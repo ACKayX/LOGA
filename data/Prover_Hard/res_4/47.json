@@ -1,0 +1,372 @@
+{
+  "claim": "If Emelia handles pressure well, then she either earns respect from others or saves lives, but not both. Anyone who is meticulous will attend to details. Emelia coordinates efficiently. Emelia is meticulous. If someone meets deadlines, then they prioritize their work. Emelia handles pressure well. If Emelia performs her job precisely, then she saves lives and coordinates efficiently. Emelia does not prioritize her work. Emelia either manages tasks or meets deadlines, but not both. For all people, if they attend to details and manage tasks, then they perform their job precisely.Based on the above information, is the following statement true, false, or uncertain? Emelia earns respect from others.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "From the given information, Emelia handles pressure well. The conditional statement 'If Emelia handles pressure well, then she either earns respect from others or saves lives, but not both' implies that if she handles pressure well, exactly one of 'earns respect' or 'saves lives' is true. To determine if she earns respect, we must check if she saves lives."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the given information, Emelia handles pressure well. The conditional statement 'If Emelia handles pressure well, then she either earns respect from others or saves lives, but not both' implies that if she handles pressure well, exactly one of 'earns respect' or 'saves lives' is true. To determine if she earns respect, we must check if she saves lives.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 incorrectly assumes we need to check if she saves lives to determine if she earns respect. Actually, from the premises, we can deduce she saves lives, which would mean she does NOT earn respect (since it's 'not both'). Let's trace: 1) Emelia is meticulous \u2192 attends to details. 2) She coordinates efficiently. 3) She does not prioritize work \u2192 does not meet deadlines (contrapositive of 'if meets deadlines then prioritizes work'). 4) She either manages tasks or meets deadlines, but not both \u2192 since she does not meet deadlines, she must manage tasks. 5) She attends to details and manages tasks \u2192 performs job precisely. 6) If performs job precisely \u2192 saves lives and coordinates efficiently. Thus she saves lives. Given she handles pressure well, the exclusive or means she saves lives \u2192 she does NOT earn respect. So the claim 'Emelia earns respect from others' is FALSE, not uncertain.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1's deduction relies on the premise 'Emelia does not prioritize her work' leading to 'does not meet deadlines' via contrapositive. However, the contrapositive of 'If someone meets deadlines, then they prioritize their work' is 'If someone does not prioritize work, then they do not meet deadlines.' That is valid. But we must check consistency: 'Emelia either manages tasks or meets deadlines, but not both' combined with 'does not meet deadlines' indeed forces 'manages tasks'. The rest follows logically. So B1's reasoning is sound and shows A1's conclusion about uncertainty is wrong.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A1's cate should be P, not S, because A1 is exploring whether Emelia earns respect, which is what the claim asks. The argument is trying to determine truth of 'Emelia earns respect', so it's supporting the process of evaluating the claim, not directly supporting the negation. But more importantly, A1's logical approach is incomplete, leading to an 'uncertain' stance, whereas a full deduction yields false.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "It is given that Emelia is meticulous. The statement 'Anyone who is meticulous will attend to details' means Emelia attends to details."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "It is given that Emelia is meticulous. The statement 'Anyone who is meticulous will attend to details' means Emelia attends to details.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is irrelevant to the claim about Ayden's recklessness. The claim and all given information concern Ayden, Estelle, Laila, and Yummers, but A2 introduces a new character 'Emelia' who is not mentioned in the premise set.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A2's logical form is valid but its conclusion ('Emelia attends to details') does not support or oppose the claim 'Ayden is not reckless'. Therefore, A2 cannot be correctly categorized as supporting (P) or opposing (S) the target claim.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out A2's irrelevance, one could interpret the task as requiring evaluation of A2's internal logic. As a standalone logical deduction from its own premise ('Emelia is meticulous'), A2 is valid and its cate should be 'P' relative to its own implied claim 'Emelia attends to details'.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.4,
+            "B2": 0.45
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "It is given that Emelia does not prioritize her work. The conditional 'If someone meets deadlines, then they prioritize their work' means that if Emelia prioritized her work, she could meet deadlines, but since she does not prioritize her work, she does not meet deadlines."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "It is given that Emelia does not prioritize her work. The conditional 'If someone meets deadlines, then they prioritize their work' means that if Emelia prioritized her work, she could meet deadlines, but since she does not prioritize her work, she does not meet deadlines.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument misinterprets the given conditional. The statement 'If someone meets deadlines, then they prioritize their work' (P \u2192 Q) does not allow the inference that if someone does not prioritize work (~Q), then they do not meet deadlines (~P). This is the fallacy of denying the antecedent. From ~Q alone, we cannot conclude ~P.",
+          "confidence": 0.92,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly identifies the formal logical error, in many real-world contexts, the intended meaning of such a conditional might be biconditional, or the context might imply that prioritizing work is necessary for meeting deadlines. The original problem's natural language might support A3's pragmatic interpretation.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.55
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context of the original claim about Brandon is completely unrelated to Emelia and deadlines. Argument A3 is irrelevant to the target claim 'Brandon is a reckless driver,' making its logical category (P or S) meaningless for the given task. It should not be part of this reasoning tree at all.",
+          "confidence": 0.98,
+          "attacks": {
+            "A3": 0.99,
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The statement 'Emelia either manages tasks or meets deadlines, but not both' combined with the fact that she does not meet deadlines (from A3) means she must manage tasks."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The statement 'Emelia either manages tasks or meets deadlines, but not both' combined with the fact that she does not meet deadlines (from A3) means she must manage tasks.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is based on a logical inference from premises about 'Emelia', but the claim and all other given information in the problem are exclusively about Joziah, Emerson, Leila, and Adele. There is no 'Emelia' mentioned in the claim or its supporting facts. Therefore, A4 is irrelevant to determining whether 'Emerson does not blend tradition with innovation' is true.",
+          "confidence": 0.99,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the name mismatch and treat 'Emelia' as a typo for one of the relevant individuals (e.g., Emerson), the logical structure 'X either manages tasks or meets deadlines, but not both' and 'X does not meet deadlines' does not appear anywhere in the provided information about Emerson, Joziah, Leila, or Adele. The premises in A4 are fabricated and not derivable from the given text.",
+          "confidence": 0.97,
+          "attacks": {
+            "B1": 0.2,
+            "A4": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A4 attempts to support the claim's truth (cate: P), but its conclusion ('she must manage tasks') has no logical connection to the claim in question ('Emerson does not blend tradition with innovation'). Supporting an unrelated true statement does not make the claim true.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A4's reasoning, if it were about a relevant person and with correct premises, would be deductively valid (disjunctive syllogism). However, since its premises are not provided in the problem statement, the argument fails to provide any support for the claim about Emerson.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.3
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "From A2, Emelia attends to details, and from A4, she manages tasks. The universal statement 'For all people, if they attend to details and manage tasks, then they perform their job precisely' applies to Emelia, so she performs her job precisely."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From A2, Emelia attends to details, and from A4, she manages tasks. The universal statement 'For all people, if they attend to details and manage tasks, then they perform their job precisely' applies to Emelia, so she performs her job precisely.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 references premises (A2, A4) and a universal statement that do not appear in the provided claim about Jase, Brody, Reece, and Harlem. The claim contains no information about Emelia, attending to details, managing tasks, or performing jobs precisely. Therefore, A5 is irrelevant to determining whether 'Jase trains elite units' is true, false, or uncertain.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A5 is irrelevant to the specific claim, the logical structure of A5 itself (modus ponens) is valid. If the premises about Emelia were true and the universal statement applied, the conclusion would follow. The error is in applying it to the wrong problem, not in the deductive form.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The assigned cate 'S' for A5 is incorrect relative to the original claim's statement 'Jase trains elite units'. A5 concludes 'Emelia performs her job precisely', which neither supports nor opposes the truth of 'Jase trains elite units'. It is a non-sequitur, so it should not be categorized as support (P) or support for negation (S) for that claim.",
+          "confidence": 0.92,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "If we interpret the task abstractly, A5 demonstrates a logical inference pattern. If we artificially map 'performs job precisely' to 'trains elite units', and assume Emelia is Jase, then A5 could be seen as supporting the statement. However, this requires substantial, unsupported assumptions.",
+          "confidence": 0.45,
+          "attacks": {
+            "B2": 0.4
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The conditional 'If Emelia performs her job precisely, then she saves lives and coordinates efficiently' combined with A5 means she saves lives. It is also given she coordinates efficiently, which is consistent."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The conditional 'If Emelia performs her job precisely, then she saves lives and coordinates efficiently' combined with A5 means she saves lives. It is also given she coordinates efficiently, which is consistent.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 references 'Emelia' and 'A5', but the claim and context are about Forest, Kehlani, and Kendra. This is a complete non-sequitur with zero relevance to the claim about Forest surviving in harsh environments.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the wrong names, A6 attempts to draw a conclusion from a conditional and an unspecified 'A5', but neither premise exists in the provided information about Forest. The reasoning cannot be validated.",
+          "confidence": 0.9,
+          "attacks": {
+            "A6": 0.95
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "From A1 and A6, since Emelia handles pressure well and saves lives, the exclusive disjunction in A1 forces the other option, 'earns respect from others,' to be false. Therefore, Emelia does not earn respect from others."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "From A1 and A6, since Emelia handles pressure well and saves lives, the exclusive disjunction in A1 forces the other option, 'earns respect from others,' to be false. Therefore, Emelia does not earn respect from others.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A7 references premises (A1 and A6) and a conclusion about 'Emelia' that are completely unrelated to the given claim and information about Forest, Kendra, and Kehlani. This makes A7 irrelevant and invalid for the current claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim to evaluate is 'Forest can survive in harsh environments.' The information provided states that if Forest is adaptable, then he can survive in harsh environments and attract scientific attention. To determine if Forest can survive, we must first determine if Forest is adaptable.",
+          "confidence": 0.9,
+          "attacks": {
+            "A7": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the given information: 'Any snake that has stealth or is agile is adaptable.' We know Forest is intelligent and has strong instincts. The rule states: 'If Forest is intelligent, then he is either agile or has strong instincts, but not both.' Since Forest has strong instincts, he cannot be agile (exclusive or). Therefore, Forest does not have agility. We have no information that Forest has stealth. Since Forest has neither stealth nor agility, he does not meet the condition to be considered adaptable.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "However, the definition of 'adaptable' in the premises might only be one sufficient condition, not the only possible way to be adaptable. Forest could be adaptable through other means not mentioned (e.g., intelligence, strong instincts). The conclusion that Forest is not adaptable is therefore uncertain based solely on the lack of stealth/agility.",
+          "confidence": 0.65,
+          "attacks": {
+            "C1": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Let's check another path. We know Forest lives in the rainforest and is intelligent. The rule says: 'If Forest lives in the rainforest, then he is either carnivorous or venomous, but not both.' We also know 'Forest does not have venom.' Therefore, Forest must be carnivorous. Next rule: 'If Forest is a carnivorous snake, then he is either stealthy or camouflaged, but not both.' We know 'Forest is not camouflaged.' Therefore, Forest must be stealthy. Since Forest has stealth, and 'Any snake that has stealth or is agile is adaptable,' Forest is adaptable. Finally, 'If Forest is adaptable, then he can survive in harsh environments and attract scientific attention.' Therefore, Forest can survive in harsh environments. The original claim is true.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85,
+            "B2": 0.3
+          }
+        },
+        {
+          "id": "D2",
+          "text": "The reasoning in C2 is logically valid from the given premises. It uses a chain of deductions: Rainforest + no venom \u2192 carnivorous. Carnivorous + not camouflaged \u2192 stealthy. Stealthy \u2192 adaptable. Adaptable \u2192 can survive in harsh environments. This provides direct, positive support for the claim, making A7's attempted support (which was about an unrelated person) completely invalid.",
+          "confidence": 0.9,
+          "attacks": {
+            "A7": 0.98,
+            "B1": 0.2,
+            "C1": 0.75
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "The logical derivation is complete and consistent: all given premises lead to the conclusion that Emelia saves lives and does not earn respect, making the statement 'Emelia earns respect from others' false."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The logical derivation is complete and consistent: all given premises lead to the conclusion that Emelia saves lives and does not earn respect, making the statement 'Emelia earns respect from others' false.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A8 references 'Emelia saves lives and does not earn respect' and a statement about 'Emelia earns respect from others', but the original claim and provided information are exclusively about camels named Goobers and Blossom. There is no character named Emelia in the premises, making A8's conclusion irrelevant to the actual claim about Goobers being well-hydrated.",
+          "confidence": 0.99,
+          "attacks": {
+            "A8": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even ignoring the name mismatch, A8 claims a 'logical derivation is complete and consistent' based on premises, but it does not present the actual derivation steps connecting the camel-related premises to the conclusion about Goobers' hydration status. This is an assertion without demonstration.",
+          "confidence": 0.85,
+          "attacks": {
+            "A8": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance due to the name 'Emelia', one could interpret A8 as a miswritten summary intended for the camel scenario. The core fault is the lack of logical trace from premises to conclusion, which B2 addresses.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.4,
+            "B2": 0.3
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's attempt to reinterpret A8 is charitable but undermines the evaluation task. The instruction is to verify the given argument text as-is. A8's text is objectively about a different scenario, so B1's attack is definitive, not merely a contextual point.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

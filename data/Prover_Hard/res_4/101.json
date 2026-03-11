@@ -1,0 +1,262 @@
+{
+  "claim": "Elina loves reading. Elina sets goals or stays disciplined. Elina either enjoys the outdoors or loves reading, but not both. If Elina either monitors her performance or evaluates her results (but not both), then she tracks her progress. Stella does not stay motivated. Elina learns from her failures. Bridget does not perform well. Bridget either enjoys the outdoors or loves reading, but not both. Elina does not perform well. Everyone faces challenges or overcomes fear. If someone either achieves success or stays motivated, then they perform well. If someone visualizes success, then they build strategies and set goals. Elina does not stay motivated. If Bridget is a professional athlete, then she either overcomes fear or stays disciplined, but not both. Elina either tracks her progress or learns from her failures, but not both. Remington sets goals or stays disciplined. If Elina masters extreme sports, then she can overcome fear. If Elina either tracks her progress or sets goals (but not both), then she achieves success. If Elina is a professional athlete, then she either overcomes fear or stays disciplined, but not both. Remington enjoys the outdoors or is a professional athlete. Elina enjoys the outdoors or is a professional athlete. If Elina lives in a rural area, then she either has an adventurous spirit or enjoys the outdoors, but not both.Based on the above information, is the following statement true, false, or uncertain? Elina does not master extreme sports.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'If Elina masters extreme sports, then she can overcome fear.' This is a conditional statement, but it does not assert that Elina masters extreme sports. To determine if she does not master extreme sports, we need to check if she overcomes fear. The context states 'Everyone faces challenges or overcomes fear.' This is a disjunction, so it does not guarantee Elina overcomes fear; she might only face challenges. Without explicit information that Elina overcomes fear, we cannot infer she masters extreme sports from the given conditional. Therefore, it is uncertain if she masters extreme sports, but the claim 'Elina does not master extreme sports' is not directly contradicted."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'If Elina masters extreme sports, then she can overcome fear.' This is a conditional statement, but it does not assert that Elina masters extreme sports. To determine if she does not master extreme sports, we need to check if she overcomes fear. The context states 'Everyone faces challenges or overcomes fear.' This is a disjunction, so it does not guarantee Elina overcomes fear; she might only face challenges. Without explicit information that Elina overcomes fear, we cannot infer she masters extreme sports from the given conditional. Therefore, it is uncertain if she masters extreme sports, but the claim 'Elina does not master extreme sports' is not directly contradicted.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 incorrectly analyzes the wrong context. The given claim is about 'Thomas studies the elands' with a completely different set of premises about Thomas, wildlife conservation, ecological knowledge, etc. The argument A1 discusses Elina and extreme sports, which is irrelevant to the Thomas problem.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the contextual mismatch, the original argument A1 might have been intended as a meta-argument about logical reasoning patterns that could apply by analogy to Thomas's case. However, the premises are so different that direct analogy fails.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.4
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the wrong context issue, A1's logical structure is flawed for the actual Thomas problem. For Thomas, we have specific premises: 'If Thomas studies the elands or lives in the savannah (or both), then he contributes to wildlife conservation.' We also know 'Thomas does not support conservation.' From 'Thomas supports conservation or pursues academic research' and 'Thomas does not support conservation', we deduce Thomas pursues academic research. Then from 'Thomas either pursues academic research or educates others, but not both' and Thomas pursues academic research, we deduce Thomas does not educate others. Many other premises exist, but A1 doesn't engage with them.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument A1 concludes uncertainty about whether Thomas studies the elands, but the actual logical deduction from the premises leads to a definite answer. From premises: Thomas does not support conservation \u2192 Thomas pursues academic research \u2192 Thomas does not educate others. Also: Thomas does not love nature \u2192 Thomas does not protect the environment (contrapositive of 'Everyone who protects the environment loves nature'). From 'If Thomas either lives in the savannah or works with animals (but not both), then he protects the environment' and Thomas does not protect environment, we get Thomas does not live in savannah AND does not work with animals (or does both, but 'but not both' makes it exclusive OR, so the conditional's antecedent is false only if both are false or both are true; but 'not both' means both true is impossible, so both must be false). So Thomas does not live in savannah and does not work with animals. From 'If Thomas either tracks wildlife or explores rural areas (but not both), then he lives in the savannah' and Thomas does not live in savannah, we get Thomas does not track wildlife AND does not explore rural areas (or does both, but again exclusive OR). Also: Thomas does not understand animal behavior. From 'If Thomas has ecological knowledge, then he understands animal behavior' and Thomas does not understand animal behavior, we get Thomas does not have ecological knowledge. From 'Thomas values biodiversity or has ecological knowledge' and Thomas does not have ecological knowledge, we get Thomas values biodiversity. Now: 'If Thomas studies the elands or lives in the savannah (or both), then he contributes to wildlife conservation.' We know Thomas does not live in savannah. If Thomas studies the elands, then he contributes to wildlife conservation. But we also have 'If Thomas contributes to wildlife conservation, then he either has ecological knowledge or takes community action, but not both.' Thomas does not have ecological knowledge, so if he contributes, he must take community action. But also 'If Thomas either takes community action or educates others (but not both), then he makes a social impact.' Thomas does not educate others, so if he takes community action, he makes a social impact. But we have 'Thomas either makes a social impact or pursues personal gain, but not both' and 'Thomas pursues personal gain' is given. So Thomas cannot make a social impact. Therefore, Thomas cannot take community action. Therefore, Thomas cannot contribute to wildlife conservation (since to contribute he needs ecological knowledge or community action, but he has neither). Therefore, Thomas cannot study the elands (because if he did, he'd contribute). So the statement 'Thomas studies the elands' is false, not uncertain.",
+          "confidence": 0.92,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B3's deduction is logically sound but depends on correct interpretation of exclusive 'or' in conditionals. Some premises use 'either A or B, but not both' in the antecedent of conditionals, which is unusual in natural language logic puzzles. If interpreted differently, the deduction might not hold. However, given standard interpretation, B3 is correct.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.3
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context includes 'If Elina is a professional athlete, then she either overcomes fear or stays disciplined, but not both.' However, it is not stated that Elina is a professional athlete. The context says 'Elina enjoys the outdoors or is a professional athlete.' This is a disjunction, so she might enjoy the outdoors without being a professional athlete. Since we cannot confirm she is a professional athlete, we cannot use that conditional to infer anything about overcoming fear or staying discipline related to mastering extreme sports. Thus, there is no evidence she masters extreme sports."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context includes 'If Elina is a professional athlete, then she either overcomes fear or stays disciplined, but not both.' However, it is not stated that Elina is a professional athlete. The context says 'Elina enjoys the outdoors or is a professional athlete.' This is a disjunction, so she might enjoy the outdoors without being a professional athlete. Since we cannot confirm she is a professional athlete, we cannot use that conditional to infer anything about overcoming fear or staying discipline related to mastering extreme sports. Thus, there is no evidence she masters extreme sports.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is irrelevant to the claim about Caroline reducing genetic disorders. The claim and supporting facts are about Caroline, Kennedi, Lakelyn, and Reece, but A2 discusses Elina and extreme sports, which are not mentioned in the given context at all. This appears to be a case of mixed contexts or incorrect argument attribution.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A2's reasoning about disjunctions is correct but incomplete. From 'Elina enjoys the outdoors or is a professional athlete,' we cannot conclude she is a professional athlete, but we also cannot conclude she is not. The absence of evidence for being a professional athlete doesn't prove she doesn't master extreme sports; she could master them for other reasons.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 points out a logical limitation in A2, B2 itself is irrelevant because the entire Elina example is extraneous to the Caroline claim. The primary issue is contextual mismatch, making B2's logical critique secondary to B1's relevance attack.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Consider the statement 'Elina either tracks her progress or learns from her failures, but not both.' It is given that 'Elina learns from her failures.' Therefore, by the exclusive or, Elina does not track her progress. Then, from 'If Elina either tracks her progress or sets goals (but not both), then she achieves success.' Since Elina does not track her progress, we need to check if she sets goals. The context states 'Elina sets goals or stays disciplined.' This is an inclusive or, so she might set goals, but it is not exclusive. However, even if she sets goals, the conditional requires 'either tracks her progress or sets goals (but not both).' If she sets goals and does not track progress, then the condition is satisfied, so she achieves success. But achieving success does not imply mastering extreme sports. There is no direct link from achieving success to mastering extreme sports in the context."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Consider the statement 'Elina either tracks her progress or learns from her failures, but not both.' It is given that 'Elina learns from her failures.' Therefore, by the exclusive or, Elina does not track her progress. Then, from 'If Elina either tracks her progress or sets goals (but not both), then she achieves success.' Since Elina does not track her progress, we need to check if she sets goals. The context states 'Elina sets goals or stays disciplined.' This is an inclusive or, so she might set goals, but it is not exclusive. However, even if she sets goals, the conditional requires 'either tracks her progress or sets goals (but not both).' If she sets goals and does not track progress, then the condition is satisfied, so she achieves success. But achieving success does not imply mastering extreme sports. There is no direct link from achieving success to mastering extreme sports in the context.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is analyzing a different scenario about Elina, which is completely unrelated to the original claim about Caroline and genetic disorders. This makes A3 irrelevant to supporting the truth of the claim 'Caroline reduces genetic disorders.'",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevance, A3's internal logic is flawed for the original problem. It concludes something about 'achieving success' but the original claim requires connecting 'marrying outside family' to 'reducing genetic disorders.' A3 does not address any premises from the original Caroline context.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out A3's irrelevance, one could interpret A3 as an attempt at analogical reasoning. However, the analogy is too weak because the logical structures and entities (Elina vs. Caroline, tracking progress vs. marrying outside family) are not analogous.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.25
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The context does not contain any statement that directly asserts Elina masters extreme sports. All conditionals involving mastering extreme sports are hypothetical (e.g., 'If Elina masters extreme sports, then she can overcome fear.'). Since the antecedent is not confirmed, we cannot conclude she masters extreme sports. In the absence of positive evidence, the claim 'Elina does not master extreme sports' is plausible, though not definitively proven. However, given the logical constraints, it is more likely true than false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context does not contain any statement that directly asserts Elina masters extreme sports. All conditionals involving mastering extreme sports are hypothetical (e.g., 'If Elina masters extreme sports, then she can overcome fear.'). Since the antecedent is not confirmed, we cannot conclude she masters extreme sports. In the absence of positive evidence, the claim 'Elina does not master extreme sports' is plausible, though not definitively proven. However, given the logical constraints, it is more likely true than false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly applies reasoning about Elina to a claim about Kevin. The original claim is 'Kevin discovers new species,' but A4 discusses Elina mastering extreme sports, which is irrelevant to Kevin's activities. This is a category error that invalidates the support for the claim about Kevin.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch, the logical structure of A4 is flawed. It argues from absence of direct evidence to a negative conclusion ('more likely true than false'), but in many logical systems (especially with incomplete information), absence of evidence is not evidence of absence. The claim about Kevin discovering new species requires positive deduction from the given premises, not default negation.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly points out the limitation of arguing from absence of evidence, in constrained logical puzzles like this one, often the closed-world assumption applies. If 'Kevin discovers new species' were necessarily true given the premises, it would be derivable. Since it's not directly asserted, uncertainty or falsity might be justified\u2014but the argument still fails due to the irrelevant content about Elina.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Examine the statement 'If Elina lives in a rural area, then she either has an adventurous spirit or enjoys the outdoors, but not both.' There is no information about Elina living in a rural area or having an adventurous spirit. Therefore, this conditional does not provide evidence about mastering extreme sports. Mastering extreme sports might relate to adventurous spirit, but it is not stated. Thus, no inference can be made about mastering extreme sports from this."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Examine the statement 'If Elina lives in a rural area, then she either has an adventurous spirit or enjoys the outdoors, but not both.' There is no information about Elina living in a rural area or having an adventurous spirit. Therefore, this conditional does not provide evidence about mastering extreme sports. Mastering extreme sports might relate to adventurous spirit, but it is not stated. Thus, no inference can be made about mastering extreme sports from this.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Kevin discovering new species. It discusses Elina, extreme sports, and unrelated conditionals, while the claim concerns Kevin's marine research activities. Irrelevant arguments cannot support or oppose the claim.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A5 is irrelevant to Kevin's case, the principle it illustrates\u2014that missing information prevents definitive inference\u2014could apply analogously. If we lack information about whether Kevin studies the ocean (a prerequisite for discovering new species in the claim's logic), we cannot conclude he discovers new species.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The analogy in C1 is weak because the claim provides specific logical constraints about Kevin. We can deduce whether Kevin studies the ocean from the given premises, unlike Elina's case where information is truly absent. Therefore, A5's irrelevance remains fatal; it doesn't provide valid reasoning for the claim.",
+          "confidence": 0.82,
+          "attacks": {
+            "C1": 0.78
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "From 'Elina does not stay motivated' and 'If someone either achieves success or stays motivated, then they perform well.' Since Elina does not stay motivated, for her to perform well, she must achieve success. But it is given 'Elina does not perform well.' Therefore, Elina does not achieve success. Now, from 'If Elina either tracks her progress or sets goals (but not both), then she achieves success.' Since Elina does not achieve success, it must be that she does not satisfy the condition: she does not have exactly one of tracks her progress or sets goals. We know she learns from her failures, and from 'Elina either tracks her progress or learns from her failures, but not both,' so she does not track her progress. Then, for the condition to be false, she must not set goals either (because if she sets goals, then with not tracking progress, she would have exactly one, making the condition true). Therefore, Elina does not set goals. From 'Elina sets goals or stays disciplined,' since she does not set goals, she must stay disciplined. But staying disciplined does not imply mastering extreme sports. There is no logical path from these facts to mastering extreme sports, so the claim remains unsupported in the positive, making 'does not master' likely."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "From 'Elina does not stay motivated' and 'If someone either achieves success or stays motivated, then they perform well.' Since Elina does not stay motivated, for her to perform well, she must achieve success. But it is given 'Elina does not perform well.' Therefore, Elina does not achieve success. Now, from 'If Elina either tracks her progress or sets goals (but not both), then she achieves success.' Since Elina does not achieve success, it must be that she does not satisfy the condition: she does not have exactly one of tracks her progress or sets goals. We know she learns from her failures, and from 'Elina either tracks her progress or learns from her failures, but not both,' so she does not track her progress. Then, for the condition to be false, she must not set goals either (because if she sets goals, then with not tracking progress, she would have exactly one, making the condition true). Therefore, Elina does not set goals. From 'Elina sets goals or stays disciplined,' since she does not set goals, she must stay disciplined. But staying disciplined does not imply mastering extreme sports. There is no logical path from these facts to mastering extreme sports, so the claim remains unsupported in the positive, making 'does not master' likely.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 incorrectly assumes the claim being evaluated is about 'Elina does not master extreme sports,' but the actual claim in the problem is 'Avah cannot solve complex cases.' Therefore, A6 is completely irrelevant to the target claim and provides zero support for it.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the mismatch, A6's reasoning about Elina is based on premises not present in the given information about Avah. The problem statement contains no information about Elina, staying motivated, performing well, tracking progress, setting goals, or mastering extreme sports. Thus, A6 cannot logically support any conclusion about Avah.",
+          "confidence": 0.93,
+          "attacks": {
+            "A6": 0.96
+          }
+        },
+        {
+          "id": "B3",
+          "text": "For the actual claim about Avah, we must use the provided facts. Key relevant facts: 'For all humans, if someone is a skilled forensic scientist, then they can solve complex cases...' and 'If Avah has a PhD, then she is either a researcher or a skilled forensic scientist, but not both.' Avah has a PhD. She becomes a public figure. From 'Avah either advances her field or becomes a public figure, but not both,' since she becomes a public figure, she does not advance her field. From 'For all humans, if someone is a researcher and publishes papers, then they advance their field,' if Avah were a researcher and published papers, she would advance her field\u2014but she does not. So she cannot be both a researcher and publish papers. However, she might still be a researcher without publishing, or not a researcher at all. The argument does not establish she is a skilled forensic scientist, which is necessary to conclude she can solve complex cases. Therefore, the claim 'Avah cannot solve complex cases' is uncertain, not supported by A6's irrelevant reasoning.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.9
+          }
+        }
+      ]
+    }
+  }
+}

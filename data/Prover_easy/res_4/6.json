@@ -1,0 +1,141 @@
+{
+  "claim": "Context:'''\nBrody does not speak softly. Brody has empathy. Mauricio has empathy. Mauricio speaks softly or remains calm. Brody speaks softly or remains calm. For all humans, if a person has empathy and remains calm, then they resolve conflicts peacefully.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Brody does not resolve conflicts peacefully.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states 'Brody does not speak softly' and 'Brody speaks softly or remains calm'. Since the first disjunct is false, the second must be true, so Brody remains calm. Brody also has empathy. The rule says 'if a person has empathy and remains calm, then they resolve conflicts peacefully'. Therefore, Brody resolves conflicts peacefully, so the statement 'Brody does not resolve conflicts peacefully' is false."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Brody does not speak softly' and 'Brody speaks softly or remains calm'. Since the first disjunct is false, the second must be true, so Brody remains calm. Brody also has empathy. The rule says 'if a person has empathy and remains calm, then they resolve conflicts peacefully'. Therefore, Brody resolves conflicts peacefully, so the statement 'Brody does not resolve conflicts peacefully' is false.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states 'Brody does not speak softly'. However, the rule about peaceful conflict resolution applies only if both conditions (empathy AND remains calm) are met. While we can deduce Brody remains calm from the disjunction, the context does not guarantee the rule's antecedent is satisfied for Brody in all interpretations; it only provides a conditional statement. The conclusion that Brody resolves conflicts peacefully follows deductively from the given premises, leaving no logical room for the claim 'Brody does not resolve conflicts peacefully' to be true.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.1
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context provides that 'Brody does not speak softly' and 'Brody speaks softly or remains calm'. This disjunction is satisfied if Brody remains calm. However, the context does not explicitly state that Brody remains calm; it only states a disjunction. If we interpret the disjunction as not guaranteeing both conditions, we cannot definitively conclude Brody remains calm. Without confirmed calmness, the peaceful conflict resolution rule does not apply, making the statement 'Brody does not resolve conflicts peacefully' uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context provides that 'Brody does not speak softly' and 'Brody speaks softly or remains calm'. This disjunction is satisfied if Brody remains calm. However, the context does not explicitly state that Brody remains calm; it only states a disjunction. If we interpret the disjunction as not guaranteeing both conditions, we cannot definitively conclude Brody remains calm. Without confirmed calmness, the peaceful conflict resolution rule does not apply, making the statement 'Brody does not resolve conflicts peacefully' uncertain.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Brody does not speak softly' and 'Brody speaks softly or remains calm'. Given the first statement, the disjunction can only be true if Brody remains calm (since 'speaks softly' is false). This is a logical necessity from propositional logic: if (P \u2228 Q) is true and \u00acP is true, then Q must be true. Therefore, Brody must remain calm.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Brody remains calm, the rule for peaceful conflict resolution requires both empathy and calmness. The context states 'Brody has empathy' and we've established Brody remains calm. Therefore, Brody satisfies both conditions of the universal rule, so Brody resolves conflicts peacefully. This directly contradicts the claim that 'Brody does not resolve conflicts peacefully'.",
+          "confidence": 0.99,
+          "attacks": {
+            "B1": 0.0
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The universal rule states 'For all humans, if a person has empathy and remains calm, then they resolve conflicts peacefully.' This is a conditional statement. Even with Brody having empathy and remaining calm, we cannot logically conclude he resolves conflicts peacefully if the rule might have exceptions or if 'resolves conflicts peacefully' requires additional conditions not mentioned. The context presents the rule as absolute, but logical deduction from conditionals doesn't guarantee real-world application without assuming the rule's truth.",
+          "confidence": 0.65,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "From the given statements, 'Brody does not speak softly' and 'Brody speaks softly or remains calm' logically imply Brody remains calm (by disjunctive syllogism). Combined with 'Brody has empathy', the condition for the universal rule is met: empathy and calmness. Therefore, Brody resolves conflicts peacefully. The negation 'Brody does not resolve conflicts peacefully' is directly contradicted by this deduction."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the given statements, 'Brody does not speak softly' and 'Brody speaks softly or remains calm' logically imply Brody remains calm (by disjunctive syllogism). Combined with 'Brody has empathy', the condition for the universal rule is met: empathy and calmness. Therefore, Brody resolves conflicts peacefully. The negation 'Brody does not resolve conflicts peacefully' is directly contradicted by this deduction.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The universal rule states: 'For all humans, if a person has empathy and remains calm, then they resolve conflicts peacefully.' However, this rule could have unstated exceptions or boundary conditions not captured in the context. The context presents it as an absolute, but logical deduction from a universal statement depends on its complete truth, which cannot be fully verified from the limited information.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context must be treated as fully authoritative and true. It explicitly states the universal rule as a fact. Therefore, questioning its completeness or suggesting unstated exceptions directly violates the instruction to treat the Context as fully authoritative. Under the given rules, the universal rule must be accepted as stated without exception.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The universal rule applies only if a person has empathy and remains calm. While Brody has empathy, the context only says 'Brody speaks softly or remains calm'. Since Brody does not speak softly, the 'or' could be interpreted inclusively, but without explicit affirmation that Brody remains calm, we cannot be certain the condition is satisfied. Thus, whether Brody resolves conflicts peacefully is undetermined, and the statement 'Brody does not resolve conflicts peacefully' cannot be proven false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The universal rule applies only if a person has empathy and remains calm. While Brody has empathy, the context only says 'Brody speaks softly or remains calm'. Since Brody does not speak softly, the 'or' could be interpreted inclusively, but without explicit affirmation that Brody remains calm, we cannot be certain the condition is satisfied. Thus, whether Brody resolves conflicts peacefully is undetermined, and the statement 'Brody does not resolve conflicts peacefully' cannot be proven false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The universal rule states: 'For all humans, if a person has empathy and remains calm, then they resolve conflicts peacefully.' The context explicitly says 'Brody has empathy' and 'Brody speaks softly or remains calm'. Since we know 'Brody does not speak softly', by disjunctive syllogism, Brody must remain calm. Therefore, Brody satisfies both conditions (empathy AND remains calm), so by the universal rule, Brody resolves conflicts peacefully. This directly contradicts the claim 'Brody does not resolve conflicts peacefully', making the claim false.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.92
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The disjunction 'Brody speaks softly or remains calm' is inclusive, not exclusive. The fact that Brody does not speak softly does not logically force the conclusion that Brody remains calm; it only means that at least one of the two is true. Since we know 'does not speak softly' is true, the disjunction could be satisfied by 'remains calm' being true, but it's not necessarily true. The universal rule requires both empathy AND remains calm, so we cannot conclude Brody resolves conflicts peacefully without certainty about remaining calm.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "D1",
+          "text": "In propositional logic, from 'P or Q' and 'not P', we can validly deduce Q. Here, P = 'Brody speaks softly', Q = 'Brody remains calm'. The context gives 'Brody speaks softly or remains calm' and 'Brody does not speak softly'. Therefore, 'Brody remains calm' is a necessary logical consequence. The universal rule's antecedent is fully satisfied, so Brody resolves conflicts peacefully. The claim 'Brody does not resolve conflicts peacefully' is therefore false with logical certainty.",
+          "confidence": 0.97,
+          "attacks": {
+            "C1": 0.94
+          }
+        }
+      ]
+    }
+  }
+}

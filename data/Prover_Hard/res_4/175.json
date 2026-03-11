@@ -1,0 +1,301 @@
+{
+  "claim": "If Justin either analyzes clinical data or creates treatment plans (but not both), then he improves patient outcomes. Anyone who pursues medical advancements or develops new procedures can improve patient outcomes. Justin does not advance medical knowledge. If Justin is dedicated to research, then he can either improve patient outcomes or inspire future generations, but not both. Justin is curious. If Aron has a medical background, then he either pursues medical advancements or collaborates with specialists, but not both. If Justin seeks knowledge and enjoys learning, then he is dedicated to research. Justin values accuracy. If Justin strives for excellence, then he either advances medical knowledge or develops new procedures (or both). Justin collaborates with specialists. Sincere collaborates with specialists. If Justin is curious, then he either has a medical background or works independently, but not both. Justin does not work independently. If Justin has a degree, then he either has a medical background or attends conferences, but not both. Celine values accuracy. Celine reads medical journals. Celine sets high standards or strives for excellence. Justin reads medical journals. If Justin has a medical background, then he either pursues medical advancements or collaborates with specialists, but not both. Justin sets high standards or strives for excellence. If Celine is curious, then he either has a medical background or works independently, but not both. Justin does not set high standards. Anyone who values accuracy and reads medical journals is dedicated to research.Based on the above information, is the following statement true, false, or uncertain? Justin does not inspire future generations.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Justin is dedicated to research because he values accuracy and reads medical journals, and anyone with those traits is dedicated to research."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Justin is dedicated to research because he values accuracy and reads medical journals, and anyone with those traits is dedicated to research.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that 'anyone who values accuracy and reads medical journals is dedicated to research' is an overgeneralization; some people may read journals out of casual interest or maintain accuracy in non-research roles.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In professional medical contexts, reading journals and valuing accuracy are strongly correlated with research engagement, making the generalization reasonable despite rare exceptions.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Justin is dedicated to research, the claim states that if dedicated to research, he can either improve patient outcomes OR inspire future generations, but not both. Dedication to research alone does not determine which one he achieves.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The information shows Justin collaborates with specialists, and if he has a medical background, he either pursues medical advancements or collaborates with specialists (not both). Since he collaborates, he may not pursue advancements, which are linked to improving outcomes, possibly leaving inspiration as the outcome from research dedication.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "However, Justin does not advance medical knowledge, and if he strives for excellence, he either advances medical knowledge or develops new procedures. Since he does not advance knowledge, if he strives for excellence he must develop new procedures, which can improve patient outcomes, possibly fulfilling the 'improve outcomes' branch of the research dedication condition.",
+          "confidence": 0.78,
+          "attacks": {
+            "C2": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Since Justin is dedicated to research, the conditional states he can either improve patient outcomes or inspire future generations, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Since Justin is dedicated to research, the conditional states he can either improve patient outcomes or inspire future generations, but not both.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 assumes Justin is dedicated to research, but this premise may not be established with certainty from the given information.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the statements: 'Anyone who values accuracy and reads medical journals is dedicated to research.' Justin values accuracy and reads medical journals, so he must be dedicated to research.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Justin is dedicated to research, the conditional only says he can either improve patient outcomes OR inspire future generations, not both. It doesn't specify which one he actually does, so we cannot conclude he does not inspire future generations.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "If Justin improves patient outcomes, then by the exclusive 'or' in the research dedication conditional, he cannot inspire future generations. So we need to check if Justin improves patient outcomes.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the claim: 'Anyone who pursues medical advancements or develops new procedures can improve patient outcomes.' Justin does not advance medical knowledge. If Justin strives for excellence, then he either advances medical knowledge or develops new procedures (or both). Justin strives for excellence (since he sets high standards or strives for excellence, and he does not set high standards, so he must strive for excellence). Therefore, since he strives for excellence and does not advance medical knowledge, he must develop new procedures. Thus, he pursues medical advancements or develops new procedures \u2192 he can improve patient outcomes.",
+          "confidence": 0.82,
+          "attacks": {
+            "C2": 0.78
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The reasoning in D1 assumes 'develops new procedures' is true, but the conditional only says if he strives for excellence then he advances medical knowledge OR develops new procedures. Since he doesn't advance medical knowledge, he must develop new procedures. This is valid, so Justin can improve patient outcomes.",
+          "confidence": 0.85,
+          "attacks": {
+            "D1": 0.6
+          }
+        },
+        {
+          "id": "F1",
+          "text": "If Justin improves patient outcomes and is dedicated to research, then by the exclusive 'or' (improve patient outcomes or inspire future generations, but not both), he does NOT inspire future generations. Therefore, the original claim 'Justin does not inspire future generations' is true.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Justin improves patient outcomes because he collaborates with specialists, and anyone who pursues medical advancements or develops new procedures can improve patient outcomes; collaborating with specialists implies pursuing medical advancements."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Justin improves patient outcomes because he collaborates with specialists, and anyone who pursues medical advancements or develops new procedures can improve patient outcomes; collaborating with specialists implies pursuing medical advancements.",
+          "cate": "P",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that collaborating with specialists necessarily implies pursuing medical advancements. Collaboration could be for routine care coordination, administrative purposes, or standard practice implementation without any advancement component.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Justin pursues medical advancements, the premise 'anyone who pursues medical advancements or develops new procedures can improve patient outcomes' is too strong. Some advancements fail, have neutral effects, or even worsen outcomes in practice.",
+          "confidence": 0.68,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While not all collaboration implies advancement, in medical contexts, interdisciplinary specialist collaboration is widely recognized as a key driver of clinical innovation and protocol improvement, which often leads to better outcomes.",
+          "confidence": 0.71,
+          "attacks": {
+            "B1": 0.72
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Medical advancements are rigorously tested before implementation. While not every advancement succeeds, the systematic pursuit of advancements through evidence-based methods statistically increases the likelihood of improved patient outcomes.",
+          "confidence": 0.69,
+          "attacks": {
+            "B2": 0.68
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The medical field has many examples of 'advancements' that were later found harmful (e.g., certain surgical techniques, medications). The link between pursuing advancements and improving outcomes is probabilistic, not guaranteed.",
+          "confidence": 0.66,
+          "attacks": {
+            "C2": 0.62
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Given Justin improves patient outcomes and the exclusive 'or' in the research dedication condition, he cannot also inspire future generations, so he does not inspire them."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Given Justin improves patient outcomes and the exclusive 'or' in the research dedication condition, he cannot also inspire future generations, so he does not inspire them.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Justin' and 'patient outcomes,' but the claim is about 'Crew' and biology/ecology. This is a context mismatch\u2014the argument text appears to be from a different problem entirely.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the name mismatch and assume 'Justin' is meant to be 'Crew,' the premise 'Justin improves patient outcomes' has no logical connection to any given premise about Crew. The premises concern biology, ecology, wildlife, endangered species, axolotls, sanctuaries, and conservation\u2014not medical outcomes.",
+          "confidence": 0.88,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "If we charitably reinterpret 'improves patient outcomes' as a metaphor for 'helps endangered species' (which Crew does), the exclusive 'or' condition referenced is not clearly defined in the claim's premises. The claim contains several conditionals, but none explicitly state an exclusive 'or' between improving outcomes and inspiring generations.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.65
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Justin does not advance medical knowledge, which is explicitly stated, but he can still improve patient outcomes through collaboration, supporting the conclusion that he does not inspire future generations."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Justin does not advance medical knowledge, which is explicitly stated, but he can still improve patient outcomes through collaboration, supporting the conclusion that he does not inspire future generations.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the given claim about Muffin regaining her health, as it discusses 'Justin' and unrelated medical topics not present in the provided information.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, one could argue that any argument about a different subject should be evaluated as having zero confidence rather than being attacked for relevance alone.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.3
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Justin sets high standards or strives for excellence, and since he does not set high standards, he must strive for excellence, which implies he either advances medical knowledge or develops new procedures; since he does not advance medical knowledge, he develops new procedures, which also leads to improving patient outcomes, reinforcing the exclusive outcome."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Justin sets high standards or strives for excellence, and since he does not set high standards, he must strive for excellence, which implies he either advances medical knowledge or develops new procedures; since he does not advance medical knowledge, he develops new procedures, which also leads to improving patient outcomes, reinforcing the exclusive outcome.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text is completely irrelevant to the claim about Muffin regaining her health, as it discusses 'Justin' and medical outcomes instead of cats, diets, exercise, or health conditions mentioned in the problem.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, the logical structure of A6 contains undefined terms ('Justin', 'high standards', 'medical knowledge') that have no connection to the given premises about cats, making it impossible to derive any conclusion about Muffin.",
+          "confidence": 0.93,
+          "attacks": {
+            "A6": 0.98
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The claim concerns whether 'Muffin regains her health', which depends on Muffin following a strict diet and getting regular exercise according to the premises. A6 does not address these conditions at all.",
+          "confidence": 0.94,
+          "attacks": {
+            "A6": 0.99
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "claim": "Consider the following background information: A 66-year-old man is brought to the emergency room by his wife due to abdominal distension and persistent somnolence for the past 2 weeks. The patient\u2019s wife says that he has been sleeping much more than usual for the past 5 days. His bowel and bladder habit have not changed. His past medical history is significant for alcoholic liver cirrhosis. His vital signs include: pulse 76/min, respiratory rate 15/min, temperature 38.0\u00b0C (100.4\u00b0F) and blood pressure 122/75 mm Hg. On physical examination, the patient is altered and not responsive to commands. Oriented x 0. The abdomen is significantly distended. Shifting dullness is present and a positive fluid wave can be elicited. Hyperreflexia and asterixis are noted. Laboratory findings are significant for the following: Laboratory test Sodium 140 mEq/L Potassium 3.5 mEq/L Chloride 97 mEq/L Glucose 90 mg/dL Ammonia 100 \u00b5g/dL (ref: 19-60 \u00b5g/dL) Arterial blood gas pH 7.4 pCO2 40 mm Hg pO2 90 mm Hg HCO3 26 mEq/L An abdominal ultrasound shows surface nodularity compatible with cirrhosis but no other changes aside from ascites. An upper GI endoscopy is performed which shows gastric varices with no signs of active bleeding. An MRI of the brain is insignificant.\n\nGiven the background information the following is corrrect: Variceal gastrointestinal bleeding is the most likely precipitating factor that led to this patient\u2019s condition.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The upper GI endoscopy shows no signs of active bleeding, which contradicts the claim that variceal gastrointestinal bleeding is the precipitating factor."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The upper GI endoscopy shows no signs of active bleeding, which contradicts the claim that variceal gastrointestinal bleeding is the precipitating factor.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's elevated ammonia levels (100 \u00b5g/dL) and altered mental status suggest hepatic encephalopathy, which is a more likely precipitating factor than variceal bleeding.",
+          "confidence": 0.78,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Hepatic encephalopathy is often triggered by factors other than bleeding, such as infections or electrolyte imbalances, which could explain the patient's condition without evidence of active bleeding.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The presence of gastric varices, even without active bleeding, still poses a risk for bleeding and could have contributed to the patient's condition indirectly.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.5
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The patient's elevated ammonia level (100 \u00b5g/dL) and altered mental status are more consistent with hepatic encephalopathy, a common complication of cirrhosis, rather than variceal bleeding."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The patient's elevated ammonia level (100 \u00b5g/dL) and altered mental status are more consistent with hepatic encephalopathy, a common complication of cirrhosis, rather than variceal bleeding.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Hepatic encephalopathy typically presents with asterixis and hyperreflexia, which are present in this patient, further supporting A2's argument.",
+          "confidence": 0.78,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Variceal bleeding can also lead to hepatic encephalopathy due to increased nitrogen load from blood in the gut, making it a potential precipitating factor.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The absence of active bleeding on endoscopy significantly reduces the likelihood of variceal bleeding as the precipitating factor.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Elevated ammonia levels are not exclusive to hepatic encephalopathy and can occur in other conditions like urea cycle disorders.",
+          "confidence": 0.5,
+          "attacks": {
+            "A2": 0.4
+          }
+        },
+        {
+          "id": "F1",
+          "text": "The patient's clinical presentation, including somnolence and asterixis, is classic for hepatic encephalopathy, making other diagnoses less likely.",
+          "confidence": 0.8,
+          "attacks": {
+            "E1": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The absence of hematemesis, melena, or hematochezia in the patient's history further weakens the argument for variceal bleeding as the cause."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The absence of hematemesis, melena, or hematochezia in the patient's history further weakens the argument for variceal bleeding as the cause.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Variceal bleeding can sometimes present without overt hematemesis or melena, especially if the bleeding is slow or intermittent.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of signs of active bleeding on upper GI endoscopy strongly supports the argument against variceal bleeding as the precipitating factor.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's elevated ammonia levels and altered mental status are more consistent with hepatic encephalopathy, which can occur without variceal bleeding.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The presence of asterixis and hyperreflexia are neurological signs typically associated with hepatic encephalopathy, not variceal bleeding."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The presence of asterixis and hyperreflexia are neurological signs typically associated with hepatic encephalopathy, not variceal bleeding.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Variceal bleeding can lead to hepatic encephalopathy due to increased ammonia levels from blood breakdown in the gut.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's ammonia level is elevated (100 \u00b5g/dL), which strongly supports hepatic encephalopathy as the primary diagnosis.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The upper GI endoscopy showed no signs of active bleeding, making variceal bleeding an unlikely precipitating factor.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The patient's stable hemoglobin and lack of hypotension or tachycardia suggest no significant blood loss, which would be expected in variceal bleeding."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The patient's stable hemoglobin and lack of hypotension or tachycardia suggest no significant blood loss, which would be expected in variceal bleeding.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Variceal bleeding can sometimes occur without significant hemodynamic changes, especially if the bleeding is slow or intermittent.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of gastric varices on endoscopy increases the likelihood of variceal bleeding, even without active bleeding signs at the time of examination.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's elevated ammonia levels and altered mental status are more consistent with hepatic encephalopathy, which can occur without variceal bleeding.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The abdominal distension and ascites are more likely due to portal hypertension from cirrhosis, not acute bleeding."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The abdominal distension and ascites are more likely due to portal hypertension from cirrhosis, not acute bleeding.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's elevated ammonia levels and altered mental status suggest hepatic encephalopathy, which is often triggered by gastrointestinal bleeding.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The upper GI endoscopy showed no signs of active bleeding, making acute variceal bleeding an unlikely precipitating factor.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Hepatic encephalopathy can also be triggered by infections, which could explain the elevated ammonia levels without bleeding.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The patient's temperature of 38.0\u00b0C (100.4\u00b0F) could indicate an underlying infection, supporting the infection-triggered encephalopathy hypothesis.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.55
+          }
+        }
+      ]
+    }
+  }
+}

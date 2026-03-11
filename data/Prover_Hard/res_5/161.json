@@ -1,0 +1,189 @@
+{
+  "claim": "If Callan has a unique design, then it either pioneers a discovery or breaks boundaries (or both). If Galilea is either remarkable or has a unique design (but not both), then it makes history. Galilea does not make history. Galilea runs smoothly. Galilea has advanced sensors. If Galilea has a unique design, then it either pioneers a discovery or breaks boundaries (or both). Galilea either travels a long distance or is remarkable. Any spacecraft that meets specifications or is well maintained is fully functional. Callan does not make history. Galilea is maintained. Galilea does not break boundaries. If Callan is either remarkable or has a unique design (but not both), then it makes history. If Galilea is either fully functional or completely damaged (but not both), then it is remarkable. Galilea either pioneers a discovery or gathers critical data, but not both. Kenji runs smoothly. Any spacecraft with advanced sensors gathers critical data. Galilea operates normally or is fully functional. Kenji has advanced sensors. All maintained spacecraft either operate normally or run smoothly.Based on the above information, is the following statement true, false, or uncertain? Galilea is completely damaged.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states 'Galilea runs smoothly.' A spacecraft that runs smoothly cannot be completely damaged, as complete damage implies non-operation."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Galilea runs smoothly.' A spacecraft that runs smoothly cannot be completely damaged, as complete damage implies non-operation.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' This conditional does not assert that Galilea is completely damaged; it only states what would follow if it were. The premise 'Galilea runs smoothly' does not directly contradict the possibility of being completely damaged under a different interpretation of 'runs smoothly' (e.g., in a limited capacity).",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Galilea runs smoothly.' In the context of spacecraft, 'runs smoothly' is semantically incompatible with 'completely damaged.' A completely damaged spacecraft cannot run smoothly by any reasonable interpretation. The conditional rule about being remarkable does not override this direct factual statement.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The context states 'Galilea is maintained.' A maintained spacecraft is actively cared for, which contradicts being completely damaged."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context states 'Galilea is maintained.' A maintained spacecraft is actively cared for, which contradicts being completely damaged.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' This conditional does not assert Galilea is completely damaged; it only states a condition for being remarkable. The argument A2 incorrectly treats maintenance as absolute proof against damage, but a spacecraft could theoretically be maintained while still being completely damaged (e.g., maintenance attempts after catastrophic failure).",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Galilea is maintained.' Under standard interpretation, 'maintained' implies operational upkeep, which is semantically incompatible with 'completely damaged.' The conditional rule about being remarkable does not override the factual statement about maintenance. Therefore, A2's logical inference from maintenance to not completely damaged is valid.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The context includes 'Any spacecraft that meets specifications or is well maintained is fully functional.' Since Galilea is maintained, it is fully functional, and being fully functional is incompatible with being completely damaged."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context includes 'Any spacecraft that meets specifications or is well maintained is fully functional.' Since Galilea is maintained, it is fully functional, and being fully functional is incompatible with being completely damaged.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' This conditional does not assert Galilea is fully functional; it only says if it were one or the other (exclusively), then it would be remarkable. The premise that Galilea is maintained leading to 'fully functional' relies on an implicit assumption that 'well maintained' in the general rule applies without exception, but the context does not guarantee the antecedent of the conditional about remarkableness is true.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The general rule 'Any spacecraft that meets specifications or is well maintained is fully functional' is absolute in the context. Since Galilea is explicitly stated to be maintained, it must be fully functional. The conditional about 'if fully functional or completely damaged (but not both)' does not override this; it only establishes a relationship between those states and being remarkable, but does not deny Galilea can be fully functional.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The context states 'Galilea operates normally or is fully functional.' Given Galilea is maintained and runs smoothly, it must operate normally or be fully functional, both of which are inconsistent with complete damage."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context states 'Galilea operates normally or is fully functional.' Given Galilea is maintained and runs smoothly, it must operate normally or be fully functional, both of which are inconsistent with complete damage.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Galilea operates normally or is fully functional' is a disjunction. It does not exclude the possibility that Galilea is completely damaged while also operating normally or being fully functional, if we interpret 'or' inclusively. A spacecraft could be completely damaged in one subsystem yet still operate normally in another sense, or be considered fully functional for its mission despite damage.",
+          "confidence": 0.45,
+          "attacks": {
+            "A4": 0.4
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context also states 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' This conditional's antecedent requires Galilea to be either fully functional or completely damaged, but not both. Since Galilea is not remarkable (it does not make history, and 'remarkable' likely leads to making history), the antecedent must be false. Therefore, Galilea cannot be 'either fully functional or completely damaged (but not both)'. This leaves open the possibility that Galilea is both fully functional and completely damaged, or neither. Thus, complete damage is not ruled out.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.8
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context states 'All maintained spacecraft either operate normally or run smoothly.' Galilea is maintained, so it must operate normally or run smoothly; both conditions preclude complete damage."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context states 'All maintained spacecraft either operate normally or run smoothly.' Galilea is maintained, so it must operate normally or run smoothly; both conditions preclude complete damage.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The context includes 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' Since Galilea does not make history, and if it were remarkable it would make history, Galilea cannot be remarkable, so the condition 'fully functional or completely damaged (but not both)' cannot be true in a way that makes it remarkable. Given Galilea is maintained and runs smoothly, it is fully functional, so it cannot be completely damaged."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context includes 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' Since Galilea does not make history, and if it were remarkable it would make history, Galilea cannot be remarkable, so the condition 'fully functional or completely damaged (but not both)' cannot be true in a way that makes it remarkable. Given Galilea is maintained and runs smoothly, it is fully functional, so it cannot be completely damaged.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'if it were remarkable it would make history.' The context states 'If Galilea is either remarkable or has a unique design (but not both), then it makes history.' This is a conditional statement, not a biconditional. Galilea not making history only tells us that it is not the case that (Galilea is remarkable XOR Galilea has a unique design). This could mean Galilea is neither remarkable nor has a unique design, OR it could mean Galilea is both remarkable and has a unique design. Therefore, Galilea could still be remarkable without making history if it also has a unique design, which violates the 'but not both' condition of the premise.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 is logically valid but overlooks other contextual constraints. The context also states 'Galilea either travels a long distance or is remarkable.' If Galilea were both remarkable and had a unique design (as B1 suggests is possible), this 'or' statement would still be satisfied. However, we must check consistency with 'Galilea does not make history.' The premise 'If Galilea is either remarkable or has a unique design (but not both), then it makes history' can be false only if the antecedent is true and consequent false. For the consequent false (Galilea does not make history), the antecedent must be false. The antecedent 'Galilea is either remarkable or has a unique design (but not both)' is false in three cases: 1) Galilea is neither remarkable nor has a unique design. 2) Galilea is both remarkable and has a unique design. Since case 2 violates the 'but not both' condition, it makes the antecedent false. Therefore, B1 is correct that Galilea could be remarkable without making history if it also has a unique design. This does not inherently refute A6's final conclusion, but it undermines its logical path.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if Galilea could be remarkable (as established by C1), A6's core reasoning that 'Galilea is fully functional, so it cannot be completely damaged' remains intact and is supported by other context. The context states 'Any spacecraft that meets specifications or is well maintained is fully functional.' and 'Galilea is maintained.' Therefore, Galilea is fully functional. The premise 'If Galilea is either fully functional or completely damaged (but not both), then it is remarkable.' does not require Galilea to be remarkable for its antecedent to be true or false. The antecedent is 'Galilea is either fully functional or completely damaged (but not both).' Since Galilea is fully functional, for this XOR to be true, it must NOT be completely damaged. Therefore, 'Galilea is completely damaged' is false regardless of whether Galilea is remarkable. This directly supports the Claim's negation, making A6's cate 'P' correct and its conclusion sound despite the flawed intermediate step about remarkability.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

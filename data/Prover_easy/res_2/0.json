@@ -1,0 +1,198 @@
+{
+  "claim": "Context:'''\nBrecken has experienced heartbreak. Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Brecken has never experienced heartbreak.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states 'Brecken has experienced heartbreak.' This is a direct, unambiguous assertion of fact."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Brecken has experienced heartbreak.' This is a direct, unambiguous assertion of fact.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context also contains a logical tautology: 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both.' This doesn't change the factual assertion already made, but could be misinterpreted as introducing uncertainty where none exists.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.2
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The question asks about the truth of 'Brecken has never experienced heartbreak.' Since the context directly asserts the opposite, the statement is false, not uncertain. The argument's confidence should reflect this certainty.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The tautology in the context is redundant given the direct assertion. It doesn't create genuine uncertainty about the fact stated. B1's attack is weak because it misinterprets the purpose of the tautology, which is to clarify the logical space, not to undermine the factual claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both' establishes that the two possibilities are mutually exclusive and exhaustive."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The logical disjunction 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both' establishes that the two possibilities are mutually exclusive and exhaustive.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states 'Brecken has experienced heartbreak,' which directly contradicts the claim 'Brecken has never experienced heartbreak.' Therefore, the disjunction establishes that the 'never experienced heartbreak' alternative is false.",
+          "confidence": 0.98,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A2 only establishes the logical structure of the disjunction but doesn't apply the given factual premise from the context. Without applying the premise, A2 doesn't actually support any conclusion about the truth value of the statement.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B2 is correct that A2 alone is incomplete, but when combined with the explicit context statement, it strongly supports the falsity of 'Brecken has never experienced heartbreak.' The logical structure from A2 ensures no middle ground exists.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The phrase 'but not both' in the disjunction is redundant since 'either/or' in logical terms typically implies mutual exclusivity already. This redundancy might indicate informal rather than formal logical reasoning.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.4
+          }
+        },
+        {
+          "id": "C2",
+          "text": "While 'either/or' often implies exclusivity in English, explicitly stating 'but not both' removes any ambiguity, strengthening rather than weakening the logical clarity of the disjunction.",
+          "confidence": 0.85,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Given the first statement is true, the second part of the disjunction ('he has never experienced heartbreak') must be false, as they cannot both be true."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the first statement is true, the second part of the disjunction ('he has never experienced heartbreak') must be false, as they cannot both be true.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the first statement 'Brecken has experienced heartbreak' is true, but the context only states it as a possibility in a disjunction, not as an established fact.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context presents the disjunction as an exclusive 'either/or' statement about reality, not just possibilities. Since the claim is about determining truth from the given information, A3 correctly interprets the logical structure.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The statement 'Brecken has experienced heartbreak' could be false while still making the overall disjunction true if the second part is true, leaving the truth value of 'Brecken has never experienced heartbreak' uncertain.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "For an exclusive disjunction 'P or Q, but not both' to be true, exactly one of P or Q must be true. If we don't know which one, we cannot conclude either P or Q individually. A3 assumes P is true without justification.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The original context states 'Brecken has experienced heartbreak' as a standalone fact before the disjunction, making it the established premise that A3 correctly uses.",
+          "confidence": 0.7,
+          "attacks": {
+            "C2": 0.65
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The question asks if 'Brecken has never experienced heartbreak' is true. Since the context directly asserts the opposite, the statement is necessarily false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The question asks if 'Brecken has never experienced heartbreak' is true. Since the context directly asserts the opposite, the statement is necessarily false.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Brecken has experienced heartbreak' as a premise, but it doesn't explicitly say this premise is true within the logical framework. It could be presenting it as a hypothetical or disputed claim.",
+          "confidence": 0.45,
+          "attacks": {
+            "A4": 0.35
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument assumes the context is providing factual information rather than describing a logical exercise or fictional scenario. If the context is from a work of fiction or a thought experiment, 'Brecken has experienced heartbreak' might not be a true statement about reality.",
+          "confidence": 0.4,
+          "attacks": {
+            "A4": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the context presents a hypothetical, the logical structure 'Either Brecken has experienced heartbreak or he has never experienced heartbreak, but not both' establishes an exclusive disjunction. Combined with the first statement, it creates a complete logical argument where the conclusion follows necessarily from the premises as given.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8,
+            "B2": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

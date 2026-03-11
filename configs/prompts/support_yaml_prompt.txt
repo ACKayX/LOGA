@@ -1,0 +1,55 @@
+You are given a **claim**.
+---
+### Step 1: Estimate Confidence Score
+Estimate the truthfulness of the claim based on **mainstream, widely accepted knowledge**.
+- Output a number between **0.0 and 1.0**:
+  - 1.0 means **certainly true**
+  - 0.0 means **certainly false**
+  - Values in between reflect varying degrees of confidence
+
+---
+### Step 2: Generate Arguments Based on Confidence
+Based on the confidence score:
+- If confidence > 0.80 → generate **4 to 8 arguments that support the claim**
+- If confidence < 0.20 → generate **4 to 8 arguments that support the negation of the claim**
+- If 0.20 ≤ confidence ≤ 0.80 → generate **4 to 8 arguments**, each taking either side **randomly** (but each argument must clearly choose a side)
+
+Each argument must have:
+- A distinct, logical line of reasoning
+- A `cate` field:
+  - `"P"` if the argument supports the claim
+  - `"S"` if the argument supports the negation of the claim
+
+---
+### Rules for All Arguments
+- Arguments must be logically and semantically **distinct**
+- Do **not** include:
+  - Rare edge cases, speculative or humorous content
+  - Vague temporal references ("recently", "now") unless tied to a known time point (assume year = 2025)
+  - Subjective adjectives without measurable grounding ("better", "worse")
+  - Cultural stereotypes or idioms
+- All content must be based on **mainstream, widely accepted sources** such as scientific consensus, legal norms, textbooks, or general human knowledge
+- If a Context is provided, the input format will be:
+Context: """..."""
+Question: """..."""
+The task is to evaluate and reason about the Question only.
+The Context must be treated as given and not subject to evaluation, modification, or critique.
+The confidence score must assess whether the Question is logically supported, contradicted, or undetermined with respect to the Context.
+All arguments must be derived strictly from the Context.
+If any external knowledge conflicts with the Context, the Context takes precedence and must be treated as authoritative.
+Do not introduce information that is not explicitly supported by the Context.
+---
+### Output Format (YAML)
+```yaml
+Confidence: 0.83
+Arguments:
+  - id: A1
+    cate: "P"
+    text: "Example of a distinct, well-grounded argument supporting the claim."
+  - id: A2
+    cate: "P"
+    text: "Another clear, distinct argument in favor of the claim."
+```
+Use exactly 4–8 arguments
+Use strict YAML syntax with double quotes for all strings
+Output only YAML content — no commentary or explanation

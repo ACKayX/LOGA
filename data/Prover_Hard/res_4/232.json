@@ -1,0 +1,234 @@
+{
+  "claim": "Adelina writes poetry. If Adelina excels at art, then she will gain recognition and earn acclaim. If Adelina either provides guidance or offers feedback (but not both), then she is supportive. Elian either shares her experiences or listens to others, but not both. If someone values opinions and respects perspectives, then they listen to others. Adelina has imagination. If Adelina has imagination, then she either thinks outside the box or solves problems creatively, but not both. Adelina is willing to help. Adelina solves problems creatively. If Adelina pursues artistic interests, then she either develops a unique voice or cultivates an original style, but not both. Adelina either shares her experiences or listens to others, but not both. Adelina is innovative. Adelina is not supportive. If Elian either provides guidance or offers feedback (but not both), then she is supportive. Anyone who has experience or is willing to help can provide guidance. If Adelina is innovative, then she either harnesses her creativity or thinks outside the box, but not both. Elian solves problems creatively. If Adelina harnesses her creativity, then she develops a unique voice and gains recognition. If Adelina writes poetry, then she can either gain recognition or inspire others, but not both. For anyone who gathers knowledge and builds connections, they can share their experiences. Everyone who mentors apprentices either provides guidance or shares knowledge (or both). Elian has imagination. Adelina either offers feedback or listens to others, but not both.Based on the above information, is the following statement true, false, or uncertain? Adelina does not inspire others.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'If Adelina writes poetry, then she can either gain recognition or inspire others, but not both.' Since it is given that Adelina writes poetry, she must choose between gaining recognition and inspiring others, meaning she cannot do both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'If Adelina writes poetry, then she can either gain recognition or inspire others, but not both.' Since it is given that Adelina writes poetry, she must choose between gaining recognition and inspiring others, meaning she cannot do both.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Adelina does not inspire others' is what we're trying to prove. A1 only shows she cannot both gain recognition AND inspire others. It doesn't prove which one she actually does. She might gain recognition (and not inspire), OR she might inspire others (and not gain recognition).",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "We can deduce which path Adelina takes. It's given: 'If Adelina harnesses her creativity, then she develops a unique voice and gains recognition.' Also: 'If Adelina is innovative, then she either harnesses her creativity or thinks outside the box, but not both.' Adelina is innovative (given). She also solves problems creatively (given). 'If Adelina has imagination, then she either thinks outside the box or solves problems creatively, but not both.' She has imagination (given) and solves problems creatively, so she does NOT think outside the box. Therefore, as an innovative person who does not think outside the box, she must harness her creativity. Therefore, she gains recognition. Since she gains recognition, and from A1's premise she cannot both gain recognition and inspire others, she does NOT inspire others.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The deduction in C1 relies on the premise 'If Adelina is innovative, then she either harnesses her creativity or thinks outside the box, but not both.' However, the context also states: 'If Adelina has imagination, then she either thinks outside the box or solves problems creatively, but not both.' Since Adelina solves problems creatively, she does not think outside the box. Therefore, as an innovative person, the only remaining option from the innovation rule is to harness her creativity. This chain seems logically sound, so B1's attack is rebutted.",
+          "confidence": 0.86,
+          "attacks": {
+            "B1": 0.8,
+            "C1": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "There is a potential contradiction. It is given: 'Adelina either offers feedback or listens to others, but not both.' and 'If someone values opinions and respects perspectives, then they listen to others.' We don't know if Adelina values opinions, so we cannot conclude she listens. Also given: 'If Adelina either provides guidance or offers feedback (but not both), then she is supportive.' and 'Adelina is not supportive.' This means Adelina does NOT (provide guidance XOR offer feedback). That is, she either does both or neither. If she does neither, then she cannot offer feedback. From 'Adelina either offers feedback or listens to others, but not both,' if she does not offer feedback, she must listen to others. But if she listens to others, and if we assume she values opinions (not stated), she'd be supportive? This tangled web might affect other deductions about her creative path.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.3,
+            "C1": 0.4
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The potential contradiction in B2 about support/feedback/guidance is isolated from the chain about creativity, innovation, and recognition. The deduction for 'Adelina gains recognition' relies only on: imagination \u2192 solves problems creatively (not think outside box), innovation \u2192 harnesses creativity (since not think outside box), harnesses creativity \u2192 gains recognition. None of those steps involve feedback, guidance, or support. Therefore, the recognition conclusion stands independently.",
+          "confidence": 0.83,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "It is stated that 'If Adelina harnesses her creativity, then she develops a unique voice and gains recognition.' Since Adelina is innovative, and 'If Adelina is innovative, then she either harnesses her creativity or thinks outside the box, but not both,' she must choose one. Given 'Adelina solves problems creatively,' which is distinct from thinking outside the box (as per 'If Adelina has imagination, then she either thinks outside the box or solves problems creatively, but not both'), she does not think outside the box, so she must harness her creativity, leading to gaining recognition."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "It is stated that 'If Adelina harnesses her creativity, then she develops a unique voice and gains recognition.' Since Adelina is innovative, and 'If Adelina is innovative, then she either harnesses her creativity or thinks outside the box, but not both,' she must choose one. Given 'Adelina solves problems creatively,' which is distinct from thinking outside the box (as per 'If Adelina has imagination, then she either thinks outside the box or solves problems creatively, but not both'), she does not think outside the box, so she must harness her creativity, leading to gaining recognition.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is entirely irrelevant to the claim about Faye. The claim asks: 'Faye did not study fungi.' A2 discusses a completely different person (Adelina) and different attributes (creativity, innovation, problem-solving). There is zero logical connection between A2's reasoning and the target claim.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A2's premises and conclusion are about 'Adelina,' but the claim is about 'Faye.' The names are different, and none of the given information in the original problem connects Adelina's properties to Faye's. Therefore, A2 cannot support any conclusion about Faye.",
+          "confidence": 0.98,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out the irrelevance, one could argue that A2 might have been intended as an analogical or symbolic argument. However, without explicit mapping rules (e.g., 'Adelina' represents 'Faye'), such an interpretation is purely speculative and not supported by the given text.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.3
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Since Adelina gains recognition from harnessing her creativity (as derived), and from the poetry condition she can only gain recognition or inspire others but not both, gaining recognition directly implies she does not inspire others."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Since Adelina gains recognition from harnessing her creativity (as derived), and from the poetry condition she can only gain recognition or inspire others but not both, gaining recognition directly implies she does not inspire others.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Adelina' and 'poetry condition', but the claim is about Esmeralda and therapy participation. This is a completely different context and irrelevant to the current claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument attempts to derive conclusions about 'Adelina' from premises that don't exist in the provided information. The premises given are about horses (Caiden, Esmeralda, Lana, Wes) and their traits/abilities, not about Adelina or poetry.",
+          "confidence": 0.93,
+          "attacks": {
+            "A3": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument structure is invalid because it starts from a false premise (that Adelina and the poetry condition are relevant). From false premises, any conclusion can be derived, making the argument unreliable for determining Esmeralda's therapy participation.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.92
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The context provides no statement indicating Adelina inspires others; all logical deductions point toward her gaining recognition instead, supporting that she does not inspire others."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context provides no statement indicating Adelina inspires others; all logical deductions point toward her gaining recognition instead, supporting that she does not inspire others.",
+          "cate": "S",
+          "confidence": 0.3,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text mentions 'Adelina' but the claim and context are about horses named Esmeralda, Caiden, Lana, and Wes. There is no 'Adelina' in the provided information, making this argument irrelevant.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The claim asks whether 'Esmeralda participates in therapy' is true, false, or uncertain. Argument A4 discusses 'Adelina inspiring others,' which addresses a different proposition entirely, so it cannot logically support or oppose the claim about Esmeralda.",
+          "confidence": 0.88,
+          "attacks": {
+            "A4": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the name mismatch and interpret A4 as being about Esmeralda, its reasoning is flawed. The context contains statements directly about Esmeralda that allow deduction about therapy participation, not just absence of statements.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.4
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Adelina is not supportive, and while supportiveness is not directly linked to inspiring others in the given statements, the absence of any positive link to inspiring others, combined with the exclusive choice forced by the poetry condition, reinforces that she does not inspire others."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Adelina is not supportive, and while supportiveness is not directly linked to inspiring others in the given statements, the absence of any positive link to inspiring others, combined with the exclusive choice forced by the poetry condition, reinforces that she does not inspire others.",
+          "cate": "S",
+          "confidence": 0.3,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 attempts to support the negation of 'Esmeralda participates in therapy' but uses premises about 'Adelina' who is not mentioned in the original claim context, making it irrelevant and invalid for the current claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The original claim and supporting facts are about horses (Caiden, Esmeralda, Lana, Wes) and their traits/abilities. Argument A5 discusses 'Adelina' and 'inspiring others,' which is a completely different domain, so it provides zero logical support for any conclusion about Esmeralda.",
+          "confidence": 0.96,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we ignore the irrelevant content, A5's reasoning is speculative ('absence of any positive link... reinforces that she does not...') which is a weak form of argument from ignorance, not a valid deduction from given premises.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1-B3 correctly point out A5's irrelevance, one could still try to salvage a meta-point: if an argument is completely off-topic, it might accidentally align with the correct answer for unrelated reasons. However, this is epistemically worthless for logical verification.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.3,
+            "B3": 0.4
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "claim": "Raul does not gain academic recognition. If Zoey is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both. Every meticulous researcher either gains academic recognition or makes groundbreaking discoveries (or both). Raul does not teach at a university. If Zoey is passionate about history, then he translates ancient texts and is a meticulous researcher. Zoey translates ancient texts. If Cherry publishes academic works, then he is either scholarly or teaches at a university (or both). Raul publishes academic works. For anyone who loves books and values knowledge, they enjoy reading. If Raul publishes academic works, then he is either scholarly or teaches at a university (or both). Cherry enjoys reading or is passionate about history. If Raul is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both. Raul translates ancient texts. Raul has a good memory. Raul enjoys reading or is passionate about history. Raul either has a good memory or enjoys reading, but it's not necessarily true that Raul's enjoyment of reading is related to his memory. Briar does not teach at a university. Briar either has a good memory or enjoys reading, but it's not necessarily true that Briar's enjoyment of reading is related to his memory. If Raul has high intellect, then he can either think critically or be scholarly, but not both. Briar has a good memory. If Raul has a curious mind, then he is a meticulous researcher and produces innovative work. If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher. If Raul loves learning, then he is passionate about history and values accuracy. Cherry does not gain academic recognition.Based on the above information, is the following statement true, false, or uncertain? Raul becomes a leading authority.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Raul does not gain academic recognition. The statement 'Every meticulous researcher either gains academic recognition or makes groundbreaking discoveries (or both)' implies that if Raul were a meticulous researcher, he would need to gain academic recognition or make groundbreaking discoveries. Since he does not gain academic recognition, if he were a meticulous researcher, he must make groundbreaking discoveries. However, the statement 'If Raul is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both' indicates that becoming a leading authority and making groundbreaking discoveries are mutually exclusive for a scholarly Raul. If Raul were to become a leading authority, he could not make groundbreaking discoveries if scholarly, but if he is not scholarly, the condition does not directly apply. Yet, from 'Raul translates ancient texts' and 'If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher', it is possible Raul is passionate about history and thus a meticulous researcher. As a meticulous researcher without academic recognition, he must make groundbreaking discoveries. This precludes him from becoming a leading authority if he is scholarly, as they are mutually exclusive. But we need to check if Raul is scholarly. From 'If Raul publishes academic works, then he is either scholarly or teaches at a university (or both)' and 'Raul publishes academic works', Raul is either scholarly or teaches at a university. However, 'Raul does not teach at a university', so Raul must be scholarly. Therefore, Raul is scholarly. For a scholarly Raul, he can either make groundbreaking discoveries or become a leading authority, but not both. As established, if Raul is a meticulous researcher (possible via passion for history), and without academic recognition, he must make groundbreaking discoveries. Thus, he cannot become a leading authority. Therefore, the claim that Raul becomes a leading authority is false."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Raul does not gain academic recognition. The statement 'Every meticulous researcher either gains academic recognition or makes groundbreaking discoveries (or both)' implies that if Raul were a meticulous researcher, he would need to gain academic recognition or make groundbreaking discoveries. Since he does not gain academic recognition, if he were a meticulous researcher, he must make groundbreaking discoveries. However, the statement 'If Raul is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both' indicates that becoming a leading authority and making groundbreaking discoveries are mutually exclusive for a scholarly Raul. If Raul were to become a leading authority, he could not make groundbreaking discoveries if scholarly, but if he is not scholarly, the condition does not directly apply. Yet, from 'Raul translates ancient texts' and 'If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher', it is possible Raul is passionate about history and thus a meticulous researcher. As a meticulous researcher without academic recognition, he must make groundbreaking discoveries. This precludes him from becoming a leading authority if he is scholarly, as they are mutually exclusive. But we need to check if Raul is scholarly. From 'If Raul publishes academic works, then he is either scholarly or teaches at a university (or both)' and 'Raul publishes academic works', Raul is either scholarly or teaches at a university. However, 'Raul does not teach at a university', so Raul must be scholarly. Therefore, Raul is scholarly. For a scholarly Raul, he can either make groundbreaking discoveries or become a leading authority, but not both. As established, if Raul is a meticulous researcher (possible via passion for history), and without academic recognition, he must make groundbreaking discoveries. Thus, he cannot become a leading authority. Therefore, the claim that Raul becomes a leading authority is false.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 is about Raul, but the claim in the prompt is about Zander. Therefore, A1 is completely irrelevant to determining the truth of the statement 'Zander is not critically acclaimed'. An argument's cate (S/P) should be assigned relative to the specific claim it addresses.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A1's conclusion is about Raul not becoming a leading authority, which is a different proposition from 'Zander is not critically acclaimed'. Supporting a different false claim does not logically support the negation of the Zander claim. The cate 'S' is incorrectly assigned because A1 does not argue for or against the given claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out the irrelevance, one could interpret the task as evaluating the internal logic of A1 against a hypothetical claim about Raul. In that isolated context, if the claim were 'Raul becomes a leading authority', then A1 argues it is false, which would correctly be cate: S. However, this is not the claim presented in the prompt.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.4,
+            "B2": 0.35
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From the premises, Raul is scholarly (since he publishes academic works and does not teach at a university). The condition for a scholarly Raul is that he can either make groundbreaking discoveries or become a leading authority, but not both. To determine which one holds, we examine other constraints. Raul translates ancient texts. If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher. Since he translates ancient texts, it is possible he is passionate about history, but not necessarily. However, 'Cherry enjoys reading or is passionate about history' and 'Raul enjoys reading or is passionate about history' do not force Raul to be passionate about history. But if Raul is not passionate about history, we cannot conclude he is a meticulous researcher from that path. Yet, 'Every meticulous researcher either gains academic recognition or makes groundbreaking discoveries (or both)'. Raul does not gain academic recognition, so if he is a meticulous researcher, he must make groundbreaking discoveries. Is Raul a meticulous researcher? From 'If Raul has a curious mind, then he is a meticulous researcher and produces innovative work', but we don't know if Raul has a curious mind. From 'If Raul loves learning, then he is passionate about history and values accuracy', but we don't know if Raul loves learning. So, we cannot definitively conclude Raul is a meticulous researcher. However, consider the contrapositive: if Raul does not make groundbreaking discoveries and is not a meticulous researcher, what then? But we need to see if becoming a leading authority is possible. If Raul becomes a leading authority, then since he is scholarly, he cannot make groundbreaking discoveries. Then, if he were a meticulous researcher, he would need academic recognition or groundbreaking discoveries; but he has neither (no academic recognition and no groundbreaking discoveries if leading authority), so he cannot be a meticulous researcher. That is consistent. But is there any forcing condition that makes Raul a meticulous researcher? Possibly from 'If Raul is passionate about history...' but we don't know if he is passionate. However, note that Raul translates ancient texts. The conditional 'If Zoey is passionate about history, then he translates ancient texts and is a meticulous researcher' applies to Zoey, not Raul. Similarly, 'If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher' is given. So, translating ancient texts alone does not imply passion for history; it could be for other reasons. So, Raul may not be passionate about history, hence not necessarily a meticulous researcher via that path. Therefore, it seems possible that Raul becomes a leading authority? But wait, there is another constraint: 'Raul does not gain academic recognition'. If he becomes a leading authority, does that count as academic recognition? Typically, becoming a leading authority might imply academic recognition, but the premise explicitly says 'academic recognition' as something he does not gain. So, if becoming a leading authority is a form of academic recognition, then it would contradict 'Raul does not gain academic recognition'. In mainstream understanding, being a leading authority in a field is a form of academic recognition. Therefore, if Raul does not gain academic recognition, he cannot become a leading authority. Thus, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From the premises, Raul is scholarly (since he publishes academic works and does not teach at a university). The condition for a scholarly Raul is that he can either make groundbreaking discoveries or become a leading authority, but not both. To determine which one holds, we examine other constraints. Raul translates ancient texts. If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher. Since he translates ancient texts, it is possible he is passionate about history, but not necessarily. However, 'Cherry enjoys reading or is passionate about history' and 'Raul enjoys reading or is passionate about history' do not force Raul to be passionate about history. But if Raul is not passionate about history, we cannot conclude he is a meticulous researcher from that path. Yet, 'Every meticulous researcher either gains academic recognition or makes groundbreaking discoveries (or both)'. Raul does not gain academic recognition, so if he is a meticulous researcher, he must make groundbreaking discoveries. Is Raul a meticulous researcher? From 'If Raul has a curious mind, then he is a meticulous researcher and produces innovative work', but we don't know if Raul has a curious mind. From 'If Raul loves learning, then he is passionate about history and values accuracy', but we don't know if Raul loves learning. So, we cannot definitively conclude Raul is a meticulous researcher. However, consider the contrapositive: if Raul does not make groundbreaking discoveries and is not a meticulous researcher, what then? But we need to see if becoming a leading authority is possible. If Raul becomes a leading authority, then since he is scholarly, he cannot make groundbreaking discoveries. Then, if he were a meticulous researcher, he would need academic recognition or groundbreaking discoveries; but he has neither (no academic recognition and no groundbreaking discoveries if leading authority), so he cannot be a meticulous researcher. That is consistent. But is there any forcing condition that makes Raul a meticulous researcher? Possibly from 'If Raul is passionate about history...' but we don't know if he is passionate. However, note that Raul translates ancient texts. The conditional 'If Zoey is passionate about history, then he translates ancient texts and is a meticulous researcher' applies to Zoey, not Raul. Similarly, 'If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher' is given. So, translating ancient texts alone does not imply passion for history; it could be for other reasons. So, Raul may not be passionate about history, hence not necessarily a meticulous researcher via that path. Therefore, it seems possible that Raul becomes a leading authority? But wait, there is another constraint: 'Raul does not gain academic recognition'. If he becomes a leading authority, does that count as academic recognition? Typically, becoming a leading authority might imply academic recognition, but the premise explicitly says 'academic recognition' as something he does not gain. So, if becoming a leading authority is a form of academic recognition, then it would contradict 'Raul does not gain academic recognition'. In mainstream understanding, being a leading authority in a field is a form of academic recognition. Therefore, if Raul does not gain academic recognition, he cannot become a leading authority. Thus, the claim is false.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is entirely irrelevant to the given claim. The claim is about 'Mae is talented' based on a complex set of premises about Holly, Coraline, Mae, and Sexy. A2 discusses a different scenario involving Raul, Cherry, and Zoey, which is not present in the provided premises. Therefore, A2 does not support or oppose the claim about Mae; it is a logical non sequitur.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, one could interpret the task as requiring an evaluation of the logical structure of A2 itself, independent of the original claim. In that isolated sense, A2 presents a self-contained logical deduction about Raul.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if we evaluate A2 in isolation, its conclusion ('the claim is false') refers to an unspecified claim about Raul, not the provided claim about Mae. Its internal reasoning is based on premises not provided in the user's input, making it impossible to assess its validity for the task at hand. Therefore, its irrelevance is fatal to its role as a support argument.",
+          "confidence": 0.95,
+          "attacks": {
+            "C1": 0.9,
+            "A2": 0.95
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Analyzing the logical structure: Let A = Raul gains academic recognition (false). Let B = Raul makes groundbreaking discoveries. Let C = Raul becomes a leading authority. Let S = Raul is scholarly. Let T = Raul teaches at a university (false). Let P = Raul is passionate about history. Let M = Raul is a meticulous researcher. Let X = Raul translates ancient texts (true). Given: (1) \u00acA. (2) If Zoey is scholarly, then (B xor C) for Zoey? Actually careful: 'If Zoey is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both.' This is about Zoey, not Raul. But there is a similar statement for Raul: 'If Raul is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both.' So we have: S \u2192 (B \u2295 C). (3) Every meticulous researcher: M \u2192 (A \u2228 B). (4) \u00acT. (5) If P then (X \u2227 M). (6) X true. (7) If Cherry publishes academic works, then (scholarly or teaches at university) for Cherry. Not directly about Raul. But there is: 'If Raul publishes academic works, then he is either scholarly or teaches at a university (or both).' And Raul publishes academic works, so S \u2228 T. Since \u00acT, we have S. So Raul is scholarly. (8) Raul publishes academic works (true). (9) For anyone who loves books and values knowledge, they enjoy reading. Not directly about Raul. (10) If Raul publishes academic works, then (S \u2228 T) already used. (11) Cherry enjoys reading or is passionate about history. Not about Raul. (12) Raul enjoys reading or is passionate about history. (13) Raul either has a good memory or enjoys reading... but not necessarily related. (14) Briar info not about Raul. (15) If Raul has high intellect... not known. (16) If Raul has a curious mind... not known. (17) If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher (same as (5)). (18) If Raul loves learning... not known. (19) Cherry does not gain academic recognition. Now, from S and S \u2192 (B \u2295 C), we have B \u2295 C. From M \u2192 (A \u2228 B). Since \u00acA, M \u2192 B. Also, from P \u2192 (X \u2227 M), so P \u2192 M. We have X true, but P is unknown. Also, from (12): Raul enjoys reading or P. We want to check C. Suppose C true. Then from B \u2295 C, B must be false. So \u00acB. Now, if M were true, then M \u2192 B (since \u00acA), so B would be true, contradiction. So \u00acM. Also, from P \u2192 M, contrapositive: \u00acM \u2192 \u00acP. So \u00acP. Then from (12): Raul enjoys reading or P, so Raul enjoys reading must be true. That is consistent. So far, C true seems possible if we can have \u00acM and \u00acP. But is there any other condition forcing M? Possibly from 'If Raul has a curious mind...' but we don't know. So logically, C true is consistent? However, consider the meaning of 'academic recognition'. Becoming a leading authority is a form of academic recognition. The premise says Raul does not gain academic recognition. If C means he becomes a leading authority, that is academic recognition, so C would contradict \u00acA. Therefore, C must be false. Thus, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Analyzing the logical structure: Let A = Raul gains academic recognition (false). Let B = Raul makes groundbreaking discoveries. Let C = Raul becomes a leading authority. Let S = Raul is scholarly. Let T = Raul teaches at a university (false). Let P = Raul is passionate about history. Let M = Raul is a meticulous researcher. Let X = Raul translates ancient texts (true). Given: (1) \u00acA. (2) If Zoey is scholarly, then (B xor C) for Zoey? Actually careful: 'If Zoey is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both.' This is about Zoey, not Raul. But there is a similar statement for Raul: 'If Raul is scholarly, then he can either make groundbreaking discoveries or become a leading authority, but not both.' So we have: S \u2192 (B \u2295 C). (3) Every meticulous researcher: M \u2192 (A \u2228 B). (4) \u00acT. (5) If P then (X \u2227 M). (6) X true. (7) If Cherry publishes academic works, then (scholarly or teaches at university) for Cherry. Not directly about Raul. But there is: 'If Raul publishes academic works, then he is either scholarly or teaches at a university (or both).' And Raul publishes academic works, so S \u2228 T. Since \u00acT, we have S. So Raul is scholarly. (8) Raul publishes academic works (true). (9) For anyone who loves books and values knowledge, they enjoy reading. Not directly about Raul. (10) If Raul publishes academic works, then (S \u2228 T) already used. (11) Cherry enjoys reading or is passionate about history. Not about Raul. (12) Raul enjoys reading or is passionate about history. (13) Raul either has a good memory or enjoys reading... but not necessarily related. (14) Briar info not about Raul. (15) If Raul has high intellect... not known. (16) If Raul has a curious mind... not known. (17) If Raul is passionate about history, then he translates ancient texts and is a meticulous researcher (same as (5)). (18) If Raul loves learning... not known. (19) Cherry does not gain academic recognition. Now, from S and S \u2192 (B \u2295 C), we have B \u2295 C. From M \u2192 (A \u2228 B). Since \u00acA, M \u2192 B. Also, from P \u2192 (X \u2227 M), so P \u2192 M. We have X true, but P is unknown. Also, from (12): Raul enjoys reading or P. We want to check C. Suppose C true. Then from B \u2295 C, B must be false. So \u00acB. Now, if M were true, then M \u2192 B (since \u00acA), so B would be true, contradiction. So \u00acM. Also, from P \u2192 M, contrapositive: \u00acM \u2192 \u00acP. So \u00acP. Then from (12): Raul enjoys reading or P, so Raul enjoys reading must be true. That is consistent. So far, C true seems possible if we can have \u00acM and \u00acP. But is there any other condition forcing M? Possibly from 'If Raul has a curious mind...' but we don't know. So logically, C true is consistent? However, consider the meaning of 'academic recognition'. Becoming a leading authority is a form of academic recognition. The premise says Raul does not gain academic recognition. If C means he becomes a leading authority, that is academic recognition, so C would contradict \u00acA. Therefore, C must be false. Thus, the claim is false.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly maps the original claim's domain. The original claim is about 'Kohen serves as a carriage horse' with premises about horses, Kohen, Snookums, Madisyn, and Kannon. A3 analyzes a completely different scenario about Raul, academic recognition, and scholarly traits, which is irrelevant to the original logical problem. Therefore, A3 does not validly support or oppose the original claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were about the correct domain, its logical structure is internally flawed. It assumes 'becoming a leading authority' is a form of 'academic recognition' without explicit premise support, then uses that to derive a contradiction. Without an explicit premise linking 'leading authority' to 'academic recognition', the contradiction is not forced, making the conclusion uncertain.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The original claim's logical structure must be analyzed with the given premises about Kohen. Key premises: Kohen runs frequently; Kohen does not have a muscular body; if Kohen runs frequently or exercises regularly (but not both), then he has a muscular body. Since he runs frequently and does not have a muscular body, he must also exercise regularly (to violate the 'but not both' condition). Then, if Kohen eats nutritious food and exercises regularly, he has a large build. Kohen eats nutritious food (premise), so he has a large build. If Kohen has a large build, he has an intimidating appearance. Kohen either has an intimidating appearance or a gentle nature, but not both, so he does not have a gentle nature. Kohen either has a gentle nature or becomes a symbol of elegance, but not both, so he becomes a symbol of elegance. If Kohen is strong, then he can either serve as a carriage horse or become a symbol of elegance, but not both. Kohen is either agile or strong, but not both. His strength status is unknown. To serve as a carriage horse, he must be strong and not become a symbol of elegance, but he already becomes a symbol of elegance, so he cannot serve as a carriage horse. Thus, the claim 'Kohen serves as a carriage horse' is false.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B2's conclusion that Kohen becomes a symbol of elegance relies on the premise 'Kohen either has a gentle nature or becomes a symbol of elegance, but not both.' However, that premise is about Snookums, not Kohen. The premise for Kohen is 'Kohen either has an intimidating appearance or has a gentle nature, but not both.' There is no direct premise stating Kohen becomes a symbol of elegance. Thus, the deduction that Kohen becomes a symbol of elegance is unsupported.",
+          "confidence": 0.87,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Correcting B2: The premise 'Kohen either has a gentle nature or becomes a symbol of elegance, but not both' is indeed stated in the original claim list. So Kohen's becoming a symbol of elegance is directly addressable. Given Kohen has an intimidating appearance (from large build), and Kohen either has an intimidating appearance or a gentle nature (but not both), he does not have a gentle nature. Then from 'Kohen either has a gentle nature or becomes a symbol of elegance, but not both,' he must become a symbol of elegance. Therefore, B2's core deduction stands.",
+          "confidence": 0.9,
+          "attacks": {
+            "C2": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "From a practical standpoint, becoming a leading authority in any academic field typically requires gaining significant academic recognition, such as awards, prestigious positions, or widespread respect from peers. The premise explicitly states 'Raul does not gain academic recognition.' Therefore, it is impossible for Raul to become a leading authority without gaining academic recognition. Hence, the statement 'Raul becomes a leading authority' is false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From a practical standpoint, becoming a leading authority in any academic field typically requires gaining significant academic recognition, such as awards, prestigious positions, or widespread respect from peers. The premise explicitly states 'Raul does not gain academic recognition.' Therefore, it is impossible for Raul to become a leading authority without gaining academic recognition. Hence, the statement 'Raul becomes a leading authority' is false.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that academic recognition is strictly necessary for becoming a leading authority, but history shows exceptions where influential thinkers gained authority posthumously or through unconventional paths without contemporary recognition.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The term 'leading authority' is ambiguous\u2014it could refer to intellectual influence rather than formal recognition. Someone could become a leading authority by producing groundbreaking work that later becomes foundational, even if initially unrecognized.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While exceptions exist, they are statistically rare. In practical, contemporary academic contexts, recognition through publications, positions, and peer esteem is virtually required for authority status, making the original argument generally sound.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.82,
+            "B2": 0.78
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even in contemporary contexts, authority can emerge through digital platforms, public engagement, or industry impact without traditional academic recognition, challenging the necessity assumption.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

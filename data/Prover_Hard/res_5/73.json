@@ -1,0 +1,237 @@
+{
+  "claim": "Jade does not map terrain. Alyssa does not map terrain. If Faith loves the outdoors, then she examines fossils and classifies minerals. Alyssa enjoys hiking. Alyssa does not appreciate nature. Faith does not gain recognition. If Twinkle enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both). Alyssa does not gain recognition. If Alyssa values exploration, then she loves the outdoors. If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both. If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both). If Faith studies geology, then she can either make breakthroughs or gain recognition, but not both. Jade does not uncover the secrets of the Earth. If Alyssa loves the outdoors, then she examines fossils and classifies minerals. If Alyssa either finds fault lines or reads seismic data (but not both), then she studies geology. If Jade either examines fossils or maps terrain (but not both), then she analyzes rock formations. Jade enjoys hiking. If Twinkle collects rocks, then she will classify minerals. Alyssa does not uncover the secrets of the Earth. Faith does not collect rocks. If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.Based on the above information, is the following statement true, false, or uncertain? Alyssa makes breakthroughs.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' Since it is also stated 'Alyssa does not gain recognition,' if Alyssa studies geology, she must make breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' Since it is also stated 'Alyssa does not gain recognition,' if Alyssa studies geology, she must make breakthroughs.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 assumes Alyssa studies geology, but this is not established. The context does not directly state that Alyssa studies geology; it only provides conditional statements about what happens if she does. Without proof that Alyssa studies geology, the conclusion that she makes breakthroughs does not follow.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' and 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since 'Alyssa does not uncover the secrets of the Earth,' if Alyssa analyzes rock formations, she must study geology. However, it is still not proven that Alyssa examines fossils or maps terrain, so the chain of reasoning to establish she studies geology remains incomplete.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'Alyssa does not map terrain.' It also states 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' Since she does not map terrain, the condition reduces to: if Alyssa examines fossils, then she analyzes rock formations. But it is not stated whether Alyssa examines fossils, so we cannot conclude she analyzes rock formations, and thus cannot conclude she studies geology.",
+          "confidence": 0.8,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From the context, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' However, it is not established that Alyssa studies geology; therefore, she may not make breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From the context, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' However, it is not established that Alyssa studies geology; therefore, she may not make breakthroughs.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' and 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since Alyssa does not uncover the secrets of the Earth, if she analyzes rock formations, she must study geology. However, it is not established that Alyssa either examines fossils or maps terrain, so the conclusion that she studies geology is not supported.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states 'Alyssa does not map terrain.' and 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' Since she does not map terrain, the condition reduces to: if Alyssa examines fossils, then she analyzes rock formations. However, it is not established whether Alyssa examines fossils, so the analysis remains incomplete.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.68
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' and 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' If Alyssa loves the outdoors, she examines fossils, which would trigger the condition for analyzing rock formations, leading to studying geology (since she does not uncover secrets of Earth). However, it is not established that Alyssa loves the outdoors.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the context, 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' and 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since 'Alyssa does not uncover the secrets of the Earth,' if Alyssa analyzes rock formations, she must study geology, leading to breakthroughs as per the rule with no recognition."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the context, 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' and 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since 'Alyssa does not uncover the secrets of the Earth,' if Alyssa analyzes rock formations, she must study geology, leading to breakthroughs as per the rule with no recognition.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 assumes Alyssa analyzes rock formations, but the premise 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations' is conditional. The context states 'Alyssa does not map terrain' but does not state she examines fossils. Without knowing if Alyssa examines fossils, we cannot conclude she analyzes rock formations.",
+          "confidence": 0.72,
+          "attacks": {
+            "A3": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Alyssa studies geology, the rule 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both' does not guarantee breakthroughs. It states she can make breakthroughs OR gain recognition, not that she must make breakthroughs. Since 'Alyssa does not gain recognition' is given, breakthroughs become possible but not logically necessary from the given information.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 itself relies on an incomplete reading. The context provides 'Alyssa does not map terrain' and the conditional rule about examining fossils or mapping terrain. Since mapping terrain is false, the condition 'either examines fossils or maps terrain (but not both)' could still be true if Alyssa examines fossils. The context does not state whether she examines fossils, making the analysis uncertain rather than disproving A3's assumption.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "From the context, 'Alyssa does not map terrain' and 'Alyssa does not uncover the secrets of the Earth.' It is not confirmed that Alyssa examines fossils, so she may not analyze rock formations, and thus may not study geology or make breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "From the context, 'Alyssa does not map terrain' and 'Alyssa does not uncover the secrets of the Earth.' It is not confirmed that Alyssa examines fossils, so she may not analyze rock formations, and thus may not study geology or make breakthroughs.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states: 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' Since Alyssa does not map terrain, if she examines fossils, she would analyze rock formations. The argument A4 assumes 'not confirmed' means she does not examine fossils, but this is not logically necessary.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Alyssa analyzes rock formations, the context states: 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since Alyssa does not uncover the secrets of the Earth, she must study geology. Studying geology is a prerequisite for making breakthroughs according to the context.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' It also states: 'Alyssa does not gain recognition.' Therefore, if Alyssa studies geology, she must make breakthroughs. This directly contradicts A4's conclusion that she may not make breakthroughs.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the context, 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' If Alyssa loves the outdoors, she examines fossils, which could trigger the condition 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations,' leading to geology study and breakthroughs."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the context, 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' If Alyssa loves the outdoors, she examines fossils, which could trigger the condition 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations,' leading to geology study and breakthroughs.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Alyssa loves the outdoors, but the context states 'Alyssa does not appreciate nature' and 'If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both).' Since Alyssa enjoys hiking (given) and does not appreciate nature, she must love the outdoors. However, 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals' is true, but the argument then assumes she examines fossils (not both with mapping terrain) to trigger rock formation analysis. Yet, 'Alyssa does not map terrain' is given, so examining fossils alone satisfies 'either examines fossils or maps terrain (but not both),' leading to analyzing rock formations. However, analyzing rock formations leads to 'either studies geology or uncovers the secrets of the Earth (or both),' but 'Alyssa does not uncover the secrets of the Earth' is given, so she must study geology. Then, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' Since 'Alyssa does not gain recognition' is given, she must make breakthroughs. Thus, the argument's conclusion is actually supported by the context, but the argument is poorly structured and speculative in its phrasing ('could trigger'), making it weak.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 incorrectly claims A5 is weak; B1's own reasoning shows that the logical chain from the context indeed proves Alyssa makes breakthroughs. A5's conclusion is correct, and its speculative phrasing does not undermine its logical validity given the context. The context forces the conclusion: Alyssa loves the outdoors (from hiking and not appreciating nature), examines fossils, analyzes rock formations, studies geology, and makes breakthroughs (since no gain recognition). Thus, A5's core claim is sound, and B1's attack is based on mischaracterizing A5's strength.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.87
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "From the context, 'If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both).' and 'Alyssa does not appreciate nature.' This implies Alyssa loves the outdoors, but 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' However, it is not explicitly stated she loves the outdoors, and even if she does, breakthroughs depend on further conditions that may not be met."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "From the context, 'If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both).' and 'Alyssa does not appreciate nature.' This implies Alyssa loves the outdoors, but 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' However, it is not explicitly stated she loves the outdoors, and even if she does, breakthroughs depend on further conditions that may not be met.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 incorrectly states 'it is not explicitly stated she loves the outdoors.' From the context: 'If Alyssa enjoys hiking, then she either appreciates nature or loves the outdoors (but not both).' and 'Alyssa does not appreciate nature.' Logically, if A enjoys hiking and does not appreciate nature, then A must love the outdoors. This is a direct logical implication, so A6's premise that it's not explicitly stated is false.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the logical necessity that Alyssa loves the outdoors given the premises, A6's core point about breakthroughs depending on further conditions remains valid. Even if Alyssa loves the outdoors, the context states 'If Alyssa loves the outdoors, then she examines fossils and classifies minerals.' This does not directly lead to 'Alyssa makes breakthroughs.' The link to breakthroughs is through other conditional chains (e.g., studying geology) which may not be activated. Therefore, B1's attack on A6's minor premise does not fully invalidate A6's conclusion about the uncertainty of breakthroughs.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's defense of A6 is logically flawed. If Alyssa loves the outdoors, then she examines fossils and classifies minerals (from context). The context also states: 'If Alyssa either examines fossils or maps terrain (but not both), then she analyzes rock formations.' Since Alyssa examines fossils (from loving outdoors) and it is given that 'Alyssa does not map terrain', she satisfies 'examines fossils but not maps terrain', triggering the condition. Therefore, she analyzes rock formations. The context further states: 'Anyone who analyzes rock formations either studies geology or uncovers the secrets of the Earth (or both).' Since 'Alyssa does not uncover the secrets of the Earth' is given, she must study geology. Finally, 'If Alyssa studies geology, then she can either make breakthroughs or gain recognition, but not both.' and 'Alyssa does not gain recognition' is given. Therefore, Alyssa must make breakthroughs. This chain is deductively valid from the context, making the Claim true and directly contradicting A6's support for 'S' (negation).",
+          "confidence": 0.92,
+          "attacks": {
+            "C1": 0.9
+          }
+        }
+      ]
+    }
+  }
+}

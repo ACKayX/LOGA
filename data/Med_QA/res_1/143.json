@@ -1,0 +1,245 @@
+{
+  "claim": "Consider the following background information: A 28-year-old male presents to the emergency department with chest pain. He reports that one hour ago he was climbing the stairs in his home when he suddenly developed excruciating chest pain. He describes the pain as ripping and radiating to the back. The patient\u2019s past medical history is significant for a heart murmur that is being followed by his outpatient cardiologist. He takes no medications. The patient works as a carpenter and reports being monogamous with his wife. He denies any history of intravenous drug use or recent travel. In the emergency department, the patient\u2019s temperature is 99.4\u00b0F (37.4\u00b0C), blood pressure is 94/56 mmHg, pulse is 121/min, and respirations are 14/min. On physical exam, the patient appears to be in moderate distress and is clutching his chest. He is tall and has joint hypermobility. His breath sounds are equal and full bilaterally and has weak distal pulses.\n\nGiven the background information the following is corrrect: A late systolic crescendo murmur at the apex with a mid-systolic click is most likely to be found in this patient.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The patient's history of a heart murmur being followed by a cardiologist suggests a pre-existing valvular condition, which is consistent with a late systolic crescendo murmur and mid-systolic click."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The patient's history of a heart murmur being followed by a cardiologist suggests a pre-existing valvular condition, which is consistent with a late systolic crescendo murmur and mid-systolic click.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's tall stature and joint hypermobility are more indicative of a connective tissue disorder like Marfan syndrome, which is associated with aortic dissection rather than valvular murmurs.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection can also present with a murmur due to aortic regurgitation, which may be confused with a valvular murmur, but the clinical context favors dissection.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The description of the pain as 'ripping and radiating to the back' is classic for aortic dissection, not for valvular conditions.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "While aortic dissection is a concern, the presence of a known heart murmur being followed by a cardiologist still makes valvular pathology a plausible finding.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.65
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The patient's tall stature and joint hypermobility are classic features of Marfan syndrome, which is strongly associated with mitral valve prolapse, the most common cause of a late systolic crescendo murmur with a mid-systolic click."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The patient's tall stature and joint hypermobility are classic features of Marfan syndrome, which is strongly associated with mitral valve prolapse, the most common cause of a late systolic crescendo murmur with a mid-systolic click.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While Marfan syndrome is associated with mitral valve prolapse, not all tall individuals with joint hypermobility have Marfan syndrome. Other connective tissue disorders or benign hypermobility could explain these features.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Genetic testing or family history would be required to confirm Marfan syndrome definitively, which is not provided in the background information.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's acute presentation with excruciating chest pain and hemodynamic instability is more concerning for aortic dissection, which is also strongly associated with Marfan syndrome but would take clinical precedence over mitral valve prolapse.",
+          "confidence": 0.9,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Aortic dissection would typically present with a pulse deficit or blood pressure discrepancy between arms, which is not mentioned in the physical exam.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The description of the chest pain as ripping and radiating to the back, along with weak distal pulses, suggests aortic dissection, which can coexist with mitral valve prolapse in connective tissue disorders like Marfan syndrome."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The description of the chest pain as ripping and radiating to the back, along with weak distal pulses, suggests aortic dissection, which can coexist with mitral valve prolapse in connective tissue disorders like Marfan syndrome.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Aortic dissection typically presents with a pulse deficit or blood pressure discrepancy between arms, which is not mentioned in the patient's examination.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's tall stature and joint hypermobility strongly suggest Marfan syndrome, which is a known risk factor for both aortic dissection and mitral valve prolapse.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The absence of a history of hypertension or trauma reduces the likelihood of aortic dissection, as these are common predisposing factors.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The patient's heart murmur and connective tissue disorder (suggested by joint hypermobility) make mitral valve prolapse highly likely, which can also cause chest pain.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The patient's hemodynamic instability (low blood pressure and tachycardia) is consistent with acute complications of mitral valve prolapse, such as severe mitral regurgitation, which can present with the described murmur."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The patient's hemodynamic instability (low blood pressure and tachycardia) is consistent with acute complications of mitral valve prolapse, such as severe mitral regurgitation, which can present with the described murmur.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's tall stature and joint hypermobility suggest Marfan syndrome, which is more commonly associated with aortic dissection than mitral valve prolapse.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection can also cause hemodynamic instability and chest pain radiating to the back, which may mimic mitral valve prolapse complications.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The absence of a history of hypertension or recent trauma reduces the likelihood of aortic dissection, making mitral valve prolapse more probable.",
+          "confidence": 0.72,
+          "attacks": {
+            "C1": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's heart murmur history does not specify whether it was previously diagnosed as mitral valve prolapse, leaving room for other causes of hemodynamic instability.",
+          "confidence": 0.68,
+          "attacks": {
+            "A4": 0.6
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The absence of fever and normal respiratory rate makes infectious or inflammatory causes of chest pain less likely, further supporting a structural cardiac etiology like mitral valve prolapse."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The absence of fever and normal respiratory rate makes infectious or inflammatory causes of chest pain less likely, further supporting a structural cardiac etiology like mitral valve prolapse.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's hypotension and weak distal pulses suggest aortic dissection, which can also present with ripping chest pain and is more urgent than mitral valve prolapse.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection typically presents with pulse deficits and blood pressure discrepancies between arms, which are not mentioned in this case.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's joint hypermobility and tall stature are classic features of Marfan syndrome, which predisposes to aortic dissection rather than mitral valve prolapse.",
+          "confidence": 0.8,
+          "attacks": {
+            "A5": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Marfan syndrome is rare, and mitral valve prolapse is much more common even in patients with these physical features.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.55
+          }
+        }
+      ]
+    }
+  }
+}

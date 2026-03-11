@@ -1,0 +1,278 @@
+{
+  "claim": "If Gracelyn has talent, then she is either content or disillusioned, but not both. Gracelyn is not inspired. If Gracelyn is passionate, then she is either inspired or creative (but not both). Gracelyn does not seek new challenges. For every human, either they have found their artistic voice or they have not found it, but not both. If Amalia is creative, then she has either found her artistic voice or is disillusioned, but not both. If Gracelyn struggles to create, then she has either found fulfillment or is disillusioned, but not both. Gracelyn does not have a clear mind. If Gracelyn is creative, then she has either found her artistic voice or is disillusioned, but not both. Gracelyn is motivated. If Gracelyn explores options or seeks new challenges, then she can discover a new medium. If Gracelyn is motivated, then she either finds her flow or has a clear mind, but not both. Gracelyn struggles to create. Gracelyn explores options. Gracelyn is passionate. Anyone who discovers a new medium or finds their flow can feel fulfilled.Based on the above information, is the following statement true, false, or uncertain? Gracelyn has not found her artistic voice.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Gracelyn struggles to create, and the statement says if she struggles to create, then she has either found fulfillment or is disillusioned, but not both. This does not directly address artistic voice, so it leaves the status of artistic voice uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Gracelyn struggles to create, and the statement says if she struggles to create, then she has either found fulfillment or is disillusioned, but not both. This does not directly address artistic voice, so it leaves the status of artistic voice uncertain.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "From the premises: 'If Gracelyn is creative, then she has either found her artistic voice or is disillusioned, but not both.' Also, 'Gracelyn is passionate. If Gracelyn is passionate, then she is either inspired or creative (but not both). Gracelyn is not inspired.' Therefore, Gracelyn must be creative. Since she is creative, she has either found her artistic voice or is disillusioned, but not both.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "We know Gracelyn struggles to create. The premise says: 'If Gracelyn struggles to create, then she has either found fulfillment or is disillusioned, but not both.' This gives us information about disillusionment or fulfillment, but not directly about artistic voice. So B1's deduction about artistic voice being linked to creativity doesn't yet determine which of the two (artistic voice or disillusioned) is true.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From C1's point: we need to resolve whether Gracelyn is disillusioned. If she is disillusioned, then from B1's premise ('If creative, then artistic voice or disillusioned, not both'), she cannot have found her artistic voice. If she is not disillusioned, then she must have found her artistic voice. So we must check the 'struggles to create' premise: it says she has either found fulfillment or is disillusioned. This doesn't tell us which. But we have other info: 'Gracelyn is motivated. If motivated, then she either finds her flow or has a clear mind, but not both. Gracelyn does not have a clear mind.' Therefore, she finds her flow. Then from the last premise: 'Anyone who discovers a new medium or finds their flow can feel fulfilled.' So she can feel fulfilled. But 'can' doesn't mean she does. However, if she finds her flow, it's plausible she has found fulfillment. But not certain.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.65
+          }
+        },
+        {
+          "id": "E1",
+          "text": "Actually, from 'Gracelyn explores options' and 'If Gracelyn explores options or seeks new challenges, then she can discover a new medium.' She can discover a new medium. With 'Anyone who discovers a new medium or finds their flow can feel fulfilled' and she finds her flow (from D1), she has two possible routes to fulfillment. But still 'can' doesn't guarantee she has found fulfillment. So we still don't know if she is disillusioned or has found fulfillment from the 'struggles to create' premise. Thus, artistic voice remains uncertain.",
+          "confidence": 0.68,
+          "attacks": {
+            "D1": 0.6
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Gracelyn is creative (since she is passionate, and if passionate, then either inspired or creative but not both, and she is not inspired, so she must be creative). The statement says if Gracelyn is creative, then she has either found her artistic voice or is disillusioned, but not both. Since she is disillusioned (from the talent condition: if she has talent, she is content or disillusioned but not both; she is not content because she struggles to create and is disillusioned from the creative condition, implying disillusioned), she cannot have found her artistic voice, so she has not found it."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Gracelyn is creative (since she is passionate, and if passionate, then either inspired or creative but not both, and she is not inspired, so she must be creative). The statement says if Gracelyn is creative, then she has either found her artistic voice or is disillusioned, but not both. Since she is disillusioned (from the talent condition: if she has talent, she is content or disillusioned but not both; she is not content because she struggles to create and is disillusioned from the creative condition, implying disillusioned), she cannot have found her artistic voice, so she has not found it.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly applies reasoning from a different scenario (Gracelyn) to the Jaylani claim. The original claim is about Jaylani being a sea goer, but A2 discusses Gracelyn's creativity and disillusionment, which is irrelevant to determining Jaylani's status as a sea goer.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the mismatch, A2's internal logic is flawed: it assumes Gracelyn is disillusioned based on premises not fully established in the provided text. The 'talent condition' referenced isn't clearly defined in the Jaylani claim context, making the disillusionment deduction unsupported.",
+          "confidence": 0.78,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, A2 might be attempting analogical reasoning (comparing Jaylani to Gracelyn), but such analogy is never stated, so the attack remains valid.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.3
+          }
+        },
+        {
+          "id": "B3",
+          "text": "A2's conclusion ('she has not found her artistic voice') does not address the claim's statement about Jaylani being a sea goer. Therefore, as a support argument (cate: S), it fails to provide any logical connection to negate 'Jaylani is a sea goer'.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the creative condition, if creative, then either found artistic voice or disillusioned but not both. Since Gracelyn is disillusioned (inferred from multiple conditions), she cannot have found her artistic voice, supporting that she has not found it."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the creative condition, if creative, then either found artistic voice or disillusioned but not both. Since Gracelyn is disillusioned (inferred from multiple conditions), she cannot have found her artistic voice, supporting that she has not found it.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text references 'Gracelyn' and 'creative condition', which are completely absent from the provided claim about Ayan, Oscar, Gunnar, and Coraline. Therefore, the argument has zero relevance to the claim 'Ayan is not careless' and provides no logical support for any position.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, the argument's internal logic is flawed. It states 'if creative, then either found artistic voice or disillusioned but not both. Since Gracelyn is disillusioned... she cannot have found her artistic voice.' This is a valid deduction from the premise, but the premise itself ('Gracelyn is disillusioned') is not established by the given claim, making the entire reasoning unsound for the current problem.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The information does not explicitly state whether Gracelyn has found her artistic voice; it only provides conditional relationships that depend on other factors like disillusionment, which themselves are inferred but not directly proven, leaving some uncertainty."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The information does not explicitly state whether Gracelyn has found her artistic voice; it only provides conditional relationships that depend on other factors like disillusionment, which themselves are inferred but not directly proven, leaving some uncertainty.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 incorrectly references 'Gracelyn' and 'artistic voice', which are not mentioned in the claim or provided information. The claim is about Dr. Giana and whether she improves patient lives, making A4's content irrelevant to the actual logical deduction required.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if A4's text were interpreted as addressing uncertainty about Dr. Giana improving patient lives, its reasoning is flawed. The provided information contains sufficient logical constraints to potentially deduce a definite answer about Dr. Giana improving patient lives, not just conditional relationships.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance of A4's specific text, the core point of A4 (that uncertainty exists) might still be valid if the logical system derived from the premises is underdetermined or contradictory regarding 'improves patient lives'.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "A formal analysis of the premises shows they are logically consistent and sufficient to deduce that Dr. Giana does not improve patient lives. Therefore, the statement in the claim is true, not uncertain, definitively refuting A4's position.",
+          "confidence": 0.85,
+          "attacks": {
+            "C1": 0.8,
+            "A4": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Gracelyn is motivated, and if motivated, then either finds her flow or has a clear mind, but not both. She does not have a clear mind, so she must find her flow. Anyone who finds their flow can feel fulfilled, but this does not directly relate to artistic voice, so artistic voice remains uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Gracelyn is motivated, and if motivated, then either finds her flow or has a clear mind, but not both. She does not have a clear mind, so she must find her flow. Anyone who finds their flow can feel fulfilled, but this does not directly relate to artistic voice, so artistic voice remains uncertain.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Jude valuing scientific discovery. It discusses Gracelyn, motivation, flow, clear mind, fulfillment, and artistic voice, which have no logical connection to Jude, scientific discovery, or any premises in the given claim context.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premises in the claim establish logical relationships about Jude, but A5 introduces entirely different entities (Gracelyn) and concepts (flow, clear mind, artistic voice) without showing how they connect to Jude or scientific discovery. This is a non sequitur.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A5 were relevant, its internal logic is flawed: 'if motivated, then either finds her flow or has a clear mind, but not both' plus 'she does not have a clear mind' does imply 'she finds her flow', but the conclusion about artistic voice being uncertain doesn't follow from the premises given.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.3
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Gracelyn explores options, and if she explores options or seeks new challenges, then she can discover a new medium. She does discover a new medium, and anyone who discovers a new medium can feel fulfilled. This fulfillment might conflict with disillusionment from other conditions, but artistic voice is not directly addressed, making it uncertain."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Gracelyn explores options, and if she explores options or seeks new challenges, then she can discover a new medium. She does discover a new medium, and anyone who discovers a new medium can feel fulfilled. This fulfillment might conflict with disillusionment from other conditions, but artistic voice is not directly addressed, making it uncertain.",
+          "cate": "P",
+          "confidence": 0.42,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument about Gracelyn is completely irrelevant to the claim about Jude valuing scientific discovery. The premises and conclusion of A6 discuss artistic fulfillment and discovering a new medium, which has no logical connection to Jude's values in biological science.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.92
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we accept A6's reasoning about Gracelyn, it establishes no premise that can be used to determine whether Jude values scientific discovery. The domains (artistic medium discovery vs. scientific discovery) are disjoint, so no inference about Jude can be drawn from Gracelyn's case.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument contains speculative language ('might conflict', 'not directly addressed, making it uncertain') which undermines its usefulness for proving anything about Jude with certainty. Speculation about artistic fulfillment cannot support a definite conclusion about scientific values.",
+          "confidence": 0.78,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly notes the irrelevance, one could argue that abstract patterns of reasoning (if someone does X under condition Y, they achieve Z) might be analogous across domains. However, this is extremely weak as the specific content matters for logical deduction.",
+          "confidence": 0.35,
+          "attacks": {
+            "B1": 0.25
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The analogy argument in C1 fails because the original problem requires deduction from given premises about Jude, Rosemary, Ryan, etc. Analogical reasoning from unrelated cases is not valid in formal deductive logic, which this problem appears to use.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.88
+          }
+        }
+      ]
+    }
+  }
+}

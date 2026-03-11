@@ -1,0 +1,437 @@
+{
+  "claim": "Legend is not competitive. Either Legend has a distinctive marking or he has no distinctive marking, but not both. Loyal is well-trained. Legend is well-trained. If Legend either has strong muscles or has an athletic build, then he is competitive. Either Araya has a distinctive marking or he has no distinctive marking, but not both. If Lucian either has strong muscles or has an athletic build, then he is competitive. If Legend has strong hooves and a powerful gait, then he can be a champion. Legend either eats nutritious food or has strong muscles. All large breed horses have strong muscles. If Legend has powerful strides or is highly energetic, then he has a racing background. Araya has a good temperament. Loyal is either fast or has a good temperament, but not both. Loyal does not have an athletic build. Legend is either well-trained or has a racing background, but not both. If Legend is a champion, then he either has a unique color or has a distinctive marking. Legend has a good temperament. Legend does not have an athletic build. If Legend has a unique color, then he is either a large breed or has a racing background, but not both. Legend is either a champion or fast. Legend either has noble bloodline or a unique color. Legend is either fast or has a good temperament, but not both.Based on the above information, is the following statement true, false, or uncertain? Legend has a distinctive marking.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The context states 'Legend either has a distinctive marking or he has no distinctive marking, but not both.' This establishes that having a distinctive marking and having no distinctive marking are mutually exclusive and exhaustive possibilities for Legend."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Legend either has a distinctive marking or he has no distinctive marking, but not both.' This establishes that having a distinctive marking and having no distinctive marking are mutually exclusive and exhaustive possibilities for Legend.",
+          "cate": "S",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The context states 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' However, being a champion is a sufficient condition for having a unique color or a distinctive marking, not a necessary one. This does not force Legend to be a champion or to have a distinctive marking."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context states 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' However, being a champion is a sufficient condition for having a unique color or a distinctive marking, not a necessary one. This does not force Legend to be a champion or to have a distinctive marking.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context also states 'Legend is either a champion or fast.' Combined with 'Legend has a good temperament' and 'Legend is either fast or has a good temperament, but not both,' we deduce Legend cannot be fast, so Legend must be a champion. The champion condition then applies.",
+          "confidence": 0.92,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From 'Legend either has noble bloodline or a unique color' and 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both,' we cannot deduce Legend has a unique color. He might have noble bloodline instead. Without a unique color, the champion condition only gives 'has a distinctive marking' as the remaining option.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'All large breed horses have strong muscles.' From 'Legend either eats nutritious food or has strong muscles,' if Legend is a large breed, he has strong muscles, making the disjunction true regardless of the other part. This doesn't confirm he is large breed. The unique color condition's large breed disjunct remains uncertain, so unique color is not ruled out.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The context states 'Legend is either a champion or fast.' and 'Legend is either fast or has a good temperament, but not both.' Since Legend has a good temperament (given), he cannot be fast. Therefore, from 'Legend is either a champion or fast,' Legend must be a champion."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context states 'Legend is either a champion or fast.' and 'Legend is either fast or has a good temperament, but not both.' Since Legend has a good temperament (given), he cannot be fast. Therefore, from 'Legend is either a champion or fast,' Legend must be a champion.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The conclusion 'Legend must be a champion' does not logically follow from the premises. The statement 'Legend is either a champion or fast' is inclusive, not exclusive. It does not state 'but not both.' Therefore, Legend could be both a champion and fast, or just one of them. Since Legend has a good temperament and cannot be fast (from 'Legend is either fast or has a good temperament, but not both'), it only eliminates the possibility of Legend being fast alone. It does not force Legend to be a champion; Legend could potentially be neither if the 'or' was misinterpreted, but given the structure, the possibility of being both champion and fast remains, which means champion is not necessarily true.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 incorrectly assumes the 'or' in 'Legend is either a champion or fast' could be inclusive. In logical contexts, 'either...or...' typically implies an exclusive disjunction, especially when contrasted with the explicit 'but not both' used elsewhere in the context. The context consistently uses 'either...or...' without 'but not both' for some statements and with it for others, suggesting that when 'but not both' is omitted, it may not be exclusive. However, given the pattern, the default interpretation without explicit exclusivity is inclusive. But the original argument A3 assumes exclusivity without justification. Therefore, B1 correctly points out a logical flaw in A3's reasoning.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if 'Legend is either a champion or fast' is interpreted as inclusive, the additional premise 'Legend has a good temperament' and 'Legend is either fast or has a good temperament, but not both' forces Legend to not be fast. In an inclusive 'or', if one disjunct is false, the other must be true for the statement to hold. Therefore, if Legend is not fast, then Legend must be a champion for 'Legend is either a champion or fast' to be true. Thus, A3's conclusion is logically valid under the inclusive interpretation as well, making B1's attack invalid.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Since Legend is a champion (from A3), the rule 'If Legend is a champion, then he either has a unique color or has a distinctive marking' applies. Therefore, Legend has either a unique color or a distinctive marking."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Since Legend is a champion (from A3), the rule 'If Legend is a champion, then he either has a unique color or has a distinctive marking' applies. Therefore, Legend has either a unique color or a distinctive marking.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 assumes Legend is a champion, but this premise is not established in the given information. The statement 'Legend is either a champion or fast' does not guarantee Legend is a champion; he could be fast instead. Therefore, the conclusion does not necessarily follow.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Legend is not a champion, the rule 'If Legend is a champion, then he either has a unique color or has a distinctive marking' is a conditional statement that only applies if the antecedent is true. If Legend is not a champion, the rule does not provide any information about his color or marking, so A4's conclusion is unsupported.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The context states 'Legend either has noble bloodline or a unique color.' This means at least one of these is true. Combined with A4, if Legend has a unique color, he satisfies the champion condition. If he does not have a unique color, he must have a distinctive marking to satisfy the champion condition."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The context states 'Legend either has noble bloodline or a unique color.' This means at least one of these is true. Combined with A4, if Legend has a unique color, he satisfies the champion condition. If he does not have a unique color, he must have a distinctive marking to satisfy the champion condition.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that Legend must be a champion. The context states 'Legend is either a champion or fast.' This is a disjunction, not a conjunction. Legend could be fast instead of being a champion, so the reasoning about distinctive marking being necessary for champion status doesn't necessarily apply to Legend.",
+          "confidence": 0.82,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Legend is not a champion, the original claim is about whether Legend has a distinctive marking. The context provides direct information: 'Either Legend has a distinctive marking or he has no distinctive marking, but not both.' This is a tautology that doesn't resolve the truth value. Without additional premises linking other properties to distinctive marking, the claim remains uncertain regardless of champion status.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context contains multiple premises that could potentially be combined to deduce information about distinctive marking. For example, if Legend has a unique color, then from 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both,' and other premises about large breeds having strong muscles, etc., a chain of reasoning might be constructed. However, without explicit contradiction or confirmation, the direct claim about distinctive marking remains logically undetermined from the given premises.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The context states 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' Also, 'Legend is either well-trained or has a racing background, but not both.' Since Legend is well-trained (given), he cannot have a racing background. Therefore, if Legend has a unique color, he must be a large breed (since racing background is impossible)."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context states 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' Also, 'Legend is either well-trained or has a racing background, but not both.' Since Legend is well-trained (given), he cannot have a racing background. Therefore, if Legend has a unique color, he must be a large breed (since racing background is impossible).",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 concludes that if Legend has a unique color, he must be a large breed. However, this conclusion does not logically address the claim 'Legend has a distinctive marking.' Having a unique color is different from having a distinctive marking, so A6 does not actually support or oppose the claim about distinctive marking.",
+          "confidence": 0.82,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A6 assumes that 'Legend is well-trained' implies 'Legend does not have a racing background' based on the exclusive 'or' statement. However, the exclusive 'or' means exactly one is true. Since Legend is well-trained, he cannot have a racing background. This part is logically correct, but it doesn't connect to the claim about distinctive marking.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "B1 correctly points out that A6's conclusion about unique color and large breed is irrelevant to the claim about distinctive marking. However, B1 itself doesn't establish a direct logical inconsistency with A6's reasoning; it merely notes irrelevance. For a valid attack, we need inconsistency, not just irrelevance.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "S",
+        "text": "If Legend is a large breed, then 'All large breed horses have strong muscles.' This would give Legend strong muscles. The context states 'Legend either eats nutritious food or has strong muscles.' If he has strong muscles, this condition is satisfied regardless of his diet."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "If Legend is a large breed, then 'All large breed horses have strong muscles.' This would give Legend strong muscles. The context states 'Legend either eats nutritious food or has strong muscles.' If he has strong muscles, this condition is satisfied regardless of his diet.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Legend is a large breed, but the context never states this. Without explicit confirmation that Legend is a large breed, the premise 'All large breed horses have strong muscles' does not apply to Legend.",
+          "confidence": 0.85,
+          "attacks": {
+            "A7": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Legend had strong muscles, this does not directly support the negation of 'Legend has a distinctive marking.' The argument attempts to connect strong muscles to competitiveness, but the claim is about distinctive marking, not competitiveness.",
+          "confidence": 0.9,
+          "attacks": {
+            "A7": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Legend either eats nutritious food or has strong muscles, but not both.' If Legend has strong muscles, he cannot also eat nutritious food. The argument incorrectly treats these as non-exclusive.",
+          "confidence": 0.95,
+          "attacks": {
+            "A7": 0.98
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "S",
+        "text": "The context states 'If Legend either has strong muscles or has an athletic build, then he is competitive.' Legend does not have an athletic build (given). If Legend has strong muscles (from being a large breed if he has a unique color), then he would be competitive. However, the first statement is 'Legend is not competitive.' Therefore, Legend cannot have strong muscles. Since all large breed horses have strong muscles, Legend cannot be a large breed. From A6, if Legend has a unique color, he must be a large breed or have a racing background. Racing background is impossible (as he is well-trained), and large breed is impossible (as he cannot have strong muscles). Therefore, Legend cannot have a unique color."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The context states 'If Legend either has strong muscles or has an athletic build, then he is competitive.' Legend does not have an athletic build (given). If Legend has strong muscles (from being a large breed if he has a unique color), then he would be competitive. However, the first statement is 'Legend is not competitive.' Therefore, Legend cannot have strong muscles. Since all large breed horses have strong muscles, Legend cannot be a large breed. From A6, if Legend has a unique color, he must be a large breed or have a racing background. Racing background is impossible (as he is well-trained), and large breed is impossible (as he cannot have strong muscles). Therefore, Legend cannot have a unique color.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that Legend cannot have a racing background because he is well-trained. The context states 'Legend is either well-trained or has a racing background, but not both.' This means if Legend is well-trained, he cannot have a racing background. However, the argument then uses this to conclude that 'racing background is impossible' for the purpose of the conditional about unique color. This is logically valid, but the argument's conclusion about unique color does not directly address the claim about distinctive marking. The argument attempts to eliminate unique color, but distinctive marking is a separate property. Therefore, the argument does not logically support or oppose the claim about distinctive marking.",
+          "confidence": 0.75,
+          "attacks": {
+            "A8": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The attack B1 is incorrect because it misrepresents the argument's logical structure. A8's ultimate goal is to show Legend cannot have a distinctive marking by eliminating unique color, but it fails to complete that chain. However, B1's criticism that A8 does not address distinctive marking is valid, but B1 itself does not establish a logical inconsistency with A8's internal reasoning about unique color. A8's steps about strong muscles, large breed, and unique color are internally consistent given the premises. The real flaw is the missing link to distinctive marking, which makes A8's cate assignment incorrect, but B1's attack on the reasoning about unique color is not logically inconsistent with A8's steps.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.65
+          }
+        }
+      ]
+    },
+    "A9": {
+      "supporting": {
+        "id": "A9",
+        "cate": "S",
+        "text": "From A4, Legend must have either a unique color or a distinctive marking. From A8, Legend cannot have a unique color. Therefore, Legend must have a distinctive marking. However, this contradicts the initial analysis. Re-examining: A3 concluded Legend is a champion because he has a good temperament and cannot be fast. But 'Legend is either fast or has a good temperament, but not both' and 'Legend has a good temperament' indeed means he is not fast. 'Legend is either a champion or fast' then forces him to be a champion. So the deduction chain holds: champion \u2192 unique color or distinctive marking. But if unique color leads to a contradiction (strong muscles via large breed, making him competitive, but he is not competitive), then unique color is false. Therefore, distinctive marking must be true. Wait, the question is whether the statement 'Legend has a distinctive marking' is true. The logical deduction from the context proves it is true. Therefore, the confidence should be 1.0 for true. But the initial confidence was set to 0.0 for false. Correcting: The arguments should support the claim (P), not its negation (S)."
+      },
+      "attacks": [
+        {
+          "id": "A9",
+          "text": "From A4, Legend must have either a unique color or a distinctive marking. From A8, Legend cannot have a unique color. Therefore, Legend must have a distinctive marking. However, this contradicts the initial analysis. Re-examining: A3 concluded Legend is a champion because he has a good temperament and cannot be fast. But 'Legend is either fast or has a good temperament, but not both' and 'Legend has a good temperament' indeed means he is not fast. 'Legend is either a champion or fast' then forces him to be a champion. So the deduction chain holds: champion \u2192 unique color or distinctive marking. But if unique color leads to a contradiction (strong muscles via large breed, making him competitive, but he is not competitive), then unique color is false. Therefore, distinctive marking must be true. Wait, the question is whether the statement 'Legend has a distinctive marking' is true. The logical deduction from the context proves it is true. Therefore, the confidence should be 1.0 for true. But the initial confidence was set to 0.0 for false. Correcting: The arguments should support the claim (P), not its negation (S).",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument relies on the premise 'Legend is a champion' to trigger the condition 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' However, the statement 'Legend is either a champion or fast' combined with 'Legend has a good temperament' and 'Legend is either fast or has a good temperament, but not both' only proves Legend is not fast. It does not logically force Legend to be a champion; it only states he must be one or the other. Without additional information confirming he is a champion, the deduction chain is incomplete.",
+          "confidence": 0.75,
+          "attacks": {
+            "A9": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Legend is a champion, the subsequent step assumes 'unique color leads to a contradiction (strong muscles via large breed, making him competitive, but he is not competitive).' This requires Legend to be a large breed horse if he has a unique color, per 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' However, nothing in the context confirms Legend is a large breed horse; it only states 'All large breed horses have strong muscles.' Without establishing Legend is a large breed, the contradiction doesn't hold, so unique color remains possible, undermining the necessity of distinctive marking.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A10": {
+      "supporting": {
+        "id": "A10",
+        "cate": "P",
+        "text": "From the context: Legend has a good temperament. 'Legend is either fast or has a good temperament, but not both.' Therefore, Legend is not fast. 'Legend is either a champion or fast.' Therefore, Legend is a champion. 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' Therefore, Legend has either a unique color or a distinctive marking."
+      },
+      "attacks": [
+        {
+          "id": "A10",
+          "text": "From the context: Legend has a good temperament. 'Legend is either fast or has a good temperament, but not both.' Therefore, Legend is not fast. 'Legend is either a champion or fast.' Therefore, Legend is a champion. 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' Therefore, Legend has either a unique color or a distinctive marking.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "From the context: 'Legend either has noble bloodline or a unique color.' This means Legend might have a unique color. Also: 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' So if Legend has a unique color, he cannot have both large breed and racing background. However, A10's conclusion 'Legend has either a unique color or a distinctive marking' does not guarantee he has a distinctive marking; he might only have a unique color, which would make the claim 'Legend has a distinctive marking' false.",
+          "confidence": 0.75,
+          "attacks": {
+            "A10": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'Legend is either well-trained or has a racing background, but not both.' and 'Legend is well-trained.' Therefore, Legend does not have a racing background. Combined with 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' If Legend had a unique color, he would need to be a large breed (since no racing background). But 'All large breed horses have strong muscles.' and 'Legend either eats nutritious food or has strong muscles.' This doesn't force strong muscles. However, the key point: if Legend has a unique color, he must be a large breed (due to no racing background), which implies strong muscles via 'All large breed horses have strong muscles.' This is consistent, so unique color remains possible, meaning distinctive marking is not guaranteed.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "From the context: 'Legend either has noble bloodline or a unique color.' This is an exclusive or? The context says 'either...or' but not explicitly 'but not both' here. However, similar structures elsewhere use 'but not both'. Assuming it's exclusive or, then if Legend has a unique color, he cannot have noble bloodline. But nothing prevents that. However, also: 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' Since A10 established Legend is a champion, he must have unique color or distinctive marking. But from 'Legend either has noble bloodline or a unique color' (exclusive), if he has unique color, no noble bloodline; if he has noble bloodline, no unique color, so then he must have distinctive marking (to satisfy champion condition). So if Legend has noble bloodline, then he must have distinctive marking. But we don't know if he has noble bloodline. Thus, the claim remains uncertain.",
+          "confidence": 0.78,
+          "attacks": {
+            "C1": 0.6
+          }
+        }
+      ]
+    },
+    "A11": {
+      "supporting": {
+        "id": "A11",
+        "cate": "P",
+        "text": "Assume Legend has a unique color. Then 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' Also, 'Legend is either well-trained or has a racing background, but not both.' Legend is well-trained, so he does not have a racing background. Therefore, if he has a unique color, he must be a large breed."
+      },
+      "attacks": [
+        {
+          "id": "A11",
+          "text": "Assume Legend has a unique color. Then 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' Also, 'Legend is either well-trained or has a racing background, but not both.' Legend is well-trained, so he does not have a racing background. Therefore, if he has a unique color, he must be a large breed.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A11 does not logically support the claim 'Legend has a distinctive marking.' It instead explores a hypothetical about unique color, which is a different attribute from distinctive marking. The premises about unique color do not establish anything about distinctive marking, so A11 fails to address the actual claim.",
+          "confidence": 0.85,
+          "attacks": {
+            "A11": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A11's reasoning about unique color were valid, it does not create a logical inconsistency with the claim about distinctive marking. Distinctive marking and unique color are separate attributes; one does not preclude the other. Therefore, B1's attack is based on a misinterpretation of A11's purpose.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A12": {
+      "supporting": {
+        "id": "A12",
+        "cate": "P",
+        "text": "If Legend is a large breed, then 'All large breed horses have strong muscles.' So Legend has strong muscles. 'Legend either eats nutritious food or has strong muscles.' This is satisfied. 'If Legend either has strong muscles or has an athletic build, then he is competitive.' Legend does not have an athletic build, but he has strong muscles, so he would be competitive. However, the first statement is 'Legend is not competitive.' This is a contradiction. Therefore, the assumption that Legend has a unique color is false."
+      },
+      "attacks": [
+        {
+          "id": "A12",
+          "text": "If Legend is a large breed, then 'All large breed horses have strong muscles.' So Legend has strong muscles. 'Legend either eats nutritious food or has strong muscles.' This is satisfied. 'If Legend either has strong muscles or has an athletic build, then he is competitive.' Legend does not have an athletic build, but he has strong muscles, so he would be competitive. However, the first statement is 'Legend is not competitive.' This is a contradiction. Therefore, the assumption that Legend has a unique color is false.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Legend is a large breed, but this is not established in the given information. The statement 'All large breed horses have strong muscles' does not imply that Legend is a large breed. Without this premise, the conclusion that Legend has strong muscles does not follow.",
+          "confidence": 0.85,
+          "attacks": {
+            "A12": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Legend were a large breed, the argument's conclusion that 'the assumption that Legend has a unique color is false' does not logically follow from the contradiction about competitiveness. The contradiction only shows that at least one premise is false, but it could be the premise 'Legend is not competitive' that is false, not the assumption about unique color.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.75
+          }
+        }
+      ]
+    },
+    "A13": {
+      "supporting": {
+        "id": "A13",
+        "cate": "P",
+        "text": "Since Legend has either a unique color or a distinctive marking (from A10) and a unique color is false (from A12), Legend must have a distinctive marking. Therefore, the statement 'Legend has a distinctive marking' is true."
+      },
+      "attacks": [
+        {
+          "id": "A13",
+          "text": "Since Legend has either a unique color or a distinctive marking (from A10) and a unique color is false (from A12), Legend must have a distinctive marking. Therefore, the statement 'Legend has a distinctive marking' is true.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

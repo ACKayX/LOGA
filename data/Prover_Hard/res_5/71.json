@@ -1,0 +1,301 @@
+{
+  "claim": "Callum reacts fast. Elisabeth will gain wisdom if he survives adversity. Any lion that acts impulsively or disobeys rules can get into trouble. If Simba has quick reflexes and has loyal friends, then he can survive adversity. Elisabeth stays alert. Aubrielle does not seek adventure. If Aubrielle has quick reflexes and has loyal friends, then he can survive adversity. Simba will gain wisdom if he survives adversity. If Simba has a bold nature or seeks adventure, then he will explore dangerous paths. If Elisabeth has a bold nature or seeks adventure, then he will explore dangerous paths. Callum is not cautious. Elisabeth has a bold nature. Any lion that reacts fast and stays alert can have quick reflexes. Simba does not seek adventure. If Callum ventures into the unknown, then he either gets into trouble or gains wisdom, but not both. Simba has a bold nature. Simba reacts fast. Simba is not cautious. Aubrielle is cautious or has loyal friends. Simba has loyal friends if he protects his pride. Simba is cautious or has loyal friends. Simba stays alert. If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both. If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both. Simba ventures into the unknown. If Aubrielle explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.Based on the above information, is the following statement true, false, or uncertain? Simba does not learn valuable lessons.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'Simba ventures into the unknown.' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' This means Simba's venturing leads to exactly one outcome: trouble or wisdom, not both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'Simba ventures into the unknown.' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' This means Simba's venturing leads to exactly one outcome: trouble or wisdom, not both.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 does not directly address whether Simba learns valuable lessons. The claim is 'Simba does not learn valuable lessons.' The context states 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' However, A1 discusses venturing into the unknown, which is a different premise from exploring dangerous paths. Without establishing that venturing into the unknown necessarily leads to exploring dangerous paths, A1's conclusion about trouble or wisdom does not logically determine whether Simba learns valuable lessons.",
+          "confidence": 0.72,
+          "attacks": {
+            "A1": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context provides a logical link: 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' It is given that 'Simba has a bold nature.' Therefore, Simba will explore dangerous paths. From 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' Since Simba explores dangerous paths, he must either learn valuable lessons or get into trouble. This directly addresses the claim about learning valuable lessons, making A1's focus on venturing into the unknown incomplete for the claim.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.82
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'Simba ventures into the unknown.' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' It also states 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' These are two separate conditional statements with different antecedents (venturing into the unknown vs. exploring dangerous paths) and different consequents (trouble or wisdom vs. trouble or valuable lessons). Without explicit equivalence between 'gains wisdom' and 'learns valuable lessons', or between the two antecedents, the outcome of one does not determine the outcome of the other. Therefore, C1's connection is not logically necessary from the given context.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context states, 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' Since Simba does not explore dangerous paths (as argued in A3), the conditional does not apply, so it does not guarantee he learns valuable lessons."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context states, 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' Since Simba does not explore dangerous paths (as argued in A3), the conditional does not apply, so it does not guarantee he learns valuable lessons.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim is 'Simba does not learn valuable lessons.' A2 argues that because Simba does not explore dangerous paths, the conditional about dangerous paths doesn't guarantee he learns lessons. However, this doesn't prove Simba doesn't learn valuable lessons - he could learn them through other means not mentioned in the context.",
+          "confidence": 0.72,
+          "attacks": {
+            "A2": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states 'Simba ventures into the unknown' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' Gaining wisdom could involve learning valuable lessons, so this directly contradicts the claim that Simba doesn't learn valuable lessons.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context says Simba gains wisdom if he survives adversity, and he has quick reflexes and loyal friends (which help survive adversity). If he survives adversity and gains wisdom, this likely involves learning valuable lessons, contradicting the claim.",
+          "confidence": 0.82,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Simba has a bold nature, but 'Simba does not seek adventure.' The context says, 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Since he does not seek adventure and the 'or' condition requires at least one to be true, and bold nature alone is insufficient without seeking adventure (as the condition is an 'or', but the statement's truth depends on interpretation; however, from given facts, Simba has bold nature, so by the rule, he should explore dangerous paths, but this conflicts with other inferences; re-evaluating: the rule is 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Simba has bold nature, so he should explore dangerous paths. But if he explores dangerous paths, then from A2's rule, he either learns lessons or gets trouble. However, from A1, venturing leads to wisdom or trouble. Since he ventures, he gets wisdom or trouble. If he explores dangerous paths, he gets lessons or trouble. Wisdom and lessons might be related, but the context does not equate them. The question is about 'valuable lessons,' not wisdom. So, from venturing, he gets wisdom or trouble. From exploring, he gets lessons or trouble. But we don't know if he explores. Actually, since he has bold nature, he should explore dangerous paths by the rule. So he explores. Then, from the exploring rule, he gets lessons or trouble. But from the venturing rule, he gets wisdom or trouble. These could be consistent if he gets trouble, or if wisdom implies lessons, but not stated. To assess 'Simba does not learn valuable lessons,' if he gets trouble from exploring, then he does not learn lessons, which supports the claim. But we need to determine which outcome occurs. From the context, we cannot definitively conclude he gets trouble or lessons from exploring, so it's uncertain. However, the confidence score is 0.80 based on the inference chain favoring trouble due to other constraints. But let's generate arguments strictly from context. For argument A3, I'll adjust: From context, Simba has bold nature, so by the rule, he explores dangerous paths. Then, from the exploring rule, he either learns valuable lessons or gets into trouble, but not both. We don't know which, so the claim 'Simba does not learn valuable lessons' is not proven. But for arguments supporting the claim, we need reasons why he might not learn. So, for A3: Since Simba ventures into the unknown and from that rule gets wisdom or trouble, if he gets trouble from venturing, he might not learn valuable lessons from exploring, but this is speculative. I'll revise arguments to be distinct and based on context. Given the confidence >0.80, I need arguments supporting the claim. So, for A3: The context does not state that Simba learns valuable lessons; it only sets conditions under which he might, so absence of evidence suggests he does not, supporting the claim."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Simba has a bold nature, but 'Simba does not seek adventure.' The context says, 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Since he does not seek adventure and the 'or' condition requires at least one to be true, and bold nature alone is insufficient without seeking adventure (as the condition is an 'or', but the statement's truth depends on interpretation; however, from given facts, Simba has bold nature, so by the rule, he should explore dangerous paths, but this conflicts with other inferences; re-evaluating: the rule is 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Simba has bold nature, so he should explore dangerous paths. But if he explores dangerous paths, then from A2's rule, he either learns lessons or gets trouble. However, from A1, venturing leads to wisdom or trouble. Since he ventures, he gets wisdom or trouble. If he explores dangerous paths, he gets lessons or trouble. Wisdom and lessons might be related, but the context does not equate them. The question is about 'valuable lessons,' not wisdom. So, from venturing, he gets wisdom or trouble. From exploring, he gets lessons or trouble. But we don't know if he explores. Actually, since he has bold nature, he should explore dangerous paths by the rule. So he explores. Then, from the exploring rule, he gets lessons or trouble. But from the venturing rule, he gets wisdom or trouble. These could be consistent if he gets trouble, or if wisdom implies lessons, but not stated. To assess 'Simba does not learn valuable lessons,' if he gets trouble from exploring, then he does not learn lessons, which supports the claim. But we need to determine which outcome occurs. From the context, we cannot definitively conclude he gets trouble or lessons from exploring, so it's uncertain. However, the confidence score is 0.80 based on the inference chain favoring trouble due to other constraints. But let's generate arguments strictly from context. For argument A3, I'll adjust: From context, Simba has bold nature, so by the rule, he explores dangerous paths. Then, from the exploring rule, he either learns valuable lessons or gets into trouble, but not both. We don't know which, so the claim 'Simba does not learn valuable lessons' is not proven. But for arguments supporting the claim, we need reasons why he might not learn. So, for A3: Since Simba ventures into the unknown and from that rule gets wisdom or trouble, if he gets trouble from venturing, he might not learn valuable lessons from exploring, but this is speculative. I'll revise arguments to be distinct and based on context. Given the confidence >0.80, I need arguments supporting the claim. So, for A3: The context does not state that Simba learns valuable lessons; it only sets conditions under which he might, so absence of evidence suggests he does not, supporting the claim.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context explicitly states: 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' Since Simba has a bold nature, the rule 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths' applies, meaning Simba explores dangerous paths. Therefore, from the exploring rule, he either learns valuable lessons or gets into trouble. The context does not specify which outcome occurs, so it is uncertain whether he learns valuable lessons. The claim 'Simba does not learn valuable lessons' is not supported; it could be true or false.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The exploring rule only states that if Simba explores dangerous paths, one of two mutually exclusive outcomes occurs. Without additional information specifying which outcome happens, the default logical position is that both outcomes remain possible. Absence of evidence for one outcome does not constitute evidence for the other; therefore, the claim remains uncertain, not supported by absence of evidence.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Simba has loyal friends if he protects his pride, but the context does not state he protects his pride, so it is not confirmed he has loyal friends from that rule. However, 'Simba is cautious or has loyal friends.' Since Simba is not cautious, he must have loyal friends. So he has loyal friends. Also, 'If Simba has quick reflexes and has loyal friends, then he can survive adversity.' Simba has quick reflexes because 'Any lion that reacts fast and stays alert can have quick reflexes,' and Simba reacts fast and stays alert. So Simba can survive adversity. Then, 'Simba will gain wisdom if he survives adversity.' So Simba gains wisdom. Wisdom might be distinct from valuable lessons; the context does not link them, so gaining wisdom does not entail learning valuable lessons, supporting that he does not learn valuable lessons."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Simba has loyal friends if he protects his pride, but the context does not state he protects his pride, so it is not confirmed he has loyal friends from that rule. However, 'Simba is cautious or has loyal friends.' Since Simba is not cautious, he must have loyal friends. So he has loyal friends. Also, 'If Simba has quick reflexes and has loyal friends, then he can survive adversity.' Simba has quick reflexes because 'Any lion that reacts fast and stays alert can have quick reflexes,' and Simba reacts fast and stays alert. So Simba can survive adversity. Then, 'Simba will gain wisdom if he survives adversity.' So Simba gains wisdom. Wisdom might be distinct from valuable lessons; the context does not link them, so gaining wisdom does not entail learning valuable lessons, supporting that he does not learn valuable lessons.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim is 'Simba does not learn valuable lessons.' The context states: 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' Also, 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Simba has a bold nature, so he explores dangerous paths. Therefore, from the rule, Simba either learns valuable lessons or gets into trouble, but not both. The argument A4 concludes Simba gains wisdom from surviving adversity, but this does not address whether he learns valuable lessons from exploring dangerous paths. Since he explores dangerous paths, he must either learn valuable lessons or get into trouble. A4 does not prove he gets into trouble, so it cannot conclude he does not learn valuable lessons.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context states: 'Simba ventures into the unknown.' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' From A4, Simba gains wisdom (since he survives adversity). Therefore, from this rule, Simba does not get into trouble from venturing into the unknown. Since he does not get into trouble from venturing into the unknown, and from the dangerous paths rule he must either learn valuable lessons or get into trouble (but not both) from exploring dangerous paths, if he does not get into trouble, then he must learn valuable lessons. Thus, Simba learns valuable lessons, contradicting the claim.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.92
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the exploring dangerous paths rule, if Simba explores, he either learns lessons or gets trouble. If he gets trouble, he does not learn lessons. Since Simba ventures into the unknown and from that rule gets wisdom or trouble, if he gets wisdom, he might not get trouble from venturing, but he could still get trouble from exploring. The context does not specify the outcome, so it is possible he gets trouble from exploring, meaning he does not learn valuable lessons, which is consistent with the claim."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the exploring dangerous paths rule, if Simba explores, he either learns lessons or gets trouble. If he gets trouble, he does not learn lessons. Since Simba ventures into the unknown and from that rule gets wisdom or trouble, if he gets wisdom, he might not get trouble from venturing, but he could still get trouble from exploring. The context does not specify the outcome, so it is possible he gets trouble from exploring, meaning he does not learn valuable lessons, which is consistent with the claim.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes Simba explores dangerous paths. The context states: 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' Simba has a bold nature (given), so he will explore dangerous paths. Therefore, the exploring dangerous paths rule applies directly, making the outcome not merely 'possible' but determined by the logical structure.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Simba explores dangerous paths, the rule states he either learns valuable lessons or gets into trouble, but not both. The claim is 'Simba does not learn valuable lessons,' which means he must get into trouble. However, from the venturing rule: 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' Simba ventures into the unknown (given). If he gains wisdom from venturing, he does not get trouble from venturing. Getting trouble from exploring and gaining wisdom from venturing are not mutually exclusive per the context, so both could occur, meaning he could still learn valuable lessons from exploring.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states: 'Simba will gain wisdom if he survives adversity.' There is no direct link established between surviving adversity and either venturing or exploring. Therefore, gaining wisdom from surviving adversity is independent of the outcomes from venturing or exploring. Simba could gain wisdom from surviving adversity without affecting whether he learns valuable lessons from exploring, making the relationship between the claim and the argument's premises uncertain.",
+          "confidence": 0.68,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The context includes multiple conditional statements but never asserts that Simba learns valuable lessons. The claim 'Simba does not learn valuable lessons' is a negation, and without positive evidence from the context that he does learn, the claim can be considered true by default in logical evaluation, supporting it."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context includes multiple conditional statements but never asserts that Simba learns valuable lessons. The claim 'Simba does not learn valuable lessons' is a negation, and without positive evidence from the context that he does learn, the claim can be considered true by default in logical evaluation, supporting it.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim 'Simba does not learn valuable lessons' is not a simple negation of an unproven statement; it is a specific factual claim about Simba. The context provides logical pathways that could lead to him learning valuable lessons (e.g., via exploring dangerous paths), so the absence of explicit assertion does not make the claim 'true by default.' Default reasoning is invalid here as the context contains relevant conditional rules about the outcome.",
+          "confidence": 0.82,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if default reasoning is invalid, the context still does not provide any positive evidence that Simba actually learns valuable lessons. The conditional 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both' does not tell us which outcome occurs. Without evidence for either disjunct, the truth value of 'Simba learns valuable lessons' remains uncertain, not false. Therefore, the original claim 'Simba does not learn valuable lessons' is also uncertain, not true.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        }
+      ]
+    },
+    "A7": {
+      "supporting": {
+        "id": "A7",
+        "cate": "P",
+        "text": "Simba has a bold nature and ventures into the unknown, which could lead to trouble according to the venturing rule. If he gets trouble from venturing, then from the exploring rule, if he explores, he might get trouble there too, but the context does not force him to learn lessons. Since trouble is an outcome in both rules, it is plausible he encounters trouble rather than lessons, supporting that he does not learn valuable lessons."
+      },
+      "attacks": [
+        {
+          "id": "A7",
+          "text": "Simba has a bold nature and ventures into the unknown, which could lead to trouble according to the venturing rule. If he gets trouble from venturing, then from the exploring rule, if he explores, he might get trouble there too, but the context does not force him to learn lessons. Since trouble is an outcome in both rules, it is plausible he encounters trouble rather than lessons, supporting that he does not learn valuable lessons.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes Simba's venturing leads to trouble, but the venturing rule states: 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' Trouble is not guaranteed; gaining wisdom is equally possible. Without establishing which outcome occurs, the argument cannot validly support 'Simba does not learn valuable lessons.'",
+          "confidence": 0.85,
+          "attacks": {
+            "A7": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if Simba gets trouble from venturing, the exploring rule ('If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both') is conditional on exploring dangerous paths. The argument does not establish that Simba explores dangerous paths, as the condition 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths' requires bold nature OR seeks adventure; Simba has bold nature but does not seek adventure, so the antecedent is true, meaning he will explore dangerous paths. Therefore, the exploring rule applies, and learning valuable lessons remains a possible outcome.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The exploring rule presents a strict disjunction: if Simba explores dangerous paths, he either learns valuable lessons OR gets into trouble, but not both. Since Simba explores dangerous paths (due to bold nature), and if he already got trouble from venturing, then under the exploring rule he cannot also get trouble again from exploring\u2014he must learn valuable lessons instead. This contradicts the original argument's claim that he does not learn valuable lessons.",
+          "confidence": 0.95,
+          "attacks": {
+            "C1": 0.6
+          }
+        }
+      ]
+    },
+    "A8": {
+      "supporting": {
+        "id": "A8",
+        "cate": "P",
+        "text": "The context states 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' For Simba to learn valuable lessons, he must explore dangerous paths and not get into trouble. However, from the context, we cannot conclude he explores dangerous paths with certainty (despite having bold nature, as other factors might prevent it), and even if he does, we cannot conclude he avoids trouble. Therefore, it is not established that he learns valuable lessons, aligning with the claim that he does not."
+      },
+      "attacks": [
+        {
+          "id": "A8",
+          "text": "The context states 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both.' For Simba to learn valuable lessons, he must explore dangerous paths and not get into trouble. However, from the context, we cannot conclude he explores dangerous paths with certainty (despite having bold nature, as other factors might prevent it), and even if he does, we cannot conclude he avoids trouble. Therefore, it is not established that he learns valuable lessons, aligning with the claim that he does not.",
+          "cate": "S",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Simba has a bold nature or seeks adventure, then he will explore dangerous paths.' It also states 'Simba has a bold nature.' This directly implies Simba explores dangerous paths. Since A8 claims we cannot conclude he explores dangerous paths, this creates a logical contradiction.",
+          "confidence": 0.95,
+          "attacks": {
+            "A8": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly establishes that Simba explores dangerous paths, the conditional rule 'If Simba explores dangerous paths, then he either learns valuable lessons or gets into trouble, but not both' does not guarantee which outcome occurs. The claim is 'Simba does not learn valuable lessons,' which requires proving he gets into trouble. The context does not provide information to determine whether he learns lessons or gets into trouble from exploring dangerous paths. Therefore, the claim remains uncertain, and A8's final alignment with the claim is not logically justified merely from the path exploration.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context states 'Simba ventures into the unknown' and 'If Simba ventures into the unknown, then he either gets into trouble or gains wisdom, but not both.' It also states 'Simba will gain wisdom if he survives adversity.' However, there is no direct link established in the context between 'ventures into the unknown' and 'explores dangerous paths,' nor between 'gains wisdom' and 'learns valuable lessons.' These are treated as separate conditional chains. Therefore, the outcome of venturing into the unknown does not directly determine the outcome of exploring dangerous paths, supporting C1's point that the claim's truth value is uncertain.",
+          "confidence": 0.78,
+          "attacks": {
+            "C1": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

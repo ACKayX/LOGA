@@ -1,0 +1,149 @@
+{
+  "claim": "Context:'''\nIf Bryce is self-directed, then she can either excel academically or inspire others, but not both. Kailani inspires others. Bryce inspires others. Kailani is self-directed. If Kailani is self-directed, then she can either excel academically or inspire others, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Kailani does not excel academically.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The Context states: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The Context states: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.'",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context also states: 'Kailani inspires others.' This means Kailani satisfies the 'inspire others' condition in the conditional statement.",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 0.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Since Kailani is self-directed (Context: 'Kailani is self-directed.') and inspires others, the conditional 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both' forces the conclusion that Kailani does not excel academically.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 0.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The Context explicitly states: 'Kailani inspires others.'"
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The Context explicitly states: 'Kailani inspires others.'",
+          "cate": "S",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states: 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' Since Kailani inspires others, she cannot excel academically, which directly supports the Claim.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 1.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the conditional rule for Kailani, since she inspires others, she cannot also excel academically, as the rule specifies 'not both.'"
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the conditional rule for Kailani, since she inspires others, she cannot also excel academically, as the rule specifies 'not both.'",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The rule states 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both.' However, the Context does not explicitly state that Kailani is self-directed; it only states 'Kailani is self-directed.' This is a direct statement in the Context, so the premise is true, but the attack is that the argument A3 assumes the rule applies without verifying Kailani meets the antecedent. Since the Context explicitly states Kailani is self-directed, this attack is invalid as it contradicts the Context.",
+          "confidence": 0.1,
+          "attacks": {
+            "A3": 0.1
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The rule uses 'can either excel academically or inspire others, but not both,' which might imply a capability or possibility, not a necessity. Kailani inspiring others does not logically force her to not excel academically; it only means she cannot do both. If she does not excel academically, it could be for other reasons, but the rule does not mandate that inspiring others precludes excelling academically\u2014it only precludes both. Thus, A3's conclusion that 'she cannot also excel academically' is too strong; the rule only says she cannot do both, not that she must not excel if she inspires.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In the Context, the rule is presented as a logical conditional: if self-directed, then (excel XOR inspire). For Kailani, given she is self-directed and inspires others, the XOR (exclusive or) logic directly implies she does not excel academically. A3 correctly applies this logical deduction, so B2's interpretation of 'can' as mere possibility is overridden by the logical structure of the Context, which treats it as a factual constraint.",
+          "confidence": 0.92,
+          "attacks": {
+            "B2": 0.88
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The Context also states: 'Kailani is self-directed.' This confirms the antecedent of the conditional rule, making the rule applicable to her."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The Context also states: 'Kailani is self-directed.' This confirms the antecedent of the conditional rule, making the rule applicable to her.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While Kailani is self-directed, the rule states she can either excel academically or inspire others, but not both. Since the Context states 'Kailani inspires others', it logically follows that she does not excel academically. Therefore, A4's confirmation of the antecedent directly supports the claim that Kailani does not excel academically.",
+          "confidence": 1.0,
+          "attacks": {
+            "A4": 0.0
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the applicable rule and the fact that Kailani inspires others, it logically follows that she does not excel academically, making the statement true."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the applicable rule and the fact that Kailani inspires others, it logically follows that she does not excel academically, making the statement true.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the rule 'If Kailani is self-directed, then she can either excel academically or inspire others, but not both' is applicable and that Kailani is self-directed. However, the Context explicitly states 'Kailani is self-directed.' and provides the rule. Therefore, the premises are fully supported by the Context, and the conclusion is logically necessary. There is no inconsistency to attack.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 0.02
+          }
+        }
+      ]
+    }
+  }
+}

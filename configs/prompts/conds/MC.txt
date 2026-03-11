@@ -1,0 +1,113 @@
+Task Description:
+
+You will be given:
+
+* one **Claim**
+* several **Argument nodes**
+Each node has the format:
+
+```
+(id, confidence, category, argument_text)
+```
+
+The `argument_text` represents the reasoning used to support or challenge the Claim.
+
+---
+
+# Task
+
+Your task is to examine **all pairs of argument nodes** and determine whether a **conflict exists between them with respect to the Claim**.
+
+If there are **n nodes**, the number of pairs is:
+
+[
+C(n,2)
+]
+
+Example:
+
+If n = 6, you must evaluate **15 pairs**.
+
+No pair may be omitted.
+
+---
+
+# Definition of Conflict
+
+A conflict exists between two arguments if **any** of the following conditions holds:
+
+1. The arguments reach **opposite or mutually exclusive conclusions** about the Claim.
+2. One argument **undercuts or invalidates** a key premise of the other.
+3. The justifications **cannot logically hold simultaneously**, and this contradiction affects their support relation to the Claim.
+
+The following situations **do NOT constitute conflict**:
+
+* addressing different aspects of the claim
+* providing complementary evidence
+* no logical contradiction
+
+---
+
+# Reasoning Procedure (internal)
+
+For each pair (Ai, Aj), perform the following steps internally:
+
+Step 1
+Identify the core reasoning of Ai.
+
+Step 2
+Identify the core reasoning of Aj.
+
+Step 3
+Check whether the arguments:
+
+* reach opposite conclusions
+* invalidate each other's premises
+* or cannot logically hold simultaneously.
+
+Step 4
+Determine whether a conflict exists.
+
+The reasoning process is **internal only and must not appear in the output**.
+
+---
+
+# Output Format
+
+Output must be **YAML only**.
+
+Strictly follow the structure:
+
+```
+---
+- node1: id1
+  node2: id2
+  conflict: 0
+- node1: id1
+  node2: id3
+  conflict: 1
+...
+---
+```
+
+Requirements:
+
+* each pair appears exactly once
+* pairs are ordered by **ascending node id**
+* conflict must be `1` or `0`
+* do not output explanations or reasoning
+
+---
+
+# Important Constraint
+
+The decision must rely **only on the semantic content of `argument_text`**.
+
+Do not infer conflicts based on:
+
+* confidence
+* category
+* node id
+
+
+Evaluate each pair independently before producing the final YAML list.

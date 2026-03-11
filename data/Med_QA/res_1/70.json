@@ -1,0 +1,329 @@
+{
+  "claim": "Consider the following background information: Three days after undergoing a laparoscopic Whipple\"s procedure, a 43-year-old woman has swelling of her right leg. She does not have pain. She has nausea but has not vomited. She was diagnosed with pancreatic cancer 1 month ago. She has been using an incentive spirometer every 6 hours since recovering from her surgery. Prior to admission, her only medications were a multivitamin and an herbal weight-loss preparation. She appears uncomfortable. Her temperature is 38\u00b0C (100.4\u00b0F), pulse is 90/min, and blood pressure is 118/78 mm Hg. Examination shows mild swelling of the right thigh to the ankle; there is no erythema or pitting edema. Homan\"s sign is negative. The abdomen is soft and shows diffuse tenderness to palpation. There are five abdominal laparoscopic incisions with no erythema or discharge. The lungs are clear to auscultation. The remainder of the examination shows no abnormalities.\n\nGiven the background information the following is corrrect: Compression ultrasonography is the most appropriate next step in management.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Compression ultrasonography is the gold standard for diagnosing deep vein thrombosis (DVT), which is a likely cause of unilateral leg swelling post-surgery."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Compression ultrasonography is the gold standard for diagnosing deep vein thrombosis (DVT), which is a likely cause of unilateral leg swelling post-surgery.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient has no pain, erythema, or pitting edema, and Homan's sign is negative, which are typical signs of DVT; thus, DVT is less likely.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even in the absence of classic signs, DVT cannot be ruled out, as post-surgical patients often present atypically, and ultrasonography remains necessary.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The swelling could be due to postoperative fluid retention or lymphatic disruption from the laparoscopic incisions, not necessarily DVT.",
+          "confidence": 0.68,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "While alternative causes exist, DVT is a high-stakes diagnosis that must be excluded first due to its life-threatening potential.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.82
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's fever and abdominal tenderness suggest a possible intra-abdominal infection, which could also cause systemic swelling.",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.55
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Infection-related swelling is usually bilateral, and the unilateral nature still warrants DVT evaluation despite fever.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The patient's recent laparoscopic Whipple's procedure and immobility increase her risk for DVT, making ultrasonography a necessary diagnostic step."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The patient's recent laparoscopic Whipple's procedure and immobility increase her risk for DVT, making ultrasonography a necessary diagnostic step.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The absence of pain and negative Homan's sign significantly reduce the likelihood of DVT, making ultrasonography less urgent.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Despite the absence of pain, the swelling and post-surgical context still warrant ultrasonography to rule out DVT definitively.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's fever and diffuse abdominal tenderness suggest an alternative diagnosis like intra-abdominal infection, which should be prioritized over DVT workup.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Intra-abdominal infection does not explain unilateral leg swelling, so DVT remains a concern requiring ultrasonography.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The absence of pain and negative Homan's sign do not rule out DVT, as these findings are neither sensitive nor specific for the condition."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The absence of pain and negative Homan's sign do not rule out DVT, as these findings are neither sensitive nor specific for the condition.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's symptoms are more consistent with postoperative swelling or mild infection rather than DVT, given the absence of classic DVT signs like pain or erythema.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Postoperative patients, especially those with cancer, are at high risk for DVT regardless of classic symptoms, making ultrasonography necessary despite the absence of pain or Homan's sign.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's fever and diffuse abdominal tenderness suggest an alternative diagnosis like intra-abdominal infection, which could also explain the leg swelling due to systemic inflammation.",
+          "confidence": 0.6,
+          "attacks": {
+            "A3": 0.55,
+            "C1": 0.5
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The use of an incentive spirometer and early mobilization post-surgery reduces the likelihood of DVT, making other causes of leg swelling more probable.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The patient's mild fever and nausea could indicate a systemic response to a thrombotic event, further justifying the need for ultrasonography."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The patient's mild fever and nausea could indicate a systemic response to a thrombotic event, further justifying the need for ultrasonography.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Fever and nausea are nonspecific symptoms and could be due to postoperative inflammation or infection rather than a thrombotic event.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of pain and negative Homan's sign reduce the likelihood of deep vein thrombosis, making ultrasonography less urgent.",
+          "confidence": 0.6,
+          "attacks": {
+            "A4": 0.8,
+            "B1": 0.5
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Postoperative fever is common and often resolves without intervention, reducing the need for immediate ultrasonography.",
+          "confidence": 0.55,
+          "attacks": {
+            "A4": 0.6,
+            "B1": 0.4
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The patient's cancer history increases the risk of thrombosis, supporting the need for ultrasonography despite nonspecific symptoms.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.75,
+            "D1": 0.7
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Early diagnosis of DVT via ultrasonography can prevent complications such as pulmonary embolism, which is critical in a post-surgical patient."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Early diagnosis of DVT via ultrasonography can prevent complications such as pulmonary embolism, which is critical in a post-surgical patient.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's Homan's sign is negative, which reduces the likelihood of DVT and may make ultrasonography less urgent.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even with a negative Homan's sign, DVT cannot be ruled out definitively, especially in a post-surgical patient with swelling.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's mild swelling without erythema or pitting edema could be due to other causes like lymphedema, not necessarily DVT.",
+          "confidence": 0.6,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Lymphedema typically develops more gradually and is less likely in this acute post-surgical setting compared to DVT.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.75
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's fever and abdominal tenderness suggest a possible intra-abdominal infection, which should be prioritized over DVT workup.",
+          "confidence": 0.68,
+          "attacks": {
+            "A5": 0.72
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Intra-abdominal infection does not explain unilateral leg swelling, and DVT can coexist with other post-surgical complications.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.82
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The patient's cancer diagnosis adds to her hypercoagulable state, increasing the likelihood of DVT and the urgency for diagnostic imaging."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The patient's cancer diagnosis adds to her hypercoagulable state, increasing the likelihood of DVT and the urgency for diagnostic imaging.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The absence of pain and negative Homan's sign significantly reduce the clinical probability of DVT, making ultrasonography less urgent.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Cancer-associated hypercoagulability is well-documented, and even asymptomatic DVTs require prompt diagnosis to prevent complications.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The swelling could be due to postoperative fluid shifts or lymphatic disruption rather than DVT, reducing the need for immediate imaging.",
+          "confidence": 0.68,
+          "attacks": {
+            "A6": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Postoperative swelling without erythema or pitting edema is more characteristic of DVT than fluid shifts, especially in a hypercoagulable state.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

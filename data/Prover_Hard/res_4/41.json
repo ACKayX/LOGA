@@ -1,0 +1,272 @@
+{
+  "claim": "If Amirah either teaches cooking classes or develops new recipes (but not both), then she writes cookbooks. If Kenzo is a talented cook, then she either works as a chef or runs her own restaurant, but not both. Amirah does not receive food awards. If Amirah is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. If Jakari is a food blogger, then she either develops new recipes or hosts cooking shows, but not both. Amirah does not teach cooking classes. Jonathan enjoys experimenting with food. If Amirah is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. If Amirah runs her own restaurant and is a successful chef, then she receives food awards. If Kenzo uses fresh ingredients or knows flavor combinations, then she has good taste. Amirah does not host cooking shows. Jonathan is not passionate about cooking. If Jakari is either passionate about cooking or skilled at cooking (but not both), then she is a successful chef. If Jakari enjoys experimenting with food, then she is a talented cook and has good taste. If Amirah uses fresh ingredients or knows flavor combinations, then she has good taste. If Amirah is an entrepreneur, then she either has formal culinary training or runs her own restaurant, but not both. If Amirah shares recipes online or documents her cooking life, then she can write cookbooks. Kenzo uses fresh ingredients. Kenzo is a food blogger. If Amirah is a talented cook, then she either works as a chef or runs her own restaurant, but not both. If Jonathan runs her own restaurant and is a successful chef, then she receives food awards. If Amirah enjoys experimenting with food, then she is a talented cook and has good taste. Amirah is not passionate about cooking. Amirah enjoys experimenting with food. For Amirah, she either writes cookbooks or works as a chef, but not both. Jakari does not teach cooking classes. If Amirah has business acumen and values customer experience, then she is a successful chef. Jonathan does not receive food awards. Amirah uses fresh ingredients. Amirah is a food blogger.Based on the above information, is the following statement true, false, or uncertain? Amirah is skilled at cooking.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Amirah is a food blogger, and the context states that if a food blogger is either passionate about cooking or skilled at cooking (but not both), then they are a successful chef. Amirah is not passionate about cooking, so if she were skilled at cooking, she would be a successful chef. However, the context also states that for Amirah, she either writes cookbooks or works as a chef, but not both. Since she writes cookbooks (derived from her being a food blogger and sharing recipes online, which allows her to write cookbooks), she cannot work as a chef, and thus cannot be a successful chef. Therefore, she cannot be skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Amirah is a food blogger, and the context states that if a food blogger is either passionate about cooking or skilled at cooking (but not both), then they are a successful chef. Amirah is not passionate about cooking, so if she were skilled at cooking, she would be a successful chef. However, the context also states that for Amirah, she either writes cookbooks or works as a chef, but not both. Since she writes cookbooks (derived from her being a food blogger and sharing recipes online, which allows her to write cookbooks), she cannot work as a chef, and thus cannot be a successful chef. Therefore, she cannot be skilled at cooking.",
+          "cate": "P",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly maps the given claim about Cristian to an unrelated scenario about Amirah. The original claim and all premises are about Cristian, not Amirah. Therefore, A1 is irrelevant to determining whether Cristian achieves success.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's internal logic is flawed. Even if we accept the Amirah analogy, the conclusion 'she cannot be skilled at cooking' does not follow. The premise states: if (passionate XOR skilled) then successful chef. Given 'not passionate', then if she were skilled, the XOR condition would be true (since one is true, one is false), making her a successful chef. The argument then claims she writes cookbooks, so she cannot work as a chef. However, 'successful chef' might be a status, not necessarily an active job. The rules don't explicitly say a successful chef must be currently working as a chef. Thus, the contradiction isn't forced.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 points out a potential flaw, the original context for Amirah likely implies that being a 'successful chef' entails working as a chef. In professional contexts, a successful chef typically holds a chef position. Given the rule 'writes cookbooks XOR works as a chef,' if she writes cookbooks, she cannot work as a chef, and thus cannot be a successful chef in the active sense. Therefore, the internal logic of A1 can be defended if we interpret 'successful chef' as requiring current chef work.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.65
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Amirah enjoys experimenting with food, which, according to the context, implies she is a talented cook and has good taste. However, being a talented cook does not necessarily imply being skilled at cooking in the context's logical structure. The context separates 'talented cook' and 'skilled at cooking' as distinct conditions in conditional statements. Since no statement directly links 'talented cook' to 'skilled at cooking', and the conditions for being skilled at cooking are not met (as she is not a successful chef), she is not skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Amirah enjoys experimenting with food, which, according to the context, implies she is a talented cook and has good taste. However, being a talented cook does not necessarily imply being skilled at cooking in the context's logical structure. The context separates 'talented cook' and 'skilled at cooking' as distinct conditions in conditional statements. Since no statement directly links 'talented cook' to 'skilled at cooking', and the conditions for being skilled at cooking are not met (as she is not a successful chef), she is not skilled at cooking.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the given claim about Scott having a chromosomal abnormality. The argument discusses Amirah's cooking skills, which is not mentioned anywhere in the provided context about Scott, Bryant, Westyn, or Reign.",
+          "confidence": 1.0,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A2's internal logic is flawed because it assumes 'talented cook' and 'skilled at cooking' are completely unrelated in ordinary language, which is questionable. However, this point is moot since the argument doesn't belong to this logical puzzle at all.",
+          "confidence": 0.9,
+          "attacks": {
+            "A2": 0.9,
+            "B1": 0.1
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Amirah is not passionate about cooking, and the context presents 'passionate about cooking' and 'skilled at cooking' as mutually exclusive conditions in a disjunction (but not both) for certain implications. For Amirah, if she were either passionate or skilled (but not both), she would be a successful chef. Since she is not passionate, the only way for her to be a successful chef is if she is skilled. However, she is not a successful chef (as she writes cookbooks and cannot work as a chef), so she cannot be skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Amirah is not passionate about cooking, and the context presents 'passionate about cooking' and 'skilled at cooking' as mutually exclusive conditions in a disjunction (but not both) for certain implications. For Amirah, if she were either passionate or skilled (but not both), she would be a successful chef. Since she is not passionate, the only way for her to be a successful chef is if she is skilled. However, she is not a successful chef (as she writes cookbooks and cannot work as a chef), so she cannot be skilled at cooking.",
+          "cate": "S",
+          "confidence": 0.62,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'writes cookbooks and cannot work as a chef' is equivalent to 'not a successful chef', but this is not necessarily true. A successful chef could also write cookbooks, and 'cannot work as a chef' might refer to current employment status rather than capability or past success.",
+          "confidence": 0.71,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure is misapplied. The original claim about Bennett involves different conditions (advances AI or enhances computing, but not both). The argument about Amirah imports a similar 'but not both' structure but applies it to different predicates (passionate/skilled) without establishing that the same logical constraints apply in Amirah's case from the given information.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if 'successful chef' is narrowly defined as currently working as a chef, the argument's conclusion that Amirah 'cannot be skilled at cooking' does not follow. One can be skilled at cooking without being a successful chef\u2014for example, skilled home cooks, cooking instructors, or food writers who don't work in restaurants.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The attack on logical structure is valid but too general. The original problem statement about Bennett provides explicit logical constraints, and A3 is attempting to reason by analogy with Amirah. The weakness is in the analogy, not necessarily in the internal logic of A3's reasoning about Amirah.",
+          "confidence": 0.68,
+          "attacks": {
+            "B2": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The argument A3 contains a hidden assumption: that being a successful chef is the only possible outcome of being skilled at cooking. This is false\u2014many skilled cooks are not chefs at all. Therefore, even if Amirah is not a successful chef, she could still be skilled.",
+          "confidence": 0.92,
+          "attacks": {
+            "A3": 0.85,
+            "C1": 0.2
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Amirah uses fresh ingredients, which, according to the context, implies she has good taste. However, having good taste is not linked to being skilled at cooking in the provided statements. The context does not contain any rule that directly or indirectly infers 'skilled at cooking' from 'has good taste' or 'uses fresh ingredients'. Therefore, based on the lack of supportive logical pathways, she is not skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Amirah uses fresh ingredients, which, according to the context, implies she has good taste. However, having good taste is not linked to being skilled at cooking in the provided statements. The context does not contain any rule that directly or indirectly infers 'skilled at cooking' from 'has good taste' or 'uses fresh ingredients'. Therefore, based on the lack of supportive logical pathways, she is not skilled at cooking.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that because no explicit logical pathway is provided in the given context, the conclusion 'she is not skilled at cooking' follows. Absence of evidence in a limited set of premises is not evidence of absence in reality. The provided statements about Emelia do not constitute a complete knowledge base about cooking skills.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument conflates the specific fictional context (about Emelia, pressure, respect, etc.) with a general claim about Amirah and cooking. The 'context' referenced in A4 is actually a set of logical constraints about Emelia, not a general rulebook about cooking. Therefore, its application to Amirah is invalid.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly points out the context mismatch, A4's core logical point remains valid within its own assumed frame: if we are strictly limited to the provided logical statements, we cannot derive 'skilled at cooking'. For a logic puzzle, conclusions must be based solely on given premises.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Using fresh ingredients is widely recognized as a key practice of skilled cooks. Common sense and real-world knowledge, which are often admissible when evaluating such claims, strongly suggest a positive link between using fresh ingredients and cooking skill, contradicting A4's assertion of 'no link'.",
+          "confidence": 0.82,
+          "attacks": {
+            "A4": 0.78
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The task is to evaluate the claim based solely on the provided information. Introducing external real-world knowledge violates the constraint of the logical reasoning problem. Therefore, B3's attack is based on an inadmissible premise.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Amirah is a food blogger who does not teach cooking classes, does not host cooking shows, and does not receive food awards. The context links receiving food awards to being a successful chef who runs her own restaurant, which she does not. Since she is not a successful chef (as she writes cookbooks instead of working as a chef), and the only way to be a successful chef from her conditions is if she is skilled at cooking (given she is not passionate), she cannot be skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Amirah is a food blogger who does not teach cooking classes, does not host cooking shows, and does not receive food awards. The context links receiving food awards to being a successful chef who runs her own restaurant, which she does not. Since she is not a successful chef (as she writes cookbooks instead of working as a chef), and the only way to be a successful chef from her conditions is if she is skilled at cooking (given she is not passionate), she cannot be skilled at cooking.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Ayden's recklessness. The claim and given information concern Ayden, Estelle, Laila, and Yummers, not Amirah or cooking-related scenarios. A5 appears to be from a different logical puzzle entirely.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevant content, A5's logical structure is internally flawed for the given claim. It attempts to deduce something about 'skilled at cooking' from premises about 'successful chef,' but the claim requires reasoning about 'Ayden is not reckless' from premises about influence, shame, consequences, isolation, support systems, etc. There is no logical connection.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out the irrelevance, one could hypothetically try to map 'Amirah' to 'Ayden' and 'skilled at cooking' to 'reckless,' but no such mapping is provided or implied in the original claim context. Without explicit mapping rules, any such attempt is speculative and invalid.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.2
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The context states that if Amirah is an entrepreneur, then she either has formal culinary training or runs her own restaurant, but not both. However, her entrepreneurial status is not specified, and this does not relate to being skilled at cooking. No statement connects formal culinary training to being skilled at cooking. Thus, there is no evidence from this or other statements to support that she is skilled at cooking."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context states that if Amirah is an entrepreneur, then she either has formal culinary training or runs her own restaurant, but not both. However, her entrepreneurial status is not specified, and this does not relate to being skilled at cooking. No statement connects formal culinary training to being skilled at cooking. Thus, there is no evidence from this or other statements to support that she is skilled at cooking.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is irrelevant to the claim about Ayden's recklessness. The claim and provided context discuss Ayden, Estelle, Laila, and Yummers, but A6 discusses Amirah, who is not mentioned in the context. Therefore, A6 does not support or oppose the claim about Ayden.",
+          "confidence": 0.95,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if A6 were relevant, it argues about a lack of evidence for a different proposition (Amirah being skilled at cooking). The claim is about Ayden not being reckless. A6's reasoning about missing connections between concepts does not apply to the logical relationships in the actual context about Ayden.",
+          "confidence": 0.88,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out A6's irrelevance, the task requires evaluating the claim 'Ayden is not reckless' using the provided context. The context contains statements about Ayden that can be analyzed directly, making the irrelevance attack valid but not a complete analysis of the main claim.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

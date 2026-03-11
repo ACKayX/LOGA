@@ -1,0 +1,117 @@
+{
+  "claim": "Context:'''\nButtercup has recovered from an illness. If Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Buttercup does not serve as a therapy horse.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Buttercup performs heavy work.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states that if Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Since it is given that Buttercup does not serve as a therapy horse, the only remaining possibility from the disjunction is that she performs heavy work."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states that if Buttercup has recovered from an illness, then she can either perform heavy work or serve as a therapy horse, but not both. Since it is given that Buttercup does not serve as a therapy horse, the only remaining possibility from the disjunction is that she performs heavy work.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context does not explicitly state that Buttercup has recovered from an illness; it only presents a conditional statement. If Buttercup has not actually recovered, then the conditional does not apply, and we cannot conclude she performs heavy work.",
+          "confidence": 0.3,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context begins with 'Buttercup has recovered from an illness,' which is a direct assertion, not a hypothetical. Therefore, the premise that she has recovered is given as true, making B1's objection invalid.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 1.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The conditional statement in the context is triggered by Buttercup's recovery, which is affirmed. Given the exclusive 'or' (either perform heavy work or serve as a therapy horse, but not both) and the negation of serving as a therapy horse, performing heavy work is logically entailed."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The conditional statement in the context is triggered by Buttercup's recovery, which is affirmed. Given the exclusive 'or' (either perform heavy work or serve as a therapy horse, but not both) and the negation of serving as a therapy horse, performing heavy work is logically entailed.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context does not explicitly state that Buttercup has recovered from an illness; it only presents it as a conditional premise. The argument A2 assumes the antecedent is true without explicit confirmation in the given context.",
+          "confidence": 0.3,
+          "attacks": {
+            "A2": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context begins with 'Buttercup has recovered from an illness.' This is a direct statement of fact, not a conditional. Therefore, the antecedent is explicitly affirmed, making A2's reasoning valid.",
+          "confidence": 1.0,
+          "attacks": {
+            "B1": 1.0
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the premises: (1) Buttercup has recovered, (2) If recovered, then (heavy work XOR therapy horse), (3) Not therapy horse. By modus ponens and the definition of exclusive disjunction, Buttercup must perform heavy work."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the premises: (1) Buttercup has recovered, (2) If recovered, then (heavy work XOR therapy horse), (3) Not therapy horse. By modus ponens and the definition of exclusive disjunction, Buttercup must perform heavy work.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The context provides all necessary conditions: recovery is true, the implication from recovery to an exclusive choice is true, and one disjunct (therapy horse) is false. Therefore, the other disjunct (heavy work) must be true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The context provides all necessary conditions: recovery is true, the implication from recovery to an exclusive choice is true, and one disjunct (therapy horse) is false. Therefore, the other disjunct (heavy work) must be true.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'but not both' regarding heavy work or therapy horse. This exclusive-or interpretation means both could be false if the implication's consequent is interpreted as requiring exactly one to be true. If Buttercup cannot do heavy work either, the statement 'Buttercup performs heavy work' would be false, not true.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Buttercup does not serve as a therapy horse' and the implication from recovery gives an exclusive choice. Since therapy horse is false, and the exclusive-or requires exactly one to be true, heavy work must be true. The 'but not both' clause doesn't allow both to be false when the antecedent (recovery) is true.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    }
+  }
+}

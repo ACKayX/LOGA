@@ -1,0 +1,222 @@
+{
+  "claim": "Consider the following background information: A 5-year-old boy of African descent is presented to the emergency department by his parents. The child is clutching his abdomen and crying about pain in his belly. His mother reports intermittent episodes of jaundice with joint and bone pain since he was 5 months old. At presentation, the patient\u2019s vital signs are within normal limits. Physical examination reveals slight jaundice and pale conjunctiva. The spleen is tender and easily palpable. After a complete blood count with differential and an abdominal ultrasound, the patient is found to have sickle-cell disease with splenic infarct. A partial splenectomy is performed. After the operation, the physician provides vaccines against Neisseria meningitidis, Haemophilus influenzae, and Streptococcus pneumoniae. The picture shows a slide obtained from the resected portion of the patient\u2019s spleen.\n\nGiven the background information the following is corrrect: Dysfunction of the zone marked with number 3 predisposes the patient to the aforementioned infections.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The spleen's white pulp (zone 3) contains lymphoid tissue responsible for immune responses against encapsulated bacteria like Neisseria meningitidis, Haemophilus influenzae, and Streptococcus pneumoniae."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The spleen's white pulp (zone 3) contains lymphoid tissue responsible for immune responses against encapsulated bacteria like Neisseria meningitidis, Haemophilus influenzae, and Streptococcus pneumoniae.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's sickle-cell disease causes functional asplenia over time, which may already impair immune responses regardless of the white pulp's role.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Partial splenectomy preserves some white pulp function, maintaining partial immune defense against encapsulated bacteria.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Vaccination post-splenectomy provides adequate protection even if white pulp function is compromised.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Splenic dysfunction, particularly in the white pulp, leads to impaired opsonization and phagocytosis of encapsulated bacteria, increasing susceptibility to infections."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Splenic dysfunction, particularly in the white pulp, leads to impaired opsonization and phagocytosis of encapsulated bacteria, increasing susceptibility to infections.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The spleen's red pulp also plays a significant role in filtering blood and removing pathogens, so dysfunction in this area could equally contribute to infection susceptibility.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While the red pulp is important, the white pulp is specifically responsible for adaptive immune responses against encapsulated bacteria, making its dysfunction more directly linked to the mentioned infections.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Other immune system components, such as the liver and bone marrow, can compensate for splenic dysfunction, reducing infection risk.",
+          "confidence": 0.6,
+          "attacks": {
+            "A2": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Compensation by other organs is often incomplete, especially in young children, leaving significant vulnerability to encapsulated bacteria.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Patients with sickle-cell disease often develop functional asplenia due to infarcts, which compromises the immune functions of the white pulp (zone 3)."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Patients with sickle-cell disease often develop functional asplenia due to infarcts, which compromises the immune functions of the white pulp (zone 3).",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Not all sickle-cell disease patients develop functional asplenia; some retain partial splenic function.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even partial splenic function loss significantly increases infection risk due to impaired white pulp function.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The immune dysfunction in sickle-cell disease is multifactorial and not solely due to white pulp compromise.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "While multifactorial, white pulp dysfunction remains a primary contributor to infection susceptibility in sickle-cell disease.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.78
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The vaccines provided post-splenectomy target bacteria that are typically cleared by the spleen's white pulp, confirming its critical role in preventing these infections."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The vaccines provided post-splenectomy target bacteria that are typically cleared by the spleen's white pulp, confirming its critical role in preventing these infections.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While the spleen's white pulp is important for clearing these bacteria, other parts of the immune system (e.g., liver, lymph nodes) can also contribute to bacterial clearance, reducing the absolute dependence on the spleen.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In asplenic or hyposplenic patients, the risk of overwhelming post-splenectomy infection (OPSI) remains high despite compensatory mechanisms, emphasizing the spleen's unique and non-redundant role in immunity.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.78
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Vaccination alone may not fully compensate for splenic dysfunction, as the spleen also provides non-antibody-mediated clearance (e.g., phagocytosis) that vaccines cannot replace.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Medical guidelines recommend vaccinations against encapsulated bacteria for patients with splenic dysfunction, underscoring the white pulp's role in immune defense."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Medical guidelines recommend vaccinations against encapsulated bacteria for patients with splenic dysfunction, underscoring the white pulp's role in immune defense.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Some patients with splenic dysfunction may still mount adequate immune responses without vaccination, reducing the absolute necessity.",
+          "confidence": 0.45,
+          "attacks": {
+            "A5": 0.4
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Vaccination recommendations may vary by region or healthcare system, introducing inconsistency in universal guidelines.",
+          "confidence": 0.6,
+          "attacks": {
+            "A5": 0.55
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Studies show that even partial splenic function loss significantly increases infection risk, supporting strict adherence to vaccination protocols.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8,
+            "B2": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

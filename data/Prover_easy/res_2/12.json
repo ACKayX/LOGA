@@ -1,0 +1,277 @@
+{
+  "claim": "Context:'''\nGeorgina is either creative or uninspired, but not both. Beckham is creative. Beckham is either creative or uninspired, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Beckham is not uninspired.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states 'Beckham is creative.' This is a direct, factual assertion."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Beckham is creative.' This is a direct, factual assertion.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context also states 'Beckham is either creative or uninspired, but not both.' If Beckham is creative, then by logical exclusion from 'not both,' Beckham cannot be uninspired. Therefore, 'Beckham is not uninspired' follows necessarily from the given facts.",
+          "confidence": 0.98,
+          "attacks": {
+            "A1": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A1 only restates a premise without explicitly connecting it to the conclusion 'Beckham is not uninspired.' A direct assertion of creativity does not, by itself, logically entail non-uninspired status unless the exclusive 'or' is applied.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 points out a missing logical step, in the context of the full problem statement, the exclusive 'or' is explicitly given for Beckham. Therefore, anyone reading A1 is implicitly relying on that background rule to make the inference complete.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context also states 'Beckham is either creative or uninspired, but not both.' This establishes an exclusive disjunction for Beckham's attributes."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context also states 'Beckham is either creative or uninspired, but not both.' This establishes an exclusive disjunction for Beckham's attributes.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While the exclusive disjunction is correctly identified, A2 doesn't connect it to the claim 'Beckham is not uninspired.' Establishing the logical structure alone doesn't prove the conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The missing connection in B1 is actually provided by another premise in the context: 'Beckham is creative.' Combined with the exclusive disjunction identified in A2, this logically entails that Beckham is not uninspired.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context contains potentially contradictory statements: it says both 'Georgina is either creative or uninspired, but not both' and 'Beckham is either creative or uninspired, but not both.' This redundancy might indicate a logical inconsistency in the premises.",
+          "confidence": 0.4,
+          "attacks": {
+            "A2": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The redundancy B2 points out isn't a contradiction but rather separate applications of the same logical structure to different individuals. Both statements can be true simultaneously without conflict.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The exclusive disjunction 'either creative or uninspired, but not both' could be interpreted as allowing a third possibility: neither creative nor uninspired, if 'uninspired' isn't defined as the strict logical complement of 'creative'.",
+          "confidence": 0.35,
+          "attacks": {
+            "A2": 0.25
+          }
+        },
+        {
+          "id": "C3",
+          "text": "In standard logical interpretation, 'either X or Y, but not both' where X and Y are presented as alternatives typically implies they are mutually exclusive and collectively exhaustive for the domain in question.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Given the exclusive disjunction, if Beckham is creative, he cannot simultaneously be uninspired."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given the exclusive disjunction, if Beckham is creative, he cannot simultaneously be uninspired.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The exclusive disjunction only applies to Georgina, not necessarily to Beckham. The statement about Beckham being 'either creative or uninspired, but not both' is a separate proposition that needs verification.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Beckham is either creative or uninspired, but not both' as a separate premise, establishing the exclusive disjunction for Beckham as well.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even with exclusive disjunction, the statement 'Beckham is creative' might be false or uncertain. The argument A3 assumes this premise is true without justification.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context explicitly states 'Beckham is creative' as a given fact, not an assumption. This is a direct premise in the information provided.",
+          "confidence": 0.95,
+          "attacks": {
+            "B2": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The term 'uninspired' might have multiple interpretations. Beckham could be neither creative nor uninspired in some broader sense, violating the exhaustive nature of the disjunction.",
+          "confidence": 0.6,
+          "attacks": {
+            "A3": 0.55
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Logical exclusive disjunction (XOR) in this context typically means exactly one of the two options is true. If Beckham is creative (given), then by XOR he cannot be uninspired. Alternative interpretations would contradict standard logical reasoning.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The statement 'Beckham is not uninspired' is the logical negation of one part of the exclusive disjunction, which is directly supported by the affirmation of the other part."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The statement 'Beckham is not uninspired' is the logical negation of one part of the exclusive disjunction, which is directly supported by the affirmation of the other part.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the exclusive disjunction applies to Beckham, but the context states 'Georgina is either creative or uninspired, but not both' and separately 'Beckham is creative. Beckham is either creative or uninspired, but not both.' This could be interpreted as two separate statements rather than a single logical constraint.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.35
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on formal logic, but natural language interpretation might allow for 'creative or uninspired' to be inclusive in some contexts, despite 'but not both' being stated.",
+          "confidence": 0.55,
+          "attacks": {
+            "A4": 0.25
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if interpreted as separate statements, the second part explicitly says 'Beckham is either creative or uninspired, but not both,' which is a clear exclusive disjunction, so A4's logical form is correct.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The phrase 'but not both' explicitly makes it an exclusive disjunction (XOR), so there's no ambiguity about inclusive vs. exclusive interpretation.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.85
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the premises 'Beckham is creative' and 'Beckham is either creative or uninspired, but not both,' the conclusion 'Beckham is not uninspired' follows deductively with certainty."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the premises 'Beckham is creative' and 'Beckham is either creative or uninspired, but not both,' the conclusion 'Beckham is not uninspired' follows deductively with certainty.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The statement 'Beckham is either creative or uninspired, but not both' is an exclusive disjunction. If Beckham is creative, then by the exclusive disjunction, he cannot be uninspired. This makes the argument logically valid, leaving no room for attack on deductive grounds.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "One could challenge whether the premise 'Beckham is creative' is actually true in reality, even if it's given in the context. The argument assumes the given premises are true, but if we question their factual accuracy, the conclusion might not hold.",
+          "confidence": 0.4,
+          "attacks": {
+            "A5": 0.3
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In formal logic problems, premises are taken as given for the sake of argument. Attacking the truth of given premises is outside the scope of deductive reasoning from those premises, making B2 irrelevant to the logical validity of A5.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The word 'uninspired' might be interpreted differently than 'not creative.' If 'uninspired' means something like 'lacking motivation' rather than 'not creative,' then Beckham could theoretically be both creative and uninspired, violating the exclusive disjunction's intended meaning.",
+          "confidence": 0.35,
+          "attacks": {
+            "A5": 0.25
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In the context provided, 'creative or uninspired, but not both' clearly sets up a logical dichotomy where the two terms are mutually exclusive and jointly exhaustive for Beckham. Semantic quibbles about alternative meanings ignore the contextual definition established.",
+          "confidence": 0.88,
+          "attacks": {
+            "B3": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

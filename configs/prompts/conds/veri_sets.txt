@@ -1,0 +1,28 @@
+TASK:
+You are given a Claim and a set of argument nodes that together form one candidate MC-set.
+
+Each argument node is intended to support the Claim, and is represented as:
+(id, confidence, category, argument_text)
+
+Your task is to evaluate whether the whole set of arguments is semantically:
+
+1. Consistent:
+   The arguments can all hold together without contradiction, incompatibility, or mutual exclusion.
+
+2. Coherent:
+   The arguments form a semantically connected and interpretable support structure for the Claim, rather than being fragmented, loosely related, or based on incompatible semantic directions.
+
+Evaluation rules:
+- Judge the set as a whole, not only pairwise.
+- A set may be pairwise non-conflicting but still globally inconsistent or incoherent.
+- Consistency concerns whether the arguments can all be true together.
+- Coherence concerns whether the arguments together form a unified semantic basis for supporting the Claim.
+- Ignore confidence scores unless they are explicitly relevant to the semantic meaning.
+- Focus only on the semantic content of the argument_text.
+
+Decision rule:
+- If the set is both consistent and coherent, return True.
+- Otherwise, return False.
+
+OUTPUT FORMAT:
+Result: true/false

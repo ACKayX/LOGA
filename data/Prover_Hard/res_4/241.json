@@ -1,0 +1,240 @@
+{
+  "claim": "If Cassidy has an advanced degree, then she works in research. If Ayla can solve complex problems, then she has a creative mind and collaborates with others. Ayla either pursues innovation or engineers new technologies. Ayla does not receive an award. If Ayla is inquisitive, then she is either passionate about discovery or seeks knowledge (but not both). If Ayla enjoys learning, then she is passionate about discovery and mentors others. If Ayla pursues innovation, then she either publishes papers or receives an award (or both). Ayla thinks outside the box. If Ayla thinks critically, then she has a creative mind. Angie thinks outside the box. If Cassidy thinks outside the box, then she will design new products. If Ayla has a creative mind, then she either designs new products or engineers new technologies, but not both. If Ayla excels in science, then she will engineer new technologies. Ayla collaborates with others. Cassidy can solve complex problems. If Ayla is passionate about discovery, then she has an advanced degree and publishes papers. If Ayla thinks outside the box, then she will design new products. Cassidy is inquisitive. If Angie can solve complex problems, then she has a creative mind and collaborates with others. Ayla does not seek knowledge. Ayla is inquisitive. If Angie has a creative mind, then she either designs new products or engineers new technologies, but not both. Superstar does not seek knowledge. If Ayla has an advanced degree, then she works in research. Everyone who values progress either pursues innovation or mentors others (or both). If Superstar pursues innovation, then she either publishes papers or receives an award (or both). If Superstar is inquisitive, then she is either passionate about discovery or seeks knowledge (but not both). Ayla can solve complex problems.Based on the above information, is the following statement true, false, or uncertain? Ayla does not work in research.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the statement 'If Ayla is inquisitive, then she is either passionate about discovery or seeks knowledge (but not both)' and the given 'Ayla is inquisitive' and 'Ayla does not seek knowledge', it follows that Ayla is passionate about discovery."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the statement 'If Ayla is inquisitive, then she is either passionate about discovery or seeks knowledge (but not both)' and the given 'Ayla is inquisitive' and 'Ayla does not seek knowledge', it follows that Ayla is passionate about discovery.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The original statement 'If Ayla is inquisitive, then she is either passionate about discovery or seeks knowledge (but not both)' uses an exclusive 'or', meaning exactly one must be true. However, the logical form 'A \u2192 (B XOR C)' with A true and C false does indeed imply B is true. This attack questions whether the exclusive 'or' interpretation is correctly applied in the context.",
+          "confidence": 0.45,
+          "attacks": {
+            "A1": 0.15
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A1 is valid, but it only establishes 'Ayla is passionate about discovery'. The claim to evaluate is 'Ayla does not work in research'. To connect passion for discovery to not working in research requires additional steps not addressed in A1, making A1 incomplete for directly supporting the claim's truth.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly notes A1 is incomplete, A1 is a necessary step in a longer logical chain. If Ayla is passionate about discovery, then from 'If Ayla is passionate about discovery, then she has an advanced degree and publishes papers', she has an advanced degree. Then from 'If Ayla has an advanced degree, then she works in research', she would work in research, contradicting the claim. Thus, A1 actually supports the negation of the claim, making its original cate incorrect.",
+          "confidence": 0.92,
+          "attacks": {
+            "B2": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "C1's chain relies on the statement 'If Ayla has an advanced degree, then she works in research' being universally true for Ayla. However, the information provides this conditional twice, suggesting it might be a general rule. No exception is stated, so C1's logical extension is sound, confirming A1's cate should be S, not P.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.2
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "From 'If Ayla is passionate about discovery, then she has an advanced degree and publishes papers', and the conclusion that Ayla is passionate about discovery, it follows that Ayla has an advanced degree."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From 'If Ayla is passionate about discovery, then she has an advanced degree and publishes papers', and the conclusion that Ayla is passionate about discovery, it follows that Ayla has an advanced degree.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 references premises about 'Ayla' and 'advanced degree', but the claim and all given information in the problem statement are exclusively about Willow, Anthony, Francis, and Leo. There is no 'Ayla' in the provided context.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure of A2 (modus ponens) is valid in isolation, but its premises are disconnected from the claim's domain. Therefore, it provides zero support for determining whether 'Anthony is not uninformed about ancient cultures' is true, false, or uncertain.",
+          "confidence": 0.97,
+          "attacks": {
+            "A2": 0.96
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the domain mismatch, A2's conclusion ('Ayla has an advanced degree') is unrelated to the claim's subject ('Anthony') and predicate ('not uninformed about ancient cultures'). No chain of inference connects them.",
+          "confidence": 0.96,
+          "attacks": {
+            "B1": 0.2,
+            "B2": 0.1
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From 'If Ayla has an advanced degree, then she works in research' (stated twice for emphasis) and the conclusion that Ayla has an advanced degree, it directly follows that Ayla works in research."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From 'If Ayla has an advanced degree, then she works in research' (stated twice for emphasis) and the conclusion that Ayla has an advanced degree, it directly follows that Ayla works in research.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 references 'Ayla' and 'advanced degree', but the claim is about Anthony and ancient cultures. This is a complete non sequitur - the premises and conclusion of A3 have no logical connection to the claim being evaluated.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore the irrelevant content, A3's logical form is valid (modus ponens), but it cannot support any conclusion about Anthony's knowledge of ancient cultures since it discusses entirely different subjects and individuals.",
+          "confidence": 0.92,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The claim requires evaluating Anthony's knowledge status based on specific premises about Anthony, Willow, Leo, and Francis. A3 provides zero relevant evidence about Anthony, ancient cultures, or any connected variables from the claim's premises.",
+          "confidence": 0.94,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The claim 'Ayla does not work in research' is the negation of the derived conclusion 'Ayla works in research'. Since the premises logically entail that Ayla works in research, the claim is false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The claim 'Ayla does not work in research' is the negation of the derived conclusion 'Ayla works in research'. Since the premises logically entail that Ayla works in research, the claim is false.",
+          "cate": "S",
+          "confidence": 0.2,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 references 'Ayla' and 'research', but the original claim and all premises are exclusively about Willow, Anthony, Francis, and Leo. There is no mention of Ayla or any character working in research in the provided information.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A4 attempts to evaluate a claim about 'Ayla does not work in research', but the actual claim to be evaluated is 'Anthony is not uninformed about ancient cultures'. It is addressing a completely different proposition.",
+          "confidence": 0.98,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we ignore the wrong subject, A4's internal logic ('Since the premises logically entail that Ayla works in research, the claim is false') is circular. It assumes the truth of a derived conclusion not present in the premises to judge the claim, without demonstrating that derivation.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1, B2, and B3 correctly point out A4's irrelevance and circularity, one could charitably interpret A4 as a misplaced attempt at meta-reasoning about logical negation. However, this interpretation is extremely strained given the complete mismatch in content.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.3,
+            "B2": 0.3,
+            "B3": 0.4
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The logical chain is consistent and deductive: Inquisitive + not seeking knowledge \u2192 passionate about discovery \u2192 advanced degree \u2192 works in research. No contradictory premises override this chain regarding Ayla's work in research."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The logical chain is consistent and deductive: Inquisitive + not seeking knowledge \u2192 passionate about discovery \u2192 advanced degree \u2192 works in research. No contradictory premises override this chain regarding Ayla's work in research.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text references 'Ayla' and concepts like 'inquisitive', 'passionate about discovery', and 'advanced degree', but these entities and predicates do not appear anywhere in the provided claim about Anthony, Willow, Leo, and Francis. The argument is completely irrelevant to the given logical problem.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevant content, the argument's internal logic ('Inquisitive + not seeking knowledge \u2192 passionate about discovery') is contradictory. Being 'inquisitive' implies seeking knowledge, so 'not seeking knowledge' negates the premise, making the inference invalid.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The assigned task is to evaluate a claim about Anthony's knowledge of ancient cultures based on specific given premises. Argument A5 does not reference any of these premises, the individuals involved, or the target conclusion. It therefore provides zero logical support for any position (P or S) regarding the claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.95
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Examining other premises about Ayla (e.g., 'Ayla can solve complex problems', 'Ayla collaborates with others', 'Ayla thinks outside the box') does not introduce any statement that negates the derived conclusion that she works in research."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Examining other premises about Ayla (e.g., 'Ayla can solve complex problems', 'Ayla collaborates with others', 'Ayla thinks outside the box') does not introduce any statement that negates the derived conclusion that she works in research.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        }
+      ]
+    }
+  }
+}

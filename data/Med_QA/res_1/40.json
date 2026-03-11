@@ -1,0 +1,245 @@
+{
+  "claim": "Consider the following background information: A 28-year-old male presents to the emergency department with chest pain. He reports that one hour ago he was climbing the stairs in his home when he suddenly developed excruciating chest pain. He describes the pain as ripping and radiating to the back. The patient\u2019s past medical history is significant for a heart murmur that is being followed by his outpatient cardiologist. He takes no medications. The patient works as a carpenter and reports being monogamous with his wife. He denies any history of intravenous drug use or recent travel. In the emergency department, the patient\u2019s temperature is 99.4\u00b0F (37.4\u00b0C), blood pressure is 94/56 mmHg, pulse is 121/min, and respirations are 14/min. On physical exam, the patient appears to be in moderate distress and is clutching his chest. He is tall and has joint hypermobility. His breath sounds are equal and full bilaterally and has weak distal pulses.\n\nGiven the background information the following is corrrect: A systolic ejection murmur at the right second intercostal space is most likely to be found in this patient.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The patient's history of a heart murmur being followed by a cardiologist suggests a pre-existing valvular abnormality, which could produce a systolic ejection murmur."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The patient's history of a heart murmur being followed by a cardiologist suggests a pre-existing valvular abnormality, which could produce a systolic ejection murmur.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's current presentation (ripping chest pain radiating to the back, hypotension, and weak distal pulses) is more consistent with an acute aortic dissection than a valvular issue.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection can still occur in patients with pre-existing valvular abnormalities, and the murmur could be due to the dissection causing aortic regurgitation.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's tall stature and joint hypermobility suggest Marfan syndrome, which is strongly associated with aortic root dilation and dissection, not necessarily valvular abnormalities.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.75
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Marfan syndrome is also associated with mitral valve prolapse, which could explain the pre-existing heart murmur.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.55
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The description of the pain as ripping and radiating to the back is classic for aortic dissection, which can cause a systolic ejection murmur due to turbulent flow across the aortic valve."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The description of the pain as ripping and radiating to the back is classic for aortic dissection, which can cause a systolic ejection murmur due to turbulent flow across the aortic valve.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "A systolic ejection murmur at the right second intercostal space is more commonly associated with aortic stenosis rather than aortic dissection.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection can still cause a systolic ejection murmur if the dissection flap interferes with aortic valve function, leading to turbulent flow.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's tall stature and joint hypermobility suggest Marfan syndrome, which is a known risk factor for aortic dissection but not necessarily for systolic ejection murmurs.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Marfan syndrome is associated with aortic root dilation, which can lead to aortic regurgitation or dissection, both of which can cause murmurs.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The patient's tall stature and joint hypermobility are suggestive of Marfan syndrome, a condition associated with aortic root dilation and aortic regurgitation, which can lead to a systolic ejection murmur."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The patient's tall stature and joint hypermobility are suggestive of Marfan syndrome, a condition associated with aortic root dilation and aortic regurgitation, which can lead to a systolic ejection murmur.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Not all tall individuals with joint hypermobility have Marfan syndrome; other connective tissue disorders or benign hypermobility could explain these features.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of a family history of Marfan syndrome or related complications reduces the likelihood of this diagnosis.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.55
+          }
+        },
+        {
+          "id": "B2",
+          "text": "A systolic ejection murmur could also result from other conditions like hypertrophic cardiomyopathy or pulmonary stenosis, not just aortic regurgitation.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The patient's acute presentation with ripping chest pain radiating to the back is more classically associated with aortic dissection, which can occur independently of Marfan syndrome.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The physical exam findings of weak distal pulses and hypotension are consistent with aortic dissection, which can cause a systolic ejection murmur due to compromised blood flow."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The physical exam findings of weak distal pulses and hypotension are consistent with aortic dissection, which can cause a systolic ejection murmur due to compromised blood flow.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "A systolic ejection murmur at the right second intercostal space is more commonly associated with aortic stenosis rather than aortic dissection.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "In aortic dissection, the murmur may vary in location and timing depending on the extent of the dissection and involvement of the aortic valve, making it less predictable.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's history of a heart murmur being followed by a cardiologist suggests a pre-existing valvular condition, which could explain the systolic ejection murmur independently of aortic dissection.",
+          "confidence": 0.78,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The acute presentation with ripping chest pain radiating to the back and hemodynamic instability strongly favors aortic dissection over a chronic valvular condition.",
+          "confidence": 0.82,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "The location of the murmur at the right second intercostal space is typical for aortic valve pathology, which is likely given the patient's presentation and history."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The location of the murmur at the right second intercostal space is typical for aortic valve pathology, which is likely given the patient's presentation and history.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's tall stature and joint hypermobility suggest Marfan syndrome, which is associated with aortic dissection rather than aortic valve pathology.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Aortic dissection can also present with a murmur at the right second intercostal space due to aortic root involvement, making it difficult to distinguish from aortic valve pathology based on murmur location alone.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's acute onset of ripping chest pain radiating to the back is more characteristic of aortic dissection than aortic valve pathology.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Aortic valve pathology typically presents with more chronic symptoms, such as progressive dyspnea or syncope, rather than acute chest pain.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

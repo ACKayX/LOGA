@@ -1,0 +1,132 @@
+You are given a Claim and a corresponding argument Ai.
+
+If a Context is provided, the input format will be:
+
+Context: """..."""
+Claim: """..."""
+Argument : """..."""
+
+Your task is to:
+
+1. Verify whether the cate (P or S) originally assigned to Ai is logically valid;
+2. Assign a confidence score (0.0–1.0) to Ai, based on its strength and reliability;
+3. Recursively construct a logically valid attack tree starting from Ai;
+4. For each attack, assign a strength score (0.0–1.0) indicating how effectively the attacker undermines the target;
+5. Output everything in strict YAML format only.
+
+------------------------------------------------------------
+Context Handling (If Provided)
+
+If a Context is present:
+
+- The Context must be treated as fully authoritative and true under all interpretations.
+- The Context must not be questioned, reinterpreted, modified, or contradicted.
+- All reasoning must be conducted strictly with respect to the Context.
+- If any external knowledge conflicts with the Context, the Context overrides it.
+- All arguments must rely exclusively on information explicitly supported by the Context.
+
+The task is to evaluate the Claim relative to the Context only.
+Do not evaluate the truthfulness of the Context itself.
+
+------------------------------------------------------------
+Step 1: Verify Ai.cate
+
+- If cate: "P" → Ai supports the truth of the Claim.
+- If cate: "S" → Ai supports the negation of the Claim.
+
+If the assigned cate is logically incorrect, correct it in the output.
+Output only the correct cate value.
+
+Cate must reflect logical relation to the Claim (given the Context, if provided).
+
+------------------------------------------------------------
+Step 2: Assign Ai.confidence
+
+Assign a score between 0.0 and 1.0:
+
+0.90–1.00 → Widely accepted, logically sound, strongly grounded
+0.70–0.89 → Generally reliable reasoning
+0.50–0.69 → Context-sensitive, partially supported
+<0.50 → Weak, speculative, rare-case, or logically flawed
+
+Confidence must reflect logical validity, evidential grounding, and scope precision.
+
+------------------------------------------------------------
+Step 3: Build the Attack Tree
+
+Generate B-layer arguments that directly attack Ai.
+
+STRICT ATTACK DEFINITION:
+
+An attack is valid only if the attacking argument is logically or semantically inconsistent with the parent argument.
+
+An attack must satisfy at least one of the following:
+
+- Logical contradiction (cannot both be true under the same interpretation)
+- Semantic incompatibility (mutually exclusive interpretations)
+- Undermining of a necessary premise used in the parent argument
+- Demonstrating that the parent’s conclusion does not logically follow from its premises
+
+If no inconsistency or incoherence can be established, do not generate an attack.
+
+------------------------------------------------------------
+Recursive Rule
+
+- Each counter-argument must attack its direct parent only.
+- The attack must create inconsistency or incoherence with the parent node.
+- Do not generate tangential objections, stylistic critiques, or parallel independent arguments.
+- The structure must form a strict parent–child attack relation.
+
+------------------------------------------------------------
+Attack Strength
+
+Each attack must include:
+
+attacks:
+  TargetID: strength_score
+
+Where strength_score is between 0.0 and 1.0 and represents:
+
+0.90–1.00 → Decisive refutation
+0.70–0.89 → Strong undermining
+0.50–0.69 → Moderate challenge
+<0.50 → Weak or rare-case objection
+
+Rare-case attacks must reduce both attacker confidence and attack strength accordingly.
+
+------------------------------------------------------------
+Output Format (YAML)
+
+Output only under the root key:
+
+Arguments:
+
+Each argument must follow:
+
+- id: "A3"
+  text: "Exact input argument text."
+  cate: "P"
+  confidence: 0.91
+  attacks: {}
+
+- id: "B1"
+  text: "First-level counter-argument to A3."
+  confidence: 0.68
+  attacks:
+    A3: 0.75
+
+- id: "C1"
+  text: "Counter-argument to B1."
+  confidence: 0.88
+  attacks:
+    B1: 0.85
+
+------------------------------------------------------------
+Strict Rules
+
+- Keep Ai.id and Ai.text unchanged.
+- Output only YAML.
+- Use double quotes for all strings.
+- attacks must be a dictionary (not a list).
+- Do not include commentary or explanations outside YAML.
+- Ensure all attacks satisfy the strict inconsistency requirement.

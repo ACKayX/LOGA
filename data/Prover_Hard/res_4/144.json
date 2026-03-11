@@ -1,0 +1,245 @@
+{
+  "claim": "Khai either stays in one city or travels to new places, but not at the same time. Khai does not support local businesses. Khai tends to stay in one city if he has strong community ties. If Khai likes exotic flavors or craves hearty meals, then he will explore street food. If someone follows food blogs, then they either try Khai's stew or recommend it to friends. If Petal appreciates traditions, then he either loves local food or supports local businesses (or both). Khai does not have new experiences. Khai does not explore culture. Khai does not sample regional specialties. If someone visits Khai's stall and tries the stew, then they become a regular customer. Petal either stays in one city or travels to new places, but not at the same time. If Khai appreciates traditions, then he either loves local food or supports local businesses (or both). If Daphne enjoys soups, then he will explore street food and try the stew. Simon does not support local businesses. If Khai enjoys soups, then he will explore street food and try the stew. Simon does not have new experiences. Petal does not sample regional specialties. Daphne enjoys soups. If Khai either explores culture or stays in one city (but not both), then he has new experiences. If Khai gets bored and seeks adventure, then he travels to new places. Anyone who travels to new places will either sample regional specialties or try local cuisine (or both). If Khai craves spicy food, then he will venture outdoors and try local cuisine. Khai appreciates traditions. If Khai loves local food, then he will visit his own stall. Khai enjoys soups.Based on the above information, is the following statement true, false, or uncertain? Khai does not become a regular customer.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Khai enjoys soups, and the context states that if Khai enjoys soups, then he will explore street food and try the stew."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Khai enjoys soups, and the context states that if Khai enjoys soups, then he will explore street food and try the stew.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'Khai does not explore culture' and 'Khai does not sample regional specialties.' Exploring street food is a form of cultural exploration, which contradicts the premise that Khai will explore street food.",
+          "confidence": 0.82,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The statement 'If Khai enjoys soups, then he will explore street food and try the stew' is a conditional rule. Even if Khai enjoys soups, other constraints (like not exploring culture) might prevent the consequent from being true, making the rule's application context-dependent.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context states 'Khai does not have new experiences.' Trying the stew (especially if it's new to him) would be a new experience, which contradicts the conclusion that he will try the stew.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Trying the stew at his own stall (if he visits it) might not be a 'new experience' if he is familiar with it, so the attack might not hold if the stew is not new to him.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.6
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if Khai tries the stew, becoming a regular customer requires visiting Khai's stall and trying the stew. The argument A1 does not establish that Khai visits his own stall, which is a necessary condition.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C3",
+          "text": "The context states 'If Khai loves local food, then he will visit his own stall.' Since Khai appreciates traditions and the context says if he appreciates traditions he either loves local food or supports local businesses, and he does not support local businesses, he must love local food. Therefore, he will visit his own stall, satisfying the condition.",
+          "confidence": 0.9,
+          "attacks": {
+            "B3": 0.95
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Khai appreciates traditions, which implies he either loves local food or supports local businesses, but since he does not support local businesses, he must love local food."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Khai appreciates traditions, which implies he either loves local food or supports local businesses, but since he does not support local businesses, he must love local food.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the claim about Kaylee and scientific knowledge, as it discusses a different person (Khai) and unrelated topics (traditions, local food, businesses).",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A2 were relevant, its logical structure is flawed: 'appreciates traditions' does not necessarily imply the exclusive disjunction presented, making the conclusion unsound.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "If Khai loves local food, then he will visit his own stall, and if someone visits Khai's stall and tries the stew, then they become a regular customer."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "If Khai loves local food, then he will visit his own stall, and if someone visits Khai's stall and tries the stew, then they become a regular customer.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is completely irrelevant to the claim about Abdullah expressing himself freely, as it discusses Khai, local food, stalls, stew, and regular customers, which have no logical connection to the given premises.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were relevant, its premises are not supported by any information in the provided claim, making it an unsupported assumption with no bearing on the logical deduction required.",
+          "confidence": 0.92,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Khai does not have new experiences, which is consistent with him staying in one city and not traveling, aligning with his strong community ties and appreciation for traditions."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Khai does not have new experiences, which is consistent with him staying in one city and not traveling, aligning with his strong community ties and appreciation for traditions.",
+          "cate": "S",
+          "confidence": 0.3,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument references 'Khai', but the claim and all given information are about Abdullah, Jianna, Mylah, and Baboo. There is no information about Khai in the provided premises, making this argument irrelevant to the claim about Abdullah.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we assume 'Khai' is a typo for another character, the premise 'staying in one city and not traveling' does not logically prove 'does not have new experiences'. New experiences can be had without traveling, through local exploration, learning, or personal growth.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The original claim's conclusion is about Abdullah expressing himself freely. Argument A4 does not address 'expressing oneself freely' at all, failing to connect its premise to the required conclusion.",
+          "confidence": 0.85,
+          "attacks": {
+            "B2": 0.6
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Khai does not explore culture or sample regional specialties, indicating he is not traveling to new places, so he is likely staying in one city and visiting his own stall."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Khai does not explore culture or sample regional specialties, indicating he is not traveling to new places, so he is likely staying in one city and visiting his own stall.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument's premise about Khai is completely irrelevant to the claim about Rex's loyalty, as they concern different subjects and scenarios.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The original claim and logical statements are about dogs (Rex, Sawyer, Dorian) and their behaviors, making an argument about a human named Khai logically disconnected and invalid for supporting any conclusion about Rex.",
+          "confidence": 0.93,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, the internal logic of A5 is weak: not exploring culture or sampling specialties does not necessarily mean one is not traveling to new places; one could travel for business, family, or other reasons without engaging in those specific activities.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.7
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Since Khai tries the stew at his own stall, he meets the condition to become a regular customer, as per the rule linking trying the stew to becoming a regular."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Since Khai tries the stew at his own stall, he meets the condition to become a regular customer, as per the rule linking trying the stew to becoming a regular.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is completely irrelevant to the claim about Rex's loyalty. It discusses Khai and stew, which are not mentioned in the given premises about dogs, Rex, Sawyer, and their behaviors.",
+          "confidence": 0.99,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A6 contains a logical error: it assumes a rule exists linking 'trying stew' to 'becoming a regular customer,' but no such rule is present in the provided premises about dogs.",
+          "confidence": 0.98,
+          "attacks": {
+            "A6": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

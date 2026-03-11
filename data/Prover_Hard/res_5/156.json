@@ -1,0 +1,221 @@
+{
+  "claim": "Leanna lives a fulfilling life or finds happiness. Leanna retires. If someone sets goals and surrounds themselves with support, then they can stay positive. If Leanna takes risks, then she either learns from her mistakes or surrounds herself with support. Leanna either faces adversity or embraces change, but not both at the same time. Leanna sets goals. Leanna follows her heart or lives a fulfilling life. Everyone who follows their dreams either achieves success or discovers their talent (or both). If someone finds happiness and stays positive, then they can bounce back. If Leanna either has good health or has social connections (but not both), then she stays positive. Sarai does not embrace change. If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life. Leanna does not embrace change. Sarai lives a fulfilling life or finds happiness. If someone follows their heart and discovers their talent, then they can find happiness. Everyone who overcomes fear either surrounds themselves with support or builds confidence (or both). Gian either faces adversity or embraces change, but not both at the same time. If Leanna retires, then she will pursue her lifelong passion. If Leanna can bounce back, then she will achieve success. Leanna does not build confidence. Leanna overcomes fear. Leanna either faces adversity or achieves success, but not both at the same time.Based on the above information, is the following statement true, false, or uncertain? Leanna does not achieve recognition.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'If Leanna retires, then she will pursue her lifelong passion.' and 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' Given that 'Leanna retires.' is stated, it logically follows that Leanna achieves recognition."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'If Leanna retires, then she will pursue her lifelong passion.' and 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' Given that 'Leanna retires.' is stated, it logically follows that Leanna achieves recognition.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The claim to evaluate is 'Leanna does not achieve recognition.' Argument A1 concludes 'Leanna achieves recognition,' which directly contradicts the claim. Therefore, A1 supports the negation of the claim, making its correct cate 'S', not 'P'.",
+          "confidence": 0.98,
+          "attacks": {
+            "A1": 0.95
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The statement 'Leanna does not achieve recognition' is directly contradicted by the logical chain: retirement \u2192 pursuing lifelong passion \u2192 achieving recognition. Since retirement is given, recognition must occur."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The statement 'Leanna does not achieve recognition' is directly contradicted by the logical chain: retirement \u2192 pursuing lifelong passion \u2192 achieving recognition. Since retirement is given, recognition must occur.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The logical chain relies on the premise 'If Leanna retires, then she will pursue her lifelong passion.' This conditional statement might not be universally true; retirement does not necessarily lead to pursuing a lifelong passion in all cases.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if retirement leads to pursuing a lifelong passion, the subsequent link 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life' is a strong conditional. However, 'achieve recognition' is only one part of a conjunction; the argument assumes the entire consequent follows, but recognition might not occur independently.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The original context explicitly states both conditionals as given facts. Therefore, under the provided logical constraints, if retirement is true, then pursuing lifelong passion is true, and if that is true, then achieving recognition is true. The chain is deductively valid within the context.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.85
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The context provides no condition under which pursuing a lifelong passion fails to yield recognition; it is presented as a certainty. Therefore, given that Leanna retires and thus pursues her passion, recognition is guaranteed."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The context provides no condition under which pursuing a lifelong passion fails to yield recognition; it is presented as a certainty. Therefore, given that Leanna retires and thus pursues her passion, recognition is guaranteed.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Leanna retires, then she will pursue her lifelong passion.' However, this is a conditional statement, not a guarantee that she actually retires. The argument assumes retirement as a premise, but the context does not explicitly state that Leanna retires; it only provides it as part of a conditional rule.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The claim being evaluated is 'Leanna does not achieve recognition.' Argument A3 attempts to support the negation of this claim (i.e., that she does achieve recognition). However, the context explicitly states 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' This is a logical guarantee: if she pursues her passion, recognition follows. Therefore, the only way for the claim 'Leanna does not achieve recognition' to be true is if she does not pursue her passion. Since the context provides 'If Leanna retires, then she will pursue her lifelong passion,' the chain becomes: if she retires, she pursues passion; if she pursues passion, she achieves recognition. Thus, if she retires, recognition is guaranteed, making the original claim false. A3's conclusion is logically valid if retirement is assumed.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "All premises are treated as true in the context. The implication 'If Leanna retires, then she will pursue her lifelong passion' combined with 'If Leanna pursues her lifelong passion, then she will achieve recognition' forces the conclusion that Leanna achieves recognition, making the negation false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "All premises are treated as true in the context. The implication 'If Leanna retires, then she will pursue her lifelong passion' combined with 'If Leanna pursues her lifelong passion, then she will achieve recognition' forces the conclusion that Leanna achieves recognition, making the negation false.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 incorrectly assumes the premises 'If Leanna retires, then she will pursue her lifelong passion' and 'If Leanna pursues her lifelong passion, then she will achieve recognition' are both true. The context states 'If Leanna retires, then she will pursue her lifelong passion' and 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' However, the conclusion 'Leanna achieves recognition' does not necessarily follow if the conjunction 'and live a fulfilling life' fails, as the implication might require both consequents.",
+          "confidence": 0.6,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Attack B1 misinterprets logical implication. In propositional logic, 'If P then (Q and R)' is true if P is false or if both Q and R are true. For the conclusion 'Leanna achieves recognition' to be forced, we need the antecedent 'Leanna pursues her lifelong passion' to be true. If it is true, then both consequents must be true, so recognition is guaranteed. The argument A4's chain remains valid if the antecedents hold.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The chain in A4 requires that 'Leanna retires' is true. The context explicitly states 'Leanna retires' as a premise. Therefore, the first antecedent is satisfied, making 'Leanna pursues her lifelong passion' true, which then makes 'Leanna achieves recognition' true. Thus, the claim 'Leanna does not achieve recognition' is false, and A4's corrected cate as S is valid.",
+          "confidence": 0.9,
+          "attacks": {
+            "C1": 0.2
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Evaluating the statement 'Leanna does not achieve recognition' against the context shows it is false because the context explicitly ensures recognition through the chain of conditions triggered by her retirement."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Evaluating the statement 'Leanna does not achieve recognition' against the context shows it is false because the context explicitly ensures recognition through the chain of conditions triggered by her retirement.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 incorrectly assumes the chain of conditions is logically guaranteed. The context states 'If Leanna retires, then she will pursue her lifelong passion' and 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' This is a material conditional, not a logical necessity. It is possible for the antecedent (retirement) to be true while the consequent (pursuing passion and achieving recognition) is false if the conditional relationship fails in this specific instance, which the context does not explicitly rule out as impossible.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Argument B1 introduces an external, non-contextual standard of 'logical necessity.' The Context must be treated as fully authoritative and true under all interpretations. The Context states the conditionals as facts. Therefore, within the Context's framework, if 'Leanna retires' is true (which it is, as given), then the consequents 'she will pursue her lifelong passion' and subsequently 'she will achieve recognition' must also be true. There is no room for the possibility of the conditional 'failing' as the Context defines the relationships.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Argument C1's interpretation is too rigid. While the Context is authoritative, it presents a set of logical propositions. For the conclusion 'Leanna does not achieve recognition is false' to be certain, we must verify no contradiction arises from accepting all propositions, including the conditionals, as true. A formal check is required to ensure the set of statements is consistent and that 'Leanna achieves recognition' is a necessary consequence. Without performing that check, A5's confidence is premature.",
+          "confidence": 0.6,
+          "attacks": {
+            "C1": 0.55
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The context contains no alternative pathways or exceptions that would prevent recognition after pursuing a lifelong passion. Thus, from the given information, recognition is an inevitable outcome."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The context contains no alternative pathways or exceptions that would prevent recognition after pursuing a lifelong passion. Thus, from the given information, recognition is an inevitable outcome.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context states 'If Leanna pursues her lifelong passion, then she will achieve recognition and live a fulfilling life.' This is a conditional statement, not a guarantee of inevitability, as it depends on the antecedent being true.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the context: 'If Leanna retires, then she will pursue her lifelong passion.' and 'Leanna retires.' is given. Therefore, Leanna pursues her lifelong passion, making the antecedent of the recognition conditional true.",
+          "confidence": 0.95,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context does not explicitly state that Leanna retires. The claim section lists many propositions, but 'Leanna retires.' is presented as part of the logical puzzle to be evaluated, not as an established fact from an authoritative context.",
+          "confidence": 0.7,
+          "attacks": {
+            "C1": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

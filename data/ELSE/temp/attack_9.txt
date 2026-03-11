@@ -1,0 +1,23 @@
+```yaml
+Arguments:
+  - id: "A10"
+    text: "From the context: Legend has a good temperament. 'Legend is either fast or has a good temperament, but not both.' Therefore, Legend is not fast. 'Legend is either a champion or fast.' Therefore, Legend is a champion. 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' Therefore, Legend has either a unique color or a distinctive marking."
+    cate: "P"
+    confidence: 0.85
+    attacks: {}
+  - id: "B1"
+    text: "From the context: 'Legend either has noble bloodline or a unique color.' This means Legend might have a unique color. Also: 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' So if Legend has a unique color, he cannot have both large breed and racing background. However, A10's conclusion 'Legend has either a unique color or a distinctive marking' does not guarantee he has a distinctive marking; he might only have a unique color, which would make the claim 'Legend has a distinctive marking' false."
+    confidence: 0.75
+    attacks:
+      A10: 0.70
+  - id: "C1"
+    text: "From the context: 'Legend is either well-trained or has a racing background, but not both.' and 'Legend is well-trained.' Therefore, Legend does not have a racing background. Combined with 'If Legend has a unique color, then he is either a large breed or has a racing background, but not both.' If Legend had a unique color, he would need to be a large breed (since no racing background). But 'All large breed horses have strong muscles.' and 'Legend either eats nutritious food or has strong muscles.' This doesn't force strong muscles. However, the key point: if Legend has a unique color, he must be a large breed (due to no racing background), which implies strong muscles via 'All large breed horses have strong muscles.' This is consistent, so unique color remains possible, meaning distinctive marking is not guaranteed."
+    confidence: 0.80
+    attacks:
+      B1: 0.65
+  - id: "D1"
+    text: "From the context: 'Legend either has noble bloodline or a unique color.' This is an exclusive or? The context says 'either...or' but not explicitly 'but not both' here. However, similar structures elsewhere use 'but not both'. Assuming it's exclusive or, then if Legend has a unique color, he cannot have noble bloodline. But nothing prevents that. However, also: 'If Legend is a champion, then he either has a unique color or has a distinctive marking.' Since A10 established Legend is a champion, he must have unique color or distinctive marking. But from 'Legend either has noble bloodline or a unique color' (exclusive), if he has unique color, no noble bloodline; if he has noble bloodline, no unique color, so then he must have distinctive marking (to satisfy champion condition). So if Legend has noble bloodline, then he must have distinctive marking. But we don't know if he has noble bloodline. Thus, the claim remains uncertain."
+    confidence: 0.78
+    attacks:
+      C1: 0.60
+```

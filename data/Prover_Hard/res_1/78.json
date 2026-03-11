@@ -1,0 +1,280 @@
+{
+  "claim": "Heath either has practical skills or has innovative ideas, but not both. If Andy studies planetary science or develops new technology, then he supports terraforming. Kabir cares about nature. Andy cares about nature. If Andy believes in space exploration or values environmental engineering, then he supports terraforming. If Andy has a passion, then he pursues sustainable living and learns quickly. If Cassidy has innovative ideas, then he believes in space exploration and is curious about ecosystems. If Cassidy believes in space exploration or values environmental engineering, then he supports terraforming. Heath either pursues sustainable living or values environmental engineering, but not both. Andy does not have practical skills. If Andy has innovative ideas, then he believes in space exploration and is curious about ecosystems. If Andy enjoys astrophysics, then he is either adventurous or believes in space exploration (but not both). Andy either has practical skills or has innovative ideas, but not both. Heath either supports terraforming or opposes it, but not both. If Andy is visionary, then he works hard and values environmental engineering. If Andy cares about nature, then he will pursue sustainable living. Andy either pursues sustainable living or values environmental engineering, but not both. Andy either supports terraforming or opposes it, but not both.Based on the above information, is the following statement true, false, or uncertain? Andy does not oppose terraforming.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Andy cares about nature, and the information states that if Andy cares about nature, then he will pursue sustainable living. Pursuing sustainable living is logically aligned with supporting terraforming, which aims to make planets habitable and sustainable, rather than opposing it."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Andy cares about nature, and the information states that if Andy cares about nature, then he will pursue sustainable living. Pursuing sustainable living is logically aligned with supporting terraforming, which aims to make planets habitable and sustainable, rather than opposing it.",
+          "cate": "P",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The information explicitly states: 'Andy either pursues sustainable living or values environmental engineering, but not both.' It also states: 'If Andy believes in space exploration or values environmental engineering, then he supports terraforming.' If Andy pursues sustainable living (from caring about nature), he cannot value environmental engineering, so the environmental engineering path to supporting terraforming is blocked for him.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The information states: 'Andy either supports terraforming or opposes it, but not both.' We cannot conclude Andy supports terraforming just because he pursues sustainable living. The connection between sustainable living and supporting terraforming is not logically given in the premises; it's an assumption in A1.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the connection between sustainable living and supporting terraforming is not explicit, multiple other conditional rules could lead Andy to support terraforming. For example: 'If Andy studies planetary science or develops new technology, then he supports terraforming.' We don't know if Andy does either, but it leaves open possibilities.",
+          "confidence": 0.6,
+          "attacks": {
+            "B2": 0.5
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The information states: 'If Andy has innovative ideas, then he believes in space exploration and is curious about ecosystems.' Also: 'If Andy believes in space exploration or values environmental engineering, then he supports terraforming.' But we know 'Andy either has practical skills or has innovative ideas, but not both' and 'Andy does not have practical skills.' Therefore, Andy has innovative ideas. Thus, Andy believes in space exploration, and therefore supports terraforming via that rule.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The argument B3 is actually a correction to A1's reasoning, not a direct attack. It provides a logically valid path to 'Andy supports terraforming' from given premises, which directly implies 'Andy does not oppose terraforming' since 'Andy either supports terraforming or opposes it, but not both.' This makes the original claim true, but for different reasons than A1 gave.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.7,
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Andy does not have practical skills, and the information states that Andy either has practical skills or has innovative ideas, but not both. Therefore, Andy must have innovative ideas. It is also stated that if Andy has innovative ideas, then he believes in space exploration and is curious about ecosystems. Believing in space exploration supports terraforming, as terraforming is a concept within space exploration."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Andy does not have practical skills, and the information states that Andy either has practical skills or has innovative ideas, but not both. Therefore, Andy must have innovative ideas. It is also stated that if Andy has innovative ideas, then he believes in space exploration and is curious about ecosystems. Believing in space exploration supports terraforming, as terraforming is a concept within space exploration.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the claim about Nathalia. The claim and all given information concern Nathalia, Mae, Zainab, and Owen, with no mention of 'Andy' or 'terraforming' anywhere in the provided context.",
+          "confidence": 0.99,
+          "attacks": {
+            "A2": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure of A2 is internally sound (denying one disjunct in an exclusive 'or' affirms the other), but it operates on premises ('Andy does not have practical skills') that are not present in the given information about Nathalia. Therefore, its conclusion cannot support any claim about Nathalia.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A2 attempts to assign a category (P/S) to support the claim 'Nathalia is not fearless.' However, A2's conclusion is about 'Andy' and 'terraforming,' which has no logical connection to Nathalia's fearlessness. A correct support argument must use the provided facts about Nathalia.",
+          "confidence": 0.97,
+          "attacks": {
+            "B2": 0.1,
+            "A2": 0.98
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "The information states that if Andy believes in space exploration or values environmental engineering, then he supports terraforming. Since Andy has innovative ideas, he believes in space exploration (as per the conditional), which directly leads to the conclusion that Andy supports terraforming, not opposes it."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The information states that if Andy believes in space exploration or values environmental engineering, then he supports terraforming. Since Andy has innovative ideas, he believes in space exploration (as per the conditional), which directly leads to the conclusion that Andy supports terraforming, not opposes it.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 references 'Andy' and concepts like 'space exploration', 'environmental engineering', and 'terraforming', but these names and concepts do not appear anywhere in the provided claim or background information. The claim is about Nathalia, Mae, Zainab, and Owen, with predicates about hiking, exploring, fear, timidity, etc. Therefore, A3 is completely irrelevant to the claim 'Nathalia is not fearless'.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignored the irrelevant content, A3's logical structure is internally flawed. It claims 'if P or Q then R', and 'P is true', therefore 'R is true'. While this is valid, it then concludes 'therefore not (opposite of R)'. This is a trivial addition, but the entire premise is disconnected from the given problem, making its assigned support for any conclusion about Nathalia's fearlessness invalid.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out A3's irrelevance, one could charitably interpret A3 as a mislabeled or miscontextualized argument. However, no charitable interpretation can connect 'Andy supports terraforming' to 'Nathalia is not fearless' without introducing entirely new, unsupported bridging premises. Therefore, the attack on A3's relevance stands definitively.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.1,
+            "B2": 0.1
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Andy either supports terraforming or opposes it, but not both. Given the logical deductions from other premises (caring about nature, having innovative ideas, believing in space exploration), the consistent outcome is that Andy supports terraforming, meaning he does not oppose it."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Andy either supports terraforming or opposes it, but not both. Given the logical deductions from other premises (caring about nature, having innovative ideas, believing in space exploration), the consistent outcome is that Andy supports terraforming, meaning he does not oppose it.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is completely irrelevant to the claim about Gavin breaking barriers. It discusses Andy and terraforming, while the claim is about Gavin and barrier-breaking.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A4 contains no premises or reasoning connected to any information provided in the claim's context about Gavin, Antonio, Eduardo, or their attributes.",
+          "confidence": 0.93,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The 'cate' field for A4 was originally 'P' (supporting the claim), but A4's text doesn't mention Gavin, barriers, or any related concepts, so it cannot logically support any conclusion about Gavin breaking barriers.",
+          "confidence": 0.94,
+          "attacks": {
+            "A4": 0.99
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Andy either pursues sustainable living or values environmental engineering, but not both. Since Andy cares about nature and thus pursues sustainable living, he does not value environmental engineering. However, this does not affect the support for terraforming, as belief in space exploration (which he has) is sufficient to trigger support for terraforming per the given conditional."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Andy either pursues sustainable living or values environmental engineering, but not both. Since Andy cares about nature and thus pursues sustainable living, he does not value environmental engineering. However, this does not affect the support for terraforming, as belief in space exploration (which he has) is sufficient to trigger support for terraforming per the given conditional.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Gavin breaking barriers. It discusses Andy, sustainable living, environmental engineering, and terraforming, which have no logical connection to the premises or conclusion about Gavin.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A5 does not contain any premises from the provided claim context, nor does it reference Gavin, breaking barriers, or any related attributes mentioned in the claim's premises. Therefore, it cannot support or oppose the claim about Gavin.",
+          "confidence": 0.93,
+          "attacks": {
+            "A5": 0.98
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if A5 were reinterpreted to be about Gavin by substituting 'Andy' with 'Gavin', its content about sustainable living and environmental engineering still does not match any premises in the given claim, making it invalid for the current logical deduction task.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.9
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The information provides no condition under which Andy would oppose terraforming. All derived attributes of Andy (caring about nature, pursuing sustainable living, having innovative ideas, believing in space exploration) point toward supporting terraforming, making opposition inconsistent with the logical structure."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The information provides no condition under which Andy would oppose terraforming. All derived attributes of Andy (caring about nature, pursuing sustainable living, having innovative ideas, believing in space exploration) point toward supporting terraforming, making opposition inconsistent with the logical structure.",
+          "cate": "S",
+          "confidence": 0.82,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that 'caring about nature' and 'pursuing sustainable living' necessarily lead to supporting terraforming. In fact, many environmentalists oppose terraforming on ethical grounds, viewing it as destructive interference with pristine extraterrestrial environments.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument conflates 'believing in space exploration' with 'supporting terraforming'. One can believe in exploration for scientific discovery while opposing planetary-scale alteration. The logical structure does not force Andy to support terraforming; it only describes his attributes without linking them to a terraforming position.",
+          "confidence": 0.8,
+          "attacks": {
+            "A6": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While some environmentalists oppose terraforming, Andy's specific combination of 'innovative ideas' and 'belief in space exploration' suggests a forward-thinking, technologically optimistic mindset that aligns more with pro-terraforming views than with preservationist opposition.",
+          "confidence": 0.68,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument's conclusion about 'opposition being inconsistent with the logical structure' is an overstatement. The premises describe Andy's attributes but do not contain logical rules that directly connect these attributes to a stance on terraforming. Therefore, opposition remains logically possible, just not explicitly described.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The logical structure implies consistency through attribute alignment. If all attributes point in one direction (support), then opposition would create internal contradiction, making it inconsistent within the given framework, even if not explicitly ruled out by direct conditional statements.",
+          "confidence": 0.72,
+          "attacks": {
+            "B3": 0.7
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "claim": "Consider the following background information: A 10-year-old boy is brought to his pediatrician after discovering a painless mass in the left testicle. Results from tumor markers and a biopsy are as follows: AFP 350 ng/mL (normal value < 10 ng/mL) hCG 0.4 IU/L (normal value < 0.5 IU/L) Biopsy: Presence of glomeruli-like structures with a central capillary within a mesodermal core, lined by flattened layers of germ cells.\n\nGiven the background information the following is corrrect: The most likely diagnosis in this patient is Embryonal carcinoma.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The biopsy findings describe glomeruli-like structures, which are characteristic of yolk sac tumor, not embryonal carcinoma."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The biopsy findings describe glomeruli-like structures, which are characteristic of yolk sac tumor, not embryonal carcinoma.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Elevated AFP is highly suggestive of yolk sac tumor, which is consistent with the biopsy findings.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Embryonal carcinoma typically presents with elevated hCG, which is not seen in this case.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Mixed germ cell tumors can have components of both embryonal carcinoma and yolk sac tumor, complicating the diagnosis.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6,
+            "B2": 0.5
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The presence of glomeruli-like structures is pathognomonic for yolk sac tumor, making mixed tumor less likely.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.8
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Elevated AFP is highly suggestive of yolk sac tumor, as embryonal carcinoma typically does not produce AFP."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Elevated AFP is highly suggestive of yolk sac tumor, as embryonal carcinoma typically does not produce AFP.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Embryonal carcinoma can occasionally produce AFP, especially in mixed germ cell tumors, which are common in pediatric cases.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The presence of glomeruli-like structures in the biopsy is pathognomonic for yolk sac tumor, not embryonal carcinoma.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Mixed germ cell tumors often show overlapping features, making pure embryonal carcinoma less likely in this case.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The histologic description of flattened layers of germ cells surrounding a mesodermal core is pathognomonic for yolk sac tumor."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The histologic description of flattened layers of germ cells surrounding a mesodermal core is pathognomonic for yolk sac tumor.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The elevated AFP level (350 ng/mL) strongly supports yolk sac tumor, as embryonal carcinoma typically does not produce AFP.",
+          "confidence": 0.9,
+          "attacks": {
+            "A3": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Embryonal carcinoma is more commonly associated with elevated hCG levels, which are normal in this case.",
+          "confidence": 0.8,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While AFP is a marker for yolk sac tumor, some mixed germ cell tumors may include embryonal carcinoma components with elevated AFP.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.65,
+            "B2": 0.55
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Embryonal carcinoma usually presents with elevated hCG, which is not seen in this case (hCG is within normal limits)."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Embryonal carcinoma usually presents with elevated hCG, which is not seen in this case (hCG is within normal limits).",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Elevated AFP is highly suggestive of yolk sac tumor, which is more common in children and fits the biopsy findings of glomeruli-like structures.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Embryonal carcinoma can still occur without elevated hCG, as hCG elevation is not universal and depends on the presence of syncytiotrophoblastic cells.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The presence of glomeruli-like structures is pathognomonic for yolk sac tumor and not seen in embryonal carcinoma, making yolk sac tumor the more likely diagnosis.",
+          "confidence": 0.95,
+          "attacks": {
+            "C1": 0.9
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Yolk sac tumor is the most common testicular germ cell tumor in children, whereas embryonal carcinoma is rare in this age group."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Yolk sac tumor is the most common testicular germ cell tumor in children, whereas embryonal carcinoma is rare in this age group.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The biopsy findings of glomeruli-like structures with a central capillary within a mesodermal core are pathognomonic for yolk sac tumor, not embryonal carcinoma.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The elevated AFP level (350 ng/mL) is highly characteristic of yolk sac tumor, which is AFP-producing, whereas embryonal carcinoma rarely produces AFP.",
+          "confidence": 0.88,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Embryonal carcinoma can rarely occur in children, though it is much less common than yolk sac tumor.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.4,
+            "B2": 0.3
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The extremely low incidence of embryonal carcinoma in children makes it statistically improbable compared to yolk sac tumor in this case.",
+          "confidence": 0.85,
+          "attacks": {
+            "C1": 0.8
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The presence of Schiller-Duval bodies (glomeruli-like structures) on biopsy is diagnostic for yolk sac tumor and excludes embryonal carcinoma."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The presence of Schiller-Duval bodies (glomeruli-like structures) on biopsy is diagnostic for yolk sac tumor and excludes embryonal carcinoma.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Embryonal carcinoma can rarely exhibit Schiller-Duval-like structures, so their presence does not definitively exclude embryonal carcinoma.",
+          "confidence": 0.65,
+          "attacks": {
+            "A6": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The extremely elevated AFP (350 ng/mL) is far more characteristic of yolk sac tumor than embryonal carcinoma, which typically has normal or only mildly elevated AFP.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Mixed germ cell tumors containing both yolk sac and embryonal carcinoma components are common, so the presence of Schiller-Duval bodies doesn't rule out concurrent embryonal carcinoma.",
+          "confidence": 0.75,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The very low hCG level argues against embryonal carcinoma, which more frequently produces hCG than yolk sac tumors do.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

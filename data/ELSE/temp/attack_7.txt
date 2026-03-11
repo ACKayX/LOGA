@@ -1,0 +1,23 @@
+```yaml
+Arguments:
+  - id: "A8"
+    text: "Iris shares knowledge with others. If Iris is passionate about research, then she shares knowledge with others and collaborates with peers. Since she collaborates with peers (from A2), it is plausible she is passionate about research and thus shares knowledge with others. But the context also says Iris either advances human understanding or shares knowledge with others, but not both. If she shares knowledge with others, she does not advance human understanding. However, from the rule about pursuing academic degrees, if she does not contribute to scientific knowledge, she advances human understanding. This could imply she contributes to scientific knowledge, which from the geological processes rule means she does not discover new minerals."
+    cate: "S"
+    confidence: 0.45
+    attacks: {}
+  - id: "B1"
+    text: "The argument incorrectly assumes Iris collaborates with peers. The context states 'Iris collaborates with peers or publishes research (or both). Iris does not publish research.' This implies Iris collaborates with peers. However, the argument then uses this to infer she is passionate about research, but the rule 'If Iris is passionate about research, then she shares knowledge with others and collaborates with peers' does not work backwards; collaboration does not prove passion for research."
+    confidence: 0.85
+    attacks:
+      A8: 0.80
+  - id: "B2"
+    text: "The argument's conclusion that Iris does not discover new minerals relies on the chain: shares knowledge → not advance understanding → from pursuing degrees rule, not advance understanding only if she contributes to scientific knowledge → therefore contributes → therefore does not discover. This chain is invalid because the rule about pursuing degrees states: 'If Iris either contributes to scientific knowledge or pursues academic degrees (but not both), then she advances human understanding.' Iris pursues academic degrees (given). If she also contributes, then the 'not both' condition is violated, making the rule's antecedent false, and we cannot conclude she advances understanding. Thus the inference fails."
+    confidence: 0.90
+    attacks:
+      A8: 0.90
+  - id: "C1"
+    text: "Even if the logical chain in B2 is broken, the core issue remains: A8 assumes Iris shares knowledge with others, but this is not established. The context provides no direct statement that Iris shares knowledge. The attempt to derive it from collaboration and the passion rule is deductively invalid (affirming the consequent)."
+    confidence: 0.88
+    attacks:
+      B1: 0.75
+```

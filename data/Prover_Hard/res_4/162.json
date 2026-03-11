@@ -1,0 +1,240 @@
+{
+  "claim": "Bunny performs ballet. Either Aileen enjoys tango or she dislikes tango, but not both. Giovanni has stage experience. If Aileen has grace, then she performs rumba and expresses passion. If Aileen has stage experience, then she either performs ballet or performs rumba, but not both. If Aileen has rhythm, then she instructs movement and shares her passion. Giovanni values culture. If Aileen is a choreographer, then she either practices yoga or teaches dance, but not both. If Aileen either performs rumba or dances samba (but not both), then she teaches dance. Aileen performs ballet. If Giovanni instructs movement, then she either loves waltz or loves salsa, but not both. Either Bunny enjoys tango or she dislikes tango, but not both. If Aileen instructs movement, then she either loves waltz or loves salsa, but not both. If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both. For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango. Bunny appreciates music. Aileen dances samba. Aileen appreciates music. Aileen values culture. Aileen loves waltz. If Bunny either performs rumba or dances samba (but not both), then she teaches dance. If Aileen appreciates music, then she instructs movement and values culture. Estella loves waltz. Aileen has stage experience. If Bunny teaches dance, then she either loves salsa or enjoys tango, but not both. Estella dances samba.Based on the above information, is the following statement true, false, or uncertain? Aileen does not dislike tango.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "From the context, 'Either Aileen enjoys tango or she dislikes tango, but not both' is a direct logical disjunction. Since we can deduce Aileen enjoys tango, it follows she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the context, 'Either Aileen enjoys tango or she dislikes tango, but not both' is a direct logical disjunction. Since we can deduce Aileen enjoys tango, it follows she does not dislike tango.",
+          "cate": "S",
+          "confidence": 0.2,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument text references 'Aileen' and 'tango', which are completely absent from the provided claim about Gunner. This makes the argument irrelevant to determining whether 'Gunner is not informed' is true.",
+          "confidence": 0.95,
+          "attacks": {
+            "A1": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument attempts to apply a general logical form (if P then not Q from exclusive-or) but uses premises ('Aileen enjoys tango') that are not established in the given context. Without those premises, the deduction is unsupported.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the logical form were valid, the conclusion about Aileen has no connection to the claim about Gunner's informed status. The argument fails to bridge the conceptual gap between the two scenarios.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.3
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Aileen teaches dance, and the rule states 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' Given Aileen loves waltz, she cannot love salsa (since loving waltz and salsa simultaneously isn't addressed, but the rule forces a choice between salsa and tango). Since she loves waltz, she must enjoy tango to satisfy the teaching dance condition, thus she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Aileen teaches dance, and the rule states 'If Aileen teaches dance, then she either loves salsa or enjoys tango, but not both.' Given Aileen loves waltz, she cannot love salsa (since loving waltz and salsa simultaneously isn't addressed, but the rule forces a choice between salsa and tango). Since she loves waltz, she must enjoy tango to satisfy the teaching dance condition, thus she does not dislike tango.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the claim about Gunner. It discusses Aileen, dance styles, and different logical rules, while the claim is about Gunner's informed status based on a specific set of premises. The argument does not support or oppose the claim 'Gunner is not informed' in any logical way.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The reasoning in A2 is internally flawed. The rule says if Aileen teaches dance, she loves salsa OR enjoys tango (exclusive or). Loving waltz is introduced as an external fact. There is no logical necessity that loving waltz prevents loving salsa; the exclusive choice is only between salsa and tango. Therefore, the conclusion 'she must enjoy tango' does not validly follow. The argument is unsound.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A2 were internally valid, its assigned category 'P' (supporting the claim's truth) is incorrect. The claim is 'Gunner is not informed.' A2's conclusion about Aileen not disliking tango has no logical connection to Gunner's informed status. Therefore, it cannot be categorized as supporting the claim. The correct category is 'S' (supporting the negation) only if we interpret it as a failed attempt to support, but more accurately it's a non-sequitur.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.2,
+            "B2": 0.1
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Aileen appreciates music, which triggers 'If Aileen appreciates music, then she instructs movement and values culture.' Instructing movement then triggers 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' She loves waltz, so she does not love salsa. Since she teaches dance (deduced from other rules), and the teaching dance rule requires her to enjoy tango (as she doesn't love salsa), she enjoys tango, meaning she does not dislike it."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Aileen appreciates music, which triggers 'If Aileen appreciates music, then she instructs movement and values culture.' Instructing movement then triggers 'If Aileen instructs movement, then she either loves waltz or loves salsa, but not both.' She loves waltz, so she does not love salsa. Since she teaches dance (deduced from other rules), and the teaching dance rule requires her to enjoy tango (as she doesn't love salsa), she enjoys tango, meaning she does not dislike it.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is completely irrelevant to the claim about Muffin regaining her health. A3 discusses Aileen's dance preferences, while the claim is about Muffin's health based on diet, exercise, and other factors. There is no logical connection between the two.",
+          "confidence": 1.0,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A3 contains internal logical flaws. It deduces 'she teaches dance' without showing which rule triggers this deduction from the given premises about Muffin, Byron, and Holland.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Aileen dances samba, and the rule 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance' applies. She dances samba and does not perform rumba (deduced from other constraints), so she teaches dance. The teaching dance rule then forces her to enjoy tango, as she loves waltz and not salsa, confirming she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Aileen dances samba, and the rule 'If Aileen either performs rumba or dances samba (but not both), then she teaches dance' applies. She dances samba and does not perform rumba (deduced from other constraints), so she teaches dance. The teaching dance rule then forces her to enjoy tango, as she loves waltz and not salsa, confirming she does not dislike tango.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is completely irrelevant to the claim about Muffin regaining her health. It discusses a different person (Aileen) and different activities (dancing samba, rumba, teaching dance, enjoying tango) that have no connection to the given premises about cats, diets, exercise, or health.",
+          "confidence": 0.99,
+          "attacks": {
+            "A4": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A4 contains logical deductions about Aileen, but these deductions are based on rules not present in the original problem statement. The original statement only contains information about cats (Byron, Muffin, Holland) and their health, appearance, diet, and exercise.",
+          "confidence": 0.98,
+          "attacks": {
+            "A4": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A4's internal logic is flawed for the original claim. The original claim asks whether 'Muffin regains her health' based on given premises about cats. A4 does not address any premises about Muffin, diet, exercise, or the rule 'if a cat follows a strict diet and gets regular exercise, then it will regain its health'.",
+          "confidence": 0.97,
+          "attacks": {
+            "B1": 0.1,
+            "B2": 0.1
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "From the general rule 'For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango.' While Aileen's attendance or listening isn't specified, her enjoyment of tango is already established through other logical deductions, so she does not dislike tango."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "From the general rule 'For all humans, if they either attend tango clubs or listen to tango music (but not both), then they enjoy tango.' While Aileen's attendance or listening isn't specified, her enjoyment of tango is already established through other logical deductions, so she does not dislike tango.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Noel being adventurous. It discusses Aileen, tango clubs, and tango music, while the claim is about Noel's adventurousness based on specific premises about Noel, Cielo, Evander, and logical relationships.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A5 contains a logical error: it attempts to apply a general rule about tango enjoyment to Aileen, but then states her enjoyment is 'already established through other logical deductions' without specifying those deductions. This is circular reasoning.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument A5 is mis-categorized as supporting (P) the claim 'Noel is adventurous.' It actually discusses a completely different person (Aileen) and topic (tango), providing zero support for or against Noel's adventurousness.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.95
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "Aileen has stage experience, which triggers 'If Aileen has stage experience, then she either performs ballet or performs rumba, but not both.' She performs ballet, so she does not perform rumba. This absence of rumba performance, combined with her samba dancing, leads to teaching dance and ultimately to enjoying tango, negating any dislike of tango."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Aileen has stage experience, which triggers 'If Aileen has stage experience, then she either performs ballet or performs rumba, but not both.' She performs ballet, so she does not perform rumba. This absence of rumba performance, combined with her samba dancing, leads to teaching dance and ultimately to enjoying tango, negating any dislike of tango.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A6 is completely irrelevant to the claim about Noel being adventurous. The claim and all given information are about Noel, Cielo, Evander, and logical relationships between properties like intelligence, adventurousness, reading, analyzing data, etc. Aileen is never mentioned in the claim or any provided premises.",
+          "confidence": 0.99,
+          "attacks": {
+            "A6": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A6 contains internal logical steps about ballet, rumba, samba, and tango that have no connection to the logical system defined in the claim. It appears to be reasoning from a completely different problem or set of premises.",
+          "confidence": 0.98,
+          "attacks": {
+            "A6": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if we ignore the irrelevance, A6's conclusion about 'negating any dislike of tango' does not address the claim's question 'Noel is adventurous.' Therefore, it provides zero support for either P (true) or S (false) regarding Noel's adventurousness.",
+          "confidence": 0.97,
+          "attacks": {
+            "B1": 0.1,
+            "B2": 0.1
+          }
+        }
+      ]
+    }
+  }
+}

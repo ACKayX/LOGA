@@ -1,0 +1,327 @@
+{
+  "claim": "Consider the following background information: A 17-year-old high school student was in shop class when he accidentally sawed off his pointer finger while making a bird house. He fainted when he realized his finger had been cut off. The teacher immediately transported the patient to the emergency department and he arrived within 20 minutes. He has a past medical history of asthma, and his only medication is an albuterol inhaler. The patient\"s current blood pressure is 122/78 mmHg. Analgesics are administered. The teacher states that he left the amputated finger in the classroom, but that the principal would be transporting it to the hospital.\n\nGiven the background information the following is corrrect: Wrap the amputated finger in moist gauze, put it in a plastic bag, and place it on ice is the correct method of transporting the amputated finger.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Wrapping the amputated finger in moist gauze helps maintain tissue hydration, which is critical for preserving viability during transport."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Wrapping the amputated finger in moist gauze helps maintain tissue hydration, which is critical for preserving viability during transport.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Excessive moisture can lead to tissue maceration, reducing the chance of successful reattachment.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Sterile saline is typically used for moistening gauze to minimize infection risk, which offsets maceration concerns.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Direct ice contact causes frostbite injury to amputated tissue, making the 'place it on ice' instruction dangerous.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Current protocols specify using a coolant barrier (like a dry cloth) between ice and the bag to prevent freezing.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Time-to-replantation exceeds 12 hours in this case due to transport logistics, making preservation methods irrelevant.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.5,
+            "C1": 0.4,
+            "C2": 0.4
+          }
+        },
+        {
+          "id": "C3",
+          "text": "Finger replantation can succeed up to 24 hours later with proper cold ischemia management.",
+          "confidence": 0.78,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "Placing the wrapped finger in a plastic bag prevents direct contact with ice, avoiding tissue damage from freezing temperatures."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Placing the wrapped finger in a plastic bag prevents direct contact with ice, avoiding tissue damage from freezing temperatures.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "If the plastic bag is not sealed properly, moisture can still seep in, leading to potential tissue damage from ice contact.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Using a waterproof, sealed container instead of a plastic bag ensures no moisture can enter, providing better protection against freezing.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The method described assumes immediate access to ice, which may not always be available in emergency situations.",
+          "confidence": 0.7,
+          "attacks": {
+            "A2": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Even without ice, keeping the amputated part cool (e.g., in a cool environment) can still be beneficial for preservation.",
+          "confidence": 0.68,
+          "attacks": {
+            "B2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Keeping the amputated part on ice slows metabolic processes, extending the window for potential reattachment surgery."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Keeping the amputated part on ice slows metabolic processes, extending the window for potential reattachment surgery.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Direct contact with ice can cause frostbite damage to the amputated tissue, reducing viability for reattachment.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Placing the finger in a sealed plastic bag before icing prevents direct contact with ice, mitigating frostbite risk while still achieving cooling.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Metabolic slowing from cooling is negligible if the amputation occurred more than 6 hours prior to surgical intervention.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Most urban hospitals can provide surgical evaluation within 4 hours, making the metabolic preservation clinically relevant.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Saline-moistened gauze provides better tissue preservation than water-moistened gauze used in standard first aid kits.",
+          "confidence": 0.72,
+          "attacks": {
+            "A3": 0.55
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Lactated Ringer's solution is superior to normal saline for tissue preservation but is rarely available in school settings.",
+          "confidence": 0.68,
+          "attacks": {
+            "B3": 0.6
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "This method aligns with standard medical protocols for handling amputated body parts, as recommended by trauma care guidelines."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "This method aligns with standard medical protocols for handling amputated body parts, as recommended by trauma care guidelines.",
+          "cate": "P",
+          "confidence": 0.92,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Standard protocols may not always be applicable if the amputated part is severely contaminated or damaged, reducing the chances of successful reattachment.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The method assumes immediate access to moist gauze, a plastic bag, and ice, which may not always be available in non-medical settings like a school.",
+          "confidence": 0.7,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if contamination occurs, modern surgical techniques can often clean and prepare the amputated part for reattachment, making the protocol still broadly valid.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Schools and workplaces are increasingly equipped with first-aid kits that include materials like gauze and plastic bags, mitigating the availability issue.",
+          "confidence": 0.78,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Avoiding dry ice or freezing the finger directly prevents cellular damage that could compromise surgical reattachment."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Avoiding dry ice or freezing the finger directly prevents cellular damage that could compromise surgical reattachment.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Direct freezing may still be necessary if the transport time exceeds a critical threshold, as cellular degradation occurs rapidly at room temperature.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Modern surgical techniques can sometimes compensate for minor cellular damage, reducing the absolute necessity of perfect preservation.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Moist gauze alone may not provide sufficient protection against bacterial contamination during transport.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Sterile saline-soaked gauze is clinically proven to reduce bacterial growth compared to plain moist gauze.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.85
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "P",
+        "text": "The described transport method maximizes the chances of successful replantation by maintaining tissue integrity until surgical evaluation."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The described transport method maximizes the chances of successful replantation by maintaining tissue integrity until surgical evaluation.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The method may not be effective if the finger is not kept at the correct temperature, potentially causing tissue damage.",
+          "confidence": 0.7,
+          "attacks": {
+            "A6": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Medical guidelines consistently recommend this method, ensuring proper temperature control if followed correctly.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The principal may not have the necessary training to properly handle and transport the amputated finger, reducing effectiveness.",
+          "confidence": 0.6,
+          "attacks": {
+            "A6": 0.55
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Basic instructions can be quickly provided to the principal, ensuring proper handling even without specialized training.",
+          "confidence": 0.75,
+          "attacks": {
+            "B2": 0.8
+          }
+        }
+      ]
+    }
+  }
+}

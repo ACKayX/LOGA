@@ -1,0 +1,207 @@
+{
+  "claim": "Ariana hides in vegetation. All frogs that live in damp environments either hide in vegetation or burrow into soil. Cairo inhabits forests. If Cairo is a small-sized frog, then he lives on land and eats insects. Cairo does not jump a long distance. Ariana is agile. If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both). Cairo burrows into soil or hibernates underground. Cairo hides in vegetation. If Cairo either breathes air or inhabits forests (but not both), then he lives on land. Cairo is agile. If Cairo has webbed feet, then he either hibernates underground or breathes air, but not both. All frogs that swim efficiently have webbed feet. If Cairo either has powerful legs or uses stream current (but not both), then he can swim efficiently. Cairo lives in a damp environment. If Ariana is agile, then he either swims efficiently or jumps a long distance (but not both). Either Cairo lives on land or lives in water, but not both. If Cairo is small, then he hibernates underground and eats insects. If Galilea has webbed feet, then he either hibernates underground or breathes air, but not both.Based on the above information, is the following statement true, false, or uncertain? Cairo lives in water.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "From the statement 'Either Cairo lives on land or lives in water, but not both,' and the deduction that Cairo lives on land, it follows directly that Cairo does not live in water."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the statement 'Either Cairo lives on land or lives in water, but not both,' and the deduction that Cairo lives on land, it follows directly that Cairo does not live in water.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A1 references 'Cairo' and statements about 'Cairo lives on land or lives in water,' but these elements do not appear anywhere in the given claim or its premises about camels, Goobers, and Blossom. Therefore, A1 is completely irrelevant to the claim about whether Goobers is well-hydrated.",
+          "confidence": 0.99,
+          "attacks": {
+            "A1": 0.98
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A1 is irrelevant to the main claim, it is internally valid as a logical deduction from its own premises. The attack B1 challenges relevance, not internal validity. A1 correctly applies the exclusive 'or' rule: if P is true and 'P or Q but not both' holds, then Q must be false.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Internal validity of an isolated deduction does not restore its relevance to the target claim. The task is to evaluate 'Goobers is well-hydrated' using the provided premises. Since A1's content shares no terms, entities, or logical connections with those premises, it provides zero support for any conclusion about the claim, regardless of its internal structure.",
+          "confidence": 0.92,
+          "attacks": {
+            "C1": 0.85,
+            "A1": 0.95
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The premise 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land' combined with 'Cairo inhabits forests' implies Cairo lives on land, which excludes living in water."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The premise 'If Cairo either breathes air or inhabits forests (but not both), then he lives on land' combined with 'Cairo inhabits forests' implies Cairo lives on land, which excludes living in water.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is irrelevant to the claim about Goobers being well-hydrated. The claim and given information are about camels (Goobers, Blossom), while A2 discusses Cairo in a completely different context about breathing air, forests, and living on land versus water.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance, A2 might have been intended as a test of logical form extraction from the original problem statement, which contains multiple complex conditionals. The original prompt includes many premises about camels, and A2 appears to be analyzing a different extracted conditional not directly about Goobers.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if A2 was analyzing a logical sub-component, it doesn't address the actual claim 'Goobers is well-hydrated'. For that claim, we need to use the given premises about thirst, water, exhaustion, stumbling, injury, etc. A2's content about Cairo and forests has no connection to hydration status.",
+          "confidence": 0.88,
+          "attacks": {
+            "C1": 0.8,
+            "A2": 0.9
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Given 'All frogs that live in damp environments either hide in vegetation or burrow into soil,' and 'Cairo lives in a damp environment,' along with 'Cairo hides in vegetation,' this describes terrestrial behavior, consistent with living on land, not in water."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Given 'All frogs that live in damp environments either hide in vegetation or burrow into soil,' and 'Cairo lives in a damp environment,' along with 'Cairo hides in vegetation,' this describes terrestrial behavior, consistent with living on land, not in water.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is completely irrelevant to the claim about Goobers being well-hydrated, as it discusses frogs (Cairo) and terrestrial behavior, while the claim is about camels (Goobers) and hydration status.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A3 appears to be from a different logical puzzle entirely (about frogs and damp environments), not from the provided premises about camels, Goobers, heavy loads, stumbling, exhaustion, injury, balance, and hydration.",
+          "confidence": 0.98,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were relevant, its conclusion 'consistent with living on land, not in water' does not logically support the negation of 'Goobers is well-hydrated' (cate: S). Hydration status (well-hydrated vs. thirsty) is different from habitat (land vs. water).",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The information 'Cairo burrows into soil or hibernates underground' indicates activities associated with terrestrial habitats, supporting that Cairo lives on land rather than in water."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The information 'Cairo burrows into soil or hibernates underground' indicates activities associated with terrestrial habitats, supporting that Cairo lives on land rather than in water.",
+          "cate": "P",
+          "confidence": 0.72,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 incorrectly applies information about 'Cairo' to a claim about 'Atharv'. The contexts are completely unrelated, making A4 irrelevant to the claim about whether Atharv follows his passion.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.98
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Burrowing or hibernating underground does not exclusively indicate terrestrial life; some aquatic or amphibious animals also burrow into substrates or enter dormant states in mud or sediment.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 is technically possible, for most common interpretations, burrowing into soil and hibernating underground are strongly associated with terrestrial mammals, reptiles, or insects, not typical aquatic behavior.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Since 'Cairo does not jump a long distance' and 'Cairo is agile,' the rule 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both)' forces Cairo to swim efficiently, but 'All frogs that swim efficiently have webbed feet' and the condition on webbed feet imply terrestrial constraints, ultimately leading to Cairo living on land."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Since 'Cairo does not jump a long distance' and 'Cairo is agile,' the rule 'If Cairo is agile, then he either swims efficiently or jumps a long distance (but not both)' forces Cairo to swim efficiently, but 'All frogs that swim efficiently have webbed feet' and the condition on webbed feet imply terrestrial constraints, ultimately leading to Cairo living on land.",
+          "cate": "P",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A5 is completely irrelevant to the claim about Atharv following his passion. It discusses a different entity (Cairo), different predicates (jumping distance, agility, swimming, webbed feet, living on land), and different logical rules. There is no logical connection to the given claim or its supporting information.",
+          "confidence": 0.99,
+          "attacks": {
+            "A5": 1.0
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A5 contains a category error. The original claim is about Atharv and logical conditions regarding success, expertise, contentment, talent, joy, progress, goals, risks, fulfillment, influence, skills, passion, and community. A5 introduces an entirely different scenario about Cairo (presumably a frog) with predicates about physical abilities and habitat. These are unrelated domains.",
+          "confidence": 0.98,
+          "attacks": {
+            "A5": 0.95
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if we ignore the irrelevance, A5's internal logic is applied to the wrong context. The 'cate' was originally assigned as 'S' (supporting negation of the claim), but the argument's text doesn't mention Atharv's passion at all, so it cannot logically support either the truth or the negation of the claim 'Atharv follows his passion.'",
+          "confidence": 0.97,
+          "attacks": {
+            "A5": 0.9
+          }
+        }
+      ]
+    }
+  }
+}

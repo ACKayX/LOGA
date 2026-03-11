@@ -1,0 +1,213 @@
+{
+  "claim": "Context:'''\nVance will make groundbreaking discoveries if he conducts rigorous research. If Ivan studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both. Vance conducts rigorous research. Vance studies ocean depths. If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Vance inspires new generations.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "From the Context: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' It is given that 'Vance studies ocean depths.' Therefore, one of the two outcomes must occur, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "From the Context: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' It is given that 'Vance studies ocean depths.' Therefore, one of the two outcomes must occur, but not both.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states: 'Vance will make groundbreaking discoveries if he conducts rigorous research.' It also states: 'Vance conducts rigorous research.' Therefore, Vance will make groundbreaking discoveries. Since the conditional about ocean depths states 'either makes groundbreaking discoveries or inspires new generations, but not both,' if Vance makes groundbreaking discoveries, he cannot also inspire new generations.",
+          "confidence": 1.0,
+          "attacks": {
+            "A1": 1.0
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "From the Context: 'Vance will make groundbreaking discoveries if he conducts rigorous research.' It is given that 'Vance conducts rigorous research.' Therefore, Vance will make groundbreaking discoveries."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "From the Context: 'Vance will make groundbreaking discoveries if he conducts rigorous research.' It is given that 'Vance conducts rigorous research.' Therefore, Vance will make groundbreaking discoveries.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "From the Context: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' It is given that 'Vance studies ocean depths.' Therefore, if Vance makes groundbreaking discoveries, he cannot also inspire new generations.",
+          "confidence": 0.98,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the Context: 'If Ivan studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' This statement is about Ivan, not Vance. The rule for Vance is separate and does not contain the 'but not both' restriction for the same conditions.",
+          "confidence": 0.6,
+          "attacks": {
+            "B1": 0.65
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Since Vance makes groundbreaking discoveries (from A2), and from the conditional in A1, he cannot both make groundbreaking discoveries and inspire new generations, Vance cannot inspire new generations."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Since Vance makes groundbreaking discoveries (from A2), and from the conditional in A1, he cannot both make groundbreaking discoveries and inspire new generations, Vance cannot inspire new generations.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes A2's conclusion ('Vance makes groundbreaking discoveries') is true, but A2 is not provided in the context, so this premise is unsupported.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even without A2, the context directly states: 'Vance will make groundbreaking discoveries if he conducts rigorous research' and 'Vance conducts rigorous research', so Vance makes groundbreaking discoveries by modus ponens.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The context also states: 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' Since Vance studies ocean depths (given in context), and he makes groundbreaking discoveries (from C1), he cannot inspire new generations by the exclusive 'or'.",
+          "confidence": 0.92,
+          "attacks": {
+            "C1": 0.3
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The Context explicitly states the condition for Vance: if he studies ocean depths, he either makes groundbreaking discoveries or inspires new generations, but not both. Given that he makes groundbreaking discoveries, the 'or' condition is satisfied without requiring the second disjunct, and the 'not both' clause prevents the second disjunct from being true."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The Context explicitly states the condition for Vance: if he studies ocean depths, he either makes groundbreaking discoveries or inspires new generations, but not both. Given that he makes groundbreaking discoveries, the 'or' condition is satisfied without requiring the second disjunct, and the 'not both' clause prevents the second disjunct from being true.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' However, the Context also states 'Vance will make groundbreaking discoveries if he conducts rigorous research' and 'Vance conducts rigorous research.' This implies Vance makes groundbreaking discoveries. But the 'not both' clause only prevents both from being true simultaneously; it doesn't prevent Vance from inspiring new generations if he also makes groundbreaking discoveries - it explicitly forbids that combination.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The Context's logical structure is: (1) Vance conducts rigorous research \u2192 Vance makes groundbreaking discoveries. (2) Vance studies ocean depths \u2192 (Vance makes groundbreaking discoveries XOR Vance inspires new generations). (3) Vance conducts rigorous research. (4) Vance studies ocean depths. From (1) and (3): Vance makes groundbreaking discoveries. From (2) and (4): (groundbreaking discoveries XOR inspires new generations). Since groundbreaking discoveries is true, XOR requires inspires new generations to be false.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.88
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The XOR interpretation in C1 assumes mutual exclusivity, but the Context phrase 'not both' only explicitly prohibits both being true, not both being false. If 'not both' means at most one can be true (which is the natural reading), then both could be false. However, the Context doesn't specify whether both can be false.",
+          "confidence": 0.65,
+          "attacks": {
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "In natural language and logical reasoning, 'either A or B, but not both' is universally understood as the exclusive OR (XOR), which means exactly one of A or B must be true. This is the standard interpretation in formal logic and common discourse. The Context provides no indication to use a non-standard interpretation.",
+          "confidence": 0.88,
+          "attacks": {
+            "D1": 0.82
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "Logical deduction: Let G = 'Vance makes groundbreaking discoveries', I = 'Vance inspires new generations'. From the Context: (1) If Vance conducts rigorous research, then G. (2) Vance conducts rigorous research. (3) Therefore, G is true. (4) If Vance studies ocean depths, then (G xor I). (5) Vance studies ocean depths. (6) Therefore, (G xor I) is true. Since G is true, for (G xor I) to be true, I must be false. Thus, Vance does not inspire new generations."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Logical deduction: Let G = 'Vance makes groundbreaking discoveries', I = 'Vance inspires new generations'. From the Context: (1) If Vance conducts rigorous research, then G. (2) Vance conducts rigorous research. (3) Therefore, G is true. (4) If Vance studies ocean depths, then (G xor I). (5) Vance studies ocean depths. (6) Therefore, (G xor I) is true. Since G is true, for (G xor I) to be true, I must be false. Thus, Vance does not inspire new generations.",
+          "cate": "P",
+          "confidence": 1.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that 'If Vance conducts rigorous research, then G' is an unconditional logical implication from the Context. However, the Context states 'Vance will make groundbreaking discoveries if he conducts rigorous research.' This is a conditional statement that does not guarantee G is true unless the condition is met. While the condition is met (Vance conducts rigorous research), the argument's logical structure is correct, but this attack questions whether the Context's phrasing is being interpreted with absolute logical rigor. Specifically, it suggests that natural language conditionals might allow for exceptions not captured in the formalization.",
+          "confidence": 0.3,
+          "attacks": {
+            "A5": 0.3
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument relies on the interpretation of 'but not both' as logical exclusive or (xor). While this is the standard interpretation, the Context's phrasing 'either makes groundbreaking discoveries or inspires new generations, but not both' could be ambiguous in rare philosophical contexts where 'or' is inclusive and 'but not both' is a separate, non-truth-functional constraint. This creates a potential semantic inconsistency if the logical framework is not strictly truth-functional.",
+          "confidence": 0.25,
+          "attacks": {
+            "A5": 0.25
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The Context provides no information suggesting Vance inspires new generations; instead, all given conditions lead to the conclusion that he makes groundbreaking discoveries, which excludes the possibility of inspiring new generations due to the exclusive 'or' constraint."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The Context provides no information suggesting Vance inspires new generations; instead, all given conditions lead to the conclusion that he makes groundbreaking discoveries, which excludes the possibility of inspiring new generations due to the exclusive 'or' constraint.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The Context states 'If Vance studies ocean depths, then he either makes groundbreaking discoveries or inspires new generations, but not both.' Since it's an exclusive or, the possibility that Vance inspires new generations remains logically open until we determine whether he makes groundbreaking discoveries.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "From the Context: 'Vance conducts rigorous research' and 'Vance will make groundbreaking discoveries if he conducts rigorous research.' This logically entails Vance makes groundbreaking discoveries. Combined with the exclusive or condition, this directly excludes Vance inspiring new generations.",
+          "confidence": 0.98,
+          "attacks": {
+            "B1": 0.95
+          }
+        }
+      ]
+    }
+  }
+}

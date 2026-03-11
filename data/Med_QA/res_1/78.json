@@ -1,0 +1,266 @@
+{
+  "claim": "Consider the following background information: An obese 42-year-old female presents to her primary care physician with a complaint of left knee pain for the past 3 months. She describes the pain as affecting the inside part of the knee as well as the front of her knee, below the kneecap. She denies any inciting injury or trauma to the knee but reports that the pain is worse when she is climbing up stairs or rising from a chair. Physical examination is significant for localized tenderness to palpation over the left anteromedial proximal tibia, 6 cm inferior to the joint line. There is no joint effusion noted. Valgus stress testing is negative for any pain or instability of the knee joint. Radiographs of the left knee are obtained and reveal only mild arthritis, without evidence of any fractures or bony lesions.\n\nGiven the background information the following is corrrect: Based on the information provided, the most likely diagnosis in this patient is a Medical collateral ligament sprain.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "The patient denies any inciting injury or trauma, which is a common cause of medial collateral ligament (MCL) sprains, making this diagnosis less likely."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The patient denies any inciting injury or trauma, which is a common cause of medial collateral ligament (MCL) sprains, making this diagnosis less likely.",
+          "cate": "S",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "MCL sprains can also occur due to repetitive stress or degenerative changes, not just acute trauma, especially in obese patients.",
+          "confidence": 0.65,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of pain or instability on valgus stress testing further reduces the likelihood of an MCL sprain.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Valgus stress testing is negative for pain or instability, which is a key clinical test for MCL sprains, further reducing the likelihood of this diagnosis."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Valgus stress testing is negative for pain or instability, which is a key clinical test for MCL sprains, further reducing the likelihood of this diagnosis.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's pain location and tenderness over the anteromedial proximal tibia could still be consistent with early or mild MCL pathology, despite negative valgus stress testing.",
+          "confidence": 0.65,
+          "attacks": {
+            "A2": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Negative valgus stress testing strongly rules out clinically significant MCL sprains, as this test has high specificity for MCL injuries.",
+          "confidence": 0.88,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "In obese patients, valgus stress testing may be less reliable due to body habitus potentially masking subtle instability.",
+          "confidence": 0.55,
+          "attacks": {
+            "C1": 0.5
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The pain is localized to the anteromedial proximal tibia, which is not a typical location for MCL sprains, as the MCL is located more superiorly along the joint line."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The pain is localized to the anteromedial proximal tibia, which is not a typical location for MCL sprains, as the MCL is located more superiorly along the joint line.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The MCL can refer pain to distal locations, including the anteromedial proximal tibia, due to its broad insertion and surrounding soft tissue connections.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Referred pain from the MCL is rare and typically associated with severe sprains or tears, which are not suggested by the negative valgus stress test in this case.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The absence of joint effusion and negative valgus stress testing strongly argue against an MCL sprain, supporting the original argument's skepticism.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The patient's obesity and activity-related pain are more consistent with patellofemoral pain syndrome or pes anserine bursitis than MCL pathology.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.78
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The absence of joint effusion is inconsistent with an acute MCL sprain, which often presents with swelling due to the ligamentous injury."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The absence of joint effusion is inconsistent with an acute MCL sprain, which often presents with swelling due to the ligamentous injury.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Chronic MCL sprains may not present with effusion, as the acute inflammatory phase has passed.",
+          "confidence": 0.75,
+          "attacks": {
+            "A4": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even in chronic cases, some degree of effusion is typically present if there is significant ligamentous injury.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's localized tenderness over the anteromedial proximal tibia is more consistent with pes anserine bursitis than MCL sprain.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.6,
+            "B1": 0.75,
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The negative valgus stress testing makes MCL sprain less likely regardless of effusion presence.",
+          "confidence": 0.9,
+          "attacks": {
+            "A4": 0.3,
+            "B1": 0.85,
+            "C1": 0.8,
+            "D1": 0.4
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "S",
+        "text": "The patient's symptoms are more consistent with patellofemoral pain syndrome or pes anserine bursitis, given the location of pain and exacerbation with stair climbing and rising from a chair."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "The patient's symptoms are more consistent with patellofemoral pain syndrome or pes anserine bursitis, given the location of pain and exacerbation with stair climbing and rising from a chair.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The absence of joint effusion and negative valgus stress testing makes a ligament sprain less likely, but does not strongly support patellofemoral pain syndrome or pes anserine bursitis over other possibilities.",
+          "confidence": 0.65,
+          "attacks": {
+            "A5": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The localized tenderness over the anteromedial proximal tibia is a classic finding in pes anserine bursitis, which strongly supports A5's argument.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Mild arthritis seen on radiographs could explain the patient's symptoms without requiring additional diagnoses like patellofemoral pain syndrome or bursitis.",
+          "confidence": 0.55,
+          "attacks": {
+            "A5": 0.5
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The pain pattern (worse with stair climbing and rising from chair) is more characteristic of patellofemoral pain syndrome than mild arthritis alone.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Radiographs reveal only mild arthritis without evidence of fractures or bony lesions, which does not support the diagnosis of an MCL sprain, as these findings are not typically associated with ligamentous injuries."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Radiographs reveal only mild arthritis without evidence of fractures or bony lesions, which does not support the diagnosis of an MCL sprain, as these findings are not typically associated with ligamentous injuries.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "MCL sprains are primarily diagnosed clinically through physical examination, not radiographs, which are often normal even in confirmed cases.",
+          "confidence": 0.78,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's symptoms (pain with climbing stairs and rising from a chair) and localized tenderness are consistent with MCL sprain, regardless of radiographic findings.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Mild arthritis seen on radiographs could contribute to the patient's symptoms independently of any ligamentous injury, complicating the diagnosis.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.6
+          }
+        }
+      ]
+    }
+  }
+}

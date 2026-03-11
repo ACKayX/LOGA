@@ -1,0 +1,207 @@
+{
+  "claim": "If Joshua is passionate about nature and excels in academics, then he will obtain a PhD. Joshua does not gain experience. If someone enters the workforce, then they gain experience and develop skills. If Joshua dedicates himself to research, then he makes new discoveries. Joshua either makes new discoveries or collaborates with others, but not both. Joshua either teaches at a university or publishes findings, but not both. Cowboy either teaches at a university or publishes findings, but not both. If Joshua obtains a PhD, then he will teach at a university. Yara develops skills. If Joshua pursues an advanced degree, then he will obtain a PhD. Joshua either collaborates with others or publishes findings. Joshua develops skills. If Joshua has curiosity, then he has a passion for learning and pursues an advanced degree. Anyone who collects data and analyzes results can publish findings. Joshua either enters the workforce or pursues an advanced degree, but not both at the same time. Yara either collaborates with others or publishes findings.Based on the above information, is the following statement true, false, or uncertain? Joshua dedicates himself to research.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Joshua develops skills, and if someone enters the workforce, they gain experience and develop skills. Since Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree, as he either enters the workforce or pursues an advanced degree, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Joshua develops skills, and if someone enters the workforce, they gain experience and develop skills. Since Joshua does not gain experience, he cannot have entered the workforce. Therefore, Joshua must pursue an advanced degree, as he either enters the workforce or pursues an advanced degree, but not both.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that Joshua develops skills does not necessarily mean he entered the workforce. The statement 'If someone enters the workforce, then they gain experience and develop skills' is a conditional, not a biconditional. Joshua could develop skills through other means (e.g., education, personal projects) without entering the workforce.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if Joshua pursues an advanced degree, it doesn't directly lead to 'Joshua dedicates himself to research.' The claim we're evaluating is about research dedication, not about obtaining a degree. Pursuing an advanced degree could involve coursework without significant research dedication.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While skills can come from other sources, the given information states Joshua develops skills AND does not gain experience. The only conditional linking skill development to workforce entry is the one A1 uses. Without alternative skill-development pathways specified, A1's inference remains reasonable.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.68
+          }
+        },
+        {
+          "id": "B3",
+          "text": "From 'If Joshua pursues an advanced degree, then he will obtain a PhD' and 'If Joshua obtains a PhD, then he will teach at a university,' we can deduce that if Joshua pursues an advanced degree, he will teach at a university. But we also have 'Joshua either teaches at a university or publishes findings, but not both.' If he teaches, he cannot publish. However, we also have 'Joshua either collaborates with others or publishes findings.' If he doesn't publish, he must collaborate. But we also have 'Joshua either makes new discoveries or collaborates with others, but not both.' If he collaborates, he cannot make new discoveries. And 'If Joshua dedicates himself to research, then he makes new discoveries.' So if he pursues an advanced degree, he cannot make new discoveries, and thus cannot dedicate himself to research. Therefore, pursuing an advanced degree actually contradicts research dedication.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "B3's chain assumes all conditionals are strict and simultaneous. However, 'Joshua either makes new discoveries or collaborates with others, but not both' could refer to different time periods or projects. He could dedicate himself to research (making discoveries) at one time, and later collaborate. The logical constraints might not apply at the exact same moment.",
+          "confidence": 0.65,
+          "attacks": {
+            "B3": 0.6
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even with temporal flexibility, the conditionals create strong constraints. If Joshua pursues an advanced degree, he will eventually teach (per the PhD condition). Teaching excludes publishing. Not publishing forces collaboration. Collaboration excludes making discoveries. Since research dedication requires making discoveries, the path from advanced degree to research dedication is logically blocked under the given rules.",
+          "confidence": 0.78,
+          "attacks": {
+            "C2": 0.72
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Joshua either teaches at a university or publishes findings, but not both. Since he teaches at a university, he does not publish findings."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "If Joshua pursues an advanced degree, then he will obtain a PhD. If Joshua obtains a PhD, then he will teach at a university. Joshua either teaches at a university or publishes findings, but not both. Since he teaches at a university, he does not publish findings.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 is completely irrelevant to the claim about Kayleigh. It discusses a different person (Joshua) and different predicates (pursuing degrees, teaching, publishing), which have no logical connection to the premises or conclusion about Kayleigh's mischievousness.",
+          "confidence": 0.95,
+          "attacks": {
+            "A2": 0.99
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A2 is irrelevant to Kayleigh's case, one could interpret the task as requiring analysis of the given argument in isolation. In that isolated context, A2 presents a logical chain: If P\u2192Q, Q\u2192R, R xor S, and R is true, then not S. This internal logic is valid if the premises are accepted.",
+          "confidence": 0.7,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even in isolation, A2's conclusion 'he does not publish findings' depends on the truth of its premises. The premises are unsupported assertions about Joshua. Without evidence for those conditionals and the exclusive disjunction, the argument's soundness is questionable, weakening its persuasive power.",
+          "confidence": 0.75,
+          "attacks": {
+            "C1": 0.8,
+            "A2": 0.7
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Joshua either collaborates with others or publishes findings. Since he does not publish findings (as he teaches at a university), he must collaborate with others."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Joshua either collaborates with others or publishes findings. Since he does not publish findings (as he teaches at a university), he must collaborate with others.",
+          "cate": "S",
+          "confidence": 0.45,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The premise that teaching at a university implies 'he does not publish findings' is false. Many university professors actively publish research findings as part of their academic duties.",
+          "confidence": 0.85,
+          "attacks": {
+            "A3": 0.9
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While many professors publish, some teaching-focused positions at universities (like lecturers or adjuncts) may not have publishing requirements, so the original premise could be contextually true in specific cases.",
+          "confidence": 0.65,
+          "attacks": {
+            "B1": 0.4
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The logical structure 'either A or B, not A, therefore B' is valid, but the truth of 'not A' is what's being challenged. If Joshua actually does publish findings, then the conclusion doesn't follow.",
+          "confidence": 0.8,
+          "attacks": {
+            "A3": 0.85
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument assumes mutual exclusivity ('either collaborates or publishes') without justification. Many academics both collaborate with others AND publish findings; these are not mutually exclusive activities.",
+          "confidence": 0.75,
+          "attacks": {
+            "A3": 0.8
+          }
+        },
+        {
+          "id": "C2",
+          "text": "In some funding or institutional contexts, there might be practical trade-offs between extensive collaboration time and publication output, creating a de facto either-or situation for individual researchers.",
+          "confidence": 0.55,
+          "attacks": {
+            "B3": 0.3
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "Joshua either makes new discoveries or collaborates with others, but not both. Since he collaborates with others, he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Therefore, Joshua does not dedicate himself to research."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Joshua either makes new discoveries or collaborates with others, but not both. Since he collaborates with others, he does not make new discoveries. If Joshua dedicates himself to research, then he makes new discoveries. Therefore, Joshua does not dedicate himself to research.",
+          "cate": "S",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A4 is completely irrelevant to the claim about Kayleigh. It discusses a different person (Joshua) and different predicates (makes discoveries, collaborates, dedicates to research) that don't appear in the original claim's premises.",
+          "confidence": 0.99,
+          "attacks": {
+            "A4": 0.99
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if A4 were relevant, its logical structure is valid but its conclusion doesn't help determine whether 'Kayleigh is not mischievous' is true, false, or uncertain. The claim requires reasoning about Kayleigh's properties, not Joshua's.",
+          "confidence": 0.97,
+          "attacks": {
+            "A4": 0.97
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 and B2 correctly point out A4's irrelevance, one could argue that A4 demonstrates valid deductive reasoning, which might be analogous to reasoning needed for the Kayleigh problem. However, this is weak since the domains are completely disjoint.",
+          "confidence": 0.45,
+          "attacks": {
+            "B1": 0.25,
+            "B2": 0.25
+          }
+        }
+      ]
+    }
+  }
+}

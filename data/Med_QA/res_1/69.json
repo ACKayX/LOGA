@@ -1,0 +1,197 @@
+{
+  "claim": "Consider the following background information: A 52-year-old woman presents with a complaint of headache for the past 10 days. Her headache is diffuse, dull in character, moderate in intensity, and is worse in the morning. It is not associated with fever and sensitivity to light or sound. She experiences occasional nausea but no vomiting. She did not have similar headaches in the past. Her blood pressure is 140/90 mm Hg; pulse, 60/min, and body mass index is 33.5 kg/m2. The neurological examination reveals normal extraocular movements. Mild bilateral papilledema is present. A magnetic resonance imaging of the brain reveals a solitary lesion in the left temporal region with predominant hemorrhage. Refer to the image below of the MRI of the brain.\n\nGiven the background information the following is corrrect: Multiple myeloma is the type of cancer that has the highest tendency to cause this brain lesion.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "S",
+        "text": "Multiple myeloma primarily affects the bone marrow and is not known for causing solitary hemorrhagic brain lesions; metastatic cancers (e.g., lung, breast, melanoma) are more common causes."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Multiple myeloma primarily affects the bone marrow and is not known for causing solitary hemorrhagic brain lesions; metastatic cancers (e.g., lung, breast, melanoma) are more common causes.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While multiple myeloma is rare, there are documented cases of solitary hemorrhagic brain lesions caused by plasmacytomas (tumors of plasma cells, which are also seen in multiple myeloma).",
+          "confidence": 0.6,
+          "attacks": {
+            "A1": 0.55
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The likelihood of a solitary hemorrhagic brain lesion being caused by multiple myeloma is extremely low compared to metastatic cancers, making A1's argument statistically stronger.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's age (52) and BMI (33.5) increase the likelihood of metastatic cancer (e.g., breast cancer) over multiple myeloma, supporting A1's reasoning.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Metastatic cancers typically present with multiple brain lesions, not solitary ones, which slightly weakens B2's argument.",
+          "confidence": 0.65,
+          "attacks": {
+            "B2": 0.5
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "The imaging findings of a solitary hemorrhagic lesion in the temporal region are more consistent with metastatic cancer or primary brain tumors (e.g., glioblastoma) rather than multiple myeloma."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The imaging findings of a solitary hemorrhagic lesion in the temporal region are more consistent with metastatic cancer or primary brain tumors (e.g., glioblastoma) rather than multiple myeloma.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Multiple myeloma rarely causes solitary hemorrhagic brain lesions; it more commonly presents with diffuse lytic bone lesions or plasmacytomas.",
+          "confidence": 0.78,
+          "attacks": {
+            "A2": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Metastatic cancer from lung, breast, or melanoma is statistically more likely to present as a solitary hemorrhagic brain lesion than primary brain tumors in this age group.",
+          "confidence": 0.82,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Glioblastoma, a primary brain tumor, often presents with hemorrhage and is more common in older adults, making it a plausible differential diagnosis.",
+          "confidence": 0.79,
+          "attacks": {
+            "C1": 0.7
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The absence of known primary cancer or systemic symptoms makes metastatic cancer less likely than a primary brain tumor in this case.",
+          "confidence": 0.75,
+          "attacks": {
+            "D1": 0.68
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "Multiple myeloma rarely metastasizes to the brain, and when it does, it typically presents with diffuse leptomeningeal involvement rather than a solitary hemorrhagic lesion."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Multiple myeloma rarely metastasizes to the brain, and when it does, it typically presents with diffuse leptomeningeal involvement rather than a solitary hemorrhagic lesion.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "While rare, solitary hemorrhagic brain lesions have been documented in multiple myeloma cases, particularly in advanced or aggressive disease.",
+          "confidence": 0.65,
+          "attacks": {
+            "A3": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The reported incidence of solitary hemorrhagic brain metastases in multiple myeloma is less than 1% of cases, making it an extremely unlikely explanation.",
+          "confidence": 0.78,
+          "attacks": {
+            "B1": 0.75
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The presence of papilledema and morning headache pattern strongly suggests increased intracranial pressure, which is more characteristic of rapidly expanding lesions than indolent metastases.",
+          "confidence": 0.82,
+          "attacks": {
+            "A3": 0.45
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Other cancers like melanoma, renal cell carcinoma, and choriocarcinoma are far more likely to cause solitary hemorrhagic brain metastases than multiple myeloma.",
+          "confidence": 0.88,
+          "attacks": {
+            "A3": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The patient's risk factors (e.g., obesity, hypertension) and imaging findings are more suggestive of a primary brain hemorrhage or metastatic lesion, not multiple myeloma."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The patient's risk factors (e.g., obesity, hypertension) and imaging findings are more suggestive of a primary brain hemorrhage or metastatic lesion, not multiple myeloma.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Multiple myeloma can metastasize to the brain, and its hemorrhagic presentation is not uncommon in such cases.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Hemorrhagic brain lesions in multiple myeloma are rare compared to other metastatic cancers like lung or breast cancer.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The patient's hypertension and obesity strongly correlate with primary intracerebral hemorrhage, making it a more likely diagnosis.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "Primary brain hemorrhages typically occur in deeper brain structures, not the temporal lobe, reducing its likelihood here.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.5
+          }
+        }
+      ]
+    }
+  }
+}

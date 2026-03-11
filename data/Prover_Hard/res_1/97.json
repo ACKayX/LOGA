@@ -1,0 +1,287 @@
+{
+  "claim": "If Mia is highly respected, then she is either an expert in her field or charismatic, but not both. Mia is not charismatic. Anyone who has expertise in their field either serves clients well or adeptly navigates complex markets (or both). If someone has high integrity, then they build trust and achieve success. Mia either manages risk or serves clients, but not necessarily both. If Mia is either of high integrity or highly skilled (but not both), then she is highly respected. Mia builds trust. Mia communicates effectively with her clients. Mia does not achieve success. Everyone either navigates complex financial markets or communicates effectively with their clients, but not both is not a requirement. Mia manages risk.Based on the above information, is the following statement true, false, or uncertain? Mia is not highly skilled.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "Mia builds trust, and if someone has high integrity, they build trust and achieve success. Mia does not achieve success, so Mia does not have high integrity. If Mia is either of high integrity or highly skilled (but not both), then she is highly respected. Since Mia does not have high integrity, for her to be highly respected, she must be highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "Mia builds trust, and if someone has high integrity, they build trust and achieve success. Mia does not achieve success, so Mia does not have high integrity. If Mia is either of high integrity or highly skilled (but not both), then she is highly respected. Since Mia does not have high integrity, for her to be highly respected, she must be highly skilled.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes the conditional 'if someone has high integrity, they build trust and achieve success' is a biconditional. From 'Mia does not achieve success', we cannot logically conclude 'Mia does not have high integrity' unless the statement is 'if and only if'. The original premise only states a one-way implication.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument's conclusion about Mia being highly skilled relies on the premise 'Mia does not have high integrity', which itself is not validly derived (as shown in B1). Therefore, the entire chain of reasoning about her being highly respected and thus highly skilled collapses due to this foundational logical error.",
+          "confidence": 0.8,
+          "attacks": {
+            "A1": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if the logical error in B1 is granted, the final step contains another issue. The premise states: 'If Mia is either of high integrity or highly skilled (but not both), then she is highly respected.' From 'Mia does not have high integrity' and the assumption she is highly respected, it does not necessarily follow she must be highly skilled. She could be neither high integrity nor highly skilled, and the conditional would simply be false (she wouldn't be highly respected). The argument incorrectly treats the 'or (but not both)' condition as exhaustive when it is not a given that she satisfies the antecedent at all.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.7,
+            "A1": 0.85
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "S",
+        "text": "Mia manages risk. Mia either manages risk or serves clients, but not necessarily both. This does not confirm she serves clients. Anyone who has expertise in their field either serves clients well or adeptly navigates complex markets (or both). Since Mia's service to clients is not confirmed, her expertise is not established. If she is not an expert, and she is not charismatic, then she cannot be highly respected. Without being highly respected, the condition linking high integrity or high skill to respect does not apply, so she may not be highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "Mia manages risk. Mia either manages risk or serves clients, but not necessarily both. This does not confirm she serves clients. Anyone who has expertise in their field either serves clients well or adeptly navigates complex markets (or both). Since Mia's service to clients is not confirmed, her expertise is not established. If she is not an expert, and she is not charismatic, then she cannot be highly respected. Without being highly respected, the condition linking high integrity or high skill to respect does not apply, so she may not be highly skilled.",
+          "cate": "S",
+          "confidence": 0.55,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes that not confirming she serves clients means her expertise is not established. However, the premise states 'anyone who has expertise... either serves clients well or adeptly navigates complex markets (or both).' Mia could still have expertise by adeptly navigating complex markets, even if she doesn't serve clients.",
+          "confidence": 0.85,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 is correct about the 'or' condition, the original A2 argument is about the claim 'Evelyn does not develop resilience.' A2 attempts to draw an analogy with Mia, but the premises about Evelyn are entirely separate. The reasoning about Mia's expertise and respect may not transfer logically to Evelyn's situation at all.",
+          "confidence": 0.9,
+          "attacks": {
+            "A2": 0.95
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument contains a non sequitur. The conclusion 'she may not be highly skilled' does not follow from 'the condition linking high integrity or high skill to respect does not apply.' The absence of a condition for respect does not logically imply anything about her skill level; skill could exist independently of respect.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.87
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The initial premise 'Mia either manages risk or serves clients, but not necessarily both' is misused. 'Not necessarily both' means they are not required to occur together, but it does not mean they cannot both occur. Mia managing risk does not preclude her from also serving clients; the statement is compatible with both being true.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.75
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "Mia communicates effectively with her clients. Everyone either navigates complex financial markets or communicates effectively with their clients, but not both is not a requirement, meaning they can do both. However, effective communication alone does not imply expertise. Since she is not charismatic, if she is highly respected, she must be an expert. But her expertise is not directly stated, so she may not be highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "Mia communicates effectively with her clients. Everyone either navigates complex financial markets or communicates effectively with their clients, but not both is not a requirement, meaning they can do both. However, effective communication alone does not imply expertise. Since she is not charismatic, if she is highly respected, she must be an expert. But her expertise is not directly stated, so she may not be highly skilled.",
+          "cate": "S",
+          "confidence": 0.0,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A3 is completely irrelevant to the claim about Elina mastering extreme sports. It discusses Mia, communication, expertise, and charisma, which have no logical connection to the premises or conclusion in the given problem.",
+          "confidence": 0.99,
+          "attacks": {
+            "A3": 1.0
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Even if A3 were relevant, its internal logic is confused. It states 'but not both is not a requirement, meaning they can do both,' which is a contradictory reading of the original logical structure. This undermines any potential reasoning it attempts.",
+          "confidence": 0.95,
+          "attacks": {
+            "A3": 0.9
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "Mia does not achieve success. If someone has high integrity, they build trust and achieve success. Mia builds trust but does not achieve success, so she does not have high integrity. For Mia to be highly respected, given she is not of high integrity, she must be highly skilled. However, being highly skilled is not directly confirmed by any other condition, making it uncertain whether she is highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "Mia does not achieve success. If someone has high integrity, they build trust and achieve success. Mia builds trust but does not achieve success, so she does not have high integrity. For Mia to be highly respected, given she is not of high integrity, she must be highly skilled. However, being highly skilled is not directly confirmed by any other condition, making it uncertain whether she is highly skilled.",
+          "cate": "P",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument about Mia is completely irrelevant to the claim about Elina not mastering extreme sports. The claim and supporting information focus exclusively on Elina, Bridget, Stella, and Remington, with no mention of Mia. Therefore, A4 provides zero logical support for the claim.",
+          "confidence": 0.95,
+          "attacks": {
+            "A4": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "Even if we ignore irrelevance, A4's internal logic is flawed. The premise 'If someone has high integrity, they build trust and achieve success' is a conditional (integrity \u2192 trust \u2227 success). Mia builds trust but doesn't achieve success. This only tells us (trust \u2227 \u00acsuccess), which doesn't logically imply \u00acintegrity. The conditional could still be true if Mia has integrity but the conditional itself is false, or if additional conditions are needed for success. The conclusion 'she does not have high integrity' doesn't necessarily follow.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.75
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly points out the formal logical flaw, in practical reasoning, if integrity reliably leads to both trust and success, and someone has trust but lacks success, it's reasonable to question their integrity. The argument uses common-sense abduction, not strict deduction, which has some merit in everyday reasoning.",
+          "confidence": 0.7,
+          "attacks": {
+            "B2": 0.6
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The argument shifts from discussing Mia's integrity to whether she is highly skilled, but never connects back to Elina or extreme sports. The final sentence admits uncertainty about whether Mia is highly skilled, which further undermines any definitive conclusion. An argument that ends with 'making it uncertain' cannot support a definite claim about Elina.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "If Mia is highly respected, then she is either an expert in her field or charismatic, but not both. Mia is not charismatic, so if she is highly respected, she must be an expert. Being an expert requires serving clients well or navigating complex markets. Mia communicates effectively with clients, which may relate to serving them well, suggesting expertise. Thus, she may be highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "If Mia is highly respected, then she is either an expert in her field or charismatic, but not both. Mia is not charismatic, so if she is highly respected, she must be an expert. Being an expert requires serving clients well or navigating complex markets. Mia communicates effectively with clients, which may relate to serving them well, suggesting expertise. Thus, she may be highly skilled.",
+          "cate": "S",
+          "confidence": 0.25,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument is about Mia, but the claim is about Elina. There is no logical connection established between Mia's attributes and Elina's mastery of extreme sports.",
+          "confidence": 0.95,
+          "attacks": {
+            "A5": 0.9
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The reasoning contains a logical flaw: 'Mia communicates effectively with clients, which may relate to serving them well' is speculative. Even if true, serving clients well is only one possible requirement for expertise (the other being navigating complex markets). The argument does not establish that Mia meets either requirement definitively.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The conclusion 'Thus, she may be highly skilled.' does not logically support the claim 'Elina does not master extreme sports.' The argument's conclusion is weak and about a different person (Mia), making it irrelevant to the claim about Elina.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B1 correctly points out the irrelevance to Elina, one could interpret the task as testing general logical reasoning patterns. If the pattern were valid, it might indirectly support evaluating similar logical structures in the main problem.",
+          "confidence": 0.4,
+          "attacks": {
+            "B1": 0.3
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The speculative link ('may relate') is indeed weak, but in some probabilistic reasoning contexts, such suggestive connections are considered. However, they still do not justify a firm conclusion.",
+          "confidence": 0.35,
+          "attacks": {
+            "B2": 0.25
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "Mia manages risk. Managing risk does not directly imply expertise in her field, as expertise requires serving clients well or navigating complex markets. Her risk management could be a separate skill. Without confirmation of her serving clients well or navigating complex markets, she may not be an expert, and thus not highly respected. Without high integrity or high skill leading to respect, she may not be highly skilled."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "Mia manages risk. Managing risk does not directly imply expertise in her field, as expertise requires serving clients well or navigating complex markets. Her risk management could be a separate skill. Without confirmation of her serving clients well or navigating complex markets, she may not be an expert, and thus not highly respected. Without high integrity or high skill leading to respect, she may not be highly skilled.",
+          "cate": "S",
+          "confidence": 0.65,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument incorrectly assumes that managing risk is not part of expertise in many fields. In finance, consulting, or project management, risk management is a core component of expertise and directly contributes to serving clients well and navigating complex markets.",
+          "confidence": 0.78,
+          "attacks": {
+            "A6": 0.82
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument makes a logical leap from 'may not be an expert' to 'not highly respected' to 'not highly skilled.' Respect and skill, while related, are distinct concepts. One can be highly skilled without being widely respected, especially if their work is specialized or not publicly visible.",
+          "confidence": 0.85,
+          "attacks": {
+            "A6": 0.88
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While risk management can be part of expertise, it is often a specialized function separate from client service or market navigation. A risk manager might excel at quantitative models without understanding client needs or market dynamics, supporting A6's point about possible separation of skills.",
+          "confidence": 0.72,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The connection between skill and respect is often strong in professional contexts. High skill typically leads to peer recognition and respect, even if not public. A6's chain (lack of expertise \u2192 lack of respect \u2192 lack of high skill) oversimplifies but captures a common professional reality.",
+          "confidence": 0.68,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even if risk management is separate, it is itself a high-level skill. The original claim is about Rosalia, but A6 discusses Mia in a different context. This makes A6's relevance to the original claim's logical structure questionable from the start.",
+          "confidence": 0.9,
+          "attacks": {
+            "A6": 0.92,
+            "C1": 0.75
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "claim": "Consider the following background information: A 66-year-old man is brought to the emergency room by his wife due to abdominal distension and persistent somnolence for the past 2 weeks. The patient\u2019s wife says that he has been sleeping much more than usual for the past 5 days. His bowel and bladder habit have not changed. His past medical history is significant for alcoholic liver cirrhosis. His vital signs include: pulse 76/min, respiratory rate 15/min, temperature 38.0\u00b0C (100.4\u00b0F) and blood pressure 122/75 mm Hg. On physical examination, the patient is altered and not responsive to commands. Oriented x 0. The abdomen is significantly distended. Shifting dullness is present and a positive fluid wave can be elicited. Hyperreflexia and asterixis are noted. Laboratory findings are significant for the following: Laboratory test Sodium 140 mEq/L Potassium 3.5 mEq/L Chloride 97 mEq/L Glucose 90 mg/dL Ammonia 100 \u00b5g/dL (ref: 19-60 \u00b5g/dL) Arterial blood gas pH 7.4 pCO2 40 mm Hg pO2 90 mm Hg HCO3 26 mEq/L An abdominal ultrasound shows surface nodularity compatible with cirrhosis but no other changes aside from ascites. An upper GI endoscopy is performed which shows gastric varices with no signs of active bleeding. An MRI of the brain is insignificant.\n\nGiven the background information the following is corrrect: Portal vein thrombosis is the most likely precipitating factor that led to this patient\u2019s condition.",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The patient's history of alcoholic liver cirrhosis predisposes him to portal vein thrombosis, which can lead to worsening portal hypertension and hepatic encephalopathy."
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The patient's history of alcoholic liver cirrhosis predisposes him to portal vein thrombosis, which can lead to worsening portal hypertension and hepatic encephalopathy.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient's ammonia level is elevated (100 \u00b5g/dL), which is more directly indicative of hepatic encephalopathy rather than portal vein thrombosis.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Portal vein thrombosis typically presents with acute abdominal pain and signs of intestinal ischemia, which are absent in this patient.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The presence of gastric varices on endoscopy supports portal hypertension, but it does not specifically confirm portal vein thrombosis as the precipitating factor.",
+          "confidence": 0.7,
+          "attacks": {
+            "A1": 0.6
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The patient's altered mental status and asterixis are classic signs of hepatic encephalopathy, which can occur without portal vein thrombosis in the setting of cirrhosis.",
+          "confidence": 0.88,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "F1",
+          "text": "The abdominal ultrasound showed no evidence of portal vein thrombosis, making it less likely to be the precipitating factor.",
+          "confidence": 0.9,
+          "attacks": {
+            "A1": 0.9
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The presence of gastric varices on endoscopy suggests underlying portal hypertension, which is commonly associated with portal vein thrombosis."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The presence of gastric varices on endoscopy suggests underlying portal hypertension, which is commonly associated with portal vein thrombosis.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Gastric varices can also result from splenic vein thrombosis or other causes of portal hypertension, not exclusively portal vein thrombosis.",
+          "confidence": 0.75,
+          "attacks": {
+            "A2": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The patient's history of alcoholic liver cirrhosis is a more common and likely cause of portal hypertension and gastric varices than portal vein thrombosis.",
+          "confidence": 0.8,
+          "attacks": {
+            "B1": 0.65
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Portal vein thrombosis often presents with acute symptoms like abdominal pain and vomiting, which are absent in this patient.",
+          "confidence": 0.78,
+          "attacks": {
+            "A2": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "S",
+        "text": "The patient's elevated ammonia level and altered mental status are more consistent with hepatic encephalopathy, which is a common complication of cirrhosis and does not necessarily indicate portal vein thrombosis."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "The patient's elevated ammonia level and altered mental status are more consistent with hepatic encephalopathy, which is a common complication of cirrhosis and does not necessarily indicate portal vein thrombosis.",
+          "cate": "P",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Portal vein thrombosis can also cause elevated ammonia levels and altered mental status due to compromised liver function, making it a plausible differential diagnosis.",
+          "confidence": 0.7,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of acute abdominal pain or other signs of mesenteric ischemia makes portal vein thrombosis less likely in this patient.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Hepatic encephalopathy is more likely given the presence of asterixis and hyperreflexia, which are classic neurological findings in this condition.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "S",
+        "text": "The abdominal ultrasound did not reveal any evidence of portal vein thrombosis, such as thrombus in the portal vein or cavernous transformation, making this diagnosis less likely."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The abdominal ultrasound did not reveal any evidence of portal vein thrombosis, such as thrombus in the portal vein or cavernous transformation, making this diagnosis less likely.",
+          "cate": "S",
+          "confidence": 0.85,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Portal vein thrombosis can sometimes be missed on ultrasound, especially if it is partial or if the thrombus is small.",
+          "confidence": 0.65,
+          "attacks": {
+            "A4": 0.6
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The absence of portal vein thrombosis on ultrasound is highly reliable when performed by an experienced operator, reducing the likelihood of a false negative.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The patient's elevated ammonia levels and altered mental status are more consistent with hepatic encephalopathy, which is a common complication of cirrhosis and does not require portal vein thrombosis as a precipitating factor.",
+          "confidence": 0.8,
+          "attacks": {
+            "A4": 0.3
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Portal vein thrombosis can exacerbate ascites and hepatic encephalopathy, both of which are present in this patient, supporting it as a precipitating factor."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Portal vein thrombosis can exacerbate ascites and hepatic encephalopathy, both of which are present in this patient, supporting it as a precipitating factor.",
+          "cate": "P",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The patient has no imaging evidence of portal vein thrombosis, making it less likely as the precipitating factor.",
+          "confidence": 0.85,
+          "attacks": {
+            "A5": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "Alcoholic liver cirrhosis alone can explain the ascites and hepatic encephalopathy without invoking portal vein thrombosis.",
+          "confidence": 0.9,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "The absence of abdominal pain or other clinical signs of thrombosis reduces the likelihood of portal vein thrombosis.",
+          "confidence": 0.7,
+          "attacks": {
+            "A5": 0.65
+          }
+        },
+        {
+          "id": "E1",
+          "text": "The patient's elevated ammonia levels are more consistent with hepatic encephalopathy due to cirrhosis rather than portal vein thrombosis.",
+          "confidence": 0.8,
+          "attacks": {
+            "A5": 0.75
+          }
+        }
+      ]
+    },
+    "A6": {
+      "supporting": {
+        "id": "A6",
+        "cate": "S",
+        "text": "The patient's stable vital signs and lack of acute bleeding or abdominal pain make portal vein thrombosis a less likely cause compared to other complications of cirrhosis."
+      },
+      "attacks": [
+        {
+          "id": "A6",
+          "text": "The patient's stable vital signs and lack of acute bleeding or abdominal pain make portal vein thrombosis a less likely cause compared to other complications of cirrhosis.",
+          "cate": "S",
+          "confidence": 0.75,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "Portal vein thrombosis can present without acute bleeding or pain, especially in chronic cases, and stable vital signs do not rule it out.",
+          "confidence": 0.65,
+          "attacks": {
+            "A6": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The elevated ammonia levels and asterixis strongly suggest hepatic encephalopathy as the primary issue, not portal vein thrombosis.",
+          "confidence": 0.85,
+          "attacks": {
+            "B1": 0.8
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Hepatic encephalopathy does not explain the ascites and shifting dullness, which are more consistent with portal hypertension from thrombosis.",
+          "confidence": 0.6,
+          "attacks": {
+            "C1": 0.65
+          }
+        }
+      ]
+    }
+  }
+}

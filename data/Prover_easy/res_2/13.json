@@ -1,0 +1,262 @@
+{
+  "claim": "Context:'''\nCallen can think creatively. If Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both. If Tyson can think creatively, then she can either create innovative solutions or inspire social change, but not both. Callen inspires social change.\n'''\nQuestion: '''Based on the above information, is the following statement true, false, or uncertain? Callen does not create innovative solutions.\n'''",
+  "Args": {
+    "A1": {
+      "supporting": {
+        "id": "A1",
+        "cate": "P",
+        "text": "The context states 'Callen inspires social change.'"
+      },
+      "attacks": [
+        {
+          "id": "A1",
+          "text": "The context states 'Callen inspires social change.'",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The context says Callen can think creatively, and if she does, she can either create innovative solutions OR inspire social change, but not both. Since she inspires social change, she cannot create innovative solutions. This directly supports the claim, so A1 is not attacking the claim but supporting it.",
+          "confidence": 0.85,
+          "attacks": {
+            "A1": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "A1's text is simply quoting a fact from the context. It doesn't explicitly state the logical conclusion that 'Callen does not create innovative solutions.' However, when combined with the other premises, it strongly implies that conclusion. So A1 is correctly categorized as P (supporting the claim), and B1's attack is based on a misinterpretation of A1's role.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context doesn't explicitly state that Callen cannot create innovative solutions; it only says she inspires social change. The 'but not both' condition applies only if she can think creatively. We must first establish she can think creatively to apply the exclusion.",
+          "confidence": 0.75,
+          "attacks": {
+            "A1": 0.7
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context begins with 'Callen can think creatively.' This is given as a fact. Therefore, the condition 'if Callen can think creatively...' is satisfied, and the exclusive 'or' applies: she can do one but not both. Since she inspires social change, she cannot create innovative solutions.",
+          "confidence": 0.92,
+          "attacks": {
+            "B2": 0.9
+          }
+        }
+      ]
+    },
+    "A2": {
+      "supporting": {
+        "id": "A2",
+        "cate": "P",
+        "text": "The context also states that if Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both."
+      },
+      "attacks": [
+        {
+          "id": "A2",
+          "text": "The context also states that if Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument A2 only restates a conditional premise from the context without applying it to reach the conclusion that Callen does not create innovative solutions.",
+          "confidence": 0.82,
+          "attacks": {
+            "A2": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While A2 doesn't complete the logical chain, it correctly identifies the relevant rule that must be combined with other premises to reach the conclusion, making it a valid supporting step.",
+          "confidence": 0.75,
+          "attacks": {
+            "B1": 0.7
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A2 fails to incorporate the crucial premise that 'Callen inspires social change,' which is necessary to apply the exclusive 'or' rule mentioned in A2.",
+          "confidence": 0.88,
+          "attacks": {
+            "A2": 0.85
+          }
+        },
+        {
+          "id": "C2",
+          "text": "A2 serves as a foundational premise in a logical deduction. The missing connection to 'Callen inspires social change' would be made in a subsequent argument, not necessarily within A2 itself.",
+          "confidence": 0.72,
+          "attacks": {
+            "B2": 0.65
+          }
+        },
+        {
+          "id": "B3",
+          "text": "The context begins with 'Callen can think creatively.' Combined with A2's rule and 'Callen inspires social change,' the conclusion follows directly. A2 is therefore a necessary and correct supporting premise.",
+          "confidence": 0.9,
+          "attacks": {
+            "B1": 0.85,
+            "B2": 0.8
+          }
+        }
+      ]
+    },
+    "A3": {
+      "supporting": {
+        "id": "A3",
+        "cate": "P",
+        "text": "From the first premise, since Callen inspires social change, she cannot also create innovative solutions under the 'but not both' condition."
+      },
+      "attacks": [
+        {
+          "id": "A3",
+          "text": "From the first premise, since Callen inspires social change, she cannot also create innovative solutions under the 'but not both' condition.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the 'but not both' condition applies to Callen's situation, but the premises only state that if she can think creatively, then she can do one or the other but not both. It doesn't explicitly confirm she can think creatively.",
+          "confidence": 0.72,
+          "attacks": {
+            "A3": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The premises state 'Callen inspires social change' as a fact, but this could be interpreted as a potential outcome of her creative thinking, not necessarily the exclusive outcome. The 'but not both' condition might only apply to what she can do, not what she actually does.",
+          "confidence": 0.68,
+          "attacks": {
+            "A3": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context explicitly states 'Callen can think creatively' as the first premise, so B1's challenge about whether she can think creatively is invalid.",
+          "confidence": 0.92,
+          "attacks": {
+            "B1": 0.9
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The logical structure is clear: (1) Callen can think creatively. (2) If Callen can think creatively, then she can either create innovative solutions or inspire social change, but not both. (3) Callen inspires social change. Therefore, by modus ponens and the exclusive 'or', she does not create innovative solutions.",
+          "confidence": 0.88,
+          "attacks": {
+            "B2": 0.85
+          }
+        },
+        {
+          "id": "D1",
+          "text": "Even with C1's correction, there's ambiguity in whether 'inspires social change' refers to her actual achievement or just a capacity. The premises use 'can' for capacities, but 'Callen inspires social change' is stated as a fact without 'can', potentially creating a logical gap.",
+          "confidence": 0.6,
+          "attacks": {
+            "C2": 0.55
+          }
+        }
+      ]
+    },
+    "A4": {
+      "supporting": {
+        "id": "A4",
+        "cate": "P",
+        "text": "The logical implication is that if one of the two exclusive outcomes (inspire social change) is true, the other (create innovative solutions) must be false."
+      },
+      "attacks": [
+        {
+          "id": "A4",
+          "text": "The logical implication is that if one of the two exclusive outcomes (inspire social change) is true, the other (create innovative solutions) must be false.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The argument assumes the exclusive 'or' (XOR) applies to Callen's situation, but the context states 'but not both' only for the conditional outcomes, not as a direct fact about Callen's actual achievements.",
+          "confidence": 0.72,
+          "attacks": {
+            "A4": 0.65
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The context says Callen inspires social change, but it doesn't explicitly state she cannot also create innovative solutions; the conditional only says if she thinks creatively, she can do one or the other but not both. We don't know for certain she thinks creatively.",
+          "confidence": 0.85,
+          "attacks": {
+            "A4": 0.8
+          }
+        },
+        {
+          "id": "C1",
+          "text": "The context begins with 'Callen can think creatively,' which is stated as a given fact, not a conditional. Therefore, the conditional about exclusive outcomes does apply to her.",
+          "confidence": 0.9,
+          "attacks": {
+            "B2": 0.88
+          }
+        },
+        {
+          "id": "B3",
+          "text": "Even if the XOR logic applies, 'inspire social change' might be interpreted broadly enough to encompass 'create innovative solutions' as a subset, potentially violating the exclusivity in practice.",
+          "confidence": 0.5,
+          "attacks": {
+            "A4": 0.45
+          }
+        },
+        {
+          "id": "C2",
+          "text": "The context explicitly frames them as distinct exclusive outcomes ('but not both'), so semantic overlap would contradict the intended logical structure of the problem.",
+          "confidence": 0.82,
+          "attacks": {
+            "B3": 0.75
+          }
+        }
+      ]
+    },
+    "A5": {
+      "supporting": {
+        "id": "A5",
+        "cate": "P",
+        "text": "Therefore, the statement 'Callen does not create innovative solutions' is directly supported by the given facts and logical rules."
+      },
+      "attacks": [
+        {
+          "id": "A5",
+          "text": "Therefore, the statement 'Callen does not create innovative solutions' is directly supported by the given facts and logical rules.",
+          "cate": "P",
+          "confidence": 0.95,
+          "attacks": {}
+        },
+        {
+          "id": "B1",
+          "text": "The logical rule states 'Callen can either create innovative solutions or inspire social change, but not both.' Since Callen inspires social change, she cannot create innovative solutions. This is a direct logical deduction, not just 'support'.",
+          "confidence": 0.92,
+          "attacks": {
+            "A5": 0.85
+          }
+        },
+        {
+          "id": "B2",
+          "text": "The argument A5 is a conclusion, not a supporting argument. It restates what needs to be proven rather than providing independent reasoning. Its confidence should be lower as it doesn't add new logical steps.",
+          "confidence": 0.75,
+          "attacks": {
+            "A5": 0.7
+          }
+        },
+        {
+          "id": "C1",
+          "text": "While B2 correctly notes A5 is a conclusion, in logical analysis, stating a conclusion that follows necessarily from premises is valid. The 'therefore' indicates it's the result of reasoning, which is appropriate in this context.",
+          "confidence": 0.8,
+          "attacks": {
+            "B2": 0.65
+          }
+        }
+      ]
+    }
+  }
+}

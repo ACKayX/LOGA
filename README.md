@@ -1,8 +1,12 @@
 # LOGA
 
-LOGA: **LOG**ical **A**rgumentation Framework for LLMs 
+LOGA (**LOG**ical **A**rgumentation Framework  for LLMs) is a project focused on the task of claim verification through the use of argumentative reasoning.
 
-The task of this project is **Claim Verification**.
+## Full Pipeline
+
+![Pipeline](images/Pipeline.png)
+
+
 
 ---
 
@@ -132,7 +136,7 @@ Prompts used for specific **Conditions**:
 
 
 
-## Result
+## `Result` Folder
 
 This directory stores the **best single-run results for several datasets**.
 
@@ -140,12 +144,20 @@ These results are used to compute the **Aggregation methods**:`Weighted Conditio
 
 
 
-## Full Pipeline
-
-![Pipeline](images/Pipeline.png)
 
 
-
-## Experiment Result
+## Experimental results
 
 ![Result](images/Best-Result_all_semantics.png)
+
+The above experimental results are based on **DeepSeek-V3** (PorverQA is based on **DeepSeek-V3.2**).
+
+#### Method Aggregation
+
+tt: Threshold True
+
+veto
+
+Wc_S: Weighted_Condition-Semantic
+
+Wc_Ws: Weighted_Condition-Weighted_Semantic

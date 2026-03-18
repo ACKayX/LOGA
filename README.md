@@ -154,10 +154,10 @@ The above experimental results are based on **DeepSeek-V3** (PorverQA is based o
 
 #### Method Aggregation
 
-tt: Threshold True
+TT: Threshold True
 
-veto
+Veto
 
-Wc_S: Weighted_Condition-Semantic
+WcS: Weighted_Condition-Semantic
 
-Wc_Ws: Weighted_Condition-Weighted_Semantic
+WcWs: Weighted_Condition-Weighted_Semantic
